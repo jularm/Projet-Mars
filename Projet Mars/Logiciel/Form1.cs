@@ -25,7 +25,7 @@ namespace Logiciel
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9;
-            jour42.BackgroundImage = sortie;            
+            jour42.BackgroundImage = sortie;
         }
 
 
@@ -36,7 +36,7 @@ namespace Logiciel
             c.Horloge();
             heureMars.Text = c.Heure.ToString() + " h " + c.Minute.ToString() + " min " + c.Seconde.ToString() + " s";
             nbrJour.Text = c.Jour.ToString();
-            label1.Text = Convert.ToString(DateTime.Now);
+            DateTerrestre.Text = Convert.ToString(DateTime.Now);
             timer1.Start();
         }
 
@@ -98,37 +98,26 @@ namespace Logiciel
             premClick = true;
 
             //modifié par léo
-            groupBox2.Visible = true;
+            Niveau2.Visible = true;
             //groupBox1.Visible = false;
             NumeroJour.Text = clickedButton.Text;
         }
-
-        
-      
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            groupBox2.Visible = false;
-            //groupBox1.Visible = true;
-        }
-
-        
-
+     
         private void button3_Click(object sender, EventArgs e)
         {
-            groupBox3.Visible = true;
+            Niveau3.Visible = true;
             comboBox1.Text = "Sleeping";
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            groupBox3.Visible = false;
+            Niveau3.Visible = false;
         }
 
         private void CreerActivite_Click(object sender, EventArgs e)
         {
-            groupBox3.Visible = true;
+            Niveau3.Visible = true;
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -163,6 +152,36 @@ namespace Logiciel
             }
             trackBar1_Scroll(sender, e);
         }
+
+        private void RetourCalendrier_Click_1(object sender, EventArgs e)
+        {
+            Niveau2.Visible = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void JourPrecedent_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(NumeroJour.Text) > 1)
+            {
+                NumeroJour.Text = Convert.ToString(int.Parse(NumeroJour.Text) - 1);
+            }
+        }
+
+        private void JourSuivant_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(NumeroJour.Text) < 500)
+            {
+                NumeroJour.Text = Convert.ToString(int.Parse(NumeroJour.Text) + 1);
+            }
+        }
+
+
+
+
 
        
        
