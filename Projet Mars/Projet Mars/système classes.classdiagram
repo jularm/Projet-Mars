@@ -66,6 +66,9 @@
           <property Id="df067bf1-fae9-4397-b27b-478d709d05b5" name="Compte rendu Journée" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="065bb6b6-5933-47dd-b12a-f8a94c8fc286" />
           </property>
+          <property Id="8b7611af-d7bd-4cfb-b90e-29a0dbdf04e5" name="ListeActivite" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="773f8252-3764-44a0-8556-fcabf68174f3" />
+          </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -73,26 +76,26 @@
       <class Id="93869af9-c340-45f7-9436-326a581a3021" name="Activite" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="586b8dc4-72f6-40a2-8ff7-88951470697f" />
         <ownedAttributesInternal>
-          <property Id="ee2cfaa7-d17b-42f8-91b7-4c0fee94103e" name="Heure Début" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="ee2cfaa7-d17b-42f8-91b7-4c0fee94103e" name="Heure Debut" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="1474c178-4a62-4d90-b1be-3b2fa9203e4a" />
           </property>
           <property Id="ac73673d-ba6f-43d8-a58a-b96ac696ee55" name="Compte rendu Mission" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="dad6ab45-6c67-4bc3-84a4-97ef3c7beb67" />
           </property>
-          <property Id="1388d234-a053-44fa-9469-103f4877aa32" name="Type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="c6448f25-d854-4a8f-ae72-0c427d7eac8d" />
-          </property>
           <property Id="4b691de2-4a7e-464e-b9e0-b566b7005260" name="Lieu" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="233392a9-3e74-4e27-bca4-5fe4d8046ca9" />
-          </property>
-          <property Id="75a503f0-10c9-4162-bb66-5515663dbf50" name="Numéro Jour" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="6f55d44d-afd9-4209-8b99-f28cf87c2a82" />
           </property>
           <property Id="fbc16711-bfb0-4aa2-ac81-5cdd5d66ad60" name="Liste Astronautes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="9fdb7e25-0075-40e5-a99c-a7bce35d8dbb" />
           </property>
           <property Id="ba8180c1-2a6e-4270-b950-fac08ecd5525" name="Texte Descriptif" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="aeac2fe4-b94e-4636-a180-40a240493faf" />
+          </property>
+          <property Id="21258724-73dd-498f-baa9-8e2d2ec232a0" name="Heure Fin" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a1134c6c-dceb-401a-91c9-48a68ac3909f" />
+          </property>
+          <property Id="376350f3-1f9f-48e2-978a-42700672182e" name="Nom" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e303e6d5-f153-45cf-8447-926d3139f426" />
           </property>
         </ownedAttributesInternal>
       </class>
@@ -132,7 +135,7 @@
           <property Id="499f7945-632b-4b59-98f1-21196340c538" name="Nom" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="510ed210-57c7-45f9-b7af-b4a2d01d0136" />
           </property>
-          <property Id="e005b465-6be8-4a51-94f5-66f365673269" name="Attribute1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="e005b465-6be8-4a51-94f5-66f365673269" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="3c2a4cd7-b7fd-4088-bc5d-d76c98f2c0a3" />
           </property>
         </ownedAttributesInternal>
@@ -173,8 +176,11 @@
           <property Id="17364c99-5ff1-4552-922a-5809d7f63869" name="Nom" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="ef496645-1927-4eaa-b7df-0131c3b6ca3d" />
           </property>
-          <property Id="5755d787-cd36-40f5-985b-394a7549c067" name="Position" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="5755d787-cd36-40f5-985b-394a7549c067" name="PositionX" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="698c8f75-b8d3-41e3-abfe-223eaf19127a" />
+          </property>
+          <property Id="14cd3a37-4030-43ff-bdd8-78666cedb63f" name="PositionY" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fd0ffcee-53b1-4161-bbb9-e89f28f68d78" />
           </property>
         </ownedAttributesInternal>
       </class>
@@ -243,44 +249,6 @@
             <elementDefinition Id="02fdaaa8-761f-444a-a663-93633faeb73d" />
           </property>
         </ownedAttributesInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <Interface Id="0ef2255f-f78d-4e4e-9608-ec45fed13c08" name="IEtat" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="62f3008c-b74f-4d9d-8ea8-ecaf423ea132" />
-      </Interface>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="b057abcb-9bc6-45fa-97b3-7e09abf20ca6" name="JourPasse" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="417e0151-1b40-43a2-b475-f7ef3fb32b2d" />
-        <suppliersInternal>
-          <dependency Id="46b965ef-5009-4f70-8a92-35fcadb6054d">
-            <interfaceMoniker Id="0ef2255f-f78d-4e4e-9608-ec45fed13c08" LastKnownName="IEtat" />
-            <elementDefinition Id="0fc329fb-6166-46ea-b2d9-f5af943cfa9b" />
-          </dependency>
-        </suppliersInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="ca37ce8c-aad4-4725-8e06-a9c2e85f4b7b" name="JourPresent" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="0e0f3850-29cf-48ba-86aa-2330a5fe6a6e" />
-        <suppliersInternal>
-          <dependency Id="cae7ce01-c7ca-4d6a-a5b4-0dbf7eabd41f">
-            <interfaceMoniker Id="0ef2255f-f78d-4e4e-9608-ec45fed13c08" LastKnownName="IEtat" />
-            <elementDefinition Id="911b5e48-a59e-4de6-a10a-2f300ceb30ed" />
-          </dependency>
-        </suppliersInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="f7db35f9-3eb8-46ed-b94b-ae582955230e" name="JourFutur" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="fb91b243-2435-46cc-93d2-b41a07445a18" />
-        <suppliersInternal>
-          <dependency Id="65c59cd1-7876-4c5e-a592-341282f6d9ec">
-            <interfaceMoniker Id="0ef2255f-f78d-4e4e-9608-ec45fed13c08" LastKnownName="IEtat" />
-            <elementDefinition Id="0bd989c9-d3b5-4ec7-98bd-a6d06ba3ade6" />
-          </dependency>
-        </suppliersInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>

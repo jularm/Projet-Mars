@@ -6,6 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Xml.Serialization;
+using System.Xml;
+
 
 namespace Logiciel
 {
@@ -25,7 +29,8 @@ namespace Logiciel
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9;
-            jour42.BackgroundImage = sortie;            
+            jour42.BackgroundImage = sortie;           
+            c.Jour = 12;
         }
 
 
@@ -49,9 +54,14 @@ namespace Logiciel
                 {
                     groupBox1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i - 1);
 
+
+                    if (int.Parse(groupBox1.Controls[i].Text) < int.Parse(nbrJour.Text))
+                    {
+                        groupBox1.Controls[i].BackColor = Color.DimGray;
+                    }  
                     if (int.Parse(groupBox1.Controls[i].Text) == int.Parse(nbrJour.Text))
                     {
-                        groupBox1.Controls[i].BackColor = Color.Blue;
+                        groupBox1.Controls[i].BackColor = Color.RoyalBlue;
                     }                    
                 }
             }      
@@ -65,13 +75,21 @@ namespace Logiciel
                 {
                     groupBox1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i-1);
 
-                    if (int.Parse(nbrJour.Text) == (50 * trackBar1.Value) + i-1)
+                    if (int.Parse(nbrJour.Text) == (50 * trackBar1.Value) + i - 1)
                     {
-                        groupBox1.Controls[i].BackColor = Color.Blue;
+                        groupBox1.Controls[i].BackColor = Color.RoyalBlue;
                     }
                     else
                     {
-                        groupBox1.Controls[i].BackColor = Color.DarkGreen;
+                        if (int.Parse(groupBox1.Controls[i].Text) < c.Jour)
+                        {
+                            groupBox1.Controls[i].BackColor = Color.DimGray;
+                        }
+                        else
+                        {
+                            groupBox1.Controls[i].BackColor = Color.DarkGreen;
+                        }
+
                     }
                 }
             }      
@@ -82,14 +100,21 @@ namespace Logiciel
         private void jour_Click(object sender, EventArgs e)
         {
             if (premClick) 
-            {
+            {                
                 if (int.Parse(test.Text) == c.Jour)
                 {
-                    test.BackColor = Color.Blue;
+                    test.BackColor = Color.RoyalBlue;
                 }
                 else
                 {
-                    test.BackColor = Color.DarkGreen;
+                    if (int.Parse(test.Text) < c.Jour)
+                    {
+                        test.BackColor = Color.DimGray;
+                    }
+                    else
+                    {
+                        test.BackColor = Color.DarkGreen;
+                    }
                 }
             }
             Button clickedButton = (Button)sender;
@@ -118,7 +143,6 @@ namespace Logiciel
         {
             groupBox3.Visible = true;
             comboBox1.Text = "Sleeping";
-
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -171,6 +171,17 @@
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false" />
+          <property
+            Id="773f8252-3764-44a0-8556-fcabf68174f3"
+            name="ListeActivite"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -200,7 +211,7 @@
         <ownedAttributesInternal>
           <property
             Id="1474c178-4a62-4d90-b1be-3b2fa9203e4a"
-            name="Heure Début"
+            name="Heure Debut"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -221,30 +232,8 @@
             aggregation="None"
             isComposite="false" />
           <property
-            Id="c6448f25-d854-4a8f-ae72-0c427d7eac8d"
-            name="Type"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
             Id="233392a9-3e74-4e27-bca4-5fe4d8046ca9"
             name="Lieu"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="6f55d44d-afd9-4209-8b99-f28cf87c2a82"
-            name="Numéro Jour"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -267,6 +256,28 @@
           <property
             Id="aeac2fe4-b94e-4636-a180-40a240493faf"
             name="Texte Descriptif"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a1134c6c-dceb-401a-91c9-48a68ac3909f"
+            name="Heure Fin"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="e303e6d5-f153-45cf-8447-926d3139f426"
+            name="Nom"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -361,10 +372,11 @@
             isComposite="false" />
           <property
             Id="3c2a4cd7-b7fd-4088-bc5d-d76c98f2c0a3"
-            name="Attribute1"
+            name="Id"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
+            isUnique="false"
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
@@ -447,7 +459,18 @@
             isComposite="false" />
           <property
             Id="698c8f75-b8d3-41e3-abfe-223eaf19127a"
-            name="Position"
+            name="PositionX"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="fd0ffcee-53b1-4161-bbb9-e89f28f68d78"
+            name="PositionY"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"

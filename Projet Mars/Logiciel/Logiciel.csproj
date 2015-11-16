@@ -46,13 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activite.cs" />
+    <Compile Include="Astronaute.cs" />
     <Compile Include="Calendrier Martien.cs" />
+    <Compile Include="CategorieActivite.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Jour.cs" />
+    <Compile Include="Lieu.cs" />
+    <Compile Include="Mission.cs" />
+    <Compile Include="NomActivite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
