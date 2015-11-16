@@ -25,8 +25,7 @@ namespace Logiciel
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9;
-            jour42.BackgroundImage = sortie;
-            trackBar1.BackColor = Color.WhiteSmoke;
+            jour42.BackgroundImage = sortie;            
         }
 
 
@@ -57,118 +56,22 @@ namespace Logiciel
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            switch (trackBar1.Value)
+            for (int i = 0; i < groupBox1.Controls.Count; i++)
             {
-                case 0:
-                    for (int i=0; i<groupBox1.Controls.Count;i++)
-                    {
-                        if (groupBox1.Controls[i].Name.Contains("jour"))
-                        {
-                            groupBox1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i + 1);
-                        }
-                        if (int.Parse(nbrJour.Text) == (50 * trackBar1.Value) + i + 1)
-                        {
-                            groupBox1.Controls[i].BackColor = Color.Blue;
-                        }
-                        else
-                        {
-                            groupBox1.Controls[i].BackColor = Color.DarkGreen;
-                        }
-                    }                    
-                    break;
-                case 1:
-                    for (int i = 0; i < groupBox1.Controls.Count; i++)
-                    {
-                        if (groupBox1.Controls[i].Name.Contains("jour"))
-                        {
-                            groupBox1.Controls[i].Text = Convert.ToString(50 * trackBar1.Value + i + 1);
-                        }
-                        if (int.Parse(nbrJour.Text) == (50 * trackBar1.Value) + i + 1)
-                        {
-                            groupBox1.Controls[i].BackColor = Color.Blue;
-                        }
-                        else
-                        {
-                            groupBox1.Controls[i].BackColor = Color.DarkGreen;
-                        }
-                    }                    
-                    break;
-                case 2:
-                    for (int i = 0; i < groupBox1.Controls.Count; i++)
-                    {
-                        if (groupBox1.Controls[i].Name.Contains("jour"))
-                        {
-                            groupBox1.Controls[i].Text = Convert.ToString(50 * trackBar1.Value + i + 1);
-                        }
-                    }                    
-                    break;
-                case 3:
-                    for (int i = 0; i < groupBox1.Controls.Count; i++)
-                    {
-                        if (groupBox1.Controls[i].Name.Contains("jour"))
-                        {
-                            groupBox1.Controls[i].Text = Convert.ToString(50 * trackBar1.Value + i + 1);
-                        }
-                    }                    
-                    break;
-                case 4: 
-                    for (int i = 0; i < groupBox1.Controls.Count; i++)
-                    {
-                        if (groupBox1.Controls[i].Name.Contains("jour"))
-                        {
-                            groupBox1.Controls[i].Text = Convert.ToString(50 * trackBar1.Value + i + 1);
-                        }
-                    }                    
-                    break;
-                case 5: 
-                    for (int i = 0; i < groupBox1.Controls.Count; i++)
-                    {
-                        if (groupBox1.Controls[i].Name.Contains("jour"))
-                        {
-                            groupBox1.Controls[i].Text = Convert.ToString(50 * trackBar1.Value + i + 1);
-                        }
-                    }
-                    break;
-                case 6: 
-                    for (int i = 0; i < groupBox1.Controls.Count; i++)
-                    {
-                        if (groupBox1.Controls[i].Name.Contains("jour"))
-                        {
-                            groupBox1.Controls[i].Text = Convert.ToString(50 * trackBar1.Value + i + 1);
-                        }
-                    }
-                    break;
-                case 7: 
-                    for (int i = 0; i < groupBox1.Controls.Count; i++)
-                    {
-                        if (groupBox1.Controls[i].Name.Contains("jour"))
-                        {
-                            groupBox1.Controls[i].Text = Convert.ToString(50 * trackBar1.Value + i + 1);
-                        }
-                    }                    
-                    break;
-                case 8: 
-                    for (int i = 0; i < groupBox1.Controls.Count; i++)
-                    {
-                        if (groupBox1.Controls[i].Name.Contains("jour"))
-                        {
-                            groupBox1.Controls[i].Text = Convert.ToString(50 * trackBar1.Value + i + 1);
-                        }
-                    }                    
-                    break;
-                case 9: 
-                    for (int i = 0; i < groupBox1.Controls.Count; i++)
-                    {
-                        if (groupBox1.Controls[i].Name.Contains("jour"))
-                        {
-                            groupBox1.Controls[i].Text = Convert.ToString(50 * trackBar1.Value + i + 1);
-                        }
-                    }                    
-                    break;
+                if (groupBox1.Controls[i].Name.Contains("jour"))
+                {
+                    groupBox1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i-1);
 
-                default: break;
-            }
-            trackBar1.BackColor = Color.WhiteSmoke;
+                    if (int.Parse(nbrJour.Text) == (50 * trackBar1.Value) + i-1)
+                    {
+                        groupBox1.Controls[i].BackColor = Color.Blue;
+                    }
+                    else
+                    {
+                        groupBox1.Controls[i].BackColor = Color.DarkGreen;
+                    }
+                }
+            }      
         }
 
         
@@ -188,8 +91,7 @@ namespace Logiciel
             }
             Button clickedButton = (Button)sender;
             jourSelec=int.Parse(clickedButton.Text);
-            test = clickedButton;
-            clickedButton.BackColor = Color.DarkMagenta;
+            test = clickedButton;           
             premClick = true;
 
             //modifié par léo
@@ -239,6 +141,24 @@ namespace Logiciel
         private void button7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (trackBar1.Value > 0)
+            {
+                trackBar1.Value = trackBar1.Value - 1;
+            }
+            trackBar1_Scroll(sender, e);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (trackBar1.Value < 9)
+            {
+                trackBar1.Value = trackBar1.Value + 1;
+            }
+            trackBar1_Scroll(sender, e);
         }
 
        
