@@ -29,12 +29,12 @@ namespace Logiciel
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9;
-<<<<<<< HEAD
+
             jour42.BackgroundImage = sortie;           
             c.Jour = 12;
-=======
+
             jour42.BackgroundImage = sortie;
->>>>>>> origin/master
+
         }
 
 

@@ -95,13 +95,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-<<<<<<< HEAD
-=======
             this.DateTerrestre = new System.Windows.Forms.Label();
             this.Niveau2 = new System.Windows.Forms.GroupBox();
             this.TrancheHoraire2 = new System.Windows.Forms.Label();
             this.TranchHoraire1 = new System.Windows.Forms.Label();
->>>>>>> origin/master
             this.label1 = new System.Windows.Forms.Label();
             this.RetourCalendrier = new System.Windows.Forms.PictureBox();
             this.JourSuivant = new System.Windows.Forms.PictureBox();
@@ -135,14 +132,10 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-<<<<<<< HEAD
-            this.groupBox2.SuspendLayout();
-=======
             this.Niveau2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RetourCalendrier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JourSuivant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JourPrecedent)).BeginInit();
->>>>>>> origin/master
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -1214,8 +1207,6 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-<<<<<<< HEAD
-=======
             // DateTerrestre
             // 
             this.DateTerrestre.AutoSize = true;
@@ -1263,7 +1254,6 @@
             this.TranchHoraire1.TabIndex = 12;
             this.TranchHoraire1.Text = "00h00-12h20";
             // 
->>>>>>> origin/master
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1633,16 +1623,12 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-<<<<<<< HEAD
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-=======
+
             this.Niveau2.ResumeLayout(false);
             this.Niveau2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RetourCalendrier)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.JourSuivant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.JourPrecedent)).EndInit();
->>>>>>> origin/master
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

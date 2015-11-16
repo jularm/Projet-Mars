@@ -143,69 +143,69 @@ namespace Logiciel
 
 
         // Generation Xml
-        public override void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
-        {
-            XmlNode NodeChef = xmlDoc.CreateElement("Chef");
+        /*    public override void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
+           {
+               XmlNode NodeChef = xmlDoc.CreateElement("Chef");
 
-            base.genereXml(xmlDoc, NodeChef);
+               base.genereXml(xmlDoc, NodeChef);
 
-            XmlNode NodeNbrCommis = xmlDoc.CreateElement("nbrCommis");
-            NodeNbrCommis.InnerText = NbrCommis.ToString();
-            NodeChef.AppendChild(NodeNbrCommis);
+               XmlNode NodeNbrCommis = xmlDoc.CreateElement("nbrCommis");
+               NodeNbrCommis.InnerText = NbrCommis.ToString();
+               NodeChef.AppendChild(NodeNbrCommis);
 
-            XmlNode NodeNbrCouverts = xmlDoc.CreateElement("nbrCouverts");
-            NodeNbrCouverts.InnerText = NbrCouverts.ToString();
-            NodeChef.AppendChild(NodeNbrCouverts);
-
-
-            rootNode.AppendChild(NodeChef);
-
-        }
-
-        // lecture xml et generation objets
-        static
-        public void chargerXml(XmlDocument xmlDoc, Restaurant R)
-        {
-            XmlNodeList nodelistListePersonnel = xmlDoc.GetElementsByTagName("ListePersonnel");
-
-            foreach (XmlNode nodelist in nodelistListePersonnel)
-            {
-                // les chefs
-
-                XmlNodeList nodelistChef = nodelist.SelectNodes("Chef");
-
-                foreach (XmlNode nodeChef in nodelistChef)
-                {
-                    int id_chef = int.Parse(nodeChef.SelectSingleNode("ID").InnerText);
-                    string nom_chef = nodeChef.SelectSingleNode("Nom").InnerText;
-                    string prenom_chef = nodeChef.SelectSingleNode("Prenom").InnerText;
-                    int nbrCommis_chef = int.Parse(nodeChef.SelectSingleNode("nbrCommis").InnerText);
-                    int nbrCouverts_chef = int.Parse(nodeChef.SelectSingleNode("nbrCouverts").InnerText);
+               XmlNode NodeNbrCouverts = xmlDoc.CreateElement("nbrCouverts");
+               NodeNbrCouverts.InnerText = NbrCouverts.ToString();
+               NodeChef.AppendChild(NodeNbrCouverts);
 
 
-                    int[] _jHTrav_chef = new int[7];
+               rootNode.AppendChild(NodeChef);
+
+           }
+
+          // lecture xml et generation objets
+           static
+           public void chargerXml(XmlDocument xmlDoc, Restaurant R)
+           {
+               XmlNodeList nodelistListePersonnel = xmlDoc.GetElementsByTagName("ListePersonnel");
+
+               foreach (XmlNode nodelist in nodelistListePersonnel)
+               {
+                   // les chefs
+
+                   XmlNodeList nodelistChef = nodelist.SelectNodes("Chef");
+
+                   foreach (XmlNode nodeChef in nodelistChef)
+                   {
+                       int id_chef = int.Parse(nodeChef.SelectSingleNode("ID").InnerText);
+                       string nom_chef = nodeChef.SelectSingleNode("Nom").InnerText;
+                       string prenom_chef = nodeChef.SelectSingleNode("Prenom").InnerText;
+                       int nbrCommis_chef = int.Parse(nodeChef.SelectSingleNode("nbrCommis").InnerText);
+                       int nbrCouverts_chef = int.Parse(nodeChef.SelectSingleNode("nbrCouverts").InnerText);
 
 
-                    XmlNodeList nodelistListeHorraire = nodeChef.SelectNodes("ListeHorraire");
-                    foreach (XmlNode nodeListeHorraire in nodelistListeHorraire)
-                    {
-                        int i = 0;
-                        XmlNodeList nodelistHorraire = nodeListeHorraire.SelectNodes("Horraire");
-                        foreach (XmlNode nodeHorraire in nodelistHorraire)
-                        {
-                            _jHTrav_chef[i] = int.Parse(nodeHorraire.InnerText);
-                            i++;
-                        }
+                       int[] _jHTrav_chef = new int[7];
 
-                    }
 
-                    Chef c = new Chef(id_chef, nom_chef, prenom_chef, nbrCommis_chef, nbrCouverts_chef);
-                    c._jHTrav = _jHTrav_chef;
-                    R.ajout(c);
-                }
-            }
+                       XmlNodeList nodelistListeHorraire = nodeChef.SelectNodes("ListeHorraire");
+                       foreach (XmlNode nodeListeHorraire in nodelistListeHorraire)
+                       {
+                           int i = 0;
+                           XmlNodeList nodelistHorraire = nodeListeHorraire.SelectNodes("Horraire");
+                           foreach (XmlNode nodeHorraire in nodelistHorraire)
+                           {
+                               _jHTrav_chef[i] = int.Parse(nodeHorraire.InnerText);
+                               i++;
+                           }
 
-        }
+                       }
+
+                       Chef c = new Chef(id_chef, nom_chef, prenom_chef, nbrCommis_chef, nbrCouverts_chef);
+                       c._jHTrav = _jHTrav_chef;
+                       R.ajout(c);
+                   }
+               }
+
+           }*/
 
 
 
