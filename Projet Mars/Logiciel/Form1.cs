@@ -43,15 +43,18 @@ namespace Logiciel
         private void nbrJour_TextChanged(object sender, EventArgs e)
         {
             dureMission.Increment(1);
-            switch (int.Parse(nbrJour.Text))
+            for (int i = 0; i < groupBox1.Controls.Count; i++)
             {
-                case 1: jour1.BackColor = Color.Blue; break;
-                case 2: jour1.BackColor = Color.DimGray; jour2.BackColor = Color.Blue; break;
+                if (groupBox1.Controls[i].Name.Contains("jour"))
+                {
+                    groupBox1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i - 1);
 
-///////////////////////////////////////////////////////à completer///////////////////////////////////////////////////////////////////
-
-                default: break;
-            }
+                    if (int.Parse(groupBox1.Controls[i].Text) == int.Parse(nbrJour.Text))
+                    {
+                        groupBox1.Controls[i].BackColor = Color.Blue;
+                    }                    
+                }
+            }      
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
