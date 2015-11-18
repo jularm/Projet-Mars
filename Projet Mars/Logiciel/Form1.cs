@@ -207,6 +207,51 @@ namespace Logiciel
             }
         }
 
+        private void HDebut_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (HDebut.SelectedIndex == 24)
+            {
+                MinDebut.Items.Remove("40");
+                MinDebut.Items.Remove("50");
+                MinDebut.SelectedText = "";
+            }
+            else if(MinDebut.Items.Count==4)
+            {
+                MinDebut.Items.Add("40");
+                MinDebut.Items.Add("50");
+            }
+
+            //code à revoir
+            //int heureFinMin = 0;
+            //if (MinDebut.SelectedIndex == 50)
+            //{
+            //    heureFinMin = HDebut.SelectedIndex + 1;
+            //}
+            //else
+            //{
+            //    heureFinMin = HDebut.SelectedIndex;
+            //}
+            //for (int i = 0; i < heureFinMin; i++)
+            //{
+            //    HFin.Items.RemoveAt(i);
+            //}
+            //MinDebut.Enabled = true;
+        }
+
+        private void HFin_SelectedValueChanged(object sender, EventArgs e)
+        {
+            MinFin.Enabled = true;
+        }
+
+        private void MinDebut_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HFin.Enabled = true;
+        }
+
+        
+        
+        
+
 
 
 

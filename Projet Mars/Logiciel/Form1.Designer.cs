@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Paul");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Pierre");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Jack");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Paul");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Pierre");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Jack");
             this.heureMars = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.nbrJour = new System.Windows.Forms.Label();
@@ -119,9 +119,18 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.Niveau3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.MinFin = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.HFin = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.MinDebut = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.HDebut = new System.Windows.Forms.ComboBox();
             this.NJour = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.TitreNiv3 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -1485,9 +1494,18 @@
             // 
             // Niveau3
             // 
+            this.Niveau3.Controls.Add(this.label8);
+            this.Niveau3.Controls.Add(this.label6);
+            this.Niveau3.Controls.Add(this.MinFin);
+            this.Niveau3.Controls.Add(this.label7);
+            this.Niveau3.Controls.Add(this.HFin);
+            this.Niveau3.Controls.Add(this.label5);
+            this.Niveau3.Controls.Add(this.MinDebut);
+            this.Niveau3.Controls.Add(this.label4);
+            this.Niveau3.Controls.Add(this.HDebut);
             this.Niveau3.Controls.Add(this.NJour);
             this.Niveau3.Controls.Add(this.label3);
-            this.Niveau3.Controls.Add(this.label2);
+            this.Niveau3.Controls.Add(this.TitreNiv3);
             this.Niveau3.Controls.Add(this.richTextBox2);
             this.Niveau3.Controls.Add(this.button7);
             this.Niveau3.Controls.Add(this.listView1);
@@ -1501,7 +1519,155 @@
             this.Niveau3.TabStop = false;
             this.Niveau3.Text = "Niveau3";
             this.Niveau3.Visible = false;
-            
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 67);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Activité : ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(280, 143);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(23, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "min";
+            // 
+            // MinFin
+            // 
+            this.MinFin.Enabled = false;
+            this.MinFin.FormattingEnabled = true;
+            this.MinFin.Items.AddRange(new object[] {
+            "00",
+            "10",
+            "20",
+            "30",
+            "40",
+            "50"});
+            this.MinFin.Location = new System.Drawing.Point(234, 140);
+            this.MinFin.Name = "MinFin";
+            this.MinFin.Size = new System.Drawing.Size(40, 21);
+            this.MinFin.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(214, 143);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(13, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "h";
+            // 
+            // HFin
+            // 
+            this.HFin.Enabled = false;
+            this.HFin.FormattingEnabled = true;
+            this.HFin.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"});
+            this.HFin.Location = new System.Drawing.Point(168, 140);
+            this.HFin.Name = "HFin";
+            this.HFin.Size = new System.Drawing.Size(40, 21);
+            this.HFin.TabIndex = 13;
+            this.HFin.SelectedValueChanged += new System.EventHandler(this.HFin_SelectedValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(280, 117);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "min";
+            // 
+            // MinDebut
+            // 
+            this.MinDebut.Enabled = false;
+            this.MinDebut.FormattingEnabled = true;
+            this.MinDebut.Items.AddRange(new object[] {
+            "00",
+            "10",
+            "20",
+            "30",
+            "40",
+            "50"});
+            this.MinDebut.Location = new System.Drawing.Point(234, 114);
+            this.MinDebut.Name = "MinDebut";
+            this.MinDebut.Size = new System.Drawing.Size(40, 21);
+            this.MinDebut.TabIndex = 11;
+            this.MinDebut.SelectedIndexChanged += new System.EventHandler(this.MinDebut_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(214, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(13, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "h";
+            // 
+            // HDebut
+            // 
+            this.HDebut.FormattingEnabled = true;
+            this.HDebut.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"});
+            this.HDebut.Location = new System.Drawing.Point(168, 114);
+            this.HDebut.Name = "HDebut";
+            this.HDebut.Size = new System.Drawing.Size(40, 21);
+            this.HDebut.TabIndex = 9;
+            this.HDebut.SelectedValueChanged += new System.EventHandler(this.HDebut_SelectedValueChanged);
             // 
             // NJour
             // 
@@ -1514,24 +1680,24 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 99);
+            this.label3.Location = new System.Drawing.Point(6, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "N° de jour : ";
             // 
-            // label2
+            // TitreNiv3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(281, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "(Titre)";
+            this.TitreNiv3.AutoSize = true;
+            this.TitreNiv3.Location = new System.Drawing.Point(281, 20);
+            this.TitreNiv3.Name = "TitreNiv3";
+            this.TitreNiv3.Size = new System.Drawing.Size(34, 13);
+            this.TitreNiv3.TabIndex = 6;
+            this.TitreNiv3.Text = "(Titre)";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(53, 289);
+            this.richTextBox2.Location = new System.Drawing.Point(16, 362);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(399, 96);
             this.richTextBox2.TabIndex = 5;
@@ -1539,7 +1705,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(217, 399);
+            this.button7.Location = new System.Drawing.Point(192, 464);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 4;
@@ -1550,14 +1716,14 @@
             // listView1
             // 
             this.listView1.CheckBoxes = true;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            listViewItem3.StateImageIndex = 0;
+            listViewItem7.StateImageIndex = 0;
+            listViewItem8.StateImageIndex = 0;
+            listViewItem9.StateImageIndex = 0;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
-            this.listView1.Location = new System.Drawing.Point(36, 169);
+            listViewItem7,
+            listViewItem8,
+            listViewItem9});
+            this.listView1.Location = new System.Drawing.Point(9, 209);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(89, 108);
             this.listView1.TabIndex = 3;
@@ -1573,7 +1739,7 @@
             "Eating",
             "Sleeping",
             "Exploration"});
-            this.comboBox1.Location = new System.Drawing.Point(205, 208);
+            this.comboBox1.Location = new System.Drawing.Point(74, 64);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 2;
@@ -1591,7 +1757,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(316, 399);
+            this.button2.Location = new System.Drawing.Point(310, 464);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 23);
             this.button2.TabIndex = 0;
@@ -1623,7 +1789,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-
             this.Niveau2.ResumeLayout(false);
             this.Niveau2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RetourCalendrier)).EndInit();
@@ -1737,9 +1902,18 @@
         private System.Windows.Forms.Label TranchHoraire1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label TitreNiv3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label NJour;
+        private System.Windows.Forms.ComboBox HDebut;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox MinDebut;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox MinFin;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox HFin;
+        private System.Windows.Forms.Label label8;
 
 
     }
