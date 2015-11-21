@@ -29,6 +29,12 @@ namespace Logiciel
             _minute = 0;
             _heure = 0;
             _seconde = 0;
+
+            for (int i = 0; i < 500; i++)
+            {
+                _Jours.Add(new Jour(i)) ;
+            }
+            _Jours.ElementAt(20).ListeActivites.RemoveAt(1);
         }
                 
 

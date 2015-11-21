@@ -69,6 +69,9 @@
           <property Id="8b7611af-d7bd-4cfb-b90e-29a0dbdf04e5" name="ListeActivite" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="773f8252-3764-44a0-8556-fcabf68174f3" />
           </property>
+          <property Id="27299280-4b9c-4674-a8c6-e6e7f168d7db" name="TabHoraires" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2bf9de0c-fc66-4593-9d9b-d5b6d2da7a1f" />
+          </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>

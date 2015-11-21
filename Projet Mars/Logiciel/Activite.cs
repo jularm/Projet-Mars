@@ -9,20 +9,66 @@ using System.Xml;
 
 namespace Logiciel
 {
+    public struct Heure //La structure permet la factorisation de code de la même manière qu'une classe mais en plus léger donc plus utilisable pour des petits éléments
+    {
+        int _heures;
+        int _minutes;
+        int _heuresMinutes;
+
+        public int HeuresMinutes
+        {
+            get { return _heuresMinutes; }
+            set { _heuresMinutes = value; }
+        }
+
+        public int Heures
+        {
+            get { return _heures; }
+            set { _heures = value; }
+        }
+        public int Minutes
+        {
+            get { return _minutes; }
+            set { _minutes = value; }
+        }
+
+        public Heure(int h, int m)
+        {
+            _heures = h;
+            _minutes = m;
+            _heuresMinutes = int.Parse(Convert.ToString(h) + Convert.ToString(m));
+
+        }
+    }
     class Activite
     {
         private string _nom;
+
+        
         private string _compteRendu;
-        private DateTime _debut;
-        private DateTime _fin;
+        private Heure _debut;
+        private Heure _fin;
         private Lieu _gps;
         private List<Astronaute> _listAstronaute = new List<Astronaute>();
+
+        internal List<Astronaute> ListAstronaute
+        {
+            get { return _listAstronaute; }
+            set { _listAstronaute = value; }
+        }
         private string _texteDescriptif;
 
 
         public Activite(string nom)
         {
             _nom = nom;
+        }
+        public Activite(string nom, Heure debut, Heure fin, string texteDescriptif,List<Astronaute> listAst):this (nom)
+        {
+            _debut = debut;
+            _fin = fin;
+            _texteDescriptif = texteDescriptif;
+            _listAstronaute = listAst;
         }
 
         public string CompteRendu
@@ -43,27 +89,22 @@ namespace Logiciel
             set { _gps = value; }
         }
 
-        public DateTime Debut
+        public Heure Debut
         {
             get { return _debut; }
             set { _debut = value; }
         }
 
-        public DateTime Fin
+        public Heure Fin
         {
             get { return _fin; }
             set { _fin = value; }
         }
-
-        public void AddAstronaute(Astronaute a)
+        public string Nom
         {
-            _listAstronaute.Add(a);
-        }
-
-        public void RemoveAstronaute(Astronaute a)
-        {
-            _listAstronaute.Remove(a);
-        }        
+            get { return _nom; }
+            set { _nom = value; }
+        }     
 
     }
 }

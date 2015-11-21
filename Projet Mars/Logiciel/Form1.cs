@@ -36,7 +36,89 @@ namespace Logiciel
             jour42.BackgroundImage = sortie;
 
         }
+        public void CreerBoutons(int n) //n : numéro du jour
+        {
+            boutonsMatin.Controls.Clear();
+            boutonsApresMidi.Controls.Clear();
+            Point pointDeBase=new Point(0,0);
+            int largeurActivite = 262;
+            Jour jourJ = c.Jours.ElementAt(n);
 
+            //recherche du nombre d'activités du jour n dans le calendrier
+            for (int i=0; i < jourJ.ListeActivites.Count; i++)
+            {
+                Button bouton = new System.Windows.Forms.Button();
+                Activite Act = jourJ.ListeActivites.ElementAt(i);
+                switch (Act.Nom)
+                {
+                    case "Eating":
+                        bouton.BackColor = Color.Bisque;
+                        break;
+                    case "Sleeping":
+                        bouton.BackColor = Color.BurlyWood;
+                        break;
+                    default :
+                        bouton.BackColor = Color.LightCyan;
+                        break;
+                }
+                //bouton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+                bouton.Cursor = System.Windows.Forms.Cursors.Hand;
+                bouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+
+                Point localisation=new Point(pointDeBase.X,pointDeBase.Y);
+
+                if (Act.Debut.HeuresMinutes < 1220 && Act.Fin.HeuresMinutes<=1220)
+                {
+                    this.boutonsMatin.Controls.Add(bouton);
+
+                    localisation.Y += (Act.Debut.Heures * 6 + Act.Debut.Minutes / 10) * 5; //calcul du nb de tranches de 10min * 5px le matin                  
+                    bouton.Size = new System.Drawing.Size(largeurActivite, ((Act.Fin.Heures * 6 + Act.Fin.Minutes / 10) * 5) - localisation.Y -1);
+                }
+                else
+                {
+
+                    this.boutonsApresMidi.Controls.Add(bouton);
+
+                    if ((Act.Debut.Heures * 6 + Act.Debut.Minutes / 10 - 74) * 5 < 0)
+                    {
+                        localisation.Y += -1;
+                    }
+                    else
+                    {
+                        localisation.Y += (Act.Debut.Heures * 6 + Act.Debut.Minutes / 10 - 74) * 5; //calcul du nb de tranches de 10min * 5px l'après-midi                
+                    }                    
+
+                    bouton.Size = new System.Drawing.Size(largeurActivite, ((Act.Fin.Heures * 6 + Act.Fin.Minutes / 10-74) * 5) - localisation.Y -1);
+                    if (Act.Debut.HeuresMinutes < 1220)
+                    {
+                        Button bouttonBis = new Button();
+                        this.boutonsMatin.Controls.Add(bouttonBis);
+                        bouttonBis.Location = new Point(0, (Act.Debut.Heures * 6 + Act.Debut.Minutes / 10) * 5); //calcul du nb de tranches de 10min * 5px le matin                  
+                        bouttonBis.Size = new System.Drawing.Size(largeurActivite, 370-((Act.Debut.Heures * 6 + Act.Debut.Minutes / 10) * 5) - localisation.Y );
+                        bouttonBis.Margin = new System.Windows.Forms.Padding(0);
+                        bouttonBis.Name = "ActiviteBis" + i;
+                        bouttonBis.TabIndex = i;
+                        bouttonBis.Text = Act.Nom;
+                        bouttonBis.UseVisualStyleBackColor = false;
+                        bouttonBis.Click += new System.EventHandler(this.ClickNiveau3);
+                        bouttonBis.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+                        bouttonBis.Cursor = System.Windows.Forms.Cursors.Hand;
+                        bouttonBis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                        bouttonBis.BackColor = bouton.BackColor;
+                    }
+                }
+
+                bouton.Location = localisation;
+                bouton.Margin = new System.Windows.Forms.Padding(0);
+                bouton.Name = "Activite" + i;
+                bouton.TabIndex = i;
+                bouton.Text = Act.Nom;
+                bouton.UseVisualStyleBackColor = false;
+
+                bouton.Click += new System.EventHandler(this.ClickNiveau3);
+            }
+            
+        }
 
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -130,22 +212,75 @@ namespace Logiciel
             Niveau2.Visible = true;
             //groupBox1.Visible = false;
             NumeroJour.Text = clickedButton.Text;
+            NduJNiv3.Text = NumeroJour.Text;
+            CreerBoutons(jourSelec);
         }
      
-        private void button3_Click(object sender, EventArgs e)
+        private void ClickNiveau3(object sender, EventArgs e)
         {
+            //treeView1.Controls[0].Controls.Add(new CheckBox());
+            Button clickedButton = (Button)sender;
+            
+            Activite act = c.Jours.ElementAt(int.Parse(NduJNiv3.Text)).ListeActivites.ElementAt(clickedButton.TabIndex); //activité à l'index i du jour concerné
+
+            
+
             Niveau3.Visible = true;
-            comboBox1.Text = "Sleeping";
+            Niveau2.Visible = false;
+            TitreNiv3.Text = "Mofifier une activité";
+            texteDescriptif.Text = act.TexteDescriptif;
+            for (int i = 0; i < listView1.Items.Count; i++) //on décoche tous les astronautes par sécurité
+            {
+                listView1.Items[i].Checked = false;
+            }
+            for (int i = 0; i < act.ListAstronaute.Count; i++) //on coche les astronautes pour une activité donnée
+            {
+                for (int j = 0; j < listView1.Items.Count; j++)
+                {
+                    if (listView1.Items[j].Text == act.ListAstronaute[i].Nom)
+                    {
+                        listView1.Items[j].Checked = true;
+                    }
+
+                }
+                
+                        
+            }
+
+            ItemSelect.Text= act.Nom;
+            HDebut.Enabled = true;
+            MinDebut.Enabled = true;
+            HFin.Enabled = true;
+            MinFin.Enabled = true;
+            HDebut.SelectedIndex = act.Debut.Heures;
+            MinDebut.SelectedIndex = act.Debut.Minutes/10;
+            HFin.SelectedIndex = act.Fin.Heures;
+            MinFin.SelectedIndex = act.Fin.Minutes/10;
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Niveau3.Visible = false;
+            Niveau2.Visible = true;
         }
 
         private void CreerActivite_Click(object sender, EventArgs e)
         {
+            TitreNiv3.Text = "Créer une activité";
             Niveau3.Visible = true;
+            Niveau2.Visible = false;
+
+            HDebut.Enabled = true;
+            MinDebut.Enabled = false;
+            HFin.Enabled = false;
+            MinFin.Enabled = false;
+            HDebut.SelectedIndex = -1;
+            MinDebut.SelectedIndex = -1;
+            HFin.SelectedIndex = -1;
+            MinFin.SelectedIndex = -1;
+
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -197,6 +332,8 @@ namespace Logiciel
             {
                 NumeroJour.Text = Convert.ToString(int.Parse(NumeroJour.Text) - 1);
             }
+            NduJNiv3.Text = NumeroJour.Text;
+            CreerBoutons(int.Parse(NumeroJour.Text));
         }
 
         private void JourSuivant_Click(object sender, EventArgs e)
@@ -205,6 +342,8 @@ namespace Logiciel
             {
                 NumeroJour.Text = Convert.ToString(int.Parse(NumeroJour.Text) + 1);
             }
+            NduJNiv3.Text = NumeroJour.Text;
+            CreerBoutons(int.Parse(NumeroJour.Text));
         }
 
         private void HDebut_SelectedValueChanged(object sender, EventArgs e)
@@ -235,7 +374,7 @@ namespace Logiciel
             //{
             //    HFin.Items.RemoveAt(i);
             //}
-            //MinDebut.Enabled = true;
+            MinDebut.Enabled = true;
         }
 
         private void HFin_SelectedValueChanged(object sender, EventArgs e)
@@ -247,6 +386,27 @@ namespace Logiciel
         {
             HFin.Enabled = true;
         }
+
+    
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (treeView1.SelectedNode.Level == 1)
+            {
+                ItemSelect.Text = treeView1.SelectedNode.Text;
+            }
+            else
+            {
+                ItemSelect.Text = "";
+            }
+        }
+
+        
+
+        
+
+
+       
 
         
         

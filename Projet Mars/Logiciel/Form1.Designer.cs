@@ -30,9 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Paul");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Pierre");
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Jack");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Eating");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Living", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Paul");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Pierre");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Jack");
             this.heureMars = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.nbrJour = new System.Windows.Forms.Label();
@@ -107,18 +110,15 @@
             this.NumeroJour = new System.Windows.Forms.Label();
             this.CreerActivite = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.boutonsMatin = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.Activite3 = new System.Windows.Forms.Button();
-            this.Activite2 = new System.Windows.Forms.Button();
-            this.Activite1 = new System.Windows.Forms.Button();
+            this.boutonsApresMidi = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.Niveau3 = new System.Windows.Forms.GroupBox();
+            this.ItemSelect = new System.Windows.Forms.Label();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.NduJNiv3 = new System.Windows.Forms.Label();
+            this.HDebut = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.MinFin = new System.Windows.Forms.ComboBox();
@@ -127,14 +127,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.MinDebut = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.HDebut = new System.Windows.Forms.ComboBox();
             this.NJour = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TitreNiv3 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.texteDescriptif = new System.Windows.Forms.RichTextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -1219,7 +1217,7 @@
             // DateTerrestre
             // 
             this.DateTerrestre.AutoSize = true;
-            this.DateTerrestre.Location = new System.Drawing.Point(711, 20);
+            this.DateTerrestre.Location = new System.Drawing.Point(603, 18);
             this.DateTerrestre.Name = "DateTerrestre";
             this.DateTerrestre.Size = new System.Drawing.Size(35, 13);
             this.DateTerrestre.TabIndex = 62;
@@ -1237,10 +1235,10 @@
             this.Niveau2.Controls.Add(this.NumeroJour);
             this.Niveau2.Controls.Add(this.CreerActivite);
             this.Niveau2.Controls.Add(this.splitContainer1);
-            this.Niveau2.Location = new System.Drawing.Point(771, 44);
+            this.Niveau2.Location = new System.Drawing.Point(34, 44);
             this.Niveau2.Name = "Niveau2";
             this.Niveau2.Size = new System.Drawing.Size(710, 504);
-            this.Niveau2.TabIndex = 63;
+            this.Niveau2.TabIndex = 65;
             this.Niveau2.TabStop = false;
             this.Niveau2.Text = "Niveau2";
             this.Niveau2.Visible = false;
@@ -1344,24 +1342,24 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.boutonsMatin);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox6);
-            this.splitContainer1.Panel1.Controls.Add(this.button6);
-            this.splitContainer1.Panel1.Controls.Add(this.Activite3);
-            this.splitContainer1.Panel1.Controls.Add(this.Activite2);
-            this.splitContainer1.Panel1.Controls.Add(this.Activite1);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.boutonsApresMidi);
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox5);
-            this.splitContainer1.Panel2.Controls.Add(this.button9);
-            this.splitContainer1.Panel2.Controls.Add(this.button8);
-            this.splitContainer1.Panel2.Controls.Add(this.button5);
-            this.splitContainer1.Panel2.Controls.Add(this.button4);
-            this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(698, 400);
             this.splitContainer1.SplitterDistance = 344;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // boutonsMatin
+            // 
+            this.boutonsMatin.Location = new System.Drawing.Point(65, 10);
+            this.boutonsMatin.Name = "boutonsMatin";
+            this.boutonsMatin.Size = new System.Drawing.Size(273, 370);
+            this.boutonsMatin.TabIndex = 9;
             // 
             // pictureBox6
             // 
@@ -1372,55 +1370,12 @@
             this.pictureBox6.TabIndex = 8;
             this.pictureBox6.TabStop = false;
             // 
-            // button6
+            // boutonsApresMidi
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(65, 370);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(262, 9);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // Activite3
-            // 
-            this.Activite3.BackColor = System.Drawing.Color.PaleGreen;
-            this.Activite3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Activite3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Activite3.Location = new System.Drawing.Point(65, 250);
-            this.Activite3.Name = "Activite3";
-            this.Activite3.Size = new System.Drawing.Size(262, 119);
-            this.Activite3.TabIndex = 2;
-            this.Activite3.Text = "Private";
-            this.Activite3.UseVisualStyleBackColor = false;
-            // 
-            // Activite2
-            // 
-            this.Activite2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Activite2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Activite2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Activite2.Location = new System.Drawing.Point(65, 220);
-            this.Activite2.Name = "Activite2";
-            this.Activite2.Size = new System.Drawing.Size(262, 29);
-            this.Activite2.TabIndex = 1;
-            this.Activite2.Text = "Eating";
-            this.Activite2.UseVisualStyleBackColor = false;
-            // 
-            // Activite1
-            // 
-            this.Activite1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Activite1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Activite1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Activite1.Location = new System.Drawing.Point(65, 10);
-            this.Activite1.Margin = new System.Windows.Forms.Padding(0);
-            this.Activite1.Name = "Activite1";
-            this.Activite1.Size = new System.Drawing.Size(262, 209);
-            this.Activite1.TabIndex = 0;
-            this.Activite1.Text = "Sleeping";
-            this.Activite1.UseVisualStyleBackColor = false;
-            this.Activite1.Click += new System.EventHandler(this.button3_Click);
+            this.boutonsApresMidi.Location = new System.Drawing.Point(65, 10);
+            this.boutonsApresMidi.Name = "boutonsApresMidi";
+            this.boutonsApresMidi.Size = new System.Drawing.Size(273, 370);
+            this.boutonsApresMidi.TabIndex = 10;
             // 
             // pictureBox5
             // 
@@ -1431,69 +1386,12 @@
             this.pictureBox5.TabIndex = 7;
             this.pictureBox5.TabStop = false;
             // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.PaleGreen;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(71, 270);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(262, 59);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "Private";
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(71, 330);
-            this.button8.Margin = new System.Windows.Forms.Padding(0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(262, 49);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Sleeping";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(71, 210);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(262, 59);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Eating";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.PaleGreen;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(71, 60);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(262, 149);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Private";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(71, 10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(262, 49);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // Niveau3
             // 
+            this.Niveau3.Controls.Add(this.ItemSelect);
+            this.Niveau3.Controls.Add(this.treeView1);
+            this.Niveau3.Controls.Add(this.NduJNiv3);
+            this.Niveau3.Controls.Add(this.HDebut);
             this.Niveau3.Controls.Add(this.label8);
             this.Niveau3.Controls.Add(this.label6);
             this.Niveau3.Controls.Add(this.MinFin);
@@ -1502,23 +1400,92 @@
             this.Niveau3.Controls.Add(this.label5);
             this.Niveau3.Controls.Add(this.MinDebut);
             this.Niveau3.Controls.Add(this.label4);
-            this.Niveau3.Controls.Add(this.HDebut);
             this.Niveau3.Controls.Add(this.NJour);
             this.Niveau3.Controls.Add(this.label3);
             this.Niveau3.Controls.Add(this.TitreNiv3);
-            this.Niveau3.Controls.Add(this.richTextBox2);
+            this.Niveau3.Controls.Add(this.texteDescriptif);
             this.Niveau3.Controls.Add(this.button7);
             this.Niveau3.Controls.Add(this.listView1);
-            this.Niveau3.Controls.Add(this.comboBox1);
             this.Niveau3.Controls.Add(this.pictureBox1);
             this.Niveau3.Controls.Add(this.button2);
-            this.Niveau3.Location = new System.Drawing.Point(36, 554);
+            this.Niveau3.Location = new System.Drawing.Point(34, 44);
             this.Niveau3.Name = "Niveau3";
             this.Niveau3.Size = new System.Drawing.Size(710, 504);
             this.Niveau3.TabIndex = 64;
             this.Niveau3.TabStop = false;
             this.Niveau3.Text = "Niveau3";
             this.Niveau3.Visible = false;
+            // 
+            // ItemSelect
+            // 
+            this.ItemSelect.AutoSize = true;
+            this.ItemSelect.Location = new System.Drawing.Point(310, 209);
+            this.ItemSelect.Name = "ItemSelect";
+            this.ItemSelect.Size = new System.Drawing.Size(35, 13);
+            this.ItemSelect.TabIndex = 21;
+            this.ItemSelect.Text = "label2";
+            // 
+            // treeView1
+            // 
+            this.treeView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.treeView1.Location = new System.Drawing.Point(162, 196);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Checked = true;
+            treeNode1.Name = "Eating";
+            treeNode1.Text = "Eating";
+            treeNode1.ToolTipText = "Manger c\'est cool";
+            treeNode2.Name = "Living";
+            treeNode2.Text = "Living";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            this.treeView1.Size = new System.Drawing.Size(121, 97);
+            this.treeView1.TabIndex = 20;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
+            // NduJNiv3
+            // 
+            this.NduJNiv3.AutoSize = true;
+            this.NduJNiv3.Location = new System.Drawing.Point(68, 39);
+            this.NduJNiv3.Name = "NduJNiv3";
+            this.NduJNiv3.Size = new System.Drawing.Size(35, 13);
+            this.NduJNiv3.TabIndex = 19;
+            this.NduJNiv3.Text = "label2";
+            // 
+            // HDebut
+            // 
+            this.HDebut.Enabled = false;
+            this.HDebut.FormattingEnabled = true;
+            this.HDebut.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"});
+            this.HDebut.Location = new System.Drawing.Point(168, 113);
+            this.HDebut.Name = "HDebut";
+            this.HDebut.Size = new System.Drawing.Size(40, 21);
+            this.HDebut.TabIndex = 18;
+            this.HDebut.SelectedValueChanged += new System.EventHandler(this.HDebut_SelectedValueChanged);
             // 
             // label8
             // 
@@ -1634,41 +1601,6 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "h";
             // 
-            // HDebut
-            // 
-            this.HDebut.FormattingEnabled = true;
-            this.HDebut.Items.AddRange(new object[] {
-            "00",
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24"});
-            this.HDebut.Location = new System.Drawing.Point(168, 114);
-            this.HDebut.Name = "HDebut";
-            this.HDebut.Size = new System.Drawing.Size(40, 21);
-            this.HDebut.TabIndex = 9;
-            this.HDebut.SelectedValueChanged += new System.EventHandler(this.HDebut_SelectedValueChanged);
-            // 
             // NJour
             // 
             this.NJour.AutoSize = true;
@@ -1695,13 +1627,13 @@
             this.TitreNiv3.TabIndex = 6;
             this.TitreNiv3.Text = "(Titre)";
             // 
-            // richTextBox2
+            // texteDescriptif
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(16, 362);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(399, 96);
-            this.richTextBox2.TabIndex = 5;
-            this.richTextBox2.Text = "";
+            this.texteDescriptif.Location = new System.Drawing.Point(16, 362);
+            this.texteDescriptif.Name = "texteDescriptif";
+            this.texteDescriptif.Size = new System.Drawing.Size(399, 96);
+            this.texteDescriptif.TabIndex = 5;
+            this.texteDescriptif.Text = "";
             // 
             // button7
             // 
@@ -1716,13 +1648,13 @@
             // listView1
             // 
             this.listView1.CheckBoxes = true;
-            listViewItem7.StateImageIndex = 0;
-            listViewItem8.StateImageIndex = 0;
-            listViewItem9.StateImageIndex = 0;
+            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
+            listViewItem3.StateImageIndex = 0;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
             this.listView1.Location = new System.Drawing.Point(9, 209);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(89, 108);
@@ -1730,20 +1662,6 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.SmallIcon;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DisplayMember = "Eating";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Eating",
-            "Sleeping",
-            "Exploration"});
-            this.comboBox1.Location = new System.Drawing.Point(74, 64);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.ValueMember = "Eating";
             // 
             // pictureBox1
             // 
@@ -1769,7 +1687,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1506, 1062);
+            this.ClientSize = new System.Drawing.Size(765, 568);
             this.Controls.Add(this.Niveau3);
             this.Controls.Add(this.Niveau2);
             this.Controls.Add(this.DateTerrestre);
@@ -1875,23 +1793,13 @@
         private System.Windows.Forms.GroupBox Niveau3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button Activite3;
-        private System.Windows.Forms.Button Activite2;
-        private System.Windows.Forms.Button Activite1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button CreerActivite;
         private System.Windows.Forms.Label NumeroJour;
         private System.Windows.Forms.Label Jour;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.RichTextBox texteDescriptif;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox JourSuivant;
@@ -1905,7 +1813,6 @@
         private System.Windows.Forms.Label TitreNiv3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label NJour;
-        private System.Windows.Forms.ComboBox HDebut;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox MinDebut;
         private System.Windows.Forms.Label label4;
@@ -1914,6 +1821,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox HFin;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox HDebut;
+        private System.Windows.Forms.Label NduJNiv3;
+        private System.Windows.Forms.Panel boutonsMatin;
+        private System.Windows.Forms.Panel boutonsApresMidi;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Label ItemSelect;
 
 
     }
