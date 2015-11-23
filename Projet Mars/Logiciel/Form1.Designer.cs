@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Eating");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Living", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Paul");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Pierre");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Jack");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Eating");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Living", new System.Windows.Forms.TreeNode[] {
+            treeNode5});
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Paul");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Pierre");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Jack");
             this.heureMars = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.nbrJour = new System.Windows.Forms.Label();
@@ -1222,6 +1222,7 @@
             this.DateTerrestre.Size = new System.Drawing.Size(35, 13);
             this.DateTerrestre.TabIndex = 62;
             this.DateTerrestre.Text = "label1";
+            this.DateTerrestre.Click += new System.EventHandler(this.DateTerrestre_Click);
             // 
             // Niveau2
             // 
@@ -1430,14 +1431,14 @@
             this.treeView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.treeView1.Location = new System.Drawing.Point(162, 196);
             this.treeView1.Name = "treeView1";
-            treeNode1.Checked = true;
-            treeNode1.Name = "Eating";
-            treeNode1.Text = "Eating";
-            treeNode1.ToolTipText = "Manger c\'est cool";
-            treeNode2.Name = "Living";
-            treeNode2.Text = "Living";
+            treeNode5.Checked = true;
+            treeNode5.Name = "Eating";
+            treeNode5.Text = "Eating";
+            treeNode5.ToolTipText = "Manger c\'est cool";
+            treeNode6.Name = "Living";
+            treeNode6.Text = "Living";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode6});
             this.treeView1.Size = new System.Drawing.Size(121, 97);
             this.treeView1.TabIndex = 20;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -1648,13 +1649,13 @@
             // listView1
             // 
             this.listView1.CheckBoxes = true;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            listViewItem3.StateImageIndex = 0;
+            listViewItem7.StateImageIndex = 0;
+            listViewItem8.StateImageIndex = 0;
+            listViewItem9.StateImageIndex = 0;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
+            listViewItem7,
+            listViewItem8,
+            listViewItem9});
             this.listView1.Location = new System.Drawing.Point(9, 209);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(89, 108);

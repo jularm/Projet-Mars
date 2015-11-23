@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 using System.Xml;
-
-
+using System.Xml.Serialization;
 
 namespace Logiciel
 {
@@ -36,9 +34,21 @@ namespace Logiciel
             }
             _Jours.ElementAt(20).ListeActivites.RemoveAt(1);
         }
+
+        public Calendrier_Martien(DateTime debut, DateTime fin, int jour, int heure, int minute, int seconde)
+        {
+            _debut = debut;
+            _fin = fin;
+            _jour = jour;
+            _minute = minute;
+            _heure = heure;
+            _seconde = seconde;
+           
+            _Jours.ElementAt(20).ListeActivites.RemoveAt(1);
+        }
                 
 
-        public int Jour
+        public int Day
         {
             get { return _jour; }
             set { _jour = value; }
@@ -74,7 +84,14 @@ namespace Logiciel
 
         public DateTime Fin
         {
-            get { return _fin; }           
+            get { return _fin; }
+            set { _fin = value; }    
+        }
+
+        public DateTime Debut
+        {
+            get { return _debut; }
+            set { _debut = value; }
         }
 
         public void Horloge()
@@ -108,7 +125,7 @@ namespace Logiciel
                     {
                         this.Heure = 0;
                         this.Minute = 0;
-                        this.Jour++;
+                        this.Day++;
                     }
                 }
             }
@@ -141,7 +158,7 @@ namespace Logiciel
                     {
                         this.Heure = 0;
                         this.Minute = 0;
-                        this.Jour++;
+                        this.Day++;
                     }
                 }
             } 
@@ -149,69 +166,73 @@ namespace Logiciel
 
 
         // Generation Xml
-        /*    public override void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
+            public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
            {
-               XmlNode NodeChef = xmlDoc.CreateElement("Chef");
+               XmlNode NodeCalendrier = xmlDoc.CreateElement("Calendrier_Martien");
+               
+               XmlNode NodeDebut = xmlDoc.CreateElement("Debut");
+               NodeDebut.InnerText = NodeDebut.ToString();
+               NodeCalendrier.AppendChild(NodeDebut);
 
-               base.genereXml(xmlDoc, NodeChef);
+               XmlNode NodeFin = xmlDoc.CreateElement("Fin");
+               NodeFin.InnerText = NodeFin.ToString();
+               NodeCalendrier.AppendChild(NodeFin);
 
-               XmlNode NodeNbrCommis = xmlDoc.CreateElement("nbrCommis");
-               NodeNbrCommis.InnerText = NbrCommis.ToString();
-               NodeChef.AppendChild(NodeNbrCommis);
+               XmlNode NodeJour = xmlDoc.CreateElement("Jour");
+               NodeJour.InnerText = NodeJour.ToString();
+               NodeCalendrier.AppendChild(NodeJour);
 
-               XmlNode NodeNbrCouverts = xmlDoc.CreateElement("nbrCouverts");
-               NodeNbrCouverts.InnerText = NbrCouverts.ToString();
-               NodeChef.AppendChild(NodeNbrCouverts);
+               XmlNode NodeHeure = xmlDoc.CreateElement("Heure");
+               NodeHeure.InnerText = NodeHeure.ToString();
+               NodeCalendrier.AppendChild(NodeHeure);
 
+               XmlNode NodeMinute = xmlDoc.CreateElement("Minute");
+               NodeMinute.InnerText = NodeMinute.ToString();
+               NodeCalendrier.AppendChild(NodeMinute);
 
-               rootNode.AppendChild(NodeChef);
+               XmlNode NodeSeconde = xmlDoc.CreateElement("Seconde");
+               NodeSeconde.InnerText = NodeSeconde.ToString();
+               NodeCalendrier.AppendChild(NodeSeconde);
 
+               XmlNode NodeListeJour = xmlDoc.CreateElement("ListeJour");  
+               foreach (Jour j in _Jours)
+               {
+                   j.genereXml(xmlDoc, NodeListeJour);
+               }
+               NodeCalendrier.AppendChild(NodeListeJour);
+
+               rootNode.AppendChild(NodeCalendrier);
            }
 
-          // lecture xml et generation objets
-           static
-           public void chargerXml(XmlDocument xmlDoc, Restaurant R)
-           {
-               XmlNodeList nodelistListePersonnel = xmlDoc.GetElementsByTagName("ListePersonnel");
+          // lecture xml et generation objets            
+            public void chargerXml(XmlDocument xmlDoc, Mission M)
+            {
+                XmlNodeList nodelistCalendrier = xmlDoc.GetElementsByTagName("Calendrier_Martien"); // Je récupère une liste des noeuds ayant pour nom Calendrier_MArtien
 
-               foreach (XmlNode nodelist in nodelistListePersonnel)
-               {
-                   // les chefs
+                DateTime debut = new DateTime();
+                DateTime fin = new DateTime();
+                int jour = 0;
+                int heure = 0;
+                int minute = 0;
+                int seconde = 0;
+                List<Jour> Days = new List<Jour>();
 
-                   XmlNodeList nodelistChef = nodelist.SelectNodes("Chef");
+                foreach (XmlNode nodeCalendrier in nodelistCalendrier) // Je boucle dessus ( mais il n'y en a qu'un ici) 
+                {
+                    // le récupere les données du Calendrier
+                    debut = DateTime.Parse(nodeCalendrier.SelectSingleNode("Debut").InnerText);
+                    fin = DateTime.Parse(nodeCalendrier.SelectSingleNode("Fin").InnerText);
+                    jour = int.Parse(nodeCalendrier.SelectSingleNode("Day").InnerText);
+                    heure = int.Parse(nodeCalendrier.SelectSingleNode("Heure").InnerText);
+                    minute = int.Parse(nodeCalendrier.SelectSingleNode("Minute").InnerText);
+                    seconde = int.Parse(nodeCalendrier.SelectSingleNode("Seconde").InnerText);
+                                        
+                }
 
-                   foreach (XmlNode nodeChef in nodelistChef)
-                   {
-                       int id_chef = int.Parse(nodeChef.SelectSingleNode("ID").InnerText);
-                       string nom_chef = nodeChef.SelectSingleNode("Nom").InnerText;
-                       string prenom_chef = nodeChef.SelectSingleNode("Prenom").InnerText;
-                       int nbrCommis_chef = int.Parse(nodeChef.SelectSingleNode("nbrCommis").InnerText);
-                       int nbrCouverts_chef = int.Parse(nodeChef.SelectSingleNode("nbrCouverts").InnerText);
+                Calendrier_Martien c = new Calendrier_Martien(debut, fin, jour, heure, minute, seconde);
 
-
-                       int[] _jHTrav_chef = new int[7];
-
-
-                       XmlNodeList nodelistListeHorraire = nodeChef.SelectNodes("ListeHorraire");
-                       foreach (XmlNode nodeListeHorraire in nodelistListeHorraire)
-                       {
-                           int i = 0;
-                           XmlNodeList nodelistHorraire = nodeListeHorraire.SelectNodes("Horraire");
-                           foreach (XmlNode nodeHorraire in nodelistHorraire)
-                           {
-                               _jHTrav_chef[i] = int.Parse(nodeHorraire.InnerText);
-                               i++;
-                           }
-
-                       }
-
-                       Chef c = new Chef(id_chef, nom_chef, prenom_chef, nbrCommis_chef, nbrCouverts_chef);
-                       c._jHTrav = _jHTrav_chef;
-                       R.ajout(c);
-                   }
-               }
-
-           }*/
+               // Jour.chargerXml(xmlDoc, M);
+            }
 
 
 
