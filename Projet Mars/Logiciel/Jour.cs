@@ -28,14 +28,19 @@ namespace Logiciel
         {
             _numero = numero;
             _tabHoraires= new bool[149]; //nb de tranches de 10min dans une journée
-            // journée type :
+            // journée type par défaut :
             List<Astronaute>li =new List<Astronaute>();
             li.Add(new Astronaute(1, "Paul"));
             li.Add(new Astronaute(2, "Pierre"));
             _listeActivites=new List<Activite>();
             _listeActivites.Add(new Activite("Sleeping", new Heure (0,0),new Heure(7,0),"Dormir c'est important",li));
-            _listeActivites.Add(new Activite("Eating", new Heure(10, 30), new Heure(13, 40), "Manger c'est important", li));
-            
+            _listeActivites.Add(new Activite("Eating", new Heure(7,0), new Heure(8,0), "Manger c'est important", li));
+            _listeActivites.Add(new Activite("Private", new Heure(8,0), new Heure(12,0), "", li));
+            _listeActivites.Add(new Activite("Eating", new Heure(12,0), new Heure(14,0), "Manger c'est important", li));
+            _listeActivites.Add(new Activite("Private", new Heure(14,0), new Heure(19,0), "", li));
+            _listeActivites.Add(new Activite("Eating", new Heure(19,0), new Heure(21,0), "Manger c'est important", li));
+            _listeActivites.Add(new Activite("Private", new Heure(21,0), new Heure(23,0), "", li));
+            _listeActivites.Add(new Activite("Sleeping", new Heure(23,0), new Heure(24,40), "Dormir c'est important", li));
         }
 
         public string CompteRendu

@@ -42,9 +42,7 @@ namespace Logiciel
     }
     class Activite
     {
-        private string _nom;
-
-        
+        private string _nom;       
         private string _compteRendu;
         private Heure _debut;
         private Heure _fin;
