@@ -29,13 +29,11 @@ namespace Logiciel
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9;
-
             jour42.BackgroundImage = sortie;           
             c.Day = 12;
-
             jour42.BackgroundImage = sortie;
-
         }
+
         public void CreerBoutons(int n) //n : numéro du jour
         {
             boutonsMatin.Controls.Clear();
@@ -60,23 +58,24 @@ namespace Logiciel
                     default :
                         bouton.BackColor = Color.LightCyan;
                         break;
-                }
+                }//à compléter
+
                 //bouton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
                 bouton.Cursor = System.Windows.Forms.Cursors.Hand;
                 bouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 
                 Point localisation=new Point(pointDeBase.X,pointDeBase.Y);
 
-                if (Act.Debut.HeuresMinutes < 1220 && Act.Fin.HeuresMinutes<=1220)
+                //On scinde le calendrier selon les cas
+                if (Act.Debut.HeuresMinutes < 1220 && Act.Fin.HeuresMinutes<=1220) //Si l'activité commence et se termine avant 12h20 (ou se termine à 12h20)
                 {
                     this.boutonsMatin.Controls.Add(bouton);
 
                     localisation.Y += (Act.Debut.Heures * 6 + Act.Debut.Minutes / 10) * 5; //calcul du nb de tranches de 10min * 5px le matin                  
                     bouton.Size = new System.Drawing.Size(largeurActivite, ((Act.Fin.Heures * 6 + Act.Fin.Minutes / 10) * 5) - localisation.Y -1);
                 }
-                else
+                else //Si l'activité commence et se termine après 12h20
                 {
-
                     this.boutonsApresMidi.Controls.Add(bouton);
 
                     if ((Act.Debut.Heures * 6 + Act.Debut.Minutes / 10 - 74) * 5 < 0)
@@ -85,7 +84,7 @@ namespace Logiciel
                     }
                     else
                     {
-                        localisation.Y += (Act.Debut.Heures * 6 + Act.Debut.Minutes / 10 - 74) * 5; //calcul du nb de tranches de 10min * 5px l'après-midi                
+                        localisation.Y += (Act.Debut.Heures * 6 + Act.Debut.Minutes / 10 - 74) * 5;                 
                     }                    
 
                     bouton.Size = new System.Drawing.Size(largeurActivite, ((Act.Fin.Heures * 6 + Act.Fin.Minutes / 10-74) * 5) - localisation.Y -1);
@@ -93,7 +92,7 @@ namespace Logiciel
                     {
                         Button bouttonBis = new Button();
                         this.boutonsMatin.Controls.Add(bouttonBis);
-                        bouttonBis.Location = new Point(0, (Act.Debut.Heures * 6 + Act.Debut.Minutes / 10) * 5); //calcul du nb de tranches de 10min * 5px le matin                  
+                        bouttonBis.Location = new Point(0, (Act.Debut.Heures * 6 + Act.Debut.Minutes / 10) * 5);                   
                         bouttonBis.Size = new System.Drawing.Size(largeurActivite, 370-((Act.Debut.Heures * 6 + Act.Debut.Minutes / 10) * 5) - localisation.Y );
                         bouttonBis.Margin = new System.Windows.Forms.Padding(0);
                         bouttonBis.Name = "ActiviteBis" + i;
@@ -135,7 +134,7 @@ namespace Logiciel
         {
             dureMission.Increment(1);
             for (int i = 0; i < groupBox1.Controls.Count; i++)
-            {
+            {              
                 if (groupBox1.Controls[i].Name.Contains("jour"))
                 {
                     groupBox1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i - 1);
@@ -181,10 +180,8 @@ namespace Logiciel
             }      
         }
 
-        
-
         private void jour_Click(object sender, EventArgs e)
-        {
+        {           
             if (premClick) 
             {                
                 if (int.Parse(test.Text) == c.Day)
@@ -402,6 +399,16 @@ namespace Logiciel
         }
 
         private void DateTerrestre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titreJour_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void texteDescriptif_TextChanged(object sender, EventArgs e)
         {
 
         }
