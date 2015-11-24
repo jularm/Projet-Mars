@@ -36,26 +36,38 @@ namespace Logiciel
         {
             _heures = h;
             _minutes = m;
-            _heuresMinutes = int.Parse(Convert.ToString(h) + Convert.ToString(m));
+            if (m == 0)// pour les besoins de cet attribut, on double le zéro pour que 8h00 devienne 800 et non 80 
+            {
+                _heuresMinutes = int.Parse(Convert.ToString(h) + "00");
+            }
+            else
+            {
+                _heuresMinutes = int.Parse(Convert.ToString(h) + Convert.ToString(m));
+            }
 
         }
     }
-
     class Activite
     {
-        private string _nom;
+        private string _nom;       
         private string _compteRendu;
         private Heure _debut;
         private Heure _fin;
         private Lieu _gps;
         private List<Astronaute> _listAstronaute = new List<Astronaute>();
-        private string _texteDescriptif; 
+
+        internal List<Astronaute> ListAstronaute
+        {
+            get { return _listAstronaute; }
+            set { _listAstronaute = value; }
+        }
+        private string _texteDescriptif;
+
 
         public Activite(string nom)
         {
             _nom = nom;
         }
-
         public Activite(string nom, Heure debut, Heure fin, string texteDescriptif,List<Astronaute> listAst):this (nom)
         {
             _debut = debut;
@@ -64,13 +76,6 @@ namespace Logiciel
             _listAstronaute = listAst;
         }
 
-
-        internal List<Astronaute> ListAstronaute
-        {
-            get { return _listAstronaute; }
-            set { _listAstronaute = value; }
-        }
-        
         public string CompteRendu
         {
             get { return _compteRendu;}
