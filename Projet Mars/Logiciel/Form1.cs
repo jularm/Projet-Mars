@@ -29,12 +29,9 @@ namespace Logiciel
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9;
-
             jour42.BackgroundImage = sortie;           
-            c.Jour = 12;
-
+            c.Day = 12;
             jour42.BackgroundImage = sortie;
-
         }
 
         public void CreerBoutons(int n) //n : numéro du jour
@@ -128,7 +125,7 @@ namespace Logiciel
             timer1.Stop();
             c.Horloge();
             heureMars.Text = c.Heure.ToString() + " h " + c.Minute.ToString() + " min " + c.Seconde.ToString() + " s";
-            nbrJour.Text = c.Jour.ToString();
+            nbrJour.Text = c.Day.ToString();
             DateTerrestre.Text = Convert.ToString(DateTime.Now);
             timer1.Start();
         }
@@ -169,7 +166,7 @@ namespace Logiciel
                     }
                     else
                     {
-                        if (int.Parse(groupBox1.Controls[i].Text) < c.Jour)
+                        if (int.Parse(groupBox1.Controls[i].Text) < c.Day)
                         {
                             groupBox1.Controls[i].BackColor = Color.DimGray;
                         }
@@ -187,13 +184,13 @@ namespace Logiciel
         {           
             if (premClick) 
             {                
-                if (int.Parse(test.Text) == c.Jour)
+                if (int.Parse(test.Text) == c.Day)
                 {
                     test.BackColor = Color.RoyalBlue;
                 }
                 else
                 {
-                    if (int.Parse(test.Text) < c.Jour)
+                    if (int.Parse(test.Text) < c.Day)
                     {
                         test.BackColor = Color.DimGray;
                     }
@@ -442,6 +439,11 @@ namespace Logiciel
             {
                 ItemSelect.Text = "";
             }
+        }
+
+        private void DateTerrestre_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void titreJour_Click(object sender, EventArgs e)

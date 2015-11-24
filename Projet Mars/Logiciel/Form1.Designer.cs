@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Eating");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Sleeping");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Entertainment");
@@ -97,6 +98,80 @@
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Paul");
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Pierre");
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Jack");
+
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Paul");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Pierre");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Jack");
+
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Eating");
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Sleeping");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Entertainment");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Private");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Health control");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Medical act");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Living", new System.Windows.Forms.TreeNode[] {
+            treeNode36,
+            treeNode37,
+            treeNode38,
+            treeNode39,
+            treeNode40,
+            treeNode41});
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Exploration Space suit");
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Exploration Vehicule");
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Briefing");
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Debriefing");
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Inside experiment");
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Outside experiment");
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Science", new System.Windows.Forms.TreeNode[] {
+            treeNode43,
+            treeNode44,
+            treeNode45,
+            treeNode46,
+            treeNode47,
+            treeNode48});
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Cleaning");
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("LSS air system");
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("LSS water system");
+            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("LSS food system");
+            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Power systems");
+            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Space suit");
+            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Other");
+            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Maintenance", new System.Windows.Forms.TreeNode[] {
+            treeNode50,
+            treeNode51,
+            treeNode52,
+            treeNode53,
+            treeNode54,
+            treeNode55,
+            treeNode56});
+            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Sending message");
+            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Receiving message");
+            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Communication", new System.Windows.Forms.TreeNode[] {
+            treeNode58,
+            treeNode59});
+            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("LSS");
+            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("Power systems");
+            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("Communication systems");
+            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("Propulsion systems");
+            System.Windows.Forms.TreeNode treeNode65 = new System.Windows.Forms.TreeNode("Habitat");
+            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("Space suit");
+            System.Windows.Forms.TreeNode treeNode67 = new System.Windows.Forms.TreeNode("Vehicule");
+            System.Windows.Forms.TreeNode treeNode68 = new System.Windows.Forms.TreeNode("Repair", new System.Windows.Forms.TreeNode[] {
+            treeNode61,
+            treeNode62,
+            treeNode63,
+            treeNode64,
+            treeNode65,
+            treeNode66,
+            treeNode67});
+            System.Windows.Forms.TreeNode treeNode69 = new System.Windows.Forms.TreeNode("Emergency");
+            System.Windows.Forms.TreeNode treeNode70 = new System.Windows.Forms.TreeNode("Emergency", new System.Windows.Forms.TreeNode[] {
+            treeNode69});
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Paul");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Pierre");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Jack");
+
+
             this.heureMars = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -1267,7 +1342,12 @@
             this.DateTerrestre.Name = "DateTerrestre";
             this.DateTerrestre.Size = new System.Drawing.Size(61, 13);
             this.DateTerrestre.TabIndex = 62;
+
+            this.DateTerrestre.Text = "label1";
+            this.DateTerrestre.Click += new System.EventHandler(this.DateTerrestre_Click);
+
             this.DateTerrestre.Text = "jj/mm/aaaa";
+
             // 
             // Niveau2
             // 
@@ -1576,6 +1656,7 @@
             this.treeView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.treeView1.Location = new System.Drawing.Point(9, 152);
             this.treeView1.Name = "treeView1";
+
             treeNode1.Checked = true;
             treeNode1.ForeColor = System.Drawing.Color.Sienna;
             treeNode1.Name = "Eating";
@@ -1685,6 +1766,97 @@
             treeNode35.Name = "Emergency";
             treeNode35.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             treeNode35.Text = "Emergency";
+
+
+            treeNode5.Checked = true;
+            treeNode5.Name = "Eating";
+            treeNode5.Text = "Eating";
+            treeNode5.ToolTipText = "Manger c\'est cool";
+            treeNode6.Name = "Living";
+            treeNode6.Text = "Living";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode6});
+            this.treeView1.Size = new System.Drawing.Size(121, 97);
+
+            treeNode36.Checked = true;
+            treeNode36.Name = "Eating";
+            treeNode36.Text = "Eating";
+            treeNode36.ToolTipText = "Manger c\'est cool";
+            treeNode37.Name = "Sleeping";
+            treeNode37.Text = "Sleeping";
+            treeNode38.Name = "Entertainment";
+            treeNode38.Text = "Entertainment";
+            treeNode39.Name = "Private";
+            treeNode39.Text = "Private";
+            treeNode40.Name = "Health control";
+            treeNode40.Text = "Health control";
+            treeNode41.Name = "Medical act";
+            treeNode41.Text = "Medical act";
+            treeNode42.Name = "Living";
+            treeNode42.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode42.Text = "Living";
+            treeNode43.Name = "Exploration Space suit";
+            treeNode43.Text = "Exploration Space suit";
+            treeNode44.Name = "Exploration Vehicule";
+            treeNode44.Text = "Exploration Vehicule";
+            treeNode45.Name = "Briefing";
+            treeNode45.Text = "Briefing";
+            treeNode46.Name = "Debriefing";
+            treeNode46.Text = "Debriefing";
+            treeNode47.Name = "Inside experiment";
+            treeNode47.Text = "Inside experiment";
+            treeNode48.Name = "Outside experiment";
+            treeNode48.Text = "Outside experiment";
+            treeNode49.Name = "Science";
+            treeNode49.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode49.Text = "Science";
+            treeNode50.Name = "Cleaning";
+            treeNode50.Text = "Cleaning";
+            treeNode51.Name = "LSS air system";
+            treeNode51.Text = "LSS air system";
+            treeNode52.Name = "LSS water system";
+            treeNode52.Text = "LSS water system";
+            treeNode53.Name = "LSS food system";
+            treeNode53.Text = "LSS food system";
+            treeNode54.Name = "Power systems";
+            treeNode54.Text = "Power systems";
+            treeNode55.Name = "Space suit";
+            treeNode55.Text = "Space suit";
+            treeNode56.Name = "Other";
+            treeNode56.Text = "Other";
+            treeNode57.Name = "Maintenance";
+            treeNode57.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode57.Text = "Maintenance";
+            treeNode58.Name = "Sending message";
+            treeNode58.Text = "Sending message";
+            treeNode59.Name = "Receiving message";
+            treeNode59.Text = "Receiving message";
+            treeNode60.Name = "Communication";
+            treeNode60.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode60.Text = "Communication";
+            treeNode61.Name = "LSS";
+            treeNode61.Text = "LSS";
+            treeNode62.Name = "Power systems";
+            treeNode62.Text = "Power systems";
+            treeNode63.Name = "Communication systems";
+            treeNode63.Text = "Communication systems";
+            treeNode64.Name = "Propulsion systems";
+            treeNode64.Text = "Propulsion systems";
+            treeNode65.Name = "Habitat";
+            treeNode65.Text = "Habitat";
+            treeNode66.Name = "Space suit";
+            treeNode66.Text = "Space suit";
+            treeNode67.Name = "Vehicule";
+            treeNode67.Text = "Vehicule";
+            treeNode68.Name = "Repair";
+            treeNode68.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode68.Text = "Repair";
+            treeNode69.Name = "Emergency";
+            treeNode69.Text = "Emergency";
+            treeNode70.Name = "Emergency";
+            treeNode70.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode70.Text = "Emergency";
+
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode7,
             treeNode14,
@@ -1693,6 +1865,7 @@
             treeNode33,
             treeNode35});
             this.treeView1.Size = new System.Drawing.Size(189, 342);
+
             this.treeView1.TabIndex = 20;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -1897,14 +2070,31 @@
             // listView1
             // 
             this.listView1.CheckBoxes = true;
+
             listViewItem1.StateImageIndex = 0;
             listViewItem2.StateImageIndex = 0;
             listViewItem3.StateImageIndex = 0;
+
+
+            listViewItem7.StateImageIndex = 0;
+            listViewItem8.StateImageIndex = 0;
+            listViewItem9.StateImageIndex = 0;
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem7,
+            listViewItem8,
+            listViewItem9});
+            this.listView1.Location = new System.Drawing.Point(9, 209);
+
+            listViewItem4.StateImageIndex = 0;
+            listViewItem5.StateImageIndex = 0;
+            listViewItem6.StateImageIndex = 0;
+
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2,
             listViewItem3});
             this.listView1.Location = new System.Drawing.Point(229, 151);
+
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(309, 98);
             this.listView1.TabIndex = 3;

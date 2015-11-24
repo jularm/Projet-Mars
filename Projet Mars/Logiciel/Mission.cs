@@ -10,6 +10,7 @@ namespace Logiciel
 {
     class Mission
     {
+        private List<NomActivite> _listNomActivité;
         private List<Astronaute> _listAstronautes;
         private List<CategorieActivite> _listCategorieActivite;
         private Calendrier_Martien _calendar;
