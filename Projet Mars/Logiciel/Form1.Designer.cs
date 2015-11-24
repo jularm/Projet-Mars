@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-<<<<<<< HEAD
+
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Eating");
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Living", new System.Windows.Forms.TreeNode[] {
             treeNode5});
             System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Paul");
             System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Pierre");
             System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Jack");
-=======
+
             System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Eating");
             System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Sleeping");
             System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Entertainment");
@@ -105,7 +105,7 @@
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Paul");
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Pierre");
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Jack");
->>>>>>> origin/master
+
             this.heureMars = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -1270,12 +1270,12 @@
             this.DateTerrestre.Name = "DateTerrestre";
             this.DateTerrestre.Size = new System.Drawing.Size(61, 13);
             this.DateTerrestre.TabIndex = 62;
-<<<<<<< HEAD
+
             this.DateTerrestre.Text = "label1";
             this.DateTerrestre.Click += new System.EventHandler(this.DateTerrestre_Click);
-=======
+
             this.DateTerrestre.Text = "jj/mm/aaaa";
->>>>>>> origin/master
+
             // 
             // Niveau2
             // 
@@ -1493,7 +1493,7 @@
             this.treeView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.treeView1.Location = new System.Drawing.Point(9, 152);
             this.treeView1.Name = "treeView1";
-<<<<<<< HEAD
+
             treeNode5.Checked = true;
             treeNode5.Name = "Eating";
             treeNode5.Text = "Eating";
@@ -1503,7 +1503,7 @@
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode6});
             this.treeView1.Size = new System.Drawing.Size(121, 97);
-=======
+
             treeNode36.Checked = true;
             treeNode36.Name = "Eating";
             treeNode36.Text = "Eating";
@@ -1590,7 +1590,7 @@
             treeNode68,
             treeNode70});
             this.treeView1.Size = new System.Drawing.Size(189, 342);
->>>>>>> origin/master
+
             this.treeView1.TabIndex = 20;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -1794,7 +1794,7 @@
             // listView1
             // 
             this.listView1.CheckBoxes = true;
-<<<<<<< HEAD
+
             listViewItem7.StateImageIndex = 0;
             listViewItem8.StateImageIndex = 0;
             listViewItem9.StateImageIndex = 0;
@@ -1803,7 +1803,7 @@
             listViewItem8,
             listViewItem9});
             this.listView1.Location = new System.Drawing.Point(9, 209);
-=======
+
             listViewItem4.StateImageIndex = 0;
             listViewItem5.StateImageIndex = 0;
             listViewItem6.StateImageIndex = 0;
@@ -1812,7 +1812,7 @@
             listViewItem5,
             listViewItem6});
             this.listView1.Location = new System.Drawing.Point(229, 151);
->>>>>>> origin/master
+
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(309, 98);
             this.listView1.TabIndex = 3;
