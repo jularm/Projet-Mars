@@ -222,7 +222,7 @@ namespace Logiciel
             Button clickedButton = (Button)sender;
             
             Activite act = c.Jours.ElementAt(int.Parse(NduJNiv3.Text)).ListeActivites.ElementAt(clickedButton.TabIndex); //activité à l'index i du jour concerné
-
+            labelInvisible.Text = Convert.ToString(clickedButton.TabIndex);
             
 
             Niveau3.Visible = true;
@@ -257,6 +257,26 @@ namespace Logiciel
             HFin.SelectedIndex = act.Fin.Heures;
             MinFin.SelectedIndex = act.Fin.Minutes/10;
 
+            if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule")
+            {
+                CoordX.Enabled = true;
+                CoordY.Enabled = true;
+                NomLieu.Enabled = true;
+            }
+            else
+            {
+                CoordX.Enabled = false;
+                CoordY.Enabled = false;
+                NomLieu.Enabled = false;
+                CoordX.Text = "0";
+                CoordY.Text = "0";
+                NomLieu.Text = "Base";
+            }
+
+
+
+            SupprimerNiv3.Visible = true;
+
 
         }
 
@@ -269,8 +289,7 @@ namespace Logiciel
         private void CreerActivite_Click(object sender, EventArgs e)
         {
             TitreNiv3.Text = "Créer une activité";
-            Niveau3.Visible = true;
-            Niveau2.Visible = false;
+            SupprimerNiv3.Visible = false;
 
             HDebut.Enabled = true;
             MinDebut.Enabled = false;
@@ -280,6 +299,18 @@ namespace Logiciel
             MinDebut.SelectedIndex = -1;
             HFin.SelectedIndex = -1;
             MinFin.SelectedIndex = -1;
+            ItemSelect.Text = "";
+            for(int i=0;i<listView1.Items.Count;i++)
+            {
+                listView1.Items[i].Checked = false;
+            }
+            CoordX.Text = "";
+            CoordY.Text = "";
+            texteDescriptif.Text = "";
+
+
+            Niveau3.Visible = true;
+            Niveau2.Visible = false;
 
         }
 
@@ -293,10 +324,7 @@ namespace Logiciel
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -394,6 +422,21 @@ namespace Logiciel
             if (treeView1.SelectedNode.Level == 1)
             {
                 ItemSelect.Text = treeView1.SelectedNode.Text;
+                if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule")
+                {
+                    CoordX.Enabled = true;
+                    CoordY.Enabled = true;
+                    NomLieu.Enabled = true;
+                }
+                else
+                {
+                    CoordX.Enabled = false;
+                    CoordY.Enabled = false;
+                    NomLieu.Enabled = false;
+                    CoordX.Text = "0";
+                    CoordY.Text = "0";
+                    NomLieu.Text = "Base";
+                }
             }
             else
             {
@@ -406,9 +449,19 @@ namespace Logiciel
 
         }
 
-        private void texteDescriptif_TextChanged(object sender, EventArgs e)
+      
+
+        private void ConfirmerNiv3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SupprimerNiv3_Click(object sender, EventArgs e)
+        {
+            c.Jours[int.Parse(NduJNiv3.Text)].ListeActivites.RemoveAt(int.Parse(labelInvisible.Text));
+            CreerBoutons(int.Parse(NduJNiv3.Text)); //on réactualise les boutons du niveau 2 et donc les indices de la liste d'activités
+            Niveau2.Visible = true;
+            Niveau3.Visible = false;
         }
 
         

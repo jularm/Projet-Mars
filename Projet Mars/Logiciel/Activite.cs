@@ -36,7 +36,14 @@ namespace Logiciel
         {
             _heures = h;
             _minutes = m;
-            _heuresMinutes = int.Parse(Convert.ToString(h) + Convert.ToString(m));
+            if (m == 0)// pour les besoins de cet attribut, on double le zéro pour que 8h00 devienne 800 et non 80 
+            {
+                _heuresMinutes = int.Parse(Convert.ToString(h) + "00");
+            }
+            else
+            {
+                _heuresMinutes = int.Parse(Convert.ToString(h) + Convert.ToString(m));
+            }
 
         }
     }
