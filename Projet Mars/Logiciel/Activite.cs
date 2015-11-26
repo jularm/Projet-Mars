@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Xml;
+using System.Drawing;
 
 
 namespace Logiciel
@@ -69,8 +70,13 @@ namespace Logiciel
             _fin = fin;
             _texteDescriptif = texteDescriptif;
             _listAstronaute = listAst;
+            _gps = new Lieu();
         }
-
+        public Activite(string nom, Heure debut, Heure fin, string texteDescriptif, List<Astronaute> listAst, Lieu lieu)
+            : this(nom, debut, fin, texteDescriptif, listAst)
+        {
+            _gps = lieu;
+        }
 
         internal List<Astronaute> ListAstronaute
         {

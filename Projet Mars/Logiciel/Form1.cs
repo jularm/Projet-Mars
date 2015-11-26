@@ -220,11 +220,11 @@ namespace Logiciel
             
             Activite act = c.Jours.ElementAt(int.Parse(NduJNiv3.Text)).ListeActivites.ElementAt(clickedButton.TabIndex); //activité à l'index i du jour concerné
             labelInvisible.Text = Convert.ToString(clickedButton.TabIndex);
-            
 
+            label11.Hide();
             Niveau3.Visible = true;
             Niveau2.Visible = false;
-            TitreNiv3.Text = "Mofifier une activité";
+            TitreNiv3.Text = "Modifier une activité";
             texteDescriptif.Text = act.TexteDescriptif;
             for (int i = 0; i < listView1.Items.Count; i++) //on décoche tous les astronautes par sécurité
             {
@@ -253,8 +253,11 @@ namespace Logiciel
             MinDebut.SelectedIndex = act.Debut.Minutes/10;
             HFin.SelectedIndex = act.Fin.Heures;
             MinFin.SelectedIndex = act.Fin.Minutes/10;
+            CoordX.Text = Convert.ToString(act.Gps.Coords.X);
+            CoordY.Text = Convert.ToString(act.Gps.Coords.Y);
+            NomLieu.Text = act.Gps.Nom;
 
-            if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule")
+            if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule" ||ItemSelect.Text == "Outside experiment")
             {
                 CoordX.Enabled = true;
                 CoordY.Enabled = true;
@@ -287,7 +290,7 @@ namespace Logiciel
         {
             TitreNiv3.Text = "Créer une activité";
             SupprimerNiv3.Visible = false;
-
+            label11.Hide();
             HDebut.Enabled = true;
             MinDebut.Enabled = false;
             HFin.Enabled = false;
@@ -455,7 +458,48 @@ namespace Logiciel
 
         private void ConfirmerNiv3_Click(object sender, EventArgs e)
         {
+            bool[] tab=c.Jours[int.Parse(NduJNiv3.Text)].TabHoraires;
+            bool b=false;
+            for(int i=0;i<tab.Length;i++)
+            {
+                if( tab[i])
+                {
+                    b=true;
+                }
+            }
+            if (b)
+            {
 
+
+                List<Astronaute> liA = new List<Astronaute>();
+                for (int i = 0; i < listView1.CheckedItems.Count; i++)
+                {
+                    liA.Add(new Astronaute(i, listView1.CheckedItems[i].Text));
+                }
+                if (TitreNiv3.Text == "Modifier une activité")
+                {
+                    Activite act = c.Jours[int.Parse(NduJNiv3.Text)].ListeActivites[int.Parse(labelInvisible.Text)];
+                    act.Nom = ItemSelect.Text;
+                    act.Debut = new Heure(int.Parse(HDebut.Text), int.Parse(MinDebut.Text));
+                    act.Fin = new Heure(int.Parse(HFin.Text), int.Parse(MinFin.Text));
+
+                    act.TexteDescriptif = texteDescriptif.Text;
+                    act.ListAstronaute = liA;
+                    act.Gps = new Lieu(NomLieu.Text, new Point(int.Parse(CoordX.Text), int.Parse(CoordY.Text)));
+                }
+                else
+                {
+
+                    c.Jours[int.Parse(NduJNiv3.Text)].ListeActivites.Add(new Activite(ItemSelect.Text, new Heure(int.Parse(HDebut.Text), int.Parse(MinDebut.Text)), new Heure(int.Parse(HFin.Text), int.Parse(MinFin.Text)), texteDescriptif.Text, liA, new Lieu(NomLieu.Text, new Point(int.Parse(CoordX.Text), int.Parse(CoordY.Text)))));
+                }
+                CreerBoutons(int.Parse(NduJNiv3.Text));
+                Niveau3.Hide();
+                Niveau2.Show();
+            }
+            else
+            {
+                label11.Show();
+            }
         }
 
         private void SupprimerNiv3_Click(object sender, EventArgs e)
@@ -465,6 +509,9 @@ namespace Logiciel
             Niveau2.Visible = true;
             Niveau3.Visible = false;
         }
+
+        
+
 
         
 

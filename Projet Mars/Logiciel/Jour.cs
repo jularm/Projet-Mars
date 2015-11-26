@@ -31,7 +31,7 @@ namespace Logiciel
             li.Add(new Astronaute(2, "Pierre"));
             _listeActivites=new List<Activite>();
             _listeActivites.Add(new Activite("Sleeping", new Heure (0,0),new Heure(7,0),"Dormir c'est important",li));
-            _listeActivites.Add(new Activite("Eating", new Heure(7,0), new Heure(8,0), "Manger c'est important", li));
+            _listeActivites.Add(new Activite("Exploration Space suit", new Heure(7, 0), new Heure(8, 0), "Manger c'est important", li, new Lieu("Manger", new System.Drawing.Point(1, 1))));
             _listeActivites.Add(new Activite("Private", new Heure(8,0), new Heure(12,0), "", li));
             _listeActivites.Add(new Activite("Eating", new Heure(12,0), new Heure(14,0), "Manger c'est important", li));
             _listeActivites.Add(new Activite("Private", new Heure(14,0), new Heure(19,0), "", li));
