@@ -169,6 +169,7 @@
             this.boutonsApresMidi = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.Niveau3 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.Niv3Retour = new System.Windows.Forms.Button();
             this.CoordY = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -206,7 +207,6 @@
             this.titreJour = new System.Windows.Forms.Label();
             this.nbrJour = new System.Windows.Forms.Label();
             this.DateT = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -1476,6 +1476,18 @@
             this.Niveau3.Text = "Niveau3";
             this.Niveau3.Visible = false;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(214, 485);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(386, 13);
+            this.label11.TabIndex = 40;
+            this.label11.Text = "Aucune plage horaire disponible dans la journée, supprimez d\'abord des activités";
+            this.label11.Visible = false;
+            // 
             // Niv3Retour
             // 
             this.Niv3Retour.Location = new System.Drawing.Point(614, 10);
@@ -1539,6 +1551,7 @@
             // 
             this.SupprimerNiv3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SupprimerNiv3.Location = new System.Drawing.Point(489, 10);
+            this.SupprimerNiv3.Margin = new System.Windows.Forms.Padding(0);
             this.SupprimerNiv3.Name = "SupprimerNiv3";
             this.SupprimerNiv3.Size = new System.Drawing.Size(119, 23);
             this.SupprimerNiv3.TabIndex = 31;
@@ -2004,18 +2017,6 @@
             this.DateT.Size = new System.Drawing.Size(77, 13);
             this.DateT.TabIndex = 68;
             this.DateT.Text = "Date terrestre :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(214, 485);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(386, 13);
-            this.label11.TabIndex = 40;
-            this.label11.Text = "Aucune plage horaire disponible dans la journée, supprimez d\'abord des activités";
-            this.label11.Visible = false;
             // 
             // Form1
             // 

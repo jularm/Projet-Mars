@@ -28,19 +28,18 @@ namespace Logiciel
             // c.MiseAJour();      Pour remettre les pendules à l'heure
             timer1.Start();
             dureMission.Maximum = 500;
-            trackBar1.Maximum = 9;
-            jour42.BackgroundImage = sortie;           
+            trackBar1.Maximum = 9;       
             c.Day = 12;
-            jour42.BackgroundImage = sortie;
+            
         }
 
-        public void CreerBoutons(int n) //n : numéro du jour
+        public void CreerBoutons(int n) //n : numéro du jour, n-1 : emplacement du jour dans la liste
         {
             boutonsMatin.Controls.Clear();
             boutonsApresMidi.Controls.Clear();
             Point pointDeBase=new Point(0,0);
             int largeurActivite = 262;
-            Jour jourJ = c.Jours.ElementAt(n);
+            Jour jourJ = c.Jours.ElementAt(n-1);
 
             //recherche du nombre d'activités du jour n dans le calendrier
             for (int i=0; i < jourJ.ListeActivites.Count; i++)
@@ -63,6 +62,7 @@ namespace Logiciel
                 //bouton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
                 bouton.Cursor = System.Windows.Forms.Cursors.Hand;
                 bouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                bouton.Margin = new System.Windows.Forms.Padding(0);
 
                 Point localisation=new Point(pointDeBase.X,pointDeBase.Y);
 
@@ -138,7 +138,24 @@ namespace Logiciel
                 if (groupBox1.Controls[i].Name.Contains("jour"))
                 {
                     groupBox1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i - 1);
+                    bool check=false;
+                    for (int j = 0; j < c.Jours[(50 * trackBar1.Value) + i-1].ListeActivites.Count; j++)
+                    {
 
+                        string nomActivite = c.Jours[(50 * trackBar1.Value) + i-1].ListeActivites[j].Nom;
+                        if (nomActivite == "Exploration Space suit" || nomActivite == "Exploration Vehicule" || nomActivite == "Outside experiment")
+                        {
+                            check=true;
+                        }
+                    }
+                    if(check)
+                    {
+                        groupBox1.Controls[i+1].BackgroundImage = sortie;
+                    }
+                    else
+                    {
+                        groupBox1.Controls[i+1].BackgroundImage = null;
+                    }
 
                     if (int.Parse(groupBox1.Controls[i].Text) < int.Parse(nbrJour.Text))
                     {
@@ -154,6 +171,7 @@ namespace Logiciel
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
+            nbrJour_TextChanged(new Object(), new EventArgs());
             for (int i = 0; i < groupBox1.Controls.Count; i++)
             {
                 if (groupBox1.Controls[i].Name.Contains("jour"))
@@ -218,7 +236,7 @@ namespace Logiciel
             //treeView1.Controls[0].Controls.Add(new CheckBox());
             Button clickedButton = (Button)sender;
             
-            Activite act = c.Jours.ElementAt(int.Parse(NduJNiv3.Text)).ListeActivites.ElementAt(clickedButton.TabIndex); //activité à l'index i du jour concerné
+            Activite act = c.Jours.ElementAt(int.Parse(NduJNiv3.Text)-1).ListeActivites.ElementAt(clickedButton.TabIndex); //activité à l'index i du jour concerné
             labelInvisible.Text = Convert.ToString(clickedButton.TabIndex);
 
             label11.Hide();
@@ -346,7 +364,8 @@ namespace Logiciel
 
         private void RetourCalendrier_Click_1(object sender, EventArgs e)
         {
-            Niveau2.Visible = false;
+            nbrJour_TextChanged(new Object(),new EventArgs());
+            Niveau2.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -458,16 +477,48 @@ namespace Logiciel
 
         private void ConfirmerNiv3_Click(object sender, EventArgs e)
         {
-            bool[] tab=c.Jours[int.Parse(NduJNiv3.Text)].TabHoraires;
-            bool b=false;
-            for(int i=0;i<tab.Length;i++)
+            bool[] tab=c.Jours[int.Parse(NduJNiv3.Text)-1].TabHoraires;
+            bool[] erreurs = {true, false, false, false, false};
+            Jour jourj = c.Jours[int.Parse(NduJNiv3.Text) - 1];
+            Activite act = jourj.ListeActivites[int.Parse(labelInvisible.Text)];
+            
+
+            if (TitreNiv3.Text == "Modifier une activité")
             {
-                if( tab[i])
+                changerUnePlageHoraire(act, jourj.TabHoraires, true);
+            }
+
+            for (int i = 0; i < tab.Length; i++)
+            {
+                if (tab[i])
                 {
-                    b=true;
+                    erreurs[1] = true;
                 }
             }
-            if (b)
+
+            if (ItemSelect.Text != "")
+            {
+                erreurs[4] = true;
+            }
+
+            if (HDebut.Text!="" && MinDebut.Text!="" && HFin.Text!="" && MinFin.Text!="" && (int.Parse(HDebut.Text) * 6 + int.Parse(MinDebut.Text)/10 <= int.Parse(HFin.Text) * 6 + int.Parse(MinFin.Text) / 10 - 1))
+            {
+                erreurs[2] = true;
+
+                for (int i = int.Parse(HDebut.Text) * 6 + int.Parse(MinDebut.Text) / 10; i < int.Parse(HFin.Text) * 6 + int.Parse(MinFin.Text) / 10 - 1; i++)
+                {
+                    if (!tab[i])// si tab[i] est false, alors au moins un des emplacements demandés n'est pas disponible
+                    {
+                        erreurs[0] = false;
+                    }
+                }
+            }
+
+            if (CoordX.Text != "" && CoordY.Text != "")
+            {
+                erreurs[3] = true;
+            }
+            if (erreurs[0] && erreurs[1] && erreurs[2] && erreurs[3] && erreurs[4])
             {
 
 
@@ -478,7 +529,7 @@ namespace Logiciel
                 }
                 if (TitreNiv3.Text == "Modifier une activité")
                 {
-                    Activite act = c.Jours[int.Parse(NduJNiv3.Text)].ListeActivites[int.Parse(labelInvisible.Text)];
+                    
                     act.Nom = ItemSelect.Text;
                     act.Debut = new Heure(int.Parse(HDebut.Text), int.Parse(MinDebut.Text));
                     act.Fin = new Heure(int.Parse(HFin.Text), int.Parse(MinFin.Text));
@@ -486,28 +537,70 @@ namespace Logiciel
                     act.TexteDescriptif = texteDescriptif.Text;
                     act.ListAstronaute = liA;
                     act.Gps = new Lieu(NomLieu.Text, new Point(int.Parse(CoordX.Text), int.Parse(CoordY.Text)));
+                    
                 }
                 else
                 {
+                    act = new Activite(ItemSelect.Text, new Heure(int.Parse(HDebut.Text), int.Parse(MinDebut.Text)), new Heure(int.Parse(HFin.Text), int.Parse(MinFin.Text)), texteDescriptif.Text, liA, new Lieu(NomLieu.Text, new Point(int.Parse(CoordX.Text), int.Parse(CoordY.Text))));
+                    jourj.ListeActivites.Add(act);
+                    
 
-                    c.Jours[int.Parse(NduJNiv3.Text)].ListeActivites.Add(new Activite(ItemSelect.Text, new Heure(int.Parse(HDebut.Text), int.Parse(MinDebut.Text)), new Heure(int.Parse(HFin.Text), int.Parse(MinFin.Text)), texteDescriptif.Text, liA, new Lieu(NomLieu.Text, new Point(int.Parse(CoordX.Text), int.Parse(CoordY.Text)))));
                 }
+
+                changerUnePlageHoraire(act, jourj.TabHoraires, false);
                 CreerBoutons(int.Parse(NduJNiv3.Text));
                 Niveau3.Hide();
                 Niveau2.Show();
+
             }
-            else
+            else if (!erreurs[4])
             {
+                label11.Text = "Veuillez sélectionner une activité";
                 label11.Show();
             }
+            else if (!erreurs[3])
+            {
+                label11.Text = "Les coordonnées rentrées ne sont pas valides";
+                label11.Show();
+            }
+            else if (!erreurs[2])
+            {
+                label11.Text = "La plage horaire selectionnée n'est pas valide";
+                label11.Show();
+            }
+            else if (!erreurs[1])
+            {
+                label11.Text = "Aucune plage horaire disponible dans la journée, supprimez d'abord des activités";
+                label11.Show();
+            }
+            else if (!erreurs[0])
+            {
+                label11.Text = "La plage horaire selectionnée n'est pas disponible";
+                label11.Show();
+            }
+            
+            
+        }
+
+        private void changerUnePlageHoraire(Activite act, bool[] tab, bool disponible) //à commenter
+        {
+            for (int i = act.Debut.Heures * 6 + act.Debut.Minutes / 10; i < act.Fin.Heures * 6 + act.Fin.Minutes / 10-1; i++)
+                {
+                    tab[i] = disponible;
+                }
         }
 
         private void SupprimerNiv3_Click(object sender, EventArgs e)
         {
-            c.Jours[int.Parse(NduJNiv3.Text)].ListeActivites.RemoveAt(int.Parse(labelInvisible.Text));
+            Activite act = c.Jours[int.Parse(NduJNiv3.Text)-1].ListeActivites[int.Parse(labelInvisible.Text)];
+            c.Jours[int.Parse(NduJNiv3.Text)-1].ListeActivites.RemoveAt(int.Parse(labelInvisible.Text));
+
+            changerUnePlageHoraire(act, c.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires, true);
+
             CreerBoutons(int.Parse(NduJNiv3.Text)); //on réactualise les boutons du niveau 2 et donc les indices de la liste d'activités
-            Niveau2.Visible = true;
-            Niveau3.Visible = false;
+
+            Niveau2.Show();
+            Niveau3.Hide();
         }
 
         
