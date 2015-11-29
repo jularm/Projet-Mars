@@ -17,5 +17,45 @@ namespace Logiciel
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        
     }
+    public struct Heure //La structure permet la factorisation de code de la même manière qu'une classe mais en plus léger donc plus utilisable pour des petits éléments
+    {
+        int _heures;
+        int _minutes;
+        int _heuresMinutes;
+
+        public int HeuresMinutes
+        {
+            get { return _heuresMinutes; }
+            set { _heuresMinutes = value; }
+        }
+
+        public int Heures
+        {
+            get { return _heures; }
+            set { _heures = value; }
+        }
+        public int Minutes
+        {
+            get { return _minutes; }
+            set { _minutes = value; }
+        }
+
+        public Heure(int h, int m)
+        {
+            _heures = h;
+            _minutes = m;
+            if (m == 0)// pour les besoins de cet attribut, on double le zéro pour que 8h00 devienne 800 et non 80 
+            {
+                _heuresMinutes = int.Parse(Convert.ToString(h) + "00");
+            }
+            else
+            {
+                _heuresMinutes = int.Parse(Convert.ToString(h) + Convert.ToString(m));
+            }
+
+        }
+    }
+
 }
