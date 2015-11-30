@@ -169,6 +169,10 @@
             this.NumeroJour = new System.Windows.Forms.Label();
             this.CreerActivite = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.boutonsMatin = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.boutonsApresMidi = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.Niveau3 = new System.Windows.Forms.GroupBox();
             this.CoordY = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -203,10 +207,6 @@
             this.listeAstronautes = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AnnulerNiv3 = new System.Windows.Forms.Button();
-            this.boutonsMatin = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.boutonsApresMidi = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.titreJour = new System.Windows.Forms.Label();
             this.JourCourantMission = new System.Windows.Forms.Label();
             this.DateT = new System.Windows.Forms.Label();
@@ -222,10 +222,10 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.Niveau3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.Niveau3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // heureMars
@@ -1409,6 +1409,38 @@
             this.splitContainer1.SplitterDistance = 344;
             this.splitContainer1.TabIndex = 2;
             // 
+            // boutonsMatin
+            // 
+            this.boutonsMatin.Location = new System.Drawing.Point(65, 10);
+            this.boutonsMatin.Name = "boutonsMatin";
+            this.boutonsMatin.Size = new System.Drawing.Size(273, 370);
+            this.boutonsMatin.TabIndex = 9;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Logiciel.Properties.Resources.HoraireAM;
+            this.pictureBox6.Location = new System.Drawing.Point(17, 5);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(45, 376);
+            this.pictureBox6.TabIndex = 8;
+            this.pictureBox6.TabStop = false;
+            // 
+            // boutonsApresMidi
+            // 
+            this.boutonsApresMidi.Location = new System.Drawing.Point(65, 10);
+            this.boutonsApresMidi.Name = "boutonsApresMidi";
+            this.boutonsApresMidi.Size = new System.Drawing.Size(273, 370);
+            this.boutonsApresMidi.TabIndex = 10;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Logiciel.Properties.Resources.HorairePM;
+            this.pictureBox5.Location = new System.Drawing.Point(17, 5);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(45, 376);
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            // 
             // Niveau3
             // 
             this.Niveau3.Controls.Add(this.CoordY);
@@ -1946,38 +1978,6 @@
             this.AnnulerNiv3.UseVisualStyleBackColor = true;
             this.AnnulerNiv3.Click += new System.EventHandler(this.AnnulerNiv3_Click);
             // 
-            // boutonsMatin
-            // 
-            this.boutonsMatin.Location = new System.Drawing.Point(65, 10);
-            this.boutonsMatin.Name = "boutonsMatin";
-            this.boutonsMatin.Size = new System.Drawing.Size(273, 370);
-            this.boutonsMatin.TabIndex = 9;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::Logiciel.Properties.Resources.HoraireAM;
-            this.pictureBox6.Location = new System.Drawing.Point(17, 5);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(45, 376);
-            this.pictureBox6.TabIndex = 8;
-            this.pictureBox6.TabStop = false;
-            // 
-            // boutonsApresMidi
-            // 
-            this.boutonsApresMidi.Location = new System.Drawing.Point(65, 10);
-            this.boutonsApresMidi.Name = "boutonsApresMidi";
-            this.boutonsApresMidi.Size = new System.Drawing.Size(273, 370);
-            this.boutonsApresMidi.TabIndex = 10;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Logiciel.Properties.Resources.HorairePM;
-            this.pictureBox5.Location = new System.Drawing.Point(17, 5);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(45, 376);
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
-            // 
             // titreJour
             // 
             this.titreJour.AutoSize = true;
@@ -2026,7 +2026,8 @@
             this.Controls.Add(this.heureMars);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GestionMission";
-            this.Text = "Mission d\'exploration";
+            this.Text = "Mission d\'exploration";            
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestionMission_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.Niveau1.ResumeLayout(false);
             this.Niveau1.PerformLayout();
@@ -2041,11 +2042,11 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.Niveau3.ResumeLayout(false);
             this.Niveau3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

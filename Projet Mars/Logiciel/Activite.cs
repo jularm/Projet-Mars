@@ -144,7 +144,7 @@ namespace Logiciel
                 compteRendu = nodeActivite.SelectSingleNode("Compte_Rendu").InnerText;
                 debut = Heure.Parse(nodeActivite.SelectSingleNode("Debut").InnerText);
                 fin = Heure.Parse(nodeActivite.SelectSingleNode("Fin").InnerText);
-               // gps = Lieu.Parse(nodeActivite.SelectSingleNode("GPS").InnerText);
+                gps = Lieu.Parse(nodeActivite.SelectSingleNode("GPS").InnerText);
 
                 XmlNodeList nodelistAstronaute = nodeActivite.SelectNodes("Astronaute");
                 foreach (XmlNode nodeAstronaute in nodelistAstronaute)

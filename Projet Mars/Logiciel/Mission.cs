@@ -10,9 +10,13 @@ namespace Logiciel
 {
     class Mission
     {
-        private List<Astronaute> _listAstronautes;
-        private List<CategorieActivite> _listCategorieActivite;
+        private List<Astronaute> _listAstronautes = new List<Astronaute>();
+        private List<CategorieActivite> _listCategorieActivite = new List<CategorieActivite>();
         private CalendrierMartien _calendar;
+
+        public Mission()
+        {            
+        }
 
         public Mission(CalendrierMartien calendar, List<Astronaute> listAstronautes, List<CategorieActivite> listCategorieActivite)
         {
@@ -24,6 +28,7 @@ namespace Logiciel
         public CalendrierMartien Calendar
         {
             get { return _calendar; }
+            set { _calendar = value; }
         }
 
         public void AddAstronaute(Astronaute a)
@@ -48,26 +53,30 @@ namespace Logiciel
 
 
         // Generation Xml
-        public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
+        public void genereXml(XmlDocument xmlDoc)
         {
-            XmlNode NodeMission = xmlDoc.CreateElement("Mission");
+            XmlNode NodeMission = xmlDoc.CreateElement("Mission");            
 
-            XmlNode NodeCalendar = xmlDoc.CreateElement("Calendrier_Martien");
-            NodeCalendar.InnerText = NodeCalendar.ToString();
-            NodeMission.AppendChild(NodeCalendar);
-           
-            foreach (CategorieActivite c in _listCategorieActivite)
-            {
-                c.genereXml(xmlDoc, rootNode);
-            }
-
+            XmlNode NodeListeAstronautre = xmlDoc.CreateElement("Astronaute");
             foreach (Astronaute a in _listAstronautes)
             {
-                a.genereXml(xmlDoc, rootNode);
+                a.genereXml(xmlDoc, NodeListeAstronautre);
             }
+            NodeMission.AppendChild(NodeListeAstronautre);
 
-            rootNode.AppendChild(NodeMission);
+            XmlNode NodelistCategorieActivite = xmlDoc.CreateElement("Categorie_Activite");
+            foreach (CategorieActivite a in _listCategorieActivite)
+            {
+                a.genereXml(xmlDoc, NodelistCategorieActivite);
+            }
+            NodeMission.AppendChild(NodelistCategorieActivite);
 
+
+            XmlNode NodeListeCalendar = xmlDoc.CreateElement("Calendrier");
+            _calendar.genereXml(xmlDoc, NodeListeCalendar);
+            NodeMission.AppendChild(NodeListeCalendar);
+
+            xmlDoc.AppendChild(NodeMission);
         }
 
         // lecture xml et generation objets

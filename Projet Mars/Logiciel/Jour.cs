@@ -147,8 +147,7 @@ namespace Logiciel
             }
 
             Jour j = new Jour(compteRendu, numero, sortie, tabHoraires);
-
-            //Activite.chargerXml(xmlDoc, M);
+            
         }
     }
     
