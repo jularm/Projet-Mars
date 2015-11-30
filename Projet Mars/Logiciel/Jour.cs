@@ -120,7 +120,7 @@ namespace Logiciel
         }
        
 
-        // lecture xml et generation objets            
+        // lecture xml et generation objets    
         public void chargerXml(XmlDocument xmlDoc, Mission M)
         {
             XmlNodeList nodelistJour = xmlDoc.GetElementsByTagName("Jour"); // Je récupère une liste des noeuds ayant pour nom Jour

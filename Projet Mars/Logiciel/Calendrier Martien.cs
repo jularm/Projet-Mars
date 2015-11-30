@@ -204,7 +204,7 @@ namespace Logiciel
                rootNode.AppendChild(NodeCalendrier);
            }
 
-          // lecture xml et generation objets            
+          // lecture xml et generation objets    
             public void chargerXml(XmlDocument xmlDoc, Mission M)
             {
                 XmlNodeList nodelistCalendrier = xmlDoc.GetElementsByTagName("Calendrier_Martien"); // Je récupère une liste des noeuds ayant pour nom Calendrier_MArtien
