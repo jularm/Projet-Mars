@@ -13,7 +13,7 @@ namespace Logiciel
     class CategorieActivite
     {
         private string _nom;
-        private List<NomActivite> _listNomActivite = new List<NomActivite>();
+        private List<Activite> _listActivite = new List<Activite>();
 
         public CategorieActivite(string nom)
         {
