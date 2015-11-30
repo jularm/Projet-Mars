@@ -15,7 +15,7 @@ namespace Logiciel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new GestionMission());
         }
         
     }
@@ -54,7 +54,6 @@ namespace Logiciel
             {
                 _heuresMinutes = int.Parse(Convert.ToString(h) + Convert.ToString(m));
             }
-
         }
 
         public static Heure Parse(string test)
@@ -78,7 +77,4 @@ namespace Logiciel
         }
 
     }
-   
-
-
 }

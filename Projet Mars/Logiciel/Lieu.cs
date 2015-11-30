@@ -40,7 +40,7 @@ namespace Logiciel
         }
 
 
-        public static override Lieu Parse(string test)
+     /*   public override Lieu Parse(string test)
         {
             Lieu l = new Lieu();           
             Point coords = new Point(0, 0);
@@ -66,7 +66,7 @@ namespace Logiciel
                 }
             }
             return l;
-        }
+        }*/
 
         // Generation Xml
         public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
@@ -91,7 +91,7 @@ namespace Logiciel
             XmlNodeList nodelistLieu = xmlDoc.GetElementsByTagName("Lieu");
 
             string nom="";
-            Point coords;
+            Point coords = new Point (0,0);
 
             foreach (XmlNode nodeLieu in nodelistLieu)
             {

@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace Logiciel
 {
-    class Calendrier_Martien
+    class CalendrierMartien
     {
         private int _jour;
         private DateTime _debut;
@@ -18,7 +18,7 @@ namespace Logiciel
         private int _seconde;
         private List<Jour> _Jours = new List<Jour>();
 
-        public Calendrier_Martien()
+        public CalendrierMartien()
         {
             _debut = System.DateTime.Now;
             System.TimeSpan duration = new System.TimeSpan(0, 500 * 1480, 0);
@@ -35,7 +35,7 @@ namespace Logiciel
             _Jours.ElementAt(20).ListeActivites.RemoveAt(1);
         }
 
-        public Calendrier_Martien(DateTime debut, DateTime fin, int jour, int heure, int minute, int seconde)
+        public CalendrierMartien(DateTime debut, DateTime fin, int jour, int heure, int minute, int seconde)
         {
             _debut = debut;
             _fin = fin;
@@ -229,7 +229,7 @@ namespace Logiciel
                                         
                 }
 
-                Calendrier_Martien c = new Calendrier_Martien(debut, fin, jour, heure, minute, seconde);
+                CalendrierMartien c = new CalendrierMartien(debut, fin, jour, heure, minute, seconde);
 
                // Jour.chargerXml(xmlDoc, M);
             }

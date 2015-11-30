@@ -13,39 +13,47 @@ using System.Xml;
 
 namespace Logiciel
 {
-    public partial class Form1 : Form
+    public partial class GestionMission : Form
     {
-        private Calendrier_Martien c = new Calendrier_Martien(); // à charger pour ne pas perdre les infos
+        private CalendrierMartien c = new CalendrierMartien(); // à charger pour ne pas perdre les infos
         int jourSelec;
         Image sortie = Image.FromFile("..\\..\\..\\..\\astronaut.png");
 
         Button test;
         bool premClick = false;
 
-        public Form1()
+        public GestionMission()
         {
             InitializeComponent();
             // c.MiseAJour();      Pour remettre les pendules à l'heure
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9;       
-            c.Day = 12;
-            
-        }
-        public void MiseAJourCompteRendu(string compteRendu)
-        {
-            c.Jours[int.Parse(nbrJour.Text)].CompteRendu = compteRendu;
+            c.Day = 12;           
         }
 
+        /// <summary>
+        /// Permet de remplacer le compte rendu précédent par le nouveau inscrit dans le Form "CompteRendu"
+        /// </summary>
+        /// <param name="compteRendu"></param>
+        public void MiseAJourCompteRendu(string compteRendu)
+        {
+            c.Jours[int.Parse(JourCourantMission.Text)].CompteRendu = compteRendu;
+        }
+
+        /// <summary>
+        /// Création d'un bouton par activité pour chaque jour
+        /// </summary>
+        /// <param name="n"></param>
         public void CreerBoutons(int n) //n : numéro du jour, n-1 : emplacement du jour dans la liste
         {
             boutonsMatin.Controls.Clear();
             boutonsApresMidi.Controls.Clear();
-            Point pointDeBase=new Point(0,0);
-            int largeurActivite = 262;
+            Point pointDeBase=new Point(0,0); //Point servant à la localisation des boutons
+            int largeurActivite = 262; //Largeur fixée
             Jour jourJ = c.Jours.ElementAt(n-1);
 
-            //recherche du nombre d'activités du jour n dans le calendrier
+            //Recherche du nombre d'activités du jour n dans le calendrier
             for (int i=0; i < jourJ.ListeActivites.Count; i++)
             {
                 Button bouton = new System.Windows.Forms.Button();
@@ -58,19 +66,92 @@ namespace Logiciel
                     case "Sleeping":
                         bouton.BackColor = Color.BurlyWood;
                         break;
-                    default :
-                        bouton.BackColor = Color.LightCyan;
+                    case "Entertainment":
+                        bouton.BackColor = Color.Peru;
                         break;
-                }//à compléter
-
-                //bouton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+                    case "Private":
+                        bouton.BackColor = Color.SandyBrown;
+                        break;
+                    case "Health control":
+                        bouton.BackColor = Color.Chocolate;
+                        break;
+                    case "Medical act":
+                        bouton.BackColor = Color.NavajoWhite;
+                        break;
+                    case "Exploration Space suit":
+                        bouton.BackColor = Color.CornflowerBlue;
+                        break;
+                    case "Exploration Vehicule":
+                        bouton.BackColor = Color.LightSteelBlue;
+                        break;
+                    case "Briefing":
+                        bouton.BackColor = Color.RoyalBlue;
+                        break;
+                    case "Debriefing":
+                        bouton.BackColor = Color.SteelBlue;
+                        break;
+                    case "Inside experiment":
+                        bouton.BackColor = Color.SkyBlue;
+                        break;
+                    case "Outside experiment":
+                        bouton.BackColor = Color.LightSteelBlue;
+                        break;
+                    case "Cleaning":
+                        bouton.BackColor = Color.LightGray;
+                        break;
+                    case "LSS air system":
+                        bouton.BackColor = Color.Silver;
+                        break;
+                    case "LSS water system":
+                        bouton.BackColor = Color.DarkGray;
+                        break;
+                    case "LSS food system":
+                        bouton.BackColor = Color.Gainsboro;
+                        break;
+                    case "Power systems":
+                        bouton.BackColor = Color.LightSlateGray;
+                        break;
+                    case "Space suit":
+                        bouton.BackColor = Color.Gray;
+                        break;
+                    case "Other":
+                        bouton.BackColor = Color.WhiteSmoke;
+                        break;
+                    case "Sending message":
+                        bouton.BackColor = Color.DarkKhaki;
+                        break;
+                    case "Receiving message":
+                        bouton.BackColor = Color.Khaki;
+                        break;
+                    case "LSS":
+                        bouton.BackColor = Color.Thistle;
+                        break;
+                    case "Communication systems":
+                        bouton.BackColor = Color.Plum;
+                        break;
+                    case "Propulsion systems":
+                        bouton.BackColor = Color.Pink;
+                        break;
+                    case "Habitat":
+                        bouton.BackColor = Color.LightPink;
+                        break;
+                    case "Vehicule":
+                        bouton.BackColor = Color.PaleVioletRed;
+                        break;
+                    case "Emergency":
+                        bouton.BackColor = Color.Firebrick;
+                        break;
+                    default :
+                        bouton.BackColor = Color.Snow;
+                        break;
+                }               
                 bouton.Cursor = System.Windows.Forms.Cursors.Hand;
                 bouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
                 bouton.Margin = new System.Windows.Forms.Padding(0);
 
                 Point localisation=new Point(pointDeBase.X,pointDeBase.Y);
 
-                //On scinde le calendrier selon les cas
+                //On scinde le calendrier selon les cas avant 12h20 et après 12h20
                 if (Act.Debut.HeuresMinutes < 1220 && Act.Fin.HeuresMinutes<=1220) //Si l'activité commence et se termine avant 12h20 (ou se termine à 12h20)
                 {
                     this.boutonsMatin.Controls.Add(bouton);
@@ -110,17 +191,14 @@ namespace Logiciel
                         bouttonBis.BackColor = bouton.BackColor;
                     }
                 }
-
                 bouton.Location = localisation;
                 bouton.Margin = new System.Windows.Forms.Padding(0);
                 bouton.Name = "Activite" + i;
                 bouton.TabIndex = i;
                 bouton.Text = Act.Nom;
                 bouton.UseVisualStyleBackColor = false;
-
                 bouton.Click += new System.EventHandler(this.ClickNiveau3);
-            }
-            
+            }            
         }
 
 
@@ -129,12 +207,13 @@ namespace Logiciel
             timer1.Stop();
             c.Horloge();
             heureMars.Text = c.Heure.ToString() + " h " + c.Minute.ToString() + " min " + c.Seconde.ToString() + " s";
-            nbrJour.Text = c.Day.ToString();
+            JourCourantMission.Text = c.Day.ToString();
             DateTerrestre.Text = Convert.ToString(DateTime.Now);
             timer1.Start();
         }
 
-        private void nbrJour_TextChanged(object sender, EventArgs e)
+
+        private void JourCourantMission_TextChanged(object sender, EventArgs e)
         {
             dureMission.Increment(1);
             for (int i = 0; i < Niveau1.Controls.Count; i++)
@@ -161,11 +240,11 @@ namespace Logiciel
                         Niveau1.Controls[i+1].BackgroundImage = null;
                     }
 
-                    if (int.Parse(Niveau1.Controls[i].Text) < int.Parse(nbrJour.Text))
+                    if (int.Parse(Niveau1.Controls[i].Text) < int.Parse(JourCourantMission.Text))
                     {
                         Niveau1.Controls[i].BackColor = Color.DimGray;
                     }  
-                    if (int.Parse(Niveau1.Controls[i].Text) == int.Parse(nbrJour.Text))
+                    if (int.Parse(Niveau1.Controls[i].Text) == int.Parse(JourCourantMission.Text))
                     {
                         Niveau1.Controls[i].BackColor = Color.RoyalBlue;
                     }                    
@@ -175,14 +254,14 @@ namespace Logiciel
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            nbrJour_TextChanged(new Object(), new EventArgs());
+            JourCourantMission_TextChanged(new Object(), new EventArgs());
             for (int i = 0; i < Niveau1.Controls.Count; i++)
             {
                 if (Niveau1.Controls[i].Name.Contains("jour"))
                 {
                     Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i-1);
 
-                    if (int.Parse(nbrJour.Text) == (50 * trackBar1.Value) + i - 1)
+                    if (int.Parse(JourCourantMission.Text) == (50 * trackBar1.Value) + i - 1)
                     {
                         Niveau1.Controls[i].BackColor = Color.RoyalBlue;
                     }
@@ -196,7 +275,6 @@ namespace Logiciel
                         {
                             Niveau1.Controls[i].BackColor = Color.DarkGreen;
                         }
-
                     }
                 }
             }      
@@ -226,15 +304,13 @@ namespace Logiciel
             jourSelec=int.Parse(clickedButton.Text);
             test = clickedButton;           
             premClick = true;
-
             
             Niveau2.Show();
             Niveau1.Hide();
-            
-            
+                       
             NumeroJour.Text = clickedButton.Text;
             NduJNiv3.Text = NumeroJour.Text;
-            if (int.Parse(NumeroJour.Text) < int.Parse(nbrJour.Text))
+            if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
             {
                 CreerActivite.Enabled = false;
             }
@@ -244,7 +320,8 @@ namespace Logiciel
             }
             CreerBoutons(jourSelec);
         }
-     
+  
+   
         private void ClickNiveau3(object sender, EventArgs e)
         {
             //treeView1.Controls[0].Controls.Add(new CheckBox());
@@ -253,30 +330,24 @@ namespace Logiciel
             Activite act = c.Jours.ElementAt(int.Parse(NduJNiv3.Text)-1).ListeActivites.ElementAt(clickedButton.TabIndex); //activité à l'index i du jour concerné
             labelInvisible.Text = Convert.ToString(clickedButton.TabIndex);
 
-            Niveau2.Hide();
-
+            //Niveau2.Hide();
             Niveau3.Show();
-            
-            
-
+                     
             TitreNiv3.Text = "Modifier une activité";
             texteDescriptif.Text = act.TexteDescriptif;
-            for (int i = 0; i < listView1.Items.Count; i++) //on décoche tous les astronautes par sécurité
+            for (int i = 0; i < listeAstronautes.Items.Count; i++) //on décoche tous les astronautes par sécurité
             {
-                listView1.Items[i].Checked = false;
+                listeAstronautes.Items[i].Checked = false;
             }
             for (int i = 0; i < act.ListAstronaute.Count; i++) //on coche les astronautes pour une activité donnée
             {
-                for (int j = 0; j < listView1.Items.Count; j++)
+                for (int j = 0; j < listeAstronautes.Items.Count; j++)
                 {
-                    if (listView1.Items[j].Text == act.ListAstronaute[i].Nom)
+                    if (listeAstronautes.Items[j].Text == act.ListAstronaute[i].Nom)
                     {
-                        listView1.Items[j].Checked = true;
+                        listeAstronautes.Items[j].Checked = true;
                     }
-
-                }
-                
-                        
+                }                                      
             }
 
             ItemSelect.Text= act.Nom;
@@ -305,18 +376,16 @@ namespace Logiciel
                 NomLieu.Text = "Base";
             }
 
-
-
-            SupprimerNiv3.Visible = true;
-            
-
+            SupprimerNiv3.Visible = true;           
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void AnnulerNiv3_Click(object sender, EventArgs e)
         {
             Niveau3.Hide();
             Niveau2.Show();
         }
+
 
         private void CreerActivite_Click(object sender, EventArgs e)
         {
@@ -334,31 +403,18 @@ namespace Logiciel
             MinFin.Enabled = false;
             
             ItemSelect.Text = "";
-            for(int i=0;i<listView1.Items.Count;i++)
+            for(int i=0;i<listeAstronautes.Items.Count;i++)
             {
-                listView1.Items[i].Checked = false;
+                listeAstronautes.Items[i].Checked = false;
             }
             CoordX.Text = "";
             CoordY.Text = "";
             texteDescriptif.Text = "";
 
-
             Niveau3.Show();
-            Niveau2.Hide();
-
+            //Niveau2.Hide();
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-       
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -369,6 +425,7 @@ namespace Logiciel
             trackBar1_Scroll(sender, e);
         }
 
+
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             if (trackBar1.Value < 9)
@@ -378,17 +435,14 @@ namespace Logiciel
             trackBar1_Scroll(sender, e);
         }
 
+
         private void RetourCalendrier_Click_1(object sender, EventArgs e)
         {
-            nbrJour_TextChanged(new Object(),new EventArgs());
+            JourCourantMission_TextChanged(new Object(), new EventArgs());
             Niveau2.Hide();
             Niveau1.Show();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void JourPrecedent_Click(object sender, EventArgs e)
         {
@@ -398,7 +452,7 @@ namespace Logiciel
             }
             NduJNiv3.Text = NumeroJour.Text;
             CreerBoutons(int.Parse(NumeroJour.Text));
-            if (int.Parse(NumeroJour.Text) < int.Parse(nbrJour.Text))
+            if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
             {
                 CreerActivite.Enabled = false;
             }
@@ -408,6 +462,7 @@ namespace Logiciel
             }
         }
 
+
         private void JourSuivant_Click(object sender, EventArgs e)
         {
             if (int.Parse(NumeroJour.Text) < 500)
@@ -416,7 +471,7 @@ namespace Logiciel
             }
             NduJNiv3.Text = NumeroJour.Text;
             CreerBoutons(int.Parse(NumeroJour.Text));
-            if (int.Parse(NumeroJour.Text) < int.Parse(nbrJour.Text))
+            if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
             {
                 CreerActivite.Enabled = false;
             }
@@ -425,6 +480,7 @@ namespace Logiciel
                 CreerActivite.Enabled = true;
             }
         }
+
 
         private void HDebut_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -439,41 +495,35 @@ namespace Logiciel
                 MinDebut.Items.Add("40");
                 MinDebut.Items.Add("50");
             }
-
-            //code à revoir
-            //int heureFinMin = 0;
-            //if (MinDebut.SelectedIndex == 50)
-            //{
-            //    heureFinMin = HDebut.SelectedIndex + 1;
-            //}
-            //else
-            //{
-            //    heureFinMin = HDebut.SelectedIndex;
-            //}
-            //for (int i = 0; i < heureFinMin; i++)
-            //{
-            //    HFin.Items.RemoveAt(i);
-            //}
             MinDebut.Enabled = true;
         }
 
-        private void HFin_SelectedValueChanged(object sender, EventArgs e)
-        {
-            MinFin.Enabled = true;
-        }
 
         private void MinDebut_SelectedIndexChanged(object sender, EventArgs e)
         {
             HFin.Enabled = true;
         }
 
-    
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void HFin_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (treeView1.SelectedNode.Level == 1)
+            if (HFin.SelectedIndex == 24)
             {
-                ItemSelect.Text = treeView1.SelectedNode.Text;
+                MinFin.Items.Remove("50");
+                MinFin.SelectedText = "";
+            }
+            else if (MinFin.Items.Count == 5)
+            {
+                MinFin.Items.Add("50");
+            }
+            MinFin.Enabled = true;
+        }
+
+        private void listeActivites_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (listeActivites.SelectedNode.Level == 1)
+            {
+                ItemSelect.Text = listeActivites.SelectedNode.Text;
                 if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule")
                 {
                     CoordX.Enabled = true;
@@ -496,25 +546,13 @@ namespace Logiciel
             }
         }
 
-        private void DateTerrestre_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void titreJour_Click(object sender, EventArgs e)
-        {
-
-        }
-
-      
 
         private void ConfirmerNiv3_Click(object sender, EventArgs e)
         {
             bool[] tab=c.Jours[int.Parse(NduJNiv3.Text)-1].TabHoraires;
             bool[] erreurs = {true, false, false, false, false};
             Jour jourj = c.Jours[int.Parse(NduJNiv3.Text) - 1];
-            Activite act= new Activite();
-
+            Activite act = new Activite("");
 
             if (TitreNiv3.Text == "Modifier une activité")
             {
@@ -522,7 +560,6 @@ namespace Logiciel
                 changerUnePlageHoraire(act, jourj.TabHoraires, true);
             }
             
-
             for (int i = 0; i < tab.Length; i++)
             {
                 if (tab[i])
@@ -555,38 +592,32 @@ namespace Logiciel
             }
             if (erreurs[0] && erreurs[1] && erreurs[2] && erreurs[3] && erreurs[4])
             {
-
-
                 List<Astronaute> liA = new List<Astronaute>();
-                for (int i = 0; i < listView1.CheckedItems.Count; i++)
+                for (int i = 0; i < listeAstronautes.CheckedItems.Count; i++)
                 {
-                    liA.Add(new Astronaute(i, listView1.CheckedItems[i].Text));
+                    liA.Add(new Astronaute(i, listeAstronautes.CheckedItems[i].Text));
                 }
                 if (TitreNiv3.Text == "Modifier une activité")
-                {
-                    
+                {                    
                     act.Nom = ItemSelect.Text;
                     act.Debut = new Heure(int.Parse(HDebut.Text), int.Parse(MinDebut.Text));
                     act.Fin = new Heure(int.Parse(HFin.Text), int.Parse(MinFin.Text));
 
                     act.TexteDescriptif = texteDescriptif.Text;
                     act.ListAstronaute = liA;
-                    act.Gps = new Lieu(NomLieu.Text, new Point(int.Parse(CoordX.Text), int.Parse(CoordY.Text)));
-                    
+                    act.Gps = new Lieu(NomLieu.Text, new Point(int.Parse(CoordX.Text), int.Parse(CoordY.Text)));            
                 }
                 else
                 {
                     act = new Activite(ItemSelect.Text, new Heure(int.Parse(HDebut.Text), int.Parse(MinDebut.Text)), new Heure(int.Parse(HFin.Text), int.Parse(MinFin.Text)), texteDescriptif.Text, liA, new Lieu(NomLieu.Text, new Point(int.Parse(CoordX.Text), int.Parse(CoordY.Text))));
-                    jourj.ListeActivites.Add(act);
-                    
-
+                    jourj.ListeActivites.Add(act);                   
                 }
 
                 changerUnePlageHoraire(act, jourj.TabHoraires, false);
                 CreerBoutons(int.Parse(NduJNiv3.Text));
                 Niveau3.Hide();
                 Niveau2.Show();
-                if (int.Parse(NumeroJour.Text) < int.Parse(nbrJour.Text))
+                if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
                 {
                     CreerActivite.Enabled = false;
                 }
@@ -594,36 +625,29 @@ namespace Logiciel
                 {
                     CreerActivite.Enabled = true;
                 }
-
             }
             else if (!erreurs[4])
             {
-
                 MessageBox.Show("Veuillez sélectionner une activité", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!erreurs[3])
-            {
-                
+            {              
                 MessageBox.Show("Les coordonnées rentrées ne sont pas valides", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!erreurs[2])
-            {
-                
+            {               
                 MessageBox.Show("La plage horaire selectionnée n'est pas valide", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!erreurs[1])
-            {
-                
+            {                
                 MessageBox.Show("Aucune plage horaire disponible dans la journée, supprimez d'abord des activités", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!erreurs[0])
-            {
-                
+            {                
                 MessageBox.Show("La plage horaire selectionnée n'est pas disponible", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            
-            
+            }          
         }
+
 
         private void changerUnePlageHoraire(Activite act, bool[] tab, bool disponible) //à commenter
         {
@@ -632,6 +656,7 @@ namespace Logiciel
                     tab[i] = disponible;
                 }
         }
+
 
         private void SupprimerNiv3_Click(object sender, EventArgs e)
         {
@@ -642,17 +667,18 @@ namespace Logiciel
 
             CreerBoutons(int.Parse(NduJNiv3.Text)); //on réactualise les boutons du niveau 2 et donc les indices de la liste d'activités
 
-            Niveau2.Show();
-           
+            Niveau2.Show();          
             Niveau3.Hide();
         }
 
+
         private void CompteRenduJour_Click(object sender, EventArgs e)
         {
-            CompteRendu cr = new CompteRendu(c.Jours[int.Parse(nbrJour.Text)].CompteRendu);
+            CompteRendu cr = new CompteRendu(c.Jours[int.Parse(JourCourantMission.Text)].CompteRendu);
             cr.CR += new CompteRendu.AjouterJourEventHandler(this.MiseAJourCompteRendu);
             cr.ShowDialog();
         }
+
 
         private void CreerActivite_EnabledChanged(object sender, EventArgs e)
         {
@@ -666,7 +692,7 @@ namespace Logiciel
             //    treeView1.Enabled = false;
             //    CoordX.Enabled = false;
             //    CoordY.Enabled = false;
-            //    listView1.Enabled = false;
+            //    listeAstronautes.Enabled = false;
             //    NomLieu.Enabled = false;
             //}
             //else
@@ -679,39 +705,18 @@ namespace Logiciel
             //    treeView1.Enabled = true;
             //    CoordX.Enabled = true;
             //    CoordY.Enabled = true;
-            //    listView1.Enabled = true;
+            //    listeAstronautes.Enabled = true;
             //    NomLieu.Enabled = true;
             //}
         }
 
-        
 
-        
-
-
-        
-
-        
-
-
-       
-
-        
-        
-        
-
-
-
-
-
-       
-       
-
-       
-
-       
-
-
+        private void CompteRendu_Click(object sender, EventArgs e)
+        {
+            CompteRendu cr = new CompteRendu(c.Jours[int.Parse(JourCourantMission.Text)].CompteRendu);
+            cr.CR += new CompteRendu.AjouterJourEventHandler(this.MiseAJourCompteRendu);
+            cr.ShowDialog();
+        }
     }
 }
 

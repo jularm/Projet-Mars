@@ -12,16 +12,16 @@ namespace Logiciel
     {
         private List<Astronaute> _listAstronautes;
         private List<CategorieActivite> _listCategorieActivite;
-        private Calendrier_Martien _calendar;
+        private CalendrierMartien _calendar;
 
-        public Mission(Calendrier_Martien calendar, List<Astronaute> listAstronautes, List<CategorieActivite> listCategorieActivite)
+        public Mission(CalendrierMartien calendar, List<Astronaute> listAstronautes, List<CategorieActivite> listCategorieActivite)
         {
             _calendar = calendar;
             _listAstronautes = listAstronautes;
             _listCategorieActivite = listCategorieActivite;
         }
 
-        public Calendrier_Martien Calendar
+        public CalendrierMartien Calendar
         {
             get { return _calendar; }
         }
@@ -77,7 +77,7 @@ namespace Logiciel
 
             List<Astronaute> listAstronautes = new List<Astronaute>();
             List<CategorieActivite> listCategorieActivite = new List<CategorieActivite>();
-            Calendrier_Martien calendar = new Calendrier_Martien();
+            CalendrierMartien calendar = new CalendrierMartien();
 
             foreach (XmlNode nodeMission in nodelistMission)
             {
@@ -100,7 +100,7 @@ namespace Logiciel
                 XmlNodeList nodelistCalendrierMartien = nodeMission.SelectNodes("Calendrier_Martien");
                 foreach (XmlNode nodeCalendrierMartien in nodelistCalendrierMartien)
                 {
-                    Calendrier_Martien c = new Calendrier_Martien();
+                    CalendrierMartien c = new CalendrierMartien();
                     c.chargerXml(xmlDoc, this); 
                     calendar=c;
                 }
