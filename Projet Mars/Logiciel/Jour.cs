@@ -17,15 +17,11 @@ namespace Logiciel
         private bool[] _tabHoraires= new bool[147]; // (avant 149) ca change pas et on compte 148 cran donc de 0 à 147
         private List<Activite> _listeActivites;
 
-        
-        //private bool _passee;
 
         public Jour(int numero)
         {
             _numero = numero;           
-            // journée type :
-            _numero = numero;           
-            // journée type par défaut :
+            //Journée type par défaut :
             List<Astronaute>li =new List<Astronaute>();
             li.Add(new Astronaute(1, "Paul"));
             li.Add(new Astronaute(2, "Pierre"));

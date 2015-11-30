@@ -38,13 +38,13 @@
             this.texteCR.Location = new System.Drawing.Point(13, 13);
             this.texteCR.MaxLength = 1000;
             this.texteCR.Name = "texteCR";
-            this.texteCR.Size = new System.Drawing.Size(350, 209);
+            this.texteCR.Size = new System.Drawing.Size(440, 346);
             this.texteCR.TabIndex = 0;
             this.texteCR.Text = "";
             // 
             // ConfirmerCR
             // 
-            this.ConfirmerCR.Location = new System.Drawing.Point(104, 228);
+            this.ConfirmerCR.Location = new System.Drawing.Point(148, 366);
             this.ConfirmerCR.Name = "ConfirmerCR";
             this.ConfirmerCR.Size = new System.Drawing.Size(75, 23);
             this.ConfirmerCR.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             // AnnulerCR
             // 
-            this.AnnulerCR.Location = new System.Drawing.Point(186, 228);
+            this.AnnulerCR.Location = new System.Drawing.Point(229, 366);
             this.AnnulerCR.Name = "AnnulerCR";
             this.AnnulerCR.Size = new System.Drawing.Size(75, 23);
             this.AnnulerCR.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 261);
+            this.ClientSize = new System.Drawing.Size(467, 400);
             this.Controls.Add(this.AnnulerCR);
             this.Controls.Add(this.ConfirmerCR);
             this.Controls.Add(this.texteCR);
@@ -78,6 +78,7 @@
 
         #endregion
 
+        //Le form contient une zone de texte, un bouton pour confirmer et un autre pour annuler
         private System.Windows.Forms.RichTextBox texteCR;
         private System.Windows.Forms.Button ConfirmerCR;
         private System.Windows.Forms.Button AnnulerCR;

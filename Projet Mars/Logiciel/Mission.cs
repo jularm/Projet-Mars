@@ -12,14 +12,14 @@ namespace Logiciel
     {
         private List<Astronaute> _listAstronautes;
         private List<CategorieActivite> _listCategorieActivite;
-        private Calendrier_Martien _calendar;
+        private CalendrierMartien _calendar;
 
-        public Mission(Calendrier_Martien calendar)
+        public Mission(CalendrierMartien calendar)
         {
             _calendar = calendar;
         }
 
-        public Calendrier_Martien Calendar
+        public CalendrierMartien Calendar
         {
             get { return _calendar; }
         }
