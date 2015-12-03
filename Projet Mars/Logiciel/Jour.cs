@@ -111,6 +111,15 @@ namespace Logiciel
             }
             NodeJour.AppendChild(NodeListeActivite);
 
+            XmlNode NodeTabHoraire = xmlDoc.CreateElement("Tableau Horaire");
+            foreach (bool b in _tabHoraires)
+            {
+                XmlNode NodeLibre = xmlDoc.CreateElement("Libre");
+                NodeLibre.InnerText = b.ToString();
+                NodeTabHoraire.AppendChild(NodeLibre);
+            }
+            NodeJour.AppendChild(NodeListeActivite);
+
             rootNode.AppendChild(NodeJour);
 
         }
@@ -128,9 +137,9 @@ namespace Logiciel
 
             foreach (XmlNode nodeJour in nodelistJour)
             {
-                compteRendu = nodeJour.SelectSingleNode("Debut").InnerText;
+                compteRendu = nodeJour.SelectSingleNode("Compte Rendu").InnerText;
                 numero = int.Parse(nodeJour.SelectSingleNode("Numero").InnerText);
-                sortie = bool.Parse(nodeJour.SelectSingleNode("Jour").InnerText);
+                sortie = bool.Parse(nodeJour.SelectSingleNode("Sortie").InnerText);
 
 
                 XmlNodeList nodelistTabHoraire = nodeJour.SelectNodes("TabHoraire");
