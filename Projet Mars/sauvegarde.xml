@@ -723,21 +723,12 @@
   </Liste_Catégorie_Activité>
   <Calendrier_Mission>
     <Calendrier_Martien>
-<<<<<<< HEAD
-      <Début>03/12/2015 17:05:08</Début>
-      <Fin>30/04/2017 14:25:08</Fin>
+      <Début>03/12/2015 19:54:34</Début>
+      <Fin>30/04/2017 17:14:34</Fin>
       <Jour>1</Jour>
       <Heure>0</Heure>
-      <Minute>0</Minute>
-      <Seconde>1</Seconde>
-=======
-      <Début>03/12/2015 17:02:31</Début>
-      <Fin>30/04/2017 14:22:31</Fin>
-      <Jour>1</Jour>
-      <Heure>0</Heure>
-      <Minute>0</Minute>
-      <Seconde>43</Seconde>
->>>>>>> origin/master
+      <Minute>1</Minute>
+      <Seconde>34</Seconde>
       <Liste_Jour>
         <Jour>
           <Compte_Rendu>test</Compte_Rendu>
@@ -3639,7 +3630,8 @@
               <Liste_Astronaute>
                 <Astronaute>
                   <Id>0</Id>
-                  <Nom>Paul</Nom>
+                  <Nom>
+                  </Nom>
                 </Astronaute>
               </Liste_Astronaute>
               <Texte_Descriptif>
@@ -5669,7 +5661,7 @@
               <Texte_Descriptif>Manger c'est important</Texte_Descriptif>
             </Activité>
             <Activité>
-              <Nom>Private</Nom>
+              <Nom>Exploration Space suit</Nom>
               <Compte_Rendu>
               </Compte_Rendu>
               <Heure_Debut>14</Heure_Debut>
@@ -5677,15 +5669,14 @@
               <Heure_Fin>19</Heure_Fin>
               <Minute_Fin>0</Minute_Fin>
               <Lieu>
-                <Nom>Base</Nom>
-                <Coordonnées>{X=0,Y=0}</Coordonnées>
+                <Nom>LieuTest</Nom>
+                <Coordonnées>{X=26,Y=-77}</Coordonnées>
               </Lieu>
               <GPS />
               <Liste_Astronaute>
                 <Astronaute>
                   <Id>0</Id>
-                  <Nom>
-                  </Nom>
+                  <Nom>Paul</Nom>
                 </Astronaute>
               </Liste_Astronaute>
               <Texte_Descriptif>

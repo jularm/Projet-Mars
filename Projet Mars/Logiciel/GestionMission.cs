@@ -23,10 +23,10 @@ namespace Logiciel
         int jourSelec;
 
         Image sortie = Image.FromFile("..\\..\\..\\..\\astronaut.png");
-
+        Point coordBase = new Point(90, 129); //origine du repère
         Button test;
         bool premClick = false;
-
+        Graphics croix;
         public GestionMission()
         {
             InitializeComponent();
@@ -512,12 +512,14 @@ namespace Logiciel
                 CoordX.Enabled = true;
                 CoordY.Enabled = true;
                 NomLieu.Enabled = true;
+                pictureBox1.Enabled = true;
             }
             else
             {
                 CoordX.Enabled = false;
                 CoordY.Enabled = false;
                 NomLieu.Enabled = false;
+                pictureBox1.Enabled = false;
                 CoordX.Text = "0";
                 CoordY.Text = "0";
                 NomLieu.Text = "Base";
@@ -671,17 +673,19 @@ namespace Logiciel
             if (listeActivites.SelectedNode.Level == 1)
             {
                 ItemSelect.Text = listeActivites.SelectedNode.Text;
-                if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule")
+                if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule" || ItemSelect.Text == "Outside experiment")
                 {
                     CoordX.Enabled = true;
                     CoordY.Enabled = true;
                     NomLieu.Enabled = true;
+                    pictureBox1.Enabled = true;
                 }
                 else
                 {
                     CoordX.Enabled = false;
                     CoordY.Enabled = false;
                     NomLieu.Enabled = false;
+                    pictureBox1.Enabled = false;
                     CoordX.Text = "0";
                     CoordY.Text = "0";
                     NomLieu.Text = "Base";
@@ -824,32 +828,32 @@ namespace Logiciel
 
         private void CreerActivite_EnabledChanged(object sender, EventArgs e)
         {
-            //if (!CreerActivite.Enabled)
-            //{
-            //    HDebut.Enabled = false;
-            //    MinDebut.Enabled = false;
-            //    HFin.Enabled = false;
-            //    MinFin.Enabled = false;
-            //    texteDescriptif.Enabled = false;
-            //    treeView1.Enabled = false;
-            //    CoordX.Enabled = false;
-            //    CoordY.Enabled = false;
-            //    listeAstronautes.Enabled = false;
-            //    NomLieu.Enabled = false;
-            //}
-            //else
-            //{
-            //    HDebut.Enabled = true;
-            //    MinDebut.Enabled = true;
-            //    HFin.Enabled = true;
-            //    MinFin.Enabled = true;
-            //    texteDescriptif.Enabled = true;
-            //    treeView1.Enabled = true;
-            //    CoordX.Enabled = true;
-            //    CoordY.Enabled = true;
-            //    listeAstronautes.Enabled = true;
-            //    NomLieu.Enabled = true;
-            //}
+            if (!CreerActivite.Enabled)
+            {
+                HDebut.Enabled = false;
+                MinDebut.Enabled = false;
+                HFin.Enabled = false;
+                MinFin.Enabled = false;
+                texteDescriptif.Enabled = false;
+                listeActivites.Enabled = false;
+                CoordX.Enabled = false;
+                CoordY.Enabled = false;
+                listeAstronautes.Enabled = false;
+                NomLieu.Enabled = false;
+            }
+            else
+            {
+                HDebut.Enabled = true;
+                MinDebut.Enabled = true;
+                HFin.Enabled = true;
+                MinFin.Enabled = true;
+                texteDescriptif.Enabled = true;
+                listeActivites.Enabled = true;
+                CoordX.Enabled = true;
+                CoordY.Enabled = true;
+                listeAstronautes.Enabled = true;
+                NomLieu.Enabled = true;
+            }
         }
 
 
@@ -860,15 +864,71 @@ namespace Logiciel
             cr.ShowDialog();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-             //this.CreateGraphics().DrawLine(new Pen(Color.Black),new Point(e.X-20, e.X+20)
+            
+            if (pictureBox1.Enabled)
+            {
+                
+                if (NomLieu.Text == "Base")
+                {
+                    NomLieu.Text = "";
+                }
+                pictureBox1.Refresh();
+
+                croix = pictureBox1.CreateGraphics();
+                croix.DrawLine(new Pen(Color.Black), new Point(e.X - 10, e.Y), new Point(e.X + 10, e.Y));
+                croix.DrawLine(new Pen(Color.Black), new Point(e.X, e.Y - 10), new Point(e.X, e.Y + 10));
+                CoordX.Text = Convert.ToString(e.X - coordBase.X);
+                if (e.Y < coordBase.Y)
+                {
+                    CoordY.Text = Convert.ToString(-1*(e.Y - coordBase.Y));
+                }
+                else
+                {
+                    CoordY.Text = Convert.ToString(coordBase.Y-e.Y);
+                }
+            }
+            else
+            {
+
+            }
+            
         }
+
+        private void CoordX_TextChanged(object sender, EventArgs e)
+        {
+            if (CoordY.Text != "" && CoordX.Text != "" && CoordX.Text != "-" && CoordY.Text != "-")
+            {
+                if (NomLieu.Text == "Base")
+                {
+                    NomLieu.Text = "";
+                }
+                pictureBox1.Refresh();
+
+                croix = pictureBox1.CreateGraphics();
+
+                if (int.Parse(CoordY.Text) >= 0)
+                {
+                    croix.DrawLine(new Pen(Color.Black), new Point(int.Parse(CoordX.Text) + coordBase.X - 10, (coordBase.Y - int.Parse(CoordY.Text))), new Point(int.Parse(CoordX.Text) + coordBase.X + 10, (coordBase.Y - int.Parse(CoordY.Text))));
+                    croix.DrawLine(new Pen(Color.Black), new Point(int.Parse(CoordX.Text) + coordBase.X, (coordBase.Y - int.Parse(CoordY.Text)) - 10), new Point(int.Parse(CoordX.Text) + coordBase.X, (coordBase.Y - int.Parse(CoordY.Text)) + 10));
+
+                }
+                else
+                {
+                    croix.DrawLine(new Pen(Color.Black), new Point(int.Parse(CoordX.Text) + coordBase.X - 10, -1 * (int.Parse(CoordY.Text) - coordBase.Y)), new Point(int.Parse(CoordX.Text) + coordBase.X + 10, -1 * (int.Parse(CoordY.Text) - coordBase.Y)));
+                    croix.DrawLine(new Pen(Color.Black), new Point(int.Parse(CoordX.Text) + coordBase.X, -1 * (int.Parse(CoordY.Text) - coordBase.Y) - 10), new Point(int.Parse(CoordX.Text) + coordBase.X, -1 * (int.Parse(CoordY.Text) - coordBase.Y) + 10));
+
+                }
+            }
+        }
+
+        private void CoordY_TextChanged(object sender, EventArgs e)
+        {
+            CoordX_TextChanged(new object(),new EventArgs());
+        }
+
 
 
 
