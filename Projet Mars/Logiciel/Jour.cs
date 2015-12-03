@@ -30,7 +30,7 @@ namespace Logiciel
             _listeActivites.Add(new Activite("Eating", new Heure(19,0), new Heure(21,0), "Manger c'est important"));
             _listeActivites.Add(new Activite("Private", new Heure(21,0), new Heure(23,0), ""));
             _listeActivites.Add(new Activite("Sleeping", new Heure(23,0), new Heure(24,40), "Dormir c'est important"));
-            _compteRendu = "";
+            _compteRendu = "test";
             _sortie = false;
             for (int i = 0; i < 147; i++)
             {
@@ -85,6 +85,7 @@ namespace Logiciel
         {
 
         }
+        
 
 
         
@@ -128,7 +129,7 @@ namespace Logiciel
         // lecture xml et generation objets    
         public void chargerXml(XmlDocument xmlDoc, Mission M)
         {
-            XmlNodeList nodelistJour = xmlDoc.GetElementsByTagName("Jour"); // Je récupère une liste des noeuds ayant pour nom Jour
+            XmlNodeList nodelistJour = xmlDoc.GetElementsByTagName("Jour"); 
 
             string compteRendu = "";
             int numero = 0;
@@ -138,7 +139,7 @@ namespace Logiciel
 
             foreach (XmlNode nodeJour in nodelistJour)
             {
-                compteRendu = nodeJour.SelectSingleNode("Compte_Rendu").InnerText;
+                compteRendu = nodeJour.SelectSingleNode("Compte_Rendu").InnerText.ToString();
                 numero = int.Parse(nodeJour.SelectSingleNode("Numero").InnerText);
                 sortie = bool.Parse(nodeJour.SelectSingleNode("Sortie").InnerText);
 
@@ -158,6 +159,7 @@ namespace Logiciel
                         listeActivites.Add(a);
                     }
                 }
+
                 j.ListeActivites = listeActivites;
 
                 XmlNodeList nodelistTabHoraire = nodeJour.SelectNodes("Tableau_Horaire");
@@ -172,11 +174,9 @@ namespace Logiciel
                     }
                 }
                 j.TabHoraires = tabHoraires;
-            }
 
-            
-            
-            
+                M.Calendar.Jours.Add(j);
+            }  
         }
     }
     

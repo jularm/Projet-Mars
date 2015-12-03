@@ -132,15 +132,15 @@ namespace Logiciel
                 M.AddAstronaute(A);
                 M.AddAstronaute(B);
                 M.AddAstronaute(C);
-            }
 
-            //test
-            M.Calendar.Jours[0].Sortie = true;
-            M.Calendar.Jours[11].Sortie = true;
-            M.Calendar.Jours[64].Sortie = true;
-            M.Calendar.Jours[124].Sortie = true;
-            M.Calendar.Jours[229].Sortie = true;
-            //test
+                //test
+                M.Calendar.Jours[0].Sortie = true;
+                M.Calendar.Jours[11].Sortie = true;
+                M.Calendar.Jours[64].Sortie = true;
+                M.Calendar.Jours[124].Sortie = true;
+                M.Calendar.Jours[229].Sortie = true;
+                //test
+            }           
 
             timer1.Start();
             dureMission.Maximum = 500;
@@ -386,8 +386,7 @@ namespace Logiciel
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-          //  JourCourantMission_TextChanged(new Object(), new EventArgs());
-           // dureMission.Increment(-1);
+          //  JourCourantMission_TextChanged(new Object(), new EventArgs());           
             for (int i = 0; i < Niveau1.Controls.Count; i++)
             {
                 if (Niveau1.Controls[i].Name.Contains("jour"))

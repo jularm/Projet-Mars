@@ -40,10 +40,7 @@ namespace Logiciel
         {
             _debut = debut;
             _fin = fin;
-            _texteDescriptif = texteDescriptif;            
-            _gps = new Lieu();
-            _texteDescriptif = "";            
-            _compteRendu = "";
+            _texteDescriptif = texteDescriptif;
         }
         public Activite(string nom, Heure debut, Heure fin, string texteDescriptif, List<Astronaute> listAst, Lieu lieu)
             : this(nom, debut, fin, texteDescriptif)
@@ -175,8 +172,8 @@ namespace Logiciel
                 fin.Heures = int.Parse(nodeActivite.SelectSingleNode("Heure_Fin").InnerText);
                 debut.Minutes = int.Parse(nodeActivite.SelectSingleNode("Minute_Debut").InnerText);
                 fin.Minutes = int.Parse(nodeActivite.SelectSingleNode("Minute_Fin").InnerText);
-                
-                gps = Lieu.Parse(nodeActivite.SelectSingleNode("GPS").InnerText);
+
+                gps = Lieu.Parse(nodeActivite.SelectSingleNode("GPS").InnerText,xmlDoc, M);
 
                 XmlNodeList nodelistAstronaute = nodeActivite.SelectNodes("Liste_Astronaute");
                 foreach (XmlNode nodeAstronaute in nodelistAstronaute)

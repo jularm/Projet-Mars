@@ -40,31 +40,22 @@ namespace Logiciel
         }
 
 
-        public static Lieu Parse(string test)
+        public static Lieu Parse(string test, XmlDocument xmlDoc, Mission M)
         {
             Lieu l = new Lieu();           
             Point coords = new Point(0, 0);
-            List<string> nomLieu = new List<string>();
+            string nomLieu="";
 
-            foreach (char c in test)
-            {
-                nomLieu.Add(c.ToString());
-            }
+            XmlNodeList nodelistLieu = xmlDoc.GetElementsByTagName("Lieu");
 
-            for (int i = 0; i < nomLieu.Count; i++)
+            foreach (XmlNode nodeLieu in nodelistLieu)
             {
-                if (nomLieu[i] == "n" && nomLieu[i + 2] == "m")
-                {
-                    int j=i+3;
-                    string elnom = "";
-                    do
-                    {
-                        elnom = elnom + nomLieu[j];
-                        j++;
-                    } while (nomLieu[j] == " ");
-                    l.Nom = elnom;
-                }
+                nomLieu = nodeLieu.SelectSingleNode("Nom").InnerText;
+                coords.X = int.Parse(nodeLieu.SelectSingleNode("Coordonnées").InnerText);
+                coords.Y = int.Parse(nodeLieu.SelectSingleNode("Coordonnées").InnerText);
             }
+            l.Nom = nomLieu;
+            l.Coords = coords;    
             return l;
         }
 
@@ -97,8 +88,7 @@ namespace Logiciel
             {
                 nom = nodeLieu.SelectSingleNode("Nom").InnerText;
                 coords.X = int.Parse(nodeLieu.SelectSingleNode("Coordonnées").InnerText);
-                coords.Y = int.Parse(nodeLieu.SelectSingleNode("Coordonnées").InnerText);
-                
+                coords.Y = int.Parse(nodeLieu.SelectSingleNode("Coordonnées").InnerText);                
             }
             Lieu L = new Lieu(nom, coords);        
         }

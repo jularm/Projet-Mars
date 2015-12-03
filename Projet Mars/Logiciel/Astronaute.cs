@@ -63,7 +63,7 @@ namespace Logiciel
             }
 
             Astronaute a = new Astronaute(id, nom);
-            M.AddAstronaute(a);
+           M.AddAstronaute(a);
         }
     }
 }

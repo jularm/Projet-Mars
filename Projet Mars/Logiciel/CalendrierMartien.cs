@@ -32,7 +32,6 @@ namespace Logiciel
             {
                 _Jours.Add(new Jour(i)) ;
             }
-            _Jours.ElementAt(20).ListeActivites.RemoveAt(1);
         }
 
         public CalendrierMartien(DateTime debut, DateTime fin, int jour, int heure, int minute, int seconde)
@@ -42,9 +41,7 @@ namespace Logiciel
             _jour = jour;
             _minute = minute;
             _heure = heure;
-            _seconde = seconde;
-           
-            _Jours.ElementAt(20).ListeActivites.RemoveAt(1);
+            _seconde = seconde;          
         }
                 
 
@@ -134,13 +131,22 @@ namespace Logiciel
         public void MiseAJour()
         {
             TimeSpan Ts = System.DateTime.Now - this._debut;
-            for (int i = 0; i < Ts.Minutes; i++)
+            int test = Ts.Seconds;
+            for (int i = 0; i < Ts.Seconds; i++)
             {
                 if (this.Heure != 24)
                 {
                     if (this.Minute < 59)
                     {
-                        this.Minute++;
+                        if (this.Seconde < 59)
+                        {
+                            this.Seconde++;
+                        }
+                        else
+                        {
+                            this.Minute++;
+                            this.Seconde = 0;
+                        }
                     }
                     else
                     {
@@ -152,8 +158,17 @@ namespace Logiciel
                 {
                     if (this.Minute < 39)
                     {
-                        this.Minute++;
+                        if (this.Seconde < 59)
+                        {
+                            this.Seconde++;
+                        }
+                        else
+                        {
+                            this.Minute++;
+                            this.Seconde = 0;
+                        }
                     }
+
                     else
                     {
                         this.Heure = 0;
@@ -161,8 +176,9 @@ namespace Logiciel
                         this.Day++;
                     }
                 }
-            } 
+            }
         }
+            
 
 
         // Generation Xml
@@ -207,34 +223,31 @@ namespace Logiciel
           // lecture xml et generation objets    
             public void chargerXml(XmlDocument xmlDoc, Mission M)
             {
-                XmlNodeList nodelistCalendrier = xmlDoc.GetElementsByTagName("Calendrier_Martien"); // Je récupère une liste des noeuds ayant pour nom Calendrier_MArtien
+                XmlNodeList nodelistCalendrier = xmlDoc.GetElementsByTagName("Calendrier_Martien");
 
-                DateTime debut = new DateTime();
-                DateTime fin = new DateTime();
-                int jour = 0;
-                int heure = 0;
-                int minute = 0;
-                int seconde = 0;
-                List<Jour> Days = new List<Jour>();
+                CalendrierMartien c = new CalendrierMartien();
 
-                foreach (XmlNode nodeCalendrier in nodelistCalendrier) // Je boucle dessus ( mais il n'y en a qu'un ici) 
-                {
-                    // le récupere les données du Calendrier
-                    debut = DateTime.Parse(nodeCalendrier.SelectSingleNode("Debut").InnerText);
-                    fin = DateTime.Parse(nodeCalendrier.SelectSingleNode("Fin").InnerText);
-                    jour = int.Parse(nodeCalendrier.SelectSingleNode("Jour").InnerText);
-                    heure = int.Parse(nodeCalendrier.SelectSingleNode("Heure").InnerText);
-                    minute = int.Parse(nodeCalendrier.SelectSingleNode("Minute").InnerText);
-                    seconde = int.Parse(nodeCalendrier.SelectSingleNode("Seconde").InnerText);
-                                        
+                foreach (XmlNode nodeCalendrier in nodelistCalendrier) 
+                {                    
+                    c.Debut = DateTime.Parse(nodeCalendrier.SelectSingleNode("Début").InnerText);
+                    c.Fin = DateTime.Parse(nodeCalendrier.SelectSingleNode("Fin").InnerText);
+                    c.Day = int.Parse(nodeCalendrier.SelectSingleNode("Jour").InnerText);
+                    c.Heure = int.Parse(nodeCalendrier.SelectSingleNode("Heure").InnerText);
+                    c.Minute = int.Parse(nodeCalendrier.SelectSingleNode("Minute").InnerText);
+                    c.Seconde = int.Parse(nodeCalendrier.SelectSingleNode("Seconde").InnerText);
+
+                    XmlNodeList nodelistJours = nodeCalendrier.SelectNodes("Liste_Jour");
+                    foreach (XmlNode nodeJour in nodelistJours)
+                    {
+                        Jour j = new Jour(0);
+                        j.chargerXml(xmlDoc, M);
+                        c.Jours.Add(j);
+                    }
                 }
-
-                CalendrierMartien c = new CalendrierMartien(debut, fin, jour, heure, minute, seconde);
-
-               // Jour.chargerXml(xmlDoc, M);
+               
+               
+               
+                
             }
-
-
-
     }
 }

@@ -73,7 +73,7 @@ namespace Logiciel
             }
             NodeMission.AppendChild(NodelistAstronautre);
 
-            XmlNode NodelistCategorieActivite = xmlDoc.CreateElement("Liste_Categorie_Activité");
+            XmlNode NodelistCategorieActivite = xmlDoc.CreateElement("Liste_Catégorie_Activité");
             foreach (CategorieActivite a in _listCategorieActivite)
             {
                 a.genereXml(xmlDoc, NodelistCategorieActivite);
@@ -95,7 +95,7 @@ namespace Logiciel
 
             List<Astronaute> listAstronautes = new List<Astronaute>();
             List<CategorieActivite> listCategorieActivite = new List<CategorieActivite>();
-            CalendrierMartien calendar = new CalendrierMartien();
+            CalendrierMartien calendar = new CalendrierMartien();             
 
             foreach (XmlNode nodeMission in nodelistMission)
             {
@@ -103,31 +103,28 @@ namespace Logiciel
                 foreach (XmlNode nodeAstronautes in nodelistAstronautes)
                 {
                     Astronaute a = new Astronaute(0, "");
-                    a.chargerXml(xmlDoc, this);
-                    listAstronautes.Add(a);
-
+                    a.chargerXml(xmlDoc, this);                    
                 }
+                
 
                 XmlNodeList nodelistCategorieActivite = nodeMission.SelectNodes("Liste_Catégorie_Activité");
                 foreach (XmlNode nodeCategorieActivite in nodelistCategorieActivite)
                 {
                     CategorieActivite cat = new CategorieActivite("");
-                    cat.chargerXml(xmlDoc, this);
-                    listCategorieActivite.Add(cat);
+                    cat.chargerXml(xmlDoc, this);                   
                 }
 
                
                 XmlNodeList nodelistCalendrierMartien = nodeMission.SelectNodes("Calendrier_Mission");
                 foreach (XmlNode nodeCalendrierMartien in nodelistCalendrierMartien)
                 {
-                    CalendrierMartien c = new CalendrierMartien();
-                    c.chargerXml(xmlDoc, this); 
-                    calendar=c;
+                    calendar.chargerXml(xmlDoc, this);
+                    M.Calendar = calendar;
                 }
 
             }
 
-            Mission Mission = new Mission(calendar, listAstronautes, listCategorieActivite);
+            
         }
     }
 }
