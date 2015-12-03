@@ -113,17 +113,25 @@ namespace Logiciel
             NodeNom.InnerText = Nom.ToString();
             NodeActivite.AppendChild(NodeNom);
 
-            XmlNode NodeCompteRendu = xmlDoc.CreateElement("Compte Rendu");
+            XmlNode NodeCompteRendu = xmlDoc.CreateElement("Compte_Rendu");
             NodeCompteRendu.InnerText = CompteRendu.ToString();
             NodeActivite.AppendChild(NodeCompteRendu);
 
-            XmlNode NodeDebut = xmlDoc.CreateElement("Debut");
-            NodeDebut.InnerText = Debut.ToString();
-            NodeActivite.AppendChild(NodeDebut);
+            XmlNode NodeHDebut = xmlDoc.CreateElement("Heure_Debut");
+            NodeHDebut.InnerText = Debut.Heures.ToString();
+            NodeActivite.AppendChild(NodeHDebut);
 
-            XmlNode NodeFin = xmlDoc.CreateElement("Fin");
-            NodeFin.InnerText = Fin.ToString();
-            NodeActivite.AppendChild(NodeFin);
+            XmlNode NodeMDebut = xmlDoc.CreateElement("Minute_Debut");
+            NodeMDebut.InnerText = Debut.Minutes.ToString();
+            NodeActivite.AppendChild(NodeMDebut);
+
+            XmlNode NodeHFin = xmlDoc.CreateElement("Heure_Fin");
+            NodeHFin.InnerText = Fin.Heures.ToString();
+            NodeActivite.AppendChild(NodeHFin);
+
+            XmlNode NodeMFin = xmlDoc.CreateElement("Minute_Fin");
+            NodeMFin.InnerText = Fin.Minutes.ToString();
+            NodeActivite.AppendChild(NodeMFin);
 
             XmlNode NodeGps = xmlDoc.CreateElement("GPS");
             Lieu l = _gps;
@@ -131,14 +139,14 @@ namespace Logiciel
 
             NodeActivite.AppendChild(NodeGps);
 
-            XmlNode NodeListeAstr = xmlDoc.CreateElement("Liste Astronaute");
+            XmlNode NodeListeAstr = xmlDoc.CreateElement("Liste_Astronaute");
             foreach (Astronaute a in _listAstronaute)
             {
                 a.genereXml(xmlDoc, NodeListeAstr);
             }
             NodeActivite.AppendChild(NodeListeAstr);
 
-            XmlNode NodeTexteDescriptif = xmlDoc.CreateElement("Texte Descriptif");
+            XmlNode NodeTexteDescriptif = xmlDoc.CreateElement("Texte_Descriptif");
             NodeTexteDescriptif.InnerText = TexteDescriptif.ToString();
             NodeActivite.AppendChild(NodeTexteDescriptif);
 
@@ -154,7 +162,7 @@ namespace Logiciel
             string nom="";
             string compteRendu="";
             Heure debut=new Heure (0,0);
-            Heure fin = new Heure(0, 0);
+            Heure fin=new Heure (0,0);
             Lieu gps= new Lieu();
             List<Astronaute> listAstronaute = new List<Astronaute>();
             string texteDescriptif="";
@@ -163,11 +171,14 @@ namespace Logiciel
             {
                 nom = nodeActivite.SelectSingleNode("Nom").InnerText;
                 compteRendu = nodeActivite.SelectSingleNode("Compte_Rendu").InnerText;
-                debut = Heure.Parse(nodeActivite.SelectSingleNode("Debut").InnerText);
-                fin = Heure.Parse(nodeActivite.SelectSingleNode("Fin").InnerText);
+                debut.Heures = int.Parse(nodeActivite.SelectSingleNode("Heure_Debut").InnerText);
+                fin.Heures = int.Parse(nodeActivite.SelectSingleNode("Heure_Fin").InnerText);
+                debut.Minutes = int.Parse(nodeActivite.SelectSingleNode("Minute_Debut").InnerText);
+                fin.Minutes = int.Parse(nodeActivite.SelectSingleNode("Minute_Fin").InnerText);
+                
                 gps = Lieu.Parse(nodeActivite.SelectSingleNode("GPS").InnerText);
 
-                XmlNodeList nodelistAstronaute = nodeActivite.SelectNodes("List_Astronaute");
+                XmlNodeList nodelistAstronaute = nodeActivite.SelectNodes("Liste_Astronaute");
                 foreach (XmlNode nodeAstronaute in nodelistAstronaute)
                 {
                     Astronaute a = new Astronaute(0,"");

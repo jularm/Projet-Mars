@@ -46,13 +46,13 @@ namespace Logiciel
         // Generation Xml
         public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
         {
-            XmlNode NodeCategorieActivite = xmlDoc.CreateElement("Categorie Activité");
+            XmlNode NodeCategorieActivite = xmlDoc.CreateElement("Categorie_Activité");
 
             XmlNode NodeNom = xmlDoc.CreateElement("Nom");
             NodeNom.InnerText = Nom.ToString();
             NodeCategorieActivite.AppendChild(NodeNom);
 
-            XmlNode NodeListeAct = xmlDoc.CreateElement("Liste Activité");
+            XmlNode NodeListeAct = xmlDoc.CreateElement("Liste_Activité");
             foreach (Activite i in _listActivite)
             {
                 i.genereXml(xmlDoc, NodeListeAct);
@@ -67,7 +67,7 @@ namespace Logiciel
         // lecture xml et generation objets
         public void chargerXml(XmlDocument xmlDoc, Mission M)
         {
-            XmlNodeList nodelistCategorieActivite = xmlDoc.GetElementsByTagName("Categorie Activité");
+            XmlNodeList nodelistCategorieActivite = xmlDoc.GetElementsByTagName("Categorie_Activité");
 
             string nom = "";
             List<Activite> listActivite = new List<Activite>();

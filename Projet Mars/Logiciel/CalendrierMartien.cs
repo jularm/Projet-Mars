@@ -168,7 +168,7 @@ namespace Logiciel
         // Generation Xml
             public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
            {
-               XmlNode NodeCalendrier = xmlDoc.CreateElement("Calendrier Martien");
+               XmlNode NodeCalendrier = xmlDoc.CreateElement("Calendrier_Martien");
                
                XmlNode NodeDebut = xmlDoc.CreateElement("Début");
                NodeDebut.InnerText = Debut.ToString();
@@ -194,7 +194,7 @@ namespace Logiciel
                NodeSeconde.InnerText = Seconde.ToString();
                NodeCalendrier.AppendChild(NodeSeconde);
 
-               XmlNode NodeListeJour = xmlDoc.CreateElement("Liste Jour");  
+               XmlNode NodeListeJour = xmlDoc.CreateElement("Liste_Jour");  
                foreach (Jour j in _Jours)
                {
                    j.genereXml(xmlDoc, NodeListeJour);
@@ -222,7 +222,7 @@ namespace Logiciel
                     // le récupere les données du Calendrier
                     debut = DateTime.Parse(nodeCalendrier.SelectSingleNode("Debut").InnerText);
                     fin = DateTime.Parse(nodeCalendrier.SelectSingleNode("Fin").InnerText);
-                    jour = int.Parse(nodeCalendrier.SelectSingleNode("Day").InnerText);
+                    jour = int.Parse(nodeCalendrier.SelectSingleNode("Jour").InnerText);
                     heure = int.Parse(nodeCalendrier.SelectSingleNode("Heure").InnerText);
                     minute = int.Parse(nodeCalendrier.SelectSingleNode("Minute").InnerText);
                     seconde = int.Parse(nodeCalendrier.SelectSingleNode("Seconde").InnerText);
