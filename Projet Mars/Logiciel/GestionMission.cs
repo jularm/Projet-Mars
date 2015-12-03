@@ -171,7 +171,7 @@ namespace Logiciel
         /// <param name="compteRendu"></param>
         public void MiseAJourCompteRendu(string compteRendu)
         {
-            M.Calendar.Jours[int.Parse(JourCourantMission.Text)].CompteRendu = compteRendu;
+            M.Calendar.Jours[int.Parse( NumeroJour.Text)].CompteRendu = compteRendu;
         }
 
         /// <summary>
@@ -724,7 +724,7 @@ namespace Logiciel
             {
                 erreurs[2] = true;
 
-                for (int i = int.Parse(HDebut.Text) * 6 + int.Parse(MinDebut.Text) / 10; i < int.Parse(HFin.Text) * 6 + int.Parse(MinFin.Text) / 10 - 1; i++)
+                for (int i = int.Parse(HDebut.Text) * 6 + int.Parse(MinDebut.Text) / 10; i < int.Parse(HFin.Text) * 6 + int.Parse(MinFin.Text) / 10 ; i++)
                 {
                     if (!tab[i])// si tab[i] est false, alors au moins un des emplacements demandés n'est pas disponible
                     {
@@ -798,7 +798,7 @@ namespace Logiciel
 
         private void changerUnePlageHoraire(Activite act, bool[] tab, bool disponible) //à commenter
         {
-            for (int i = act.Debut.Heures * 6 + act.Debut.Minutes / 10; i < act.Fin.Heures * 6 + act.Fin.Minutes / 10 - 1; i++)
+            for (int i = act.Debut.Heures * 6 + act.Debut.Minutes / 10; i < act.Fin.Heures * 6 + act.Fin.Minutes / 10 ; i++)
             {
                 tab[i] = disponible;
             }
@@ -819,12 +819,7 @@ namespace Logiciel
         }
 
 
-        private void CompteRenduJour_Click(object sender, EventArgs e)
-        {
-            CompteRendu cr = new CompteRendu(M.Calendar.Jours[int.Parse(JourCourantMission.Text)].CompteRendu);
-            cr.CR += new CompteRendu.AjouterJourEventHandler(this.MiseAJourCompteRendu);
-            cr.ShowDialog();
-        }
+ 
 
 
         private void CreerActivite_EnabledChanged(object sender, EventArgs e)
@@ -860,9 +855,19 @@ namespace Logiciel
 
         private void CompteRendu_Click(object sender, EventArgs e)
         {
-            CompteRendu cr = new CompteRendu(M.Calendar.Jours[int.Parse(JourCourantMission.Text)].CompteRendu);
+            CompteRendu cr = new CompteRendu(M.Calendar.Jours[int.Parse(NumeroJour.Text)].CompteRendu);
             cr.CR += new CompteRendu.AjouterJourEventHandler(this.MiseAJourCompteRendu);
             cr.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+             //this.CreateGraphics().DrawLine(new Pen(Color.Black),new Point(e.X-20, e.X+20)
         }
 
 

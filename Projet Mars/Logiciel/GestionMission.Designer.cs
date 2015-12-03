@@ -30,73 +30,73 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionMission));
-            System.Windows.Forms.TreeNode treeNode71 = new System.Windows.Forms.TreeNode("Eating");
-            System.Windows.Forms.TreeNode treeNode72 = new System.Windows.Forms.TreeNode("Sleeping");
-            System.Windows.Forms.TreeNode treeNode73 = new System.Windows.Forms.TreeNode("Entertainment");
-            System.Windows.Forms.TreeNode treeNode74 = new System.Windows.Forms.TreeNode("Private");
-            System.Windows.Forms.TreeNode treeNode75 = new System.Windows.Forms.TreeNode("Health control");
-            System.Windows.Forms.TreeNode treeNode76 = new System.Windows.Forms.TreeNode("Medical act");
-            System.Windows.Forms.TreeNode treeNode77 = new System.Windows.Forms.TreeNode("Living", new System.Windows.Forms.TreeNode[] {
-            treeNode71,
-            treeNode72,
-            treeNode73,
-            treeNode74,
-            treeNode75,
-            treeNode76});
-            System.Windows.Forms.TreeNode treeNode78 = new System.Windows.Forms.TreeNode("Exploration Space suit");
-            System.Windows.Forms.TreeNode treeNode79 = new System.Windows.Forms.TreeNode("Exploration Vehicule");
-            System.Windows.Forms.TreeNode treeNode80 = new System.Windows.Forms.TreeNode("Briefing");
-            System.Windows.Forms.TreeNode treeNode81 = new System.Windows.Forms.TreeNode("Debriefing");
-            System.Windows.Forms.TreeNode treeNode82 = new System.Windows.Forms.TreeNode("Inside experiment");
-            System.Windows.Forms.TreeNode treeNode83 = new System.Windows.Forms.TreeNode("Outside experiment");
-            System.Windows.Forms.TreeNode treeNode84 = new System.Windows.Forms.TreeNode("Science", new System.Windows.Forms.TreeNode[] {
-            treeNode78,
-            treeNode79,
-            treeNode80,
-            treeNode81,
-            treeNode82,
-            treeNode83});
-            System.Windows.Forms.TreeNode treeNode85 = new System.Windows.Forms.TreeNode("Cleaning");
-            System.Windows.Forms.TreeNode treeNode86 = new System.Windows.Forms.TreeNode("LSS air system");
-            System.Windows.Forms.TreeNode treeNode87 = new System.Windows.Forms.TreeNode("LSS water system");
-            System.Windows.Forms.TreeNode treeNode88 = new System.Windows.Forms.TreeNode("LSS food system");
-            System.Windows.Forms.TreeNode treeNode89 = new System.Windows.Forms.TreeNode("Power systems");
-            System.Windows.Forms.TreeNode treeNode90 = new System.Windows.Forms.TreeNode("Space suit");
-            System.Windows.Forms.TreeNode treeNode91 = new System.Windows.Forms.TreeNode("Other");
-            System.Windows.Forms.TreeNode treeNode92 = new System.Windows.Forms.TreeNode("Maintenance", new System.Windows.Forms.TreeNode[] {
-            treeNode85,
-            treeNode86,
-            treeNode87,
-            treeNode88,
-            treeNode89,
-            treeNode90,
-            treeNode91});
-            System.Windows.Forms.TreeNode treeNode93 = new System.Windows.Forms.TreeNode("Sending message");
-            System.Windows.Forms.TreeNode treeNode94 = new System.Windows.Forms.TreeNode("Receiving message");
-            System.Windows.Forms.TreeNode treeNode95 = new System.Windows.Forms.TreeNode("Communication", new System.Windows.Forms.TreeNode[] {
-            treeNode93,
-            treeNode94});
-            System.Windows.Forms.TreeNode treeNode96 = new System.Windows.Forms.TreeNode("LSS");
-            System.Windows.Forms.TreeNode treeNode97 = new System.Windows.Forms.TreeNode("Power systems");
-            System.Windows.Forms.TreeNode treeNode98 = new System.Windows.Forms.TreeNode("Communication systems");
-            System.Windows.Forms.TreeNode treeNode99 = new System.Windows.Forms.TreeNode("Propulsion systems");
-            System.Windows.Forms.TreeNode treeNode100 = new System.Windows.Forms.TreeNode("Habitat");
-            System.Windows.Forms.TreeNode treeNode101 = new System.Windows.Forms.TreeNode("Space suit");
-            System.Windows.Forms.TreeNode treeNode102 = new System.Windows.Forms.TreeNode("Vehicule");
-            System.Windows.Forms.TreeNode treeNode103 = new System.Windows.Forms.TreeNode("Repair", new System.Windows.Forms.TreeNode[] {
-            treeNode96,
-            treeNode97,
-            treeNode98,
-            treeNode99,
-            treeNode100,
-            treeNode101,
-            treeNode102});
-            System.Windows.Forms.TreeNode treeNode104 = new System.Windows.Forms.TreeNode("Emergency");
-            System.Windows.Forms.TreeNode treeNode105 = new System.Windows.Forms.TreeNode("Emergency", new System.Windows.Forms.TreeNode[] {
-            treeNode104});
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Paul");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Pierre");
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Jack");
+            System.Windows.Forms.TreeNode treeNode141 = new System.Windows.Forms.TreeNode("Eating");
+            System.Windows.Forms.TreeNode treeNode142 = new System.Windows.Forms.TreeNode("Sleeping");
+            System.Windows.Forms.TreeNode treeNode143 = new System.Windows.Forms.TreeNode("Entertainment");
+            System.Windows.Forms.TreeNode treeNode144 = new System.Windows.Forms.TreeNode("Private");
+            System.Windows.Forms.TreeNode treeNode145 = new System.Windows.Forms.TreeNode("Health control");
+            System.Windows.Forms.TreeNode treeNode146 = new System.Windows.Forms.TreeNode("Medical act");
+            System.Windows.Forms.TreeNode treeNode147 = new System.Windows.Forms.TreeNode("Living", new System.Windows.Forms.TreeNode[] {
+            treeNode141,
+            treeNode142,
+            treeNode143,
+            treeNode144,
+            treeNode145,
+            treeNode146});
+            System.Windows.Forms.TreeNode treeNode148 = new System.Windows.Forms.TreeNode("Exploration Space suit");
+            System.Windows.Forms.TreeNode treeNode149 = new System.Windows.Forms.TreeNode("Exploration Vehicule");
+            System.Windows.Forms.TreeNode treeNode150 = new System.Windows.Forms.TreeNode("Briefing");
+            System.Windows.Forms.TreeNode treeNode151 = new System.Windows.Forms.TreeNode("Debriefing");
+            System.Windows.Forms.TreeNode treeNode152 = new System.Windows.Forms.TreeNode("Inside experiment");
+            System.Windows.Forms.TreeNode treeNode153 = new System.Windows.Forms.TreeNode("Outside experiment");
+            System.Windows.Forms.TreeNode treeNode154 = new System.Windows.Forms.TreeNode("Science", new System.Windows.Forms.TreeNode[] {
+            treeNode148,
+            treeNode149,
+            treeNode150,
+            treeNode151,
+            treeNode152,
+            treeNode153});
+            System.Windows.Forms.TreeNode treeNode155 = new System.Windows.Forms.TreeNode("Cleaning");
+            System.Windows.Forms.TreeNode treeNode156 = new System.Windows.Forms.TreeNode("LSS air system");
+            System.Windows.Forms.TreeNode treeNode157 = new System.Windows.Forms.TreeNode("LSS water system");
+            System.Windows.Forms.TreeNode treeNode158 = new System.Windows.Forms.TreeNode("LSS food system");
+            System.Windows.Forms.TreeNode treeNode159 = new System.Windows.Forms.TreeNode("Power systems");
+            System.Windows.Forms.TreeNode treeNode160 = new System.Windows.Forms.TreeNode("Space suit");
+            System.Windows.Forms.TreeNode treeNode161 = new System.Windows.Forms.TreeNode("Other");
+            System.Windows.Forms.TreeNode treeNode162 = new System.Windows.Forms.TreeNode("Maintenance", new System.Windows.Forms.TreeNode[] {
+            treeNode155,
+            treeNode156,
+            treeNode157,
+            treeNode158,
+            treeNode159,
+            treeNode160,
+            treeNode161});
+            System.Windows.Forms.TreeNode treeNode163 = new System.Windows.Forms.TreeNode("Sending message");
+            System.Windows.Forms.TreeNode treeNode164 = new System.Windows.Forms.TreeNode("Receiving message");
+            System.Windows.Forms.TreeNode treeNode165 = new System.Windows.Forms.TreeNode("Communication", new System.Windows.Forms.TreeNode[] {
+            treeNode163,
+            treeNode164});
+            System.Windows.Forms.TreeNode treeNode166 = new System.Windows.Forms.TreeNode("LSS");
+            System.Windows.Forms.TreeNode treeNode167 = new System.Windows.Forms.TreeNode("Power systems");
+            System.Windows.Forms.TreeNode treeNode168 = new System.Windows.Forms.TreeNode("Communication systems");
+            System.Windows.Forms.TreeNode treeNode169 = new System.Windows.Forms.TreeNode("Propulsion systems");
+            System.Windows.Forms.TreeNode treeNode170 = new System.Windows.Forms.TreeNode("Habitat");
+            System.Windows.Forms.TreeNode treeNode171 = new System.Windows.Forms.TreeNode("Space suit");
+            System.Windows.Forms.TreeNode treeNode172 = new System.Windows.Forms.TreeNode("Vehicule");
+            System.Windows.Forms.TreeNode treeNode173 = new System.Windows.Forms.TreeNode("Repair", new System.Windows.Forms.TreeNode[] {
+            treeNode166,
+            treeNode167,
+            treeNode168,
+            treeNode169,
+            treeNode170,
+            treeNode171,
+            treeNode172});
+            System.Windows.Forms.TreeNode treeNode174 = new System.Windows.Forms.TreeNode("Emergency");
+            System.Windows.Forms.TreeNode treeNode175 = new System.Windows.Forms.TreeNode("Emergency", new System.Windows.Forms.TreeNode[] {
+            treeNode174});
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("Paul");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("Pierre");
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Jack");
             this.heureMars = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -1176,7 +1176,7 @@
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // Niveau1
-            //             
+            // 
             this.Niveau1.Controls.Add(this.jour1);
             this.Niveau1.Controls.Add(this.jour2);
             this.Niveau1.Controls.Add(this.jour3);
@@ -1297,6 +1297,7 @@
             this.CompteRendu.Size = new System.Drawing.Size(158, 23);
             this.CompteRendu.TabIndex = 10;
             this.CompteRendu.Text = "Compte-rendu de la journée";
+            this.CompteRendu.Click += new System.EventHandler(this.CompteRendu_Click);
             // 
             // TrancheHoraire2
             // 
@@ -1476,7 +1477,7 @@
             this.Niveau3.Controls.Add(this.listeAstronautes);
             this.Niveau3.Controls.Add(this.pictureBox1);
             this.Niveau3.Controls.Add(this.AnnulerNiv3);
-            this.Niveau3.Location = new System.Drawing.Point(36, 47);
+            this.Niveau3.Location = new System.Drawing.Point(752, 47);
             this.Niveau3.Name = "Niveau3";
             this.Niveau3.Size = new System.Drawing.Size(710, 504);
             this.Niveau3.TabIndex = 9;
@@ -1537,7 +1538,7 @@
             // SupprimerNiv3
             // 
             this.SupprimerNiv3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SupprimerNiv3.Location = new System.Drawing.Point(582, 10);
+            this.SupprimerNiv3.Location = new System.Drawing.Point(45, 469);
             this.SupprimerNiv3.Margin = new System.Windows.Forms.Padding(0);
             this.SupprimerNiv3.Name = "SupprimerNiv3";
             this.SupprimerNiv3.Size = new System.Drawing.Size(119, 23);
@@ -1625,121 +1626,121 @@
             this.listeActivites.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listeActivites.Location = new System.Drawing.Point(9, 152);
             this.listeActivites.Name = "listeActivites";
-            treeNode71.Checked = true;
-            treeNode71.ForeColor = System.Drawing.Color.Sienna;
-            treeNode71.Name = "Eating";
-            treeNode71.Text = "Eating";
-            treeNode71.ToolTipText = "Manger c\'est cool";
-            treeNode72.ForeColor = System.Drawing.Color.Sienna;
-            treeNode72.Name = "Sleeping";
-            treeNode72.Text = "Sleeping";
-            treeNode73.ForeColor = System.Drawing.Color.Sienna;
-            treeNode73.Name = "Entertainment";
-            treeNode73.Text = "Entertainment";
-            treeNode74.ForeColor = System.Drawing.Color.Sienna;
-            treeNode74.Name = "Private";
-            treeNode74.Text = "Private";
-            treeNode75.ForeColor = System.Drawing.Color.Sienna;
-            treeNode75.Name = "Health control";
-            treeNode75.Text = "Health control";
-            treeNode76.ForeColor = System.Drawing.Color.Sienna;
-            treeNode76.Name = "Medical act";
-            treeNode76.Text = "Medical act";
-            treeNode77.Name = "";
-            treeNode77.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode77.Text = "Living";
-            treeNode78.ForeColor = System.Drawing.Color.Sienna;
-            treeNode78.Name = "Exploration Space suit";
-            treeNode78.Text = "Exploration Space suit";
-            treeNode79.ForeColor = System.Drawing.Color.Sienna;
-            treeNode79.Name = "Exploration Vehicule";
-            treeNode79.Text = "Exploration Vehicule";
-            treeNode80.ForeColor = System.Drawing.Color.Sienna;
-            treeNode80.Name = "Briefing";
-            treeNode80.Text = "Briefing";
-            treeNode81.ForeColor = System.Drawing.Color.Sienna;
-            treeNode81.Name = "Debriefing";
-            treeNode81.Text = "Debriefing";
-            treeNode82.ForeColor = System.Drawing.Color.Sienna;
-            treeNode82.Name = "Inside experiment";
-            treeNode82.Text = "Inside experiment";
-            treeNode83.ForeColor = System.Drawing.Color.Sienna;
-            treeNode83.Name = "Outside experiment";
-            treeNode83.Text = "Outside experiment";
-            treeNode84.Name = "Science";
-            treeNode84.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode84.Text = "Science";
-            treeNode85.ForeColor = System.Drawing.Color.Sienna;
-            treeNode85.Name = "Cleaning";
-            treeNode85.Text = "Cleaning";
-            treeNode86.ForeColor = System.Drawing.Color.Sienna;
-            treeNode86.Name = "LSS air system";
-            treeNode86.Text = "LSS air system";
-            treeNode87.ForeColor = System.Drawing.Color.Sienna;
-            treeNode87.Name = "LSS water system";
-            treeNode87.Text = "LSS water system";
-            treeNode88.ForeColor = System.Drawing.Color.Sienna;
-            treeNode88.Name = "LSS food system";
-            treeNode88.Text = "LSS food system";
-            treeNode89.ForeColor = System.Drawing.Color.Sienna;
-            treeNode89.Name = "Power systems";
-            treeNode89.Text = "Power systems";
-            treeNode90.ForeColor = System.Drawing.Color.Sienna;
-            treeNode90.Name = "Space suit";
-            treeNode90.Text = "Space suit";
-            treeNode91.ForeColor = System.Drawing.Color.Sienna;
-            treeNode91.Name = "Other";
-            treeNode91.Text = "Other";
-            treeNode92.Name = "Maintenance";
-            treeNode92.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode92.Text = "Maintenance";
-            treeNode93.ForeColor = System.Drawing.Color.Sienna;
-            treeNode93.Name = "Sending message";
-            treeNode93.Text = "Sending message";
-            treeNode94.ForeColor = System.Drawing.Color.Sienna;
-            treeNode94.Name = "Receiving message";
-            treeNode94.Text = "Receiving message";
-            treeNode95.Name = "Communication";
-            treeNode95.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode95.Text = "Communication";
-            treeNode96.ForeColor = System.Drawing.Color.Sienna;
-            treeNode96.Name = "LSS";
-            treeNode96.Text = "LSS";
-            treeNode97.ForeColor = System.Drawing.Color.Sienna;
-            treeNode97.Name = "Power systems";
-            treeNode97.Text = "Power systems";
-            treeNode98.ForeColor = System.Drawing.Color.Sienna;
-            treeNode98.Name = "Communication systems";
-            treeNode98.Text = "Communication systems";
-            treeNode99.ForeColor = System.Drawing.Color.Sienna;
-            treeNode99.Name = "Propulsion systems";
-            treeNode99.Text = "Propulsion systems";
-            treeNode100.ForeColor = System.Drawing.Color.Sienna;
-            treeNode100.Name = "Habitat";
-            treeNode100.Text = "Habitat";
-            treeNode101.ForeColor = System.Drawing.Color.Sienna;
-            treeNode101.Name = "Space suit";
-            treeNode101.Text = "Space suit";
-            treeNode102.ForeColor = System.Drawing.Color.Sienna;
-            treeNode102.Name = "Vehicule";
-            treeNode102.Text = "Vehicule";
-            treeNode103.Name = "Repair";
-            treeNode103.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode103.Text = "Repair";
-            treeNode104.ForeColor = System.Drawing.Color.Sienna;
-            treeNode104.Name = "Emergency";
-            treeNode104.Text = "Emergency";
-            treeNode105.Name = "Emergency";
-            treeNode105.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode105.Text = "Emergency";
+            treeNode141.Checked = true;
+            treeNode141.ForeColor = System.Drawing.Color.Sienna;
+            treeNode141.Name = "Eating";
+            treeNode141.Text = "Eating";
+            treeNode141.ToolTipText = "Manger c\'est cool";
+            treeNode142.ForeColor = System.Drawing.Color.Sienna;
+            treeNode142.Name = "Sleeping";
+            treeNode142.Text = "Sleeping";
+            treeNode143.ForeColor = System.Drawing.Color.Sienna;
+            treeNode143.Name = "Entertainment";
+            treeNode143.Text = "Entertainment";
+            treeNode144.ForeColor = System.Drawing.Color.Sienna;
+            treeNode144.Name = "Private";
+            treeNode144.Text = "Private";
+            treeNode145.ForeColor = System.Drawing.Color.Sienna;
+            treeNode145.Name = "Health control";
+            treeNode145.Text = "Health control";
+            treeNode146.ForeColor = System.Drawing.Color.Sienna;
+            treeNode146.Name = "Medical act";
+            treeNode146.Text = "Medical act";
+            treeNode147.Name = "";
+            treeNode147.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode147.Text = "Living";
+            treeNode148.ForeColor = System.Drawing.Color.Sienna;
+            treeNode148.Name = "Exploration Space suit";
+            treeNode148.Text = "Exploration Space suit";
+            treeNode149.ForeColor = System.Drawing.Color.Sienna;
+            treeNode149.Name = "Exploration Vehicule";
+            treeNode149.Text = "Exploration Vehicule";
+            treeNode150.ForeColor = System.Drawing.Color.Sienna;
+            treeNode150.Name = "Briefing";
+            treeNode150.Text = "Briefing";
+            treeNode151.ForeColor = System.Drawing.Color.Sienna;
+            treeNode151.Name = "Debriefing";
+            treeNode151.Text = "Debriefing";
+            treeNode152.ForeColor = System.Drawing.Color.Sienna;
+            treeNode152.Name = "Inside experiment";
+            treeNode152.Text = "Inside experiment";
+            treeNode153.ForeColor = System.Drawing.Color.Sienna;
+            treeNode153.Name = "Outside experiment";
+            treeNode153.Text = "Outside experiment";
+            treeNode154.Name = "Science";
+            treeNode154.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode154.Text = "Science";
+            treeNode155.ForeColor = System.Drawing.Color.Sienna;
+            treeNode155.Name = "Cleaning";
+            treeNode155.Text = "Cleaning";
+            treeNode156.ForeColor = System.Drawing.Color.Sienna;
+            treeNode156.Name = "LSS air system";
+            treeNode156.Text = "LSS air system";
+            treeNode157.ForeColor = System.Drawing.Color.Sienna;
+            treeNode157.Name = "LSS water system";
+            treeNode157.Text = "LSS water system";
+            treeNode158.ForeColor = System.Drawing.Color.Sienna;
+            treeNode158.Name = "LSS food system";
+            treeNode158.Text = "LSS food system";
+            treeNode159.ForeColor = System.Drawing.Color.Sienna;
+            treeNode159.Name = "Power systems";
+            treeNode159.Text = "Power systems";
+            treeNode160.ForeColor = System.Drawing.Color.Sienna;
+            treeNode160.Name = "Space suit";
+            treeNode160.Text = "Space suit";
+            treeNode161.ForeColor = System.Drawing.Color.Sienna;
+            treeNode161.Name = "Other";
+            treeNode161.Text = "Other";
+            treeNode162.Name = "Maintenance";
+            treeNode162.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode162.Text = "Maintenance";
+            treeNode163.ForeColor = System.Drawing.Color.Sienna;
+            treeNode163.Name = "Sending message";
+            treeNode163.Text = "Sending message";
+            treeNode164.ForeColor = System.Drawing.Color.Sienna;
+            treeNode164.Name = "Receiving message";
+            treeNode164.Text = "Receiving message";
+            treeNode165.Name = "Communication";
+            treeNode165.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode165.Text = "Communication";
+            treeNode166.ForeColor = System.Drawing.Color.Sienna;
+            treeNode166.Name = "LSS";
+            treeNode166.Text = "LSS";
+            treeNode167.ForeColor = System.Drawing.Color.Sienna;
+            treeNode167.Name = "Power systems";
+            treeNode167.Text = "Power systems";
+            treeNode168.ForeColor = System.Drawing.Color.Sienna;
+            treeNode168.Name = "Communication systems";
+            treeNode168.Text = "Communication systems";
+            treeNode169.ForeColor = System.Drawing.Color.Sienna;
+            treeNode169.Name = "Propulsion systems";
+            treeNode169.Text = "Propulsion systems";
+            treeNode170.ForeColor = System.Drawing.Color.Sienna;
+            treeNode170.Name = "Habitat";
+            treeNode170.Text = "Habitat";
+            treeNode171.ForeColor = System.Drawing.Color.Sienna;
+            treeNode171.Name = "Space suit";
+            treeNode171.Text = "Space suit";
+            treeNode172.ForeColor = System.Drawing.Color.Sienna;
+            treeNode172.Name = "Vehicule";
+            treeNode172.Text = "Vehicule";
+            treeNode173.Name = "Repair";
+            treeNode173.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode173.Text = "Repair";
+            treeNode174.ForeColor = System.Drawing.Color.Sienna;
+            treeNode174.Name = "Emergency";
+            treeNode174.Text = "Emergency";
+            treeNode175.Name = "Emergency";
+            treeNode175.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode175.Text = "Emergency";
             this.listeActivites.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode77,
-            treeNode84,
-            treeNode92,
-            treeNode95,
-            treeNode103,
-            treeNode105});
-            this.listeActivites.Size = new System.Drawing.Size(189, 342);
+            treeNode147,
+            treeNode154,
+            treeNode162,
+            treeNode165,
+            treeNode173,
+            treeNode175});
+            this.listeActivites.Size = new System.Drawing.Size(189, 303);
             this.listeActivites.TabIndex = 20;
             this.listeActivites.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.listeActivites_AfterSelect);
             // 
@@ -1931,7 +1932,7 @@
             // 
             this.ConfirmerNiv3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ConfirmerNiv3.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.ConfirmerNiv3.Location = new System.Drawing.Point(310, 458);
+            this.ConfirmerNiv3.Location = new System.Drawing.Point(310, 469);
             this.ConfirmerNiv3.Name = "ConfirmerNiv3";
             this.ConfirmerNiv3.Size = new System.Drawing.Size(76, 23);
             this.ConfirmerNiv3.TabIndex = 4;
@@ -1942,13 +1943,13 @@
             // listeAstronautes
             // 
             this.listeAstronautes.CheckBoxes = true;
-            listViewItem7.StateImageIndex = 0;
-            listViewItem8.StateImageIndex = 0;
-            listViewItem9.StateImageIndex = 0;
+            listViewItem13.StateImageIndex = 0;
+            listViewItem14.StateImageIndex = 0;
+            listViewItem15.StateImageIndex = 0;
             this.listeAstronautes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9});
+            listViewItem13,
+            listViewItem14,
+            listViewItem15});
             this.listeAstronautes.Location = new System.Drawing.Point(229, 151);
             this.listeAstronautes.Name = "listeAstronautes";
             this.listeAstronautes.Size = new System.Drawing.Size(309, 98);
@@ -1966,11 +1967,13 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // AnnulerNiv3
             // 
             this.AnnulerNiv3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AnnulerNiv3.Location = new System.Drawing.Point(392, 458);
+            this.AnnulerNiv3.Location = new System.Drawing.Point(392, 469);
             this.AnnulerNiv3.Name = "AnnulerNiv3";
             this.AnnulerNiv3.Size = new System.Drawing.Size(76, 23);
             this.AnnulerNiv3.TabIndex = 0;
@@ -2012,7 +2015,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 562);
+            this.ClientSize = new System.Drawing.Size(1465, 579);
             this.Controls.Add(this.Niveau3);
             this.Controls.Add(this.DateT);
             this.Controls.Add(this.titreJour);

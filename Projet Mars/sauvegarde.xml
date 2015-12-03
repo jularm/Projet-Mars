@@ -723,12 +723,21 @@
   </Liste_Catégorie_Activité>
   <Calendrier_Mission>
     <Calendrier_Martien>
+<<<<<<< HEAD
       <Début>03/12/2015 17:05:08</Début>
       <Fin>30/04/2017 14:25:08</Fin>
       <Jour>1</Jour>
       <Heure>0</Heure>
       <Minute>0</Minute>
       <Seconde>1</Seconde>
+=======
+      <Début>03/12/2015 17:02:31</Début>
+      <Fin>30/04/2017 14:22:31</Fin>
+      <Jour>1</Jour>
+      <Heure>0</Heure>
+      <Minute>0</Minute>
+      <Seconde>43</Seconde>
+>>>>>>> origin/master
       <Liste_Jour>
         <Jour>
           <Compte_Rendu>test</Compte_Rendu>
@@ -3630,8 +3639,7 @@
               <Liste_Astronaute>
                 <Astronaute>
                   <Id>0</Id>
-                  <Nom>
-                  </Nom>
+                  <Nom>Paul</Nom>
                 </Astronaute>
               </Liste_Astronaute>
               <Texte_Descriptif>
