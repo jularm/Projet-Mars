@@ -74,11 +74,11 @@ namespace Logiciel
             XmlNode NodeLieu = xmlDoc.CreateElement("Lieu");
 
             XmlNode NodeNom = xmlDoc.CreateElement("Nom");
-            NodeNom.InnerText = NodeNom.ToString();
+            NodeNom.InnerText = Nom.ToString();
             NodeLieu.AppendChild(NodeNom);
 
             XmlNode NodeCoords = xmlDoc.CreateElement("Coordonnees");
-            NodeCoords.InnerText = NodeCoords.ToString();
+            NodeCoords.InnerText = Coords.ToString();
             NodeLieu.AppendChild(NodeCoords);
 
             rootNode.AppendChild(NodeLieu);

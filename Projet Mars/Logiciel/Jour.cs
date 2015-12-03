@@ -34,6 +34,7 @@ namespace Logiciel
             _listeActivites.Add(new Activite("Eating", new Heure(19,0), new Heure(21,0), "Manger c'est important", li));
             _listeActivites.Add(new Activite("Private", new Heure(21,0), new Heure(23,0), "", li));
             _listeActivites.Add(new Activite("Sleeping", new Heure(23,0), new Heure(24,40), "Dormir c'est important", li));
+            _compteRendu = "";
         }
 
         public Jour(string compteRendu, int numero, bool sortie, bool[] tabHoraires)
@@ -92,19 +93,19 @@ namespace Logiciel
             XmlNode NodeJour = xmlDoc.CreateElement("Jour");            
 
             XmlNode NodeCompteRendu = xmlDoc.CreateElement("CompteRendu");
-            NodeCompteRendu.InnerText = NodeCompteRendu.ToString();
+            NodeCompteRendu.InnerText = CompteRendu.ToString();
             NodeJour.AppendChild(NodeCompteRendu);
 
             XmlNode NodeNumero = xmlDoc.CreateElement("Numero");
-            NodeNumero.InnerText = NodeNumero.ToString();
+            NodeNumero.InnerText = Numero.ToString();
             NodeJour.AppendChild(NodeNumero);
 
             XmlNode NodeSortie = xmlDoc.CreateElement("Sortie");
-            NodeSortie.InnerText = NodeSortie.ToString();
+            NodeSortie.InnerText = Sortie.ToString();
             NodeJour.AppendChild(NodeSortie);
 
             XmlNode NodeListeTabHoraire = xmlDoc.CreateElement("TabHoraire");
-            foreach (bool i in _tabHoraires)
+            foreach (bool i in TabHoraires)
             {
                 XmlNode NodeLibre = xmlDoc.CreateElement("Libre");
                 NodeLibre.InnerText = i.ToString();

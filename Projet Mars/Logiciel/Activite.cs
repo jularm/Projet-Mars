@@ -91,19 +91,19 @@ namespace Logiciel
             XmlNode NodeActivite = xmlDoc.CreateElement("Activite");
 
             XmlNode NodeNom = xmlDoc.CreateElement("Nom");
-            NodeNom.InnerText = NodeNom.ToString();
+            NodeNom.InnerText = Nom.ToString();
             NodeActivite.AppendChild(NodeNom);
 
             XmlNode NodeCompteRendu = xmlDoc.CreateElement("Compte_Rendu");
-            NodeCompteRendu.InnerText = NodeCompteRendu.ToString();
+            NodeCompteRendu.InnerText = CompteRendu.ToString();
             NodeActivite.AppendChild(NodeCompteRendu);
 
             XmlNode NodeDebut = xmlDoc.CreateElement("Debut");
-            NodeDebut.InnerText = NodeDebut.ToString();
+            NodeDebut.InnerText = Debut.ToString();
             NodeActivite.AppendChild(NodeDebut);
 
             XmlNode NodeFin = xmlDoc.CreateElement("Fin");
-            NodeFin.InnerText = NodeFin.ToString();
+            NodeFin.InnerText = Fin.ToString();
             NodeActivite.AppendChild(NodeFin);
 
             XmlNode NodeGps = xmlDoc.CreateElement("GPS");
@@ -118,7 +118,7 @@ namespace Logiciel
             }
 
             XmlNode NodeTexteDescriptif = xmlDoc.CreateElement("Fin");
-            NodeTexteDescriptif.InnerText = NodeTexteDescriptif.ToString();
+            NodeTexteDescriptif.InnerText = TexteDescriptif.ToString();
             NodeActivite.AppendChild(NodeTexteDescriptif);
 
             rootNode.AppendChild(NodeActivite);

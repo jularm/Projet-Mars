@@ -44,12 +44,12 @@ namespace Logiciel
             }
             catch
             {
-                MessageBox.Show("T'es baisé !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
+                MessageBox.Show("Initialisation Mission", "Aucune Mission Existante", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
                 M.AddAstronaute(a1);
                 M.AddCategorie(b1);
                 M.Calendar = c;
             }
-            c.MiseAJour();      //Pour remettre les pendules à l'heure
+            // c.MiseAJour();      //Pour remettre les pendules à l'heure
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9;
@@ -263,7 +263,7 @@ namespace Logiciel
                 {
                     Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i - 1);
                     bool check = false;
-                    for (int j = 0; j < c.Jours[(50 * trackBar1.Value) + i - 1].ListeActivites.Count; j++)
+                   /* for (int j = 0; j < c.Jours[(50 * trackBar1.Value) + i - 1].ListeActivites.Count; j++)
                     {
 
                         string nomActivite = c.Jours[(50 * trackBar1.Value) + i - 1].ListeActivites[j].Nom;
@@ -271,7 +271,7 @@ namespace Logiciel
                         {
                             check = true;
                         }
-                    }
+                    }*/
                     if (check)
                     {
                         Niveau1.Controls[i + 1].BackgroundImage = sortie;

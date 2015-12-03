@@ -171,27 +171,27 @@ namespace Logiciel
                XmlNode NodeCalendrier = xmlDoc.CreateElement("Calendrier_Martien");
                
                XmlNode NodeDebut = xmlDoc.CreateElement("Debut");
-               NodeDebut.InnerText = NodeDebut.ToString();
+               NodeDebut.InnerText = Debut.ToString();
                NodeCalendrier.AppendChild(NodeDebut);
 
                XmlNode NodeFin = xmlDoc.CreateElement("Fin");
-               NodeFin.InnerText = NodeFin.ToString();
+               NodeFin.InnerText = Fin.ToString();
                NodeCalendrier.AppendChild(NodeFin);
 
                XmlNode NodeJour = xmlDoc.CreateElement("Jour");
-               NodeJour.InnerText = NodeJour.ToString();
+               NodeJour.InnerText = Day.ToString();
                NodeCalendrier.AppendChild(NodeJour);
 
                XmlNode NodeHeure = xmlDoc.CreateElement("Heure");
-               NodeHeure.InnerText = NodeHeure.ToString();
+               NodeHeure.InnerText = Heure.ToString();
                NodeCalendrier.AppendChild(NodeHeure);
 
                XmlNode NodeMinute = xmlDoc.CreateElement("Minute");
-               NodeMinute.InnerText = NodeMinute.ToString();
+               NodeMinute.InnerText = Minute.ToString();
                NodeCalendrier.AppendChild(NodeMinute);
 
                XmlNode NodeSeconde = xmlDoc.CreateElement("Seconde");
-               NodeSeconde.InnerText = NodeSeconde.ToString();
+               NodeSeconde.InnerText = Seconde.ToString();
                NodeCalendrier.AppendChild(NodeSeconde);
 
                XmlNode NodeListeJour = xmlDoc.CreateElement("ListeJour");  

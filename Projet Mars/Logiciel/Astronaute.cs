@@ -37,11 +37,11 @@ namespace Logiciel
             XmlNode NodeAstronaute = xmlDoc.CreateElement("Astronaute");
 
             XmlNode NodeId = xmlDoc.CreateElement("Id");
-            NodeId.InnerText = NodeId.ToString();
+            NodeId.InnerText = Id.ToString();
             NodeAstronaute.AppendChild(NodeId);
 
-            XmlNode NodeNom = xmlDoc.CreateElement("nbrCouverts");
-            NodeNom.InnerText = NodeNom.ToString();
+            XmlNode NodeNom = xmlDoc.CreateElement("Nom");
+            NodeNom.InnerText = Nom.ToString();
             NodeAstronaute.AppendChild(NodeNom);
 
 
@@ -58,9 +58,9 @@ namespace Logiciel
             int id = 0;
 
             foreach (XmlNode nodeAstronaute in nodelistAstronaute) 
-            {                
-                nom = nodeAstronaute.SelectSingleNode("Nom").InnerText;
+            {
                 id = int.Parse(nodeAstronaute.SelectSingleNode("Id").InnerText);
+                nom = nodeAstronaute.SelectSingleNode("Nom").InnerText;               
             }
 
             Astronaute a = new Astronaute(id, nom);

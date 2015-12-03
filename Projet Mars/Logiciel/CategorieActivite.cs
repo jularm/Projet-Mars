@@ -48,7 +48,7 @@ namespace Logiciel
             XmlNode NodeCategorieActivite = xmlDoc.CreateElement("Categorie_Activite");
 
             XmlNode NodeNom = xmlDoc.CreateElement("Nom");
-            NodeNom.InnerText = NodeNom.ToString();
+            NodeNom.InnerText = Nom.ToString();
             NodeCategorieActivite.AppendChild(NodeNom);
 
             foreach (Activite i in _listActivite)
@@ -71,7 +71,7 @@ namespace Logiciel
             foreach (XmlNode nodeCategorieActivite in nodelistCategorieActivite)
             {
                 nom = nodeCategorieActivite.SelectSingleNode("Nom").InnerText;
-                XmlNodeList nodelistActivite = nodeCategorieActivite.SelectNodes("Astronaute");
+                XmlNodeList nodelistActivite = nodeCategorieActivite.SelectNodes("Activite");
                 foreach (XmlNode nodeActivite in nodelistActivite)
                 {
                     Activite a = new Activite("");
