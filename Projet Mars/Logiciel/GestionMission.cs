@@ -96,7 +96,7 @@ namespace Logiciel
                 Activite EncMess = new Activite("Envoyer Message");
                 Communication_act.Add(RecMess);
                 Communication_act.Add(EncMess);
-                CategorieActivite Communication = new CategorieActivite("Maintenance", Communication_act);
+                CategorieActivite Communication = new CategorieActivite("Communication", Communication_act);
 
                 List<Activite> Reparation_act = new List<Activite>();
                 Activite LSS = new Activite("Système de survie");
@@ -111,7 +111,7 @@ namespace Logiciel
                 Reparation_act.Add(habitation);
                 Reparation_act.Add(comb);
                 Reparation_act.Add(vehicule);
-                CategorieActivite Reparation = new CategorieActivite("Maintenance", Reparation_act);
+                CategorieActivite Reparation = new CategorieActivite("Reparation", Reparation_act);
 
                 CategorieActivite Urgence = new CategorieActivite("Urgence");
 

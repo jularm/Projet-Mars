@@ -51,20 +51,29 @@ namespace Logiciel
             _listCategorieActivite.Remove(a);
         }
 
+        public List<Astronaute> ListAstr
+        {
+            get { return _listAstronautes; }
+        }
+
+        public List<CategorieActivite> Listcat
+        {
+            get { return _listCategorieActivite; }
+        }
 
         // Generation Xml
         public void genereXml(XmlDocument xmlDoc)
         {
             XmlNode NodeMission = xmlDoc.CreateElement("Mission");            
 
-            XmlNode NodeListeAstronautre = xmlDoc.CreateElement("List_Astronaute");
+            XmlNode NodeListeAstronautre = xmlDoc.CreateElement("Liste Astronaute");
             foreach (Astronaute a in _listAstronautes)
             {
                 a.genereXml(xmlDoc, NodeListeAstronautre);
             }
             NodeMission.AppendChild(NodeListeAstronautre);
 
-            XmlNode NodelistCategorieActivite = xmlDoc.CreateElement("List_Categorie_Activite");
+            XmlNode NodelistCategorieActivite = xmlDoc.CreateElement("Liste Categorie Activité");
             foreach (CategorieActivite a in _listCategorieActivite)
             {
                 a.genereXml(xmlDoc, NodelistCategorieActivite);
@@ -72,7 +81,7 @@ namespace Logiciel
             NodeMission.AppendChild(NodelistCategorieActivite);
 
 
-            XmlNode NodeListeCalendar = xmlDoc.CreateElement("Calendrier_Mission");
+            XmlNode NodeListeCalendar = xmlDoc.CreateElement("Calendrier Mission");
             _calendar.genereXml(xmlDoc, NodeListeCalendar);
             NodeMission.AppendChild(NodeListeCalendar);
 
@@ -90,7 +99,7 @@ namespace Logiciel
 
             foreach (XmlNode nodeMission in nodelistMission)
             {
-                XmlNodeList nodelistAstronautes = nodeMission.SelectNodes("List_Astronaute");
+                XmlNodeList nodelistAstronautes = nodeMission.SelectNodes("Liste Astronaute");
                 foreach (XmlNode nodeAstronautes in nodelistAstronautes)
                 {
                     Astronaute a = new Astronaute(0, "");
@@ -99,7 +108,7 @@ namespace Logiciel
 
                 }
 
-                XmlNodeList nodelistCategorieActivite = nodeMission.SelectNodes("List_Categorie_Activite");
+                XmlNodeList nodelistCategorieActivite = nodeMission.SelectNodes("Liste Catégorie Activité");
                 foreach (XmlNode nodeCategorieActivite in nodelistCategorieActivite)
                 {
                     CategorieActivite cat = new CategorieActivite("");
@@ -108,7 +117,7 @@ namespace Logiciel
                 }
 
                
-                XmlNodeList nodelistCalendrierMartien = nodeMission.SelectNodes("Calendrier_Mission");
+                XmlNodeList nodelistCalendrierMartien = nodeMission.SelectNodes("Calendrier Mission");
                 foreach (XmlNode nodeCalendrierMartien in nodelistCalendrierMartien)
                 {
                     CalendrierMartien c = new CalendrierMartien();

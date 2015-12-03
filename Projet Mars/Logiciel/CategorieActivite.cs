@@ -18,7 +18,7 @@ namespace Logiciel
         public CategorieActivite(string nom)
         {
             _nom = nom;
-            _listActivite = null;
+            _listActivite.Add(new Activite (nom));
         }
 
         public string Nom
@@ -46,16 +46,19 @@ namespace Logiciel
         // Generation Xml
         public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
         {
-            XmlNode NodeCategorieActivite = xmlDoc.CreateElement("Categorie_Activite");
+            XmlNode NodeCategorieActivite = xmlDoc.CreateElement("Categorie Activité");
 
             XmlNode NodeNom = xmlDoc.CreateElement("Nom");
             NodeNom.InnerText = Nom.ToString();
             NodeCategorieActivite.AppendChild(NodeNom);
 
+            XmlNode NodeListeAct = xmlDoc.CreateElement("Liste Activité");
             foreach (Activite i in _listActivite)
             {
-                i.genereXml(xmlDoc, rootNode);
+                i.genereXml(xmlDoc, NodeListeAct);
             }
+            NodeCategorieActivite.AppendChild(NodeListeAct);
+
 
             rootNode.AppendChild(NodeCategorieActivite);
 
@@ -64,7 +67,7 @@ namespace Logiciel
         // lecture xml et generation objets
         public void chargerXml(XmlDocument xmlDoc, Mission M)
         {
-            XmlNodeList nodelistCategorieActivite = xmlDoc.GetElementsByTagName("Categorie_Activite");
+            XmlNodeList nodelistCategorieActivite = xmlDoc.GetElementsByTagName("Categorie Activité");
 
             string nom = "";
             List<Activite> listActivite = new List<Activite>();
@@ -72,7 +75,7 @@ namespace Logiciel
             foreach (XmlNode nodeCategorieActivite in nodelistCategorieActivite)
             {
                 nom = nodeCategorieActivite.SelectSingleNode("Nom").InnerText;
-                XmlNodeList nodelistActivite = nodeCategorieActivite.SelectNodes("Activite");
+                XmlNodeList nodelistActivite = nodeCategorieActivite.SelectNodes("Activité");
                 foreach (XmlNode nodeActivite in nodelistActivite)
                 {
                     Activite a = new Activite("");

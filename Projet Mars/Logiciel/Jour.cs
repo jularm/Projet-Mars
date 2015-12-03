@@ -14,43 +14,43 @@ namespace Logiciel
         private string _compteRendu;
         private int _numero;
         private bool _sortie;
-        private bool[] _tabHoraires= new bool[147]; // (avant 149) ca change pas et on compte 148 cran donc de 0 à 147
-        private List<Activite> _listeActivites;
+        private bool[] _tabHoraires = new bool[148]; // (avant 149) ca change pas et on compte 148 cran donc de 0 à 147
+        private List<Activite> _listeActivites = new List<Activite>();
 
 
         public Jour(int numero)
         {
             _numero = numero;           
-            //Journée type par défaut :
-            List<Astronaute>li =new List<Astronaute>();
-            li.Add(new Astronaute(1, "Paul"));
-            li.Add(new Astronaute(2, "Pierre"));
-            _listeActivites=new List<Activite>();
-            _listeActivites.Add(new Activite("Sleeping", new Heure (0,0),new Heure(7,0),"Dormir c'est important",li));
-            _listeActivites.Add(new Activite("Eating", new Heure(7, 0), new Heure(8, 0), "Manger c'est important", li));
-            _listeActivites.Add(new Activite("Private", new Heure(8,0), new Heure(12,0), "", li));
-            _listeActivites.Add(new Activite("Eating", new Heure(12,0), new Heure(14,0), "Manger c'est important", li));
-            _listeActivites.Add(new Activite("Private", new Heure(14,0), new Heure(19,0), "", li));
-            _listeActivites.Add(new Activite("Eating", new Heure(19,0), new Heure(21,0), "Manger c'est important", li));
-            _listeActivites.Add(new Activite("Private", new Heure(21,0), new Heure(23,0), "", li));
-            _listeActivites.Add(new Activite("Sleeping", new Heure(23,0), new Heure(24,40), "Dormir c'est important", li));
+            //Journée type par défaut : 
+            _listeActivites.Add(new Activite("Sleeping", new Heure (0,0),new Heure(7,0),"Dormir c'est important"));
+            _listeActivites.Add(new Activite("Eating", new Heure(7, 0), new Heure(8, 0), "Manger c'est important"));
+            _listeActivites.Add(new Activite("Private", new Heure(8,0), new Heure(12,0), ""));
+            _listeActivites.Add(new Activite("Eating", new Heure(12,0), new Heure(14,0), "Manger c'est important"));
+            _listeActivites.Add(new Activite("Private", new Heure(14,0), new Heure(19,0), ""));
+            _listeActivites.Add(new Activite("Eating", new Heure(19,0), new Heure(21,0), "Manger c'est important"));
+            _listeActivites.Add(new Activite("Private", new Heure(21,0), new Heure(23,0), ""));
+            _listeActivites.Add(new Activite("Sleeping", new Heure(23,0), new Heure(24,40), "Dormir c'est important"));
             _compteRendu = "";
+            _sortie = false;
+            for (int i = 0; i < 147; i++)
+            {
+                _tabHoraires[i] = false;
+            }
         }
 
-        public Jour(string compteRendu, int numero, bool sortie, bool[] tabHoraires)
+        public Jour(string compteRendu, int numero, bool[] tabHoraires)
         {
             _numero = numero;
-            _compteRendu = compteRendu;
-            _sortie = sortie;
+            _compteRendu = compteRendu;            
             _tabHoraires = tabHoraires;
-            // journée type :
-            List<Astronaute> li = new List<Astronaute>();
-            li.Add(new Astronaute(1, "Paul"));
-            li.Add(new Astronaute(2, "Pierre"));
-            _listeActivites = new List<Activite>();
-            _listeActivites.Add(new Activite("Sleeping", new Heure(0, 0), new Heure(7, 0), "Dormir c'est important", li));
-            _listeActivites.Add(new Activite("Eating", new Heure(10, 30), new Heure(13, 40), "Manger c'est important", li));
-
+            // journée type : 
+            _listeActivites.Add(new Activite("Sleeping", new Heure(0, 0), new Heure(7, 0), "Dormir c'est important"));
+            _listeActivites.Add(new Activite("Eating", new Heure(10, 30), new Heure(13, 40), "Manger c'est important"));
+            _sortie = false;
+            for (int i = 0; i < 147; i++)
+            {
+                _tabHoraires[i] = false;
+            }
         }
 
         public string CompteRendu
@@ -92,7 +92,7 @@ namespace Logiciel
         {
             XmlNode NodeJour = xmlDoc.CreateElement("Jour");            
 
-            XmlNode NodeCompteRendu = xmlDoc.CreateElement("CompteRendu");
+            XmlNode NodeCompteRendu = xmlDoc.CreateElement("Compte Rendu");
             NodeCompteRendu.InnerText = CompteRendu.ToString();
             NodeJour.AppendChild(NodeCompteRendu);
 
@@ -104,11 +104,12 @@ namespace Logiciel
             NodeSortie.InnerText = Sortie.ToString();
             NodeJour.AppendChild(NodeSortie);
 
-            XmlNode NodeListeTabHoraire = xmlDoc.CreateElement("list_Activite");
+            XmlNode NodeListeActivite = xmlDoc.CreateElement("Liste Activité");
             foreach (Activite a in ListeActivites)
             {
-                a.genereXml(xmlDoc, rootNode);
-            }        
+                a.genereXml(xmlDoc, NodeListeActivite);
+            }
+            NodeJour.AppendChild(NodeListeActivite);
 
             rootNode.AppendChild(NodeJour);
 
@@ -145,7 +146,7 @@ namespace Logiciel
                 }
             }
 
-            Jour j = new Jour(compteRendu, numero, sortie, tabHoraires);
+            Jour j = new Jour(compteRendu, numero, tabHoraires);
             
         }
     }

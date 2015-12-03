@@ -168,9 +168,9 @@ namespace Logiciel
         // Generation Xml
             public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
            {
-               XmlNode NodeCalendrier = xmlDoc.CreateElement("Calendrier_Martien");
+               XmlNode NodeCalendrier = xmlDoc.CreateElement("Calendrier Martien");
                
-               XmlNode NodeDebut = xmlDoc.CreateElement("Debut");
+               XmlNode NodeDebut = xmlDoc.CreateElement("Début");
                NodeDebut.InnerText = Debut.ToString();
                NodeCalendrier.AppendChild(NodeDebut);
 
@@ -194,7 +194,7 @@ namespace Logiciel
                NodeSeconde.InnerText = Seconde.ToString();
                NodeCalendrier.AppendChild(NodeSeconde);
 
-               XmlNode NodeListeJour = xmlDoc.CreateElement("ListeJour");  
+               XmlNode NodeListeJour = xmlDoc.CreateElement("Liste Jour");  
                foreach (Jour j in _Jours)
                {
                    j.genereXml(xmlDoc, NodeListeJour);

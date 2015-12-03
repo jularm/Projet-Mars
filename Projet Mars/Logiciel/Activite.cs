@@ -26,20 +26,29 @@ namespace Logiciel
 
         {
             _nom = nom;
+            _debut = new Heure (0,0);
+            _fin = new Heure(0, 0);
+            _texteDescriptif = "";
+            _gps = new Lieu();
+            _texteDescriptif = "";
+            _listAstronaute.Add (new Astronaute(0,""));
+            _compteRendu = "";
         }
 
-        public Activite(string nom, Heure debut, Heure fin, string texteDescriptif, List<Astronaute> listAst)
+        public Activite(string nom, Heure debut, Heure fin, string texteDescriptif)
             : this(nom)
         {
             _debut = debut;
             _fin = fin;
-            _texteDescriptif = texteDescriptif;
-            _listAstronaute = listAst;
+            _texteDescriptif = texteDescriptif;            
             _gps = new Lieu();
+            _texteDescriptif = "";            
+            _compteRendu = "";
         }
         public Activite(string nom, Heure debut, Heure fin, string texteDescriptif, List<Astronaute> listAst, Lieu lieu)
-            : this(nom, debut, fin, texteDescriptif, listAst)
+            : this(nom, debut, fin, texteDescriptif)
         {
+            _listAstronaute = listAst;
             _gps = lieu;
         }
 
@@ -47,6 +56,16 @@ namespace Logiciel
         {
             get { return _listAstronaute; }
             set { _listAstronaute = value; }
+        }
+
+        public void AddAstronaute(Astronaute a)
+        {
+            _listAstronaute.Add(a);
+        }
+
+        public void RemoveAstronaute(Astronaute a)
+        {
+            _listAstronaute.Remove(a);
         }
 
         public string CompteRendu
@@ -88,13 +107,13 @@ namespace Logiciel
         // Generation Xml
         public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
         {
-            XmlNode NodeActivite = xmlDoc.CreateElement("Activite");
+            XmlNode NodeActivite = xmlDoc.CreateElement("Activité");
 
             XmlNode NodeNom = xmlDoc.CreateElement("Nom");
             NodeNom.InnerText = Nom.ToString();
             NodeActivite.AppendChild(NodeNom);
 
-            XmlNode NodeCompteRendu = xmlDoc.CreateElement("Compte_Rendu");
+            XmlNode NodeCompteRendu = xmlDoc.CreateElement("Compte Rendu");
             NodeCompteRendu.InnerText = CompteRendu.ToString();
             NodeActivite.AppendChild(NodeCompteRendu);
 
@@ -112,12 +131,14 @@ namespace Logiciel
 
             NodeActivite.AppendChild(NodeGps);
 
+            XmlNode NodeListeAstr = xmlDoc.CreateElement("Liste Astronaute");
             foreach (Astronaute a in _listAstronaute)
             {
-                a.genereXml(xmlDoc, rootNode);
+                a.genereXml(xmlDoc, NodeListeAstr);
             }
+            NodeActivite.AppendChild(NodeListeAstr);
 
-            XmlNode NodeTexteDescriptif = xmlDoc.CreateElement("Fin");
+            XmlNode NodeTexteDescriptif = xmlDoc.CreateElement("Texte Descriptif");
             NodeTexteDescriptif.InnerText = TexteDescriptif.ToString();
             NodeActivite.AppendChild(NodeTexteDescriptif);
 
@@ -146,15 +167,16 @@ namespace Logiciel
                 fin = Heure.Parse(nodeActivite.SelectSingleNode("Fin").InnerText);
                 gps = Lieu.Parse(nodeActivite.SelectSingleNode("GPS").InnerText);
 
-                XmlNodeList nodelistAstronaute = nodeActivite.SelectNodes("Astronaute");
+                XmlNodeList nodelistAstronaute = nodeActivite.SelectNodes("List_Astronaute");
                 foreach (XmlNode nodeAstronaute in nodelistAstronaute)
                 {
                     Astronaute a = new Astronaute(0,"");
                     a.chargerXml(xmlDoc, M);
                     listAstronaute.Add(a);
                 }
+                texteDescriptif = nodeActivite.SelectSingleNode("Texte_Descriptif").InnerText;
             }
-            Activite act = new Activite(nom, debut, fin, texteDescriptif, listAstronaute);            
+            Activite act = new Activite(nom, debut, fin, texteDescriptif);            
         }
 
 

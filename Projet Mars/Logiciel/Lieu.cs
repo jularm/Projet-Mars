@@ -77,7 +77,7 @@ namespace Logiciel
             NodeNom.InnerText = Nom.ToString();
             NodeLieu.AppendChild(NodeNom);
 
-            XmlNode NodeCoords = xmlDoc.CreateElement("Coordonnees");
+            XmlNode NodeCoords = xmlDoc.CreateElement("Coordonnées");
             NodeCoords.InnerText = Coords.ToString();
             NodeLieu.AppendChild(NodeCoords);
 
@@ -96,8 +96,8 @@ namespace Logiciel
             foreach (XmlNode nodeLieu in nodelistLieu)
             {
                 nom = nodeLieu.SelectSingleNode("Nom").InnerText;
-                coords.X = int.Parse(nodeLieu.SelectSingleNode("Coordonnees").InnerText);
-                coords.Y = int.Parse(nodeLieu.SelectSingleNode("Coordonnees").InnerText);
+                coords.X = int.Parse(nodeLieu.SelectSingleNode("Coordonnées").InnerText);
+                coords.Y = int.Parse(nodeLieu.SelectSingleNode("Coordonnées").InnerText);
                 
             }
             Lieu L = new Lieu(nom, coords);        
