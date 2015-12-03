@@ -104,12 +104,10 @@ namespace Logiciel
             NodeSortie.InnerText = Sortie.ToString();
             NodeJour.AppendChild(NodeSortie);
 
-            XmlNode NodeListeTabHoraire = xmlDoc.CreateElement("TabHoraire");
-            foreach (bool i in TabHoraires)
+            XmlNode NodeListeTabHoraire = xmlDoc.CreateElement("list_Activite");
+            foreach (Activite a in ListeActivites)
             {
-                XmlNode NodeLibre = xmlDoc.CreateElement("Libre");
-                NodeLibre.InnerText = i.ToString();
-                NodeListeTabHoraire.AppendChild(NodeLibre);
+                a.genereXml(xmlDoc, rootNode);
             }        
 
             rootNode.AppendChild(NodeJour);

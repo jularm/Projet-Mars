@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Activite.cs" />
     <Compile Include="Astronaute.cs" />
+    <Compile Include="Astronautes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Astronautes.Designer.cs">
+      <DependentUpon>Astronautes.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalendrierMartien.cs" />
     <Compile Include="CategorieActivite.cs" />
     <Compile Include="GestionMission.cs">
@@ -67,6 +73,9 @@
     <Compile Include="Mission.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Astronautes.resx">
+      <DependentUpon>Astronautes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CompteRendu.resx">
       <DependentUpon>CompteRendu.cs</DependentUpon>
     </EmbeddedResource>

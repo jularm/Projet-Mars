@@ -18,6 +18,7 @@ namespace Logiciel
         public CategorieActivite(string nom)
         {
             _nom = nom;
+            _listActivite = null;
         }
 
         public string Nom

@@ -44,24 +44,24 @@ namespace Logiciel
         {
             Lieu l = new Lieu();           
             Point coords = new Point(0, 0);
-            List<string> prout = new List<string>();
+            List<string> nomLieu = new List<string>();
 
             foreach (char c in test)
             {
-                prout.Add(c.ToString());
+                nomLieu.Add(c.ToString());
             }
 
-            for (int i = 0; i < prout.Count; i++)
+            for (int i = 0; i < nomLieu.Count; i++)
             {
-                if (prout[i] == "n" && prout[i+2]=="m")
+                if (nomLieu[i] == "n" && nomLieu[i + 2] == "m")
                 {
                     int j=i+3;
                     string elnom = "";
                     do
                     {
-                        elnom = elnom + prout[j];
+                        elnom = elnom + nomLieu[j];
                         j++;
-                    } while (prout[j] == " ");
+                    } while (nomLieu[j] == " ");
                     l.Nom = elnom;
                 }
             }

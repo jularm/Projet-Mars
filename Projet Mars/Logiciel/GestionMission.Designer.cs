@@ -2026,7 +2026,7 @@
             this.Controls.Add(this.heureMars);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GestionMission";
-            this.Text = "Mission d\'exploration";            
+            this.Text = "Mission d\'exploration";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestionMission_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.Niveau1.ResumeLayout(false);

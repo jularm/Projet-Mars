@@ -15,13 +15,8 @@ namespace Logiciel
 {
     public partial class GestionMission : Form
     {
-        CalendrierMartien c = new CalendrierMartien(); // à charger pour ne pas perdre les infos
 
-        Astronaute a1 = new Astronaute(1, "A1");
-        CategorieActivite b1 = new CategorieActivite("test1");
-        List<Astronaute> teste = new List<Astronaute>();
-        Mission M = new Mission();
-       
+       private Mission M = new Mission();
 
         XmlDocument xmlDoc = new XmlDocument();
 
@@ -40,20 +35,108 @@ namespace Logiciel
                 // ici lecture de l'xml et generation des objets 
                 xmlDoc.Load(@"..\\..\\..\\sauvegarde.xml");
                 M.chargerXml(xmlDoc, M);
-                c = M.Calendar;
+
+                M.Calendar.MiseAJour();      //Pour remettre les pendules à l'heure           
             }
             catch
             {
-                MessageBox.Show("Initialisation Mission", "Aucune Mission Existante", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
-                M.AddAstronaute(a1);
-                M.AddCategorie(b1);
+                MessageBox.Show("Initialisation Mission", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                CalendrierMartien c = new CalendrierMartien();                
+
+                List<Activite>VieCourante_act=new List<Activite>();
+                Activite manger= new Activite("Manger");
+                Activite dormir= new Activite("Dormir");
+                Activite entrainement= new Activite("Entrainement");
+                Activite privé= new Activite("privé");
+                Activite ctrlSante= new Activite("Contrôle de santé");
+                Activite actmedical= new Activite("Acte médical");
+                VieCourante_act.Add(manger);
+                VieCourante_act.Add(dormir);
+                VieCourante_act.Add(entrainement);
+                VieCourante_act.Add(privé);
+                VieCourante_act.Add(ctrlSante);
+                VieCourante_act.Add(actmedical);
+                CategorieActivite VieCourante = new CategorieActivite("Vie Courante", VieCourante_act);
+
+                List<Activite> Science_act = new List<Activite>();
+                Activite exploCost = new Activite("Exploration en combinaison");
+                Activite exploVeh = new Activite("Exploration en véhicule");
+                Activite briefing = new Activite("Briefing");
+                Activite debriefing = new Activite("Debriefing");
+                Activite Expint = new Activite("Expérience intérieure");
+                Activite Expext = new Activite("Expérience extérieure");
+                Science_act.Add(exploCost);
+                Science_act.Add(exploVeh);
+                Science_act.Add(briefing);
+                Science_act.Add(debriefing);
+                Science_act.Add(Expint);
+                Science_act.Add(Expext);
+                CategorieActivite Science = new CategorieActivite("Science", Science_act);
+
+                List<Activite> Maintenance_act = new List<Activite>();
+                Activite nettoyage = new Activite("Nettoyage");
+                Activite LSSair = new Activite("Système de survie : air");
+                Activite LSSeau = new Activite("Système de survie : eau");
+                Activite LSSnour = new Activite("Système de survie : nourriture");
+                Activite powsyst = new Activite("Système d'énergie");
+                Activite comb = new Activite("Combinaison spatiale");
+                Activite autre = new Activite("Autre");
+                Maintenance_act.Add(nettoyage);
+                Maintenance_act.Add(LSSair);
+                Maintenance_act.Add(LSSeau);
+                Maintenance_act.Add(LSSnour);
+                Maintenance_act.Add(powsyst);
+                Maintenance_act.Add(comb);
+                Maintenance_act.Add(autre);
+                CategorieActivite Maintenance = new CategorieActivite("Maintenance", Maintenance_act);
+
+                List<Activite> Communication_act = new List<Activite>();
+                Activite RecMess = new Activite("Reçevoir Message");
+                Activite EncMess = new Activite("Envoyer Message");
+                Communication_act.Add(RecMess);
+                Communication_act.Add(EncMess);
+                CategorieActivite Communication = new CategorieActivite("Maintenance", Communication_act);
+
+                List<Activite> Reparation_act = new List<Activite>();
+                Activite LSS = new Activite("Système de survie");                
+                Activite communication = new Activite("Système de communication");
+                Activite propSyst = new Activite("Système de propulsion");
+                Activite habitation = new Activite("Habitation");
+                Activite vehicule = new Activite("Vehicule");
+                Reparation_act.Add(LSS);
+                Reparation_act.Add(powsyst);
+                Reparation_act.Add(communication);
+                Reparation_act.Add(propSyst);
+                Reparation_act.Add(habitation);                
+                Reparation_act.Add(comb);
+                Reparation_act.Add(vehicule);
+                CategorieActivite Reparation = new CategorieActivite("Maintenance", Reparation_act);
+
+                CategorieActivite Urgence = new CategorieActivite("Urgence");
+
+                Astronaute A = new Astronaute(1, "Pierre");
+                Astronaute B = new Astronaute(2, "Paul");
+                Astronaute C = new Astronaute(3, "Jack");
+
+                // initAstr.Show();
+
                 M.Calendar = c;
+                M.AddCategorie(VieCourante);
+                M.AddCategorie(Science);
+                M.AddCategorie(Maintenance);
+                M.AddCategorie(Communication);
+                M.AddCategorie(Reparation);
+                M.AddCategorie(Urgence);
+
+                M.AddAstronaute(A);
+                M.AddAstronaute(B);
+                M.AddAstronaute(C);
             }
-            // c.MiseAJour();      //Pour remettre les pendules à l'heure
+           
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9;
-
         }
 
 
@@ -69,7 +152,7 @@ namespace Logiciel
             }
             catch
             {
-                MessageBox.Show("T'es baisé !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Echec sauvegarde !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -79,7 +162,7 @@ namespace Logiciel
         /// <param name="compteRendu"></param>
         public void MiseAJourCompteRendu(string compteRendu)
         {
-            c.Jours[int.Parse(JourCourantMission.Text)].CompteRendu = compteRendu;
+            M.Calendar.Jours[int.Parse(JourCourantMission.Text)].CompteRendu = compteRendu;
         }
 
         /// <summary>
@@ -92,7 +175,7 @@ namespace Logiciel
             boutonsApresMidi.Controls.Clear();
             Point pointDeBase = new Point(0, 0); //Point servant à la localisation des boutons
             int largeurActivite = 262; //Largeur fixée
-            Jour jourJ = c.Jours.ElementAt(n - 1);
+            Jour jourJ = M.Calendar.Jours.ElementAt(n - 1);
 
             //Recherche du nombre d'activités du jour n dans le calendrier
             for (int i = 0; i < jourJ.ListeActivites.Count; i++)
@@ -246,9 +329,9 @@ namespace Logiciel
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
-            c.Horloge();
-            heureMars.Text = c.Heure.ToString() + " h " + c.Minute.ToString() + " min " + c.Seconde.ToString() + " s";
-            JourCourantMission.Text = c.Day.ToString();
+            M.Calendar.Horloge();
+            heureMars.Text = M.Calendar.Heure.ToString() + " h " + M.Calendar.Minute.ToString() + " min " + M.Calendar.Seconde.ToString() + " s";
+            JourCourantMission.Text = M.Calendar.Day.ToString();
             DateTerrestre.Text = Convert.ToString(DateTime.Now);
             timer1.Start();
         }
@@ -263,10 +346,10 @@ namespace Logiciel
                 {
                     Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i - 1);
                     bool check = false;
-                   /* for (int j = 0; j < c.Jours[(50 * trackBar1.Value) + i - 1].ListeActivites.Count; j++)
+                   /* for (int j = 0; j < M.Calendar.Jours[(50 * trackBar1.Value) + i - 1].ListeActivites.Count; j++)
                     {
 
-                        string nomActivite = c.Jours[(50 * trackBar1.Value) + i - 1].ListeActivites[j].Nom;
+                        string nomActivite = M.Calendar.Jours[(50 * trackBar1.Value) + i - 1].ListeActivites[j].Nom;
                         if (nomActivite == "Exploration Space suit" || nomActivite == "Exploration Vehicule" || nomActivite == "Outside experiment")
                         {
                             check = true;
@@ -308,7 +391,7 @@ namespace Logiciel
                     }
                     else
                     {
-                        if (int.Parse(Niveau1.Controls[i].Text) < c.Day)
+                        if (int.Parse(Niveau1.Controls[i].Text) < M.Calendar.Day)
                         {
                             Niveau1.Controls[i].BackColor = Color.DimGray;
                         }
@@ -325,13 +408,13 @@ namespace Logiciel
         {
             if (premClick)
             {
-                if (int.Parse(test.Text) == c.Day)
+                if (int.Parse(test.Text) == M.Calendar.Day)
                 {
                     test.BackColor = Color.RoyalBlue;
                 }
                 else
                 {
-                    if (int.Parse(test.Text) < c.Day)
+                    if (int.Parse(test.Text) < M.Calendar.Day)
                     {
                         test.BackColor = Color.DimGray;
                     }
@@ -368,7 +451,7 @@ namespace Logiciel
             //treeView1.Controls[0].Controls.Add(new CheckBox());
             Button clickedButton = (Button)sender;
 
-            Activite act = c.Jours.ElementAt(int.Parse(NduJNiv3.Text) - 1).ListeActivites.ElementAt(clickedButton.TabIndex); //activité à l'index i du jour concerné
+            Activite act = M.Calendar.Jours.ElementAt(int.Parse(NduJNiv3.Text) - 1).ListeActivites.ElementAt(clickedButton.TabIndex); //activité à l'index i du jour concerné
             labelInvisible.Text = Convert.ToString(clickedButton.TabIndex);
 
             //Niveau2.Hide();
@@ -590,9 +673,9 @@ namespace Logiciel
 
         private void ConfirmerNiv3_Click(object sender, EventArgs e)
         {
-            bool[] tab = c.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires;
+            bool[] tab = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires;
             bool[] erreurs = { true, false, false, false, false };
-            Jour jourj = c.Jours[int.Parse(NduJNiv3.Text) - 1];
+            Jour jourj = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1];
             Activite act = new Activite("");
 
             if (TitreNiv3.Text == "Modifier une activité")
@@ -701,10 +784,10 @@ namespace Logiciel
 
         private void SupprimerNiv3_Click(object sender, EventArgs e)
         {
-            Activite act = c.Jours[int.Parse(NduJNiv3.Text) - 1].ListeActivites[int.Parse(labelInvisible.Text)];
-            c.Jours[int.Parse(NduJNiv3.Text) - 1].ListeActivites.RemoveAt(int.Parse(labelInvisible.Text));
+            Activite act = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].ListeActivites[int.Parse(labelInvisible.Text)];
+            M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].ListeActivites.RemoveAt(int.Parse(labelInvisible.Text));
 
-            changerUnePlageHoraire(act, c.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires, true);
+            changerUnePlageHoraire(act, M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires, true);
 
             CreerBoutons(int.Parse(NduJNiv3.Text)); //on réactualise les boutons du niveau 2 et donc les indices de la liste d'activités
 
@@ -715,7 +798,7 @@ namespace Logiciel
 
         private void CompteRenduJour_Click(object sender, EventArgs e)
         {
-            CompteRendu cr = new CompteRendu(c.Jours[int.Parse(JourCourantMission.Text)].CompteRendu);
+            CompteRendu cr = new CompteRendu(M.Calendar.Jours[int.Parse(JourCourantMission.Text)].CompteRendu);
             cr.CR += new CompteRendu.AjouterJourEventHandler(this.MiseAJourCompteRendu);
             cr.ShowDialog();
         }
@@ -754,7 +837,7 @@ namespace Logiciel
 
         private void CompteRendu_Click(object sender, EventArgs e)
         {
-            CompteRendu cr = new CompteRendu(c.Jours[int.Parse(JourCourantMission.Text)].CompteRendu);
+            CompteRendu cr = new CompteRendu(M.Calendar.Jours[int.Parse(JourCourantMission.Text)].CompteRendu);
             cr.CR += new CompteRendu.AjouterJourEventHandler(this.MiseAJourCompteRendu);
             cr.ShowDialog();
         }

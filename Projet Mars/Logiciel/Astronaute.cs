@@ -46,7 +46,6 @@ namespace Logiciel
 
 
             rootNode.AppendChild(NodeAstronaute);
-
         }
 
         // lecture xml et generation objets
