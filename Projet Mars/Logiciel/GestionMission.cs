@@ -16,7 +16,7 @@ namespace Logiciel
     public partial class GestionMission : Form
     {
 
-       private Mission M = new Mission();
+        private Mission M = new Mission();
 
         XmlDocument xmlDoc = new XmlDocument();
 
@@ -42,15 +42,15 @@ namespace Logiciel
             {
                 MessageBox.Show("Initialisation Mission", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                CalendrierMartien c = new CalendrierMartien();                
+                CalendrierMartien c = new CalendrierMartien();
 
-                List<Activite>VieCourante_act=new List<Activite>();
-                Activite manger= new Activite("Manger");
-                Activite dormir= new Activite("Dormir");
-                Activite entrainement= new Activite("Entrainement");
-                Activite privé= new Activite("privé");
-                Activite ctrlSante= new Activite("Contrôle de santé");
-                Activite actmedical= new Activite("Acte médical");
+                List<Activite> VieCourante_act = new List<Activite>();
+                Activite manger = new Activite("Manger");
+                Activite dormir = new Activite("Dormir");
+                Activite entrainement = new Activite("Entrainement");
+                Activite privé = new Activite("privé");
+                Activite ctrlSante = new Activite("Contrôle de santé");
+                Activite actmedical = new Activite("Acte médical");
                 VieCourante_act.Add(manger);
                 VieCourante_act.Add(dormir);
                 VieCourante_act.Add(entrainement);
@@ -99,7 +99,7 @@ namespace Logiciel
                 CategorieActivite Communication = new CategorieActivite("Maintenance", Communication_act);
 
                 List<Activite> Reparation_act = new List<Activite>();
-                Activite LSS = new Activite("Système de survie");                
+                Activite LSS = new Activite("Système de survie");
                 Activite communication = new Activite("Système de communication");
                 Activite propSyst = new Activite("Système de propulsion");
                 Activite habitation = new Activite("Habitation");
@@ -108,7 +108,7 @@ namespace Logiciel
                 Reparation_act.Add(powsyst);
                 Reparation_act.Add(communication);
                 Reparation_act.Add(propSyst);
-                Reparation_act.Add(habitation);                
+                Reparation_act.Add(habitation);
                 Reparation_act.Add(comb);
                 Reparation_act.Add(vehicule);
                 CategorieActivite Reparation = new CategorieActivite("Maintenance", Reparation_act);
@@ -127,16 +127,25 @@ namespace Logiciel
                 M.AddCategorie(Maintenance);
                 M.AddCategorie(Communication);
                 M.AddCategorie(Reparation);
-                M.AddCategorie(Urgence);
+                M.AddCategorie(Urgence);                               
 
                 M.AddAstronaute(A);
                 M.AddAstronaute(B);
                 M.AddAstronaute(C);
             }
-           
+
+            //test
+            M.Calendar.Jours[0].Sortie = true;
+            M.Calendar.Jours[11].Sortie = true;
+            M.Calendar.Jours[64].Sortie = true;
+            M.Calendar.Jours[124].Sortie = true;
+            M.Calendar.Jours[229].Sortie = true;
+            //test
+
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9;
+            trackBar1_Scroll(new Object(), new EventArgs());
         }
 
 
@@ -344,17 +353,16 @@ namespace Logiciel
             {
                 if (Niveau1.Controls[i].Name.Contains("jour"))
                 {
-                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i - 1);
-                    bool check = false;
-                   /* for (int j = 0; j < M.Calendar.Jours[(50 * trackBar1.Value) + i - 1].ListeActivites.Count; j++)
+                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);
+                    /*bool check = false;
+                    for (int j = 0; j < M.Calendar.Jours[(50 * trackBar1.Value) + i +1].ListeActivites.Count; j++)
                     {
-
-                        string nomActivite = M.Calendar.Jours[(50 * trackBar1.Value) + i - 1].ListeActivites[j].Nom;
+                        string nomActivite = M.Calendar.Jours[(50 * trackBar1.Value) + i +1].ListeActivites[j].Nom;
                         if (nomActivite == "Exploration Space suit" || nomActivite == "Exploration Vehicule" || nomActivite == "Outside experiment")
                         {
                             check = true;
                         }
-                    }*/
+                    }
                     if (check)
                     {
                         Niveau1.Controls[i + 1].BackgroundImage = sortie;
@@ -362,7 +370,7 @@ namespace Logiciel
                     else
                     {
                         Niveau1.Controls[i + 1].BackgroundImage = null;
-                    }
+                    }*/
 
                     if (int.Parse(Niveau1.Controls[i].Text) < int.Parse(JourCourantMission.Text))
                     {
@@ -378,14 +386,15 @@ namespace Logiciel
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            JourCourantMission_TextChanged(new Object(), new EventArgs());
+          //  JourCourantMission_TextChanged(new Object(), new EventArgs());
+           // dureMission.Increment(-1);
             for (int i = 0; i < Niveau1.Controls.Count; i++)
             {
                 if (Niveau1.Controls[i].Name.Contains("jour"))
                 {
-                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i - 1);
+                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);
 
-                    if (int.Parse(JourCourantMission.Text) == (50 * trackBar1.Value) + i - 1)
+                    if (int.Parse(JourCourantMission.Text) == (50 * trackBar1.Value) + i +1)
                     {
                         Niveau1.Controls[i].BackColor = Color.RoyalBlue;
                     }
@@ -400,6 +409,21 @@ namespace Logiciel
                             Niveau1.Controls[i].BackColor = Color.DarkGreen;
                         }
                     }
+                }                
+            }
+           for (int i = 50 * trackBar1.Value; i < 50 * (trackBar1.Value + 1); i++)
+            {
+                if (Niveau1.Controls[i - 50 * trackBar1.Value].Name.Contains("jour"))
+                {
+                    if (M.Calendar.Jours[i].Sortie == true)
+                    {
+                        Niveau1.Controls[i - 50 * trackBar1.Value].BackgroundImage = sortie;
+                    }
+                    else
+                    {
+                        Niveau1.Controls[i - 50 * trackBar1.Value].BackgroundImage = null;
+                    }
+
                 }
             }
         }
