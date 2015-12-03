@@ -719,12 +719,12 @@
   </Liste_Categorie_Activité>
   <Calendrier_Mission>
     <Calendrier_Martien>
-      <Début>03/12/2015 15:42:11</Début>
-      <Fin>30/04/2017 13:02:11</Fin>
+      <Début>03/12/2015 17:02:31</Début>
+      <Fin>30/04/2017 14:22:31</Fin>
       <Jour>1</Jour>
       <Heure>0</Heure>
-      <Minute>1</Minute>
-      <Seconde>0</Seconde>
+      <Minute>0</Minute>
+      <Seconde>43</Seconde>
       <Liste_Jour>
         <Jour>
           <Compte_Rendu>
@@ -3720,8 +3720,7 @@
               <Liste_Astronaute>
                 <Astronaute>
                   <Id>0</Id>
-                  <Nom>
-                  </Nom>
+                  <Nom>Paul</Nom>
                 </Astronaute>
               </Liste_Astronaute>
               <Texte_Descriptif>
