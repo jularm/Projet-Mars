@@ -20,16 +20,16 @@ namespace Logiciel
 
         public Jour(int numero)
         {
-            _numero = numero;           
+            _numero = numero;
             //Journée type par défaut : 
-            _listeActivites.Add(new Activite("Sleeping", new Heure (0,0),new Heure(7,0),"Dormir c'est important"));
+            _listeActivites.Add(new Activite("Sleeping", new Heure(0, 0), new Heure(7, 0), "Dormir c'est important"));
             _listeActivites.Add(new Activite("Eating", new Heure(7, 0), new Heure(8, 0), "Manger c'est important"));
-            _listeActivites.Add(new Activite("Private", new Heure(8,0), new Heure(12,0), ""));
-            _listeActivites.Add(new Activite("Eating", new Heure(12,0), new Heure(14,0), "Manger c'est important"));
-            _listeActivites.Add(new Activite("Private", new Heure(14,0), new Heure(19,0), ""));
-            _listeActivites.Add(new Activite("Eating", new Heure(19,0), new Heure(21,0), "Manger c'est important"));
-            _listeActivites.Add(new Activite("Private", new Heure(21,0), new Heure(23,0), ""));
-            _listeActivites.Add(new Activite("Sleeping", new Heure(23,0), new Heure(24,40), "Dormir c'est important"));
+            _listeActivites.Add(new Activite("Private", new Heure(8, 0), new Heure(12, 0), ""));
+            _listeActivites.Add(new Activite("Eating", new Heure(12, 0), new Heure(14, 0), "Manger c'est important"));
+            _listeActivites.Add(new Activite("Private", new Heure(14, 0), new Heure(19, 0), ""));
+            _listeActivites.Add(new Activite("Eating", new Heure(19, 0), new Heure(21, 0), "Manger c'est important"));
+            _listeActivites.Add(new Activite("Private", new Heure(21, 0), new Heure(23, 0), ""));
+            _listeActivites.Add(new Activite("Sleeping", new Heure(23, 0), new Heure(24, 40), "Dormir c'est important"));
             _compteRendu = "test";
             _sortie = false;
             for (int i = 0; i < 147; i++)
@@ -41,7 +41,7 @@ namespace Logiciel
         public Jour(string compteRendu, int numero, bool[] tabHoraires)
         {
             _numero = numero;
-            _compteRendu = compteRendu;            
+            _compteRendu = compteRendu;
             _tabHoraires = tabHoraires;
             // journée type : 
             _listeActivites.Add(new Activite("Sleeping", new Heure(0, 0), new Heure(7, 0), "Dormir c'est important"));
@@ -85,19 +85,19 @@ namespace Logiciel
         {
 
         }
-        
 
 
-        
+
+
         public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
         {
-            XmlNode NodeJour = xmlDoc.CreateElement("Jour");            
+            XmlNode NodeJour = xmlDoc.CreateElement("Jour");
 
             XmlNode NodeCompteRendu = xmlDoc.CreateElement("Compte_Rendu");
             NodeCompteRendu.InnerText = CompteRendu.ToString();
             NodeJour.AppendChild(NodeCompteRendu);
 
-            XmlNode NodeNumero = xmlDoc.CreateElement("Numero");
+            XmlNode NodeNumero = xmlDoc.CreateElement("Numéro");
             NodeNumero.InnerText = Numero.ToString();
             NodeJour.AppendChild(NodeNumero);
 
@@ -124,29 +124,26 @@ namespace Logiciel
             rootNode.AppendChild(NodeJour);
 
         }
-       
+
 
         // lecture xml et generation objets    
         public void chargerXml(XmlDocument xmlDoc, Mission M)
         {
-            XmlNodeList nodelistJour = xmlDoc.GetElementsByTagName("Jour"); 
+            XmlNodeList nodelistJour = xmlDoc.GetElementsByTagName("Jour");
 
-            string compteRendu = "";
-            int numero = 0;
+            string CompteRendu = "";
+            int num = 0;
             bool sortie = false;
             bool[] tabHoraires = new bool[147];
-            
 
             foreach (XmlNode nodeJour in nodelistJour)
             {
-                compteRendu = nodeJour.SelectSingleNode("Compte_Rendu").InnerText.ToString();
-                numero = int.Parse(nodeJour.SelectSingleNode("Numero").InnerText);
+                CompteRendu = nodeJour.SelectSingleNode("Compte_rendu").InnerText;
+                num = int.Parse(nodeJour.SelectSingleNode("Numéro").InnerText);
                 sortie = bool.Parse(nodeJour.SelectSingleNode("Sortie").InnerText);
 
                 List<Activite> listeActivites = new List<Activite>();
-
-                Jour j = new Jour(compteRendu, numero, tabHoraires);
-
+                Jour j = new Jour(CompteRendu, num, tabHoraires);
 
                 XmlNodeList nodelistActivite = nodeJour.SelectNodes("Liste_Activité");
                 foreach (XmlNode nodeActivite in nodelistActivite)
@@ -158,8 +155,8 @@ namespace Logiciel
                         a.chargerXml(xmlDoc, M);
                         listeActivites.Add(a);
                     }
-                }
 
+                }
                 j.ListeActivites = listeActivites;
 
                 XmlNodeList nodelistTabHoraire = nodeJour.SelectNodes("Tableau_Horaire");
@@ -176,8 +173,12 @@ namespace Logiciel
                 j.TabHoraires = tabHoraires;
 
                 M.Calendar.Jours.Add(j);
-            }  
+            }
+
         }
     }
-    
-}
+}       
+           
+            
+
+            

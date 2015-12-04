@@ -30,7 +30,7 @@ namespace Logiciel
 
             for (int i = 0; i < 500; i++)
             {
-                _Jours.Add(new Jour(i)) ;
+                _Jours.Add(new Jour(i));
             }
         }
 
@@ -41,9 +41,9 @@ namespace Logiciel
             _jour = jour;
             _minute = minute;
             _heure = heure;
-            _seconde = seconde;          
+            _seconde = seconde;
         }
-                
+
 
         public int Day
         {
@@ -82,7 +82,7 @@ namespace Logiciel
         public DateTime Fin
         {
             get { return _fin; }
-            set { _fin = value; }    
+            set { _fin = value; }
         }
 
         public DateTime Debut
@@ -178,76 +178,76 @@ namespace Logiciel
                 }
             }
         }
-            
+
 
 
         // Generation Xml
-            public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
-           {
-               XmlNode NodeCalendrier = xmlDoc.CreateElement("Calendrier_Martien");
-               
-               XmlNode NodeDebut = xmlDoc.CreateElement("Début");
-               NodeDebut.InnerText = Debut.ToString();
-               NodeCalendrier.AppendChild(NodeDebut);
+        public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
+        {
+            XmlNode NodeCalendrier = xmlDoc.CreateElement("Calendrier_Martien");
 
-               XmlNode NodeFin = xmlDoc.CreateElement("Fin");
-               NodeFin.InnerText = Fin.ToString();
-               NodeCalendrier.AppendChild(NodeFin);
+            XmlNode NodeDebut = xmlDoc.CreateElement("Début");
+            NodeDebut.InnerText = Debut.ToString();
+            NodeCalendrier.AppendChild(NodeDebut);
 
-               XmlNode NodeJour = xmlDoc.CreateElement("Jour");
-               NodeJour.InnerText = Day.ToString();
-               NodeCalendrier.AppendChild(NodeJour);
+            XmlNode NodeFin = xmlDoc.CreateElement("Fin");
+            NodeFin.InnerText = Fin.ToString();
+            NodeCalendrier.AppendChild(NodeFin);
 
-               XmlNode NodeHeure = xmlDoc.CreateElement("Heure");
-               NodeHeure.InnerText = Heure.ToString();
-               NodeCalendrier.AppendChild(NodeHeure);
+            XmlNode NodeJour = xmlDoc.CreateElement("Jour");
+            NodeJour.InnerText = Day.ToString();
+            NodeCalendrier.AppendChild(NodeJour);
 
-               XmlNode NodeMinute = xmlDoc.CreateElement("Minute");
-               NodeMinute.InnerText = Minute.ToString();
-               NodeCalendrier.AppendChild(NodeMinute);
+            XmlNode NodeHeure = xmlDoc.CreateElement("Heure");
+            NodeHeure.InnerText = Heure.ToString();
+            NodeCalendrier.AppendChild(NodeHeure);
 
-               XmlNode NodeSeconde = xmlDoc.CreateElement("Seconde");
-               NodeSeconde.InnerText = Seconde.ToString();
-               NodeCalendrier.AppendChild(NodeSeconde);
+            XmlNode NodeMinute = xmlDoc.CreateElement("Minute");
+            NodeMinute.InnerText = Minute.ToString();
+            NodeCalendrier.AppendChild(NodeMinute);
 
-               XmlNode NodeListeJour = xmlDoc.CreateElement("Liste_Jour");  
-               foreach (Jour j in _Jours)
-               {
-                   j.genereXml(xmlDoc, NodeListeJour);
-               }
-               NodeCalendrier.AppendChild(NodeListeJour);
+            XmlNode NodeSeconde = xmlDoc.CreateElement("Seconde");
+            NodeSeconde.InnerText = Seconde.ToString();
+            NodeCalendrier.AppendChild(NodeSeconde);
 
-               rootNode.AppendChild(NodeCalendrier);
-           }
-
-          // lecture xml et generation objets    
-            public void chargerXml(XmlDocument xmlDoc, Mission M)
+            XmlNode NodeListeJour = xmlDoc.CreateElement("Liste_Jour");
+            foreach (Jour j in _Jours)
             {
-                XmlNodeList nodelistCalendrier = xmlDoc.GetElementsByTagName("Calendrier_Martien");
+                j.genereXml(xmlDoc, NodeListeJour);
+            }
+            NodeCalendrier.AppendChild(NodeListeJour);
 
-                CalendrierMartien c = new CalendrierMartien();
+            rootNode.AppendChild(NodeCalendrier);
+        }
 
-                foreach (XmlNode nodeCalendrier in nodelistCalendrier) 
-                {                    
-                    c.Debut = DateTime.Parse(nodeCalendrier.SelectSingleNode("Début").InnerText);
-                    c.Fin = DateTime.Parse(nodeCalendrier.SelectSingleNode("Fin").InnerText);
-                    c.Day = int.Parse(nodeCalendrier.SelectSingleNode("Jour").InnerText);
-                    c.Heure = int.Parse(nodeCalendrier.SelectSingleNode("Heure").InnerText);
-                    c.Minute = int.Parse(nodeCalendrier.SelectSingleNode("Minute").InnerText);
-                    c.Seconde = int.Parse(nodeCalendrier.SelectSingleNode("Seconde").InnerText);
+        // lecture xml et generation objets    
+        public void chargerXml(XmlDocument xmlDoc, Mission M)
+        {
+            XmlNodeList nodelistCalendrier = xmlDoc.GetElementsByTagName("Calendrier_Martien");
 
-                    XmlNodeList nodelistJours = nodeCalendrier.SelectNodes("Liste_Jour");
-                    foreach (XmlNode nodeJour in nodelistJours)
-                    {
+            CalendrierMartien c = new CalendrierMartien();
+
+            foreach (XmlNode nodeCalendrier in nodelistCalendrier)
+            {
+                c.Debut = DateTime.Parse(nodeCalendrier.SelectSingleNode("Début").InnerText);
+                c.Fin = DateTime.Parse(nodeCalendrier.SelectSingleNode("Fin").InnerText);
+                c.Day = int.Parse(nodeCalendrier.SelectSingleNode("Jour").InnerText);
+                c.Heure = int.Parse(nodeCalendrier.SelectSingleNode("Heure").InnerText);
+                c.Minute = int.Parse(nodeCalendrier.SelectSingleNode("Minute").InnerText);
+                c.Seconde = int.Parse(nodeCalendrier.SelectSingleNode("Seconde").InnerText);
+
+                XmlNodeList nodelistJours = nodeCalendrier.SelectNodes("Liste_Jour");
+                foreach (XmlNode nodeJour in nodelistJours)
+                {
+                    XmlNodeList nodelistJour = nodeJour.SelectNodes("Jour");
+                    foreach (XmlNode jour in nodelistJour)
+                    {   
                         Jour j = new Jour(0);
                         j.chargerXml(xmlDoc, M);
                         c.Jours.Add(j);
                     }
                 }
-               
-               
-               
-                
             }
+        }
     }
 }

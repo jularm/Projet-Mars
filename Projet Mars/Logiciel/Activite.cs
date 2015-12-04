@@ -154,7 +154,7 @@ namespace Logiciel
         // lecture xml et generation objets
         public void chargerXml(XmlDocument xmlDoc, Mission M)
         {
-            XmlNodeList nodelistActivite = xmlDoc.GetElementsByTagName("Activite");
+            XmlNodeList nodelistActivite = xmlDoc.GetElementsByTagName("Activité");
 
             string nom="";
             string compteRendu="";

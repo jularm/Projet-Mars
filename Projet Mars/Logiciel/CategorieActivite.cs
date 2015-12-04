@@ -75,6 +75,7 @@ namespace Logiciel
             foreach (XmlNode nodeCategorieActivite in nodelistCategorieActivite)
             {
                 nom = nodeCategorieActivite.SelectSingleNode("Nom").InnerText;
+
                 XmlNodeList nodelistActivite = nodeCategorieActivite.SelectNodes("Activité");
                 foreach (XmlNode nodeActivite in nodelistActivite)
                 {
