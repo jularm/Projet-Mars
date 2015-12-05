@@ -21,10 +21,250 @@
     <packageHasNamedElement>
       <class
         Id="08a56062-cd9a-4f1c-bf88-ad65a2e438d3"
-        name="Calendrier"
+        name="CalendrierMartien"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="c10c0567-b7e7-4744-8a54-0f248f4dd097"
+            isDerived="false"
+            sourceEndRoleName="Calendrier"
+            targetEndRoleName="Jour"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="fa98e4b1-30c4-4447-9701-763cedbf032b"
+              LastKnownName="Jour"
+              LastKnownLocation="Projet Mars.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="226b71fe-df74-46a8-9ec2-e7a5641c624c"
+                  name="Calendrier"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="40f78e06-3c38-4efc-b437-98c90e3a1a2d"
+                  name="Jour"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c5271224-de8c-4c14-ad0f-08b13dcc2dc0"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8c700f0e-4169-4970-9e5b-9fc53f6c21ef"
+                      name="Upper"
+                      value="500" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="803fe50c-80aa-4064-9125-9cd53478f3f4"
+            name="_jour"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="af1ba112-9d1d-4945-a76b-8b20fcff9913"
+                LastKnownName="int"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a33ce1a7-875d-4f33-80f3-99fe5c3f0bb1"
+            name="_debut"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="cbae73ba-e414-45ec-9bce-cd554b11713d"
+                LastKnownName="DateTime"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="76ac241b-5d25-4922-b2a3-af53cd4b6598"
+            name="_fin"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="cbae73ba-e414-45ec-9bce-cd554b11713d"
+                LastKnownName="DateTime"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2b74ef41-faf3-4e15-9387-193d54ce7df1"
+            name="_minute"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="af1ba112-9d1d-4945-a76b-8b20fcff9913"
+                LastKnownName="int"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f9685c49-cb30-4ecd-b0c5-ed1811af80d4"
+            name="_heure"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="af1ba112-9d1d-4945-a76b-8b20fcff9913"
+                LastKnownName="int"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4cc190fa-43fb-4ebc-a4a9-2ccf9a6861b7"
+            name="_seconde"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="af1ba112-9d1d-4945-a76b-8b20fcff9913"
+                LastKnownName="int"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a4992c2c-4882-44bb-b6c0-d99e39e402ce"
+            name="_Jours"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="8a07153c-5145-4256-93c5-e9aca5291558"
+                LastKnownName="List&lt;Jour&gt;"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="e1d18b2f-4a9e-4b4a-a7c5-3f93f5a572be"
+            name="Horloge"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bee7135d-2433-4f93-8624-6176281d9c2a"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4c8f44bc-1471-46c6-b3a3-f7cd300f271f"
+            name="MiseAJour"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="661a73cc-5cfa-43e1-9a50-753955acd84b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -69,59 +309,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="cdd510c3-740a-451f-829a-ba60e933a151"
-            isDerived="false"
-            sourceEndRoleName="Jour"
-            targetEndRoleName="Calendrier"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="08a56062-cd9a-4f1c-bf88-ad65a2e438d3"
-              LastKnownName="Calendrier"
-              LastKnownLocation="Projet Mars.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="1a2f52ea-f5e6-4294-b1a5-ea101c04b13e"
-                  name="Jour"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false">
+                  isComposite="true">
                   <lowerValueInternal>
                     <literalString
-                      Id="7d3f897c-c3dc-47da-87ae-9372641918f5"
+                      Id="316708d4-ab5c-4d3a-9dcb-215ea513e1fb"
                       name="Lower"
-                      value="500" />
+                      value="1" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="c8314b73-ad0e-4cbf-885c-646b2b630946"
+                      Id="aba7bbae-9b4f-4bd8-8b66-4a7fbfa53d87"
                       name="Upper"
-                      value="500" />
+                      value="*" />
                   </upperValueInternal>
                 </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="19152db1-13cb-44eb-a29f-0e50e23b24cd"
-                  name="Calendrier"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -129,7 +330,8 @@
         <ownedAttributesInternal>
           <property
             Id="cb111178-b23a-4460-84f2-c711a6d1aefa"
-            name="Numéro"
+            name="_numero"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -137,21 +339,18 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
-          <property
-            Id="6843b414-a4f2-4852-b82a-1adeac6429ad"
-            name="Statut"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="af1ba112-9d1d-4945-a76b-8b20fcff9913"
+                LastKnownName="int"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="b9bfd20a-4441-41a1-9ac9-a35e2d86c73e"
-            name="Sortie"
+            name="_sortie"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -159,10 +358,18 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="f0c90649-fff6-4691-9bee-dd808cdecd4a"
+                LastKnownName="bool"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="065bb6b6-5933-47dd-b12a-f8a94c8fc286"
-            name="Compte rendu Journée"
+            name="_compteRendu"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -170,10 +377,18 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6ff8ae6f-c166-4b19-83a1-2510bdd23121"
+                LastKnownName="string"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="773f8252-3764-44a0-8556-fcabf68174f3"
-            name="ListeActivite"
+            name="_listeActivites"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -181,10 +396,18 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6b2c23d4-9770-4b96-a83f-5ae169b92b8c"
+                LastKnownName="List&lt;Activite&gt;"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="2bf9de0c-fc66-4593-9d9b-d5b6d2da7a1f"
-            name="TabHoraires"
+            name="_tabHoraires"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -192,7 +415,14 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7b3ca6c8-ca54-41e9-94dd-b8fd167a3eac"
+                LastKnownName="bool[]"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -219,10 +449,195 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="798331c8-10e3-435f-8ad1-98b99a403601"
+            isDerived="false"
+            sourceEndRoleName="Activite"
+            targetEndRoleName="Astronaute"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b8ea8360-5179-4b16-9c03-3721ea00965d"
+              LastKnownName="Astronaute"
+              LastKnownLocation="Projet Mars.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fc585c82-5818-4caf-b054-9f2ae8c8cdf3"
+                  name="Activite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6df556e0-8224-437a-a183-46cdd2fa85c8"
+                  name="Astronaute"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="5968ed82-3812-4804-b607-1abc79b6d29d"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c92876d6-6827-4b1d-b10b-9bd8ac1c8509"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a29bfaa3-ff7f-4bbe-b32b-936fa3cbf953"
+            isDerived="false"
+            sourceEndRoleName="Activite"
+            targetEndRoleName="Lieu"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="cb12c113-340c-4914-9cbd-7c7dd845b430"
+              LastKnownName="Lieu"
+              LastKnownLocation="Projet Mars.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8f0c1e60-7028-405b-b9bd-eff86a34e588"
+                  name="Activite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="12675c91-78c0-4672-9d5f-16c7fd3e05fe"
+                  name="Lieu"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a6f39e6d-3912-4388-99e2-3ec9ff99a4cb"
+            isDerived="false"
+            sourceEndRoleName="Activite"
+            targetEndRoleName="NomActivite"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7b819955-82ad-4f1b-abf4-e17b9ba78535"
+              LastKnownName="NomActivite"
+              LastKnownLocation="Projet Mars.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f33665ee-636e-42ac-8653-6916e99a3409"
+                  name="Activite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="765c1ca1-2583-452e-9c4f-6509ea737e4f"
+                  name="NomActivite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="53d194e0-5eda-477e-9410-ed7a431439f8"
+            isDerived="false"
+            sourceEndRoleName="Activite"
+            targetEndRoleName="CategorieActivite"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="1ab7df5a-2473-46f7-ad3b-79ed6e12f68e"
+              LastKnownName="CategorieActivite"
+              LastKnownLocation="Projet Mars.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="732903a4-cc36-49b1-a730-ecd565bca43e"
+                  name="Activite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1cf295a5-6859-40f3-9264-700ae8974361"
+                  name="CategorieActivite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="61c1ea5e-219c-438c-b310-1513351858a5"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="910806fa-fc5b-440b-b6c3-6640c766dcc1"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="1474c178-4a62-4d90-b1be-3b2fa9203e4a"
-            name="Heure Debut"
+            name="_debut"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -230,10 +645,18 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="f8c8048d-0536-4cb0-832d-2c80c1ad7f93"
+                LastKnownName="Heure"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="dad6ab45-6c67-4bc3-84a4-97ef3c7beb67"
-            name="Compte rendu Mission"
+            name="_compteRendu"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -241,10 +664,18 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6ff8ae6f-c166-4b19-83a1-2510bdd23121"
+                LastKnownName="string"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="233392a9-3e74-4e27-bca4-5fe4d8046ca9"
-            name="Lieu"
+            name="_gps"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -252,10 +683,18 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="cb12c113-340c-4914-9cbd-7c7dd845b430"
+                LastKnownName="Lieu"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="9fdb7e25-0075-40e5-a99c-a7bce35d8dbb"
-            name="Liste Astronautes"
+            name="_listeAstronaute"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -263,10 +702,18 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="15d0e1ea-70d9-4a6d-9d51-0525c215f0d0"
+                LastKnownName="List&lt;Astronaute&gt;"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="aeac2fe4-b94e-4636-a180-40a240493faf"
-            name="Texte Descriptif"
+            name="_texteDescriptif"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -274,10 +721,18 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6ff8ae6f-c166-4b19-83a1-2510bdd23121"
+                LastKnownName="string"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="a1134c6c-dceb-401a-91c9-48a68ac3909f"
-            name="Heure Fin"
+            name="_fin"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -285,10 +740,18 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="f8c8048d-0536-4cb0-832d-2c80c1ad7f93"
+                LastKnownName="Heure"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="e303e6d5-f153-45cf-8447-926d3139f426"
-            name="Nom"
+            name="_nom"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -296,8 +759,79 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6ff8ae6f-c166-4b19-83a1-2510bdd23121"
+                LastKnownName="string"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="1808eb7e-cefc-4de9-936f-353d360d60b0"
+            name="AddAstronaute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="44415c4b-2ac3-447d-939d-9801553ba408"
+                  name="Astronaute"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="31d2d31c-d49c-4aa1-ab14-80265db91767"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2e9716fb-cb17-4498-8310-bd65e25dc42a"
+            name="RemoveAstronaute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="64467a01-d217-4767-b8d0-33f3103cac7d"
+                  name="Astronaute"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2b46cc2b-28fb-4716-94f7-fd4d91c45d2e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -315,64 +849,11 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="73a6f3eb-a74c-4470-aa04-0392d0b0e7ec"
-            isDerived="false"
-            sourceEndRoleName="Astronaute"
-            targetEndRoleName="Activite"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="586b8dc4-72f6-40a2-8ff7-88951470697f"
-              LastKnownName="Activite"
-              LastKnownLocation="Projet Mars.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="cc5a150f-ee8d-452c-9914-51bf1e94def1"
-                  name="Astronaute"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Shared"
-                  isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="21669787-f4aa-456c-98c7-ce31078f8d92"
-                      name="Lower"
-                      value="n" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="3121cdbc-f734-495d-a683-82bd40f5cc69"
-                      name="Upper"
-                      value="n" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="9a30aa47-3914-48cf-a9ea-e291b3033f1f"
-                  name="Activite"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="510ed210-57c7-45f9-b7af-b4a2d01d0136"
-            name="Nom"
+            name="_nom"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -380,10 +861,18 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6ff8ae6f-c166-4b19-83a1-2510bdd23121"
+                LastKnownName="string"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="3c2a4cd7-b7fd-4088-bc5d-d76c98f2c0a3"
-            name="Id"
+            name="_id"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -391,7 +880,14 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="af1ba112-9d1d-4945-a76b-8b20fcff9913"
+                LastKnownName="int"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -402,64 +898,11 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="771925c4-2f5b-4578-bdcb-0d023ce6003e"
-            isDerived="false"
-            sourceEndRoleName="Lieu"
-            targetEndRoleName="Activite"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="586b8dc4-72f6-40a2-8ff7-88951470697f"
-              LastKnownName="Activite"
-              LastKnownLocation="Projet Mars.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="d40fd453-3a8e-43b6-b974-30f27b1848c9"
-                  name="Lieu"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Shared"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="44cd18f7-db3c-4855-be00-6111d68e2b96"
-                  name="Activite"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="6ac0ba6f-59c7-4dde-8e36-e10b40438925"
-                      name="Lower"
-                      value="n" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="6fc19e4e-3bd9-402a-a637-d700cbb09247"
-                      name="Upper"
-                      value="n" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="ef496645-1927-4eaa-b7df-0131c3b6ca3d"
-            name="Nom"
+            name="_nom"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -467,21 +910,18 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
-          <property
-            Id="698c8f75-b8d3-41e3-abfe-223eaf19127a"
-            name="PositionX"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6ff8ae6f-c166-4b19-83a1-2510bdd23121"
+                LastKnownName="string"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="fd0ffcee-53b1-4161-bbb9-e89f28f68d78"
-            name="PositionY"
+            name="_coords"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -489,7 +929,14 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7c605063-c038-4f05-a07a-d62075c0526c"
+                LastKnownName="Point"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -500,60 +947,6 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="fca2bbbf-50de-49ee-8736-949c1c62de3f"
-            isDerived="false"
-            sourceEndRoleName="NomActivite"
-            targetEndRoleName="Activite"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="586b8dc4-72f6-40a2-8ff7-88951470697f"
-              LastKnownName="Activite"
-              LastKnownLocation="Projet Mars.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="9b2185c7-2ca8-4391-ae72-e5fd9cebbcc2"
-                  name="NomActivite"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Shared"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="e77e5469-fd5e-482c-9f3b-cbe00b9e872a"
-                  name="Activite"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="b9faa901-5dbd-46b6-acad-51f7d5626cea"
-                      name="Lower"
-                      value="n" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="1fa3843d-3259-48c0-9da5-658297a7f4eb"
-                      name="Upper"
-                      value="n" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="954d6395-a4c8-415d-ac23-307581c4d00e"
@@ -576,51 +969,11 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="691b72f6-ac60-4073-942d-a17efd8b97f8"
-            isDerived="false"
-            sourceEndRoleName="CategorieActivite"
-            targetEndRoleName="NomActivite"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="7b819955-82ad-4f1b-abf4-e17b9ba78535"
-              LastKnownName="NomActivite"
-              LastKnownLocation="Projet Mars.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="031c4c2b-ae23-4968-a2a0-ce1e95534fcf"
-                  name="CategorieActivite"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Shared"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="af3fdacc-4e15-4e25-949d-ed14a3189ce5"
-                  name="NomActivite"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="02fdaaa8-761f-444a-a663-93633faeb73d"
-            name="Nom"
+            name="_nom"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -628,8 +981,98 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6ff8ae6f-c166-4b19-83a1-2510bdd23121"
+                LastKnownName="string"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="99264976-a85b-4546-ae78-dd86deffeeb3"
+            name="_listActivite"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6b2c23d4-9770-4b96-a83f-5ae169b92b8c"
+                LastKnownName="List&lt;Activite&gt;"
+                LastKnownLocation="Projet Mars.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="048e0e38-cd8b-4880-bef7-f441abaf8931"
+            name="AddActivite"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="579d6d5b-a936-44e5-ba76-58a52467a07e"
+                  name="Activite"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0bdf00e2-9ad9-4051-b4f0-6a655d2ec9bf"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="dd5414a3-3574-44e8-9cea-aa842147bcd6"
+            name="RemoveActivite"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6469dfae-e495-4d74-af44-2863802a5d4b"
+                  name="Activite"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="97e97ca2-5aa1-4768-b717-da8f47d6981d"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -692,6 +1135,56 @@
           </dependency>
         </suppliersInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="af1ba112-9d1d-4945-a76b-8b20fcff9913"
+        name="int" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6ff8ae6f-c166-4b19-83a1-2510bdd23121"
+        name="string" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="cbae73ba-e414-45ec-9bce-cd554b11713d"
+        name="DateTime" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="8a07153c-5145-4256-93c5-e9aca5291558"
+        name="List&lt;Jour&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+        name="void" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="15d0e1ea-70d9-4a6d-9d51-0525c215f0d0"
+        name="List&lt;Astronaute&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6b2c23d4-9770-4b96-a83f-5ae169b92b8c"
+        name="List&lt;Activite&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="f0c90649-fff6-4691-9bee-dd808cdecd4a"
+        name="bool" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7b3ca6c8-ca54-41e9-94dd-b8fd167a3eac"
+        name="bool[]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7c605063-c038-4f05-a07a-d62075c0526c"
+        name="Point" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

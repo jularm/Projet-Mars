@@ -81,12 +81,6 @@ namespace Logiciel
             set { _listeActivites = value; }
         }
 
-        public void Parse(string test)
-        {
-
-        }
-
-
 
 
         public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)

@@ -33,12 +33,12 @@ namespace Logiciel
             _listActivite = listActivite;
         }
 
-        public void Activite(Activite A)
+        public void AddActivite(Activite A)
         {
             _listActivite.Add(A);
         }
 
-        public void RemActivite(Activite A)
+        public void RemoveActivite(Activite A)
         {
             _listActivite.Remove(A);
         }

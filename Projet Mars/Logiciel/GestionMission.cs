@@ -929,6 +929,11 @@ namespace Logiciel
             CoordX_TextChanged(new object(),new EventArgs());
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 
