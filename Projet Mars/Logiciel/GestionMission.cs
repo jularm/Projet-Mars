@@ -50,27 +50,27 @@ namespace Logiciel
                 CalendrierMartien c = new CalendrierMartien();
 
                 List<Activite> VieCourante_act = new List<Activite>();
-                Activite manger = new Activite("Manger");
-                Activite dormir = new Activite("Dormir");
-                Activite entrainement = new Activite("Entrainement");
-                Activite privé = new Activite("privé");
-                Activite ctrlSante = new Activite("Contrôle de santé");
-                Activite actmedical = new Activite("Acte médical");
+                Activite manger = new Activite("Eating");
+                Activite dormir = new Activite("Sleeping");
+                Activite divertissement = new Activite("Entertainment");
+                Activite privé = new Activite("Private");
+                Activite ctrlSante = new Activite("Health control");
+                Activite actmedical = new Activite("Medical act");
                 VieCourante_act.Add(manger);
                 VieCourante_act.Add(dormir);
-                VieCourante_act.Add(entrainement);
+                VieCourante_act.Add(divertissement);
                 VieCourante_act.Add(privé);
                 VieCourante_act.Add(ctrlSante);
                 VieCourante_act.Add(actmedical);
-                CategorieActivite VieCourante = new CategorieActivite("Vie Courante", VieCourante_act);
+                CategorieActivite VieCourante = new CategorieActivite("Living", VieCourante_act);
 
                 List<Activite> Science_act = new List<Activite>();
-                Activite exploCost = new Activite("Exploration en combinaison");
-                Activite exploVeh = new Activite("Exploration en véhicule");
+                Activite exploCost = new Activite("Exploration Space suit");
+                Activite exploVeh = new Activite("Exploration Vehicule");
                 Activite briefing = new Activite("Briefing");
                 Activite debriefing = new Activite("Debriefing");
-                Activite Expint = new Activite("Expérience intérieure");
-                Activite Expext = new Activite("Expérience extérieure");
+                Activite Expint = new Activite("Inside experiment");
+                Activite Expext = new Activite("Outside experiment");
                 Science_act.Add(exploCost);
                 Science_act.Add(exploVeh);
                 Science_act.Add(briefing);
@@ -80,13 +80,13 @@ namespace Logiciel
                 CategorieActivite Science = new CategorieActivite("Science", Science_act);
 
                 List<Activite> Maintenance_act = new List<Activite>();
-                Activite nettoyage = new Activite("Nettoyage");
-                Activite LSSair = new Activite("Système de survie : air");
-                Activite LSSeau = new Activite("Système de survie : eau");
-                Activite LSSnour = new Activite("Système de survie : nourriture");
-                Activite powsyst = new Activite("Système d'énergie");
-                Activite comb = new Activite("Combinaison spatiale");
-                Activite autre = new Activite("Autre");
+                Activite nettoyage = new Activite("Cleaning");
+                Activite LSSair = new Activite("LSS air system");
+                Activite LSSeau = new Activite("LSS water system");
+                Activite LSSnour = new Activite("LSS food system");
+                Activite powsyst = new Activite("Power systems");
+                Activite comb = new Activite("Space suit");
+                Activite autre = new Activite("Other");
                 Maintenance_act.Add(nettoyage);
                 Maintenance_act.Add(LSSair);
                 Maintenance_act.Add(LSSeau);
@@ -97,17 +97,17 @@ namespace Logiciel
                 CategorieActivite Maintenance = new CategorieActivite("Maintenance", Maintenance_act);
 
                 List<Activite> Communication_act = new List<Activite>();
-                Activite RecMess = new Activite("Reçevoir Message");
-                Activite EncMess = new Activite("Envoyer Message");
+                Activite RecMess = new Activite("Sending message");
+                Activite EncMess = new Activite("Receiving message");
                 Communication_act.Add(RecMess);
                 Communication_act.Add(EncMess);
                 CategorieActivite Communication = new CategorieActivite("Communication", Communication_act);
 
                 List<Activite> Reparation_act = new List<Activite>();
-                Activite LSS = new Activite("Système de survie");
-                Activite communication = new Activite("Système de communication");
-                Activite propSyst = new Activite("Système de propulsion");
-                Activite habitation = new Activite("Habitation");
+                Activite LSS = new Activite("LSS");
+                Activite communication = new Activite("Communication");
+                Activite propSyst = new Activite("Propulsion systems");
+                Activite habitation = new Activite("Habitat");
                 Activite vehicule = new Activite("Vehicule");
                 Reparation_act.Add(LSS);
                 Reparation_act.Add(powsyst);
@@ -118,8 +118,12 @@ namespace Logiciel
                 Reparation_act.Add(vehicule);
                 CategorieActivite Reparation = new CategorieActivite("Reparation", Reparation_act);
 
-                CategorieActivite Urgence = new CategorieActivite("Urgence");
+                List<Activite> Emergency_act = new List<Activite>();
+                Activite urgence = new Activite("Emergency");
+                Emergency_act.Add(urgence);
+                CategorieActivite Urgence = new CategorieActivite("Emergency");
 
+                //à automatiser
                 Astronaute A = new Astronaute(1, "Pierre");
                 Astronaute B = new Astronaute(2, "Paul");
                 Astronaute C = new Astronaute(3, "Jack");
@@ -150,6 +154,7 @@ namespace Logiciel
                 //test
             }           
 
+            //création 
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9;

@@ -58,8 +58,10 @@ namespace Logiciel
 
         private void ConfirmerAstronaute_Click(object sender, EventArgs e)
         {
-            // Mission.ListAstr = listAstro;
+            Mission.ListAstr = listAstro; //à revoir
             this.Close();
-        }      
+        }
+
+           
     }
 }
