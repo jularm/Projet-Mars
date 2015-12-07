@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activite.cs" />
+    <Compile Include="ActiviteExploration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActiviteExploration.Designer.cs">
+      <DependentUpon>ActiviteExploration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Astronaute.cs" />
     <Compile Include="Astronautes.cs">
       <SubType>Form</SubType>
@@ -73,6 +79,9 @@
     <Compile Include="Mission.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ActiviteExploration.resx">
+      <DependentUpon>ActiviteExploration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Astronautes.resx">
       <DependentUpon>Astronautes.cs</DependentUpon>
     </EmbeddedResource>
