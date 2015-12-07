@@ -11,7 +11,6 @@ namespace Logiciel
 {
     public partial class CompteRendu : Form
     {
-
         public event AjouterJourEventHandler CR;
         
         public delegate void AjouterJourEventHandler(string CR);
@@ -19,16 +18,13 @@ namespace Logiciel
         public CompteRendu(string CR)
         {
             InitializeComponent();
-            texteCR.Text = CR;
-            
+            texteCR.Text = CR;            
         }
 
         private void ConfirmerCR_Click(object sender, EventArgs e)
-        {
-            
+        {          
             this.CR(texteCR.Text);
-            this.Close();
-            
+            this.Close();            
         }
 
         private void AnnulerCR_Click(object sender, EventArgs e)

@@ -508,6 +508,147 @@
         <elementDefinition Id="7c605063-c038-4f05-a07a-d62075c0526c" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d721f4f3-aaae-43d3-83a3-a86d3abf040d" name="Mission" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="947e6ec2-c1dd-4a87-b9e7-6a45a9c909d6" />
+        <targetEnds>
+          <association Id="2ba06f76-a765-4b2d-be23-be80d13634ed" isDerived="false" sourceEndRoleName="Mission" targetEndRoleName="Astronaute" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c93395dd-6334-433f-b5b3-07e7b54a6a64" LastKnownName="Astronaute" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6313b181-219f-4aab-a576-a86c79fde44c" name="Mission" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="356366d8-711d-4b22-8493-34ba9f33f2fd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4add6bab-28ce-4a1a-9793-237b8d8d1031" name="Astronaute" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="eef9b9ad-2a8c-498d-88d3-58fa1665b009" name="Lower" value="1">
+                      <elementDefinition Id="0f262bf6-9f44-45ca-a4ac-15c3ae5ccf90" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="cb0a9d69-6394-4756-88e2-d023bdba2c36" name="Upper" value="*">
+                      <elementDefinition Id="930d84b5-e392-4cb0-9427-82809f706408" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="67dc77b5-a6c6-4f92-8e99-9edae8063938" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="431d95f9-bcf8-457b-9684-e8d09906fdfc" />
+          </association>
+          <association Id="c6a10dc9-1b80-4b32-9a89-dd9e907a038c" isDerived="false" sourceEndRoleName="Mission" targetEndRoleName="CategorieActivite" isLeaf="false" isAbstract="false">
+            <classMoniker Id="840c7a99-7de2-4e9f-b682-1f95df3b1250" LastKnownName="CategorieActivite" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b9bd1af0-d381-45ea-994a-2a9eb3f48cd6" name="Mission" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="585ef206-f04a-4922-9b5b-9804e6b454f1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="362d5fc5-03da-4a48-a8b6-e7c46b4746c4" name="CategorieActivite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="3cf80eaa-7baa-4761-bc40-be14fe769c37" name="Lower" value="1">
+                      <elementDefinition Id="fbf9d0af-afb0-4acb-ae8b-cd1885ef3b1c" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="b155cdcd-1aa7-487f-a7e7-1eedcfb6babd" name="Upper" value="*">
+                      <elementDefinition Id="431354d5-5cc1-43da-bd6f-983c16308b36" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="c378a873-3017-4fd3-ba26-1bafbb841eb6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="93410142-770c-4fdf-b3a5-613ac1099bf0" />
+          </association>
+          <association Id="ee50282b-ae50-4424-b6bd-a82cba52e5ae" isDerived="false" sourceEndRoleName="Mission" targetEndRoleName="CalendrierMartien" isLeaf="false" isAbstract="false">
+            <classMoniker Id="6dca6daa-3304-44e1-bbf7-414422d1c044" LastKnownName="CalendrierMartien" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e8583197-347a-4752-b17e-80119408cd3a" name="Mission" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="490e284c-9016-41af-897b-5a0fc5d498eb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e523202e-0430-42e0-ac9c-556fdd5467f3" name="CalendrierMartien" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d3db32c1-be21-46d3-bac6-715406aae28b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a30a3ee9-b406-4b90-ad74-a883a3b66d67" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="28038d9f-9d04-47c3-95f1-239f59788f88" name="_listAstronautes" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4b47a4f2-b184-4684-9573-761cc7d20aba" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7131874b-08d8-4632-b6a4-76955814727f" LastKnownName="List&lt;Astronaute&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="1d3db2f3-195e-4c28-8c0f-60d4b4923453" name="_listCategorieActivite" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="348f1c99-2f29-4df2-a27c-ea7f4032a5db" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9504c20c-ce80-4c86-9def-6e1feed98da9" LastKnownName="List&lt;CategorieActivite&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="e914e9af-2203-44fa-9985-692d21223a04" name="_calendar : CalendrierMartien" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cec65a66-62fd-4ce1-aaa3-b68146ba911b" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="1d800d8b-d45d-44b3-93ab-79ff5b115920" name="AddAstronaute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6409a8c9-caef-4123-95f2-3a2e44757e8b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="971d8051-8193-428f-9272-d6394b11ab3d" name="Astronaute" direction="In" isUnique="false">
+                  <elementDefinition Id="7eea49f2-b2e0-4c26-9333-d85710109caa" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="373c62fc-3704-43c6-b126-258fda792109" direction="Return" isUnique="false">
+                  <elementDefinition Id="7d76e470-cf2d-4be7-b458-08c3dd271c18" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a67d6490-8dcc-4d7d-8150-7128cdd849e8" name="RemoveAstronaute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a33a6a23-b368-4fd4-a5b0-b731d93bf9fe" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="351566f0-e1a3-45c7-a428-24efbc212bd6" name="Astronaute" direction="In" isUnique="false">
+                  <elementDefinition Id="afced14d-0ce4-48bc-8861-1bac280cd596" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d3875fb6-e0c8-42d5-bb4c-c3bd21593603" direction="Return" isUnique="false">
+                  <elementDefinition Id="562f620f-05ad-48ba-a994-2304d2c03472" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e5e77f1e-cc6d-40b4-ac14-512d2738b9eb" name="RemoveCategorie) : void" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b175a923-91f1-46d9-9b96-030c322e99a3" />
+          </operation>
+          <operation Id="8a06a516-8f72-4193-8640-cb7e30c86916" name="AddCategorie) : void" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="789936ae-19b8-48ec-b4d3-83860df51d80" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="9504c20c-ce80-4c86-9def-6e1feed98da9" name="List&lt;CategorieActivite&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;CategorieActivite&gt;">
+        <elementDefinition Id="32631d2c-820b-4f32-9459-867b935b0f34" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="407e6f78-6fca-4445-a20e-006ed31b61fb" name="Projet Mars">
     <elementDefinition Id="4447bcab-b6b3-44bc-8e22-dd9b3809bfce" />

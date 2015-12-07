@@ -119,7 +119,7 @@ namespace Logiciel
                 Astronaute B = new Astronaute(2, "Paul");
                 Astronaute C = new Astronaute(3, "Jack");
 
-                // initAstr.Show();
+                // Astronautes.Show();
 
                 M.Calendar = c;
                 M.AddCategorie(VieCourante);
@@ -930,6 +930,11 @@ namespace Logiciel
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listeAstronautes_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

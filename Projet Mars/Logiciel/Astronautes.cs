@@ -9,52 +9,57 @@ using System.Windows.Forms;
 
 namespace Logiciel
 {
-    public partial class Astronautes : Form
+    public partial class Astronautes : Form      // à revoir
     {
         private Astronaute s;
         static int Id=0;
-        private List<Astronaute> list = new List<Astronaute>();
+        private List<Astronaute> listAstro = new List<Astronaute>();
 
         public Astronautes()
         {
-            button1.Enabled = false;
-            button2.Enabled = false;
+            SupprimerAstronaute.Enabled = false;
+            AjouterAstronaute.Enabled = false;
             InitializeComponent();
         }
         
 
-        private void button2_Click(object sender, EventArgs e)
+        private void AjouterAstronaute_Click(object sender, EventArgs e)
         {
             Id++;
-            Astronaute A = new Astronaute(Id, textBox1.Text);            
-            list.Add(A);
-            listBox1.Items.Add(A);
+            Astronaute A = new Astronaute(Id, NomAstronaute.Text);
+            listAstro.Add(A);
+            AstronautesMission.Items.Add(A);
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void AstronautesMission_SelectedIndexChanged(object sender, EventArgs e)
         {
-            button1.Enabled = true;
-            s = (Astronaute)listBox1.SelectedItem;
+            SupprimerAstronaute.Enabled = true;
+            s = (Astronaute)AstronautesMission.SelectedItem;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void NomAstronaute_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text != "")
+            if (NomAstronaute.Text != "")
             {
-                button2.Enabled = true;
+                AjouterAstronaute.Enabled = true;
             }
             else
             {
-                button2.Enabled = false;
+                AjouterAstronaute.Enabled = false;
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SupprimerAstronaute_Click(object sender, EventArgs e)
         {
-            s = (Astronaute)listBox1.SelectedItem;
-            list.Remove(s);
-            listBox1.Items.Remove(s);
+            s = (Astronaute)AstronautesMission.SelectedItem;
+            listAstro.Remove(s);
+            AstronautesMission.Items.Remove(s);
         }
-        
+
+        private void ConfirmerAstronaute_Click(object sender, EventArgs e)
+        {
+            Mission.ListAstr = listAstro;
+            this.Close();
+        }      
     }
 }

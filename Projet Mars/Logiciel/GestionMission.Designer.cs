@@ -1962,6 +1962,7 @@
             this.listeAstronautes.TabIndex = 3;
             this.listeAstronautes.UseCompatibleStateImageBehavior = false;
             this.listeAstronautes.View = System.Windows.Forms.View.SmallIcon;
+            this.listeAstronautes.SelectedIndexChanged += new System.EventHandler(this.listeAstronautes_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
