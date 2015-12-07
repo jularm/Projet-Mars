@@ -19,6 +19,7 @@ namespace Logiciel
         private Mission M = new Mission();
 
         XmlDocument xmlDoc = new XmlDocument();
+        XmlDocument xmlDoc2 = new XmlDocument();
 
         int jourSelec;
 
@@ -33,8 +34,11 @@ namespace Logiciel
             try
             {
                 // ici lecture de l'xml et generation des objets 
-                xmlDoc.Load(@"..\\..\\..\\sauvegarde.xml");
+                xmlDoc.Load(@"..\\..\\..\\sauvegarde1.xml");                
                 M.chargerXml(xmlDoc, M);
+
+                xmlDoc2.Load(@"..\\..\\..\\sauvegarde2.xml");
+                M.chargerXml2(xmlDoc2, M);
 
                 M.Calendar.MiseAJour();      //Pour remettre les pendules à l'heure           
             }
@@ -157,7 +161,9 @@ namespace Logiciel
             try
             {
                 M.genereXml(xmlDoc);
-                xmlDoc.Save(@"..\\..\\..\\sauvegarde.xml");
+                xmlDoc.Save(@"..\\..\\..\\sauvegarde1.xml");
+                M.genereXml2(xmlDoc2);
+                xmlDoc2.Save(@"..\\..\\..\\sauvegarde2.xml");
             }
             catch
             {

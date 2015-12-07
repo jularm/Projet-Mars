@@ -44,26 +44,47 @@ namespace Logiciel
             NodeNom.InnerText = Nom.ToString();
             NodeAstronaute.AppendChild(NodeNom);
 
-
             rootNode.AppendChild(NodeAstronaute);
         }
 
         // lecture xml et generation objets
         public void chargerXml(XmlDocument xmlDoc, Mission M)
-        {
-            XmlNodeList nodelistAstronaute = xmlDoc.GetElementsByTagName("Astronaute"); 
+        { 
+            XmlNodeList nodelistAstronaute = xmlDoc.GetElementsByTagName("Astronaute");
             
             string nom = "";
             int id = 0;
 
-            foreach (XmlNode nodeAstronaute in nodelistAstronaute) 
+            foreach (XmlNode nodeAstronaute in nodelistAstronaute)
             {
                 id = int.Parse(nodeAstronaute.SelectSingleNode("Id").InnerText);
-                nom = nodeAstronaute.SelectSingleNode("Nom").InnerText;               
-            }
+                nom = nodeAstronaute.SelectSingleNode("Nom").InnerText;
+                Astronaute a = new Astronaute(id, nom);
+                if (M.ListAstr.Contains(a) || a == new Astronaute(0,""))
+                {
 
-            Astronaute a = new Astronaute(id, nom);
-           M.AddAstronaute(a);
+                }
+                else
+                {
+                    M.AddAstronaute(a);
+                }           
+            }                       
+        }
+
+
+        public void chargerXml2(XmlDocument xmlDoc, XmlNodeList truc)
+        {
+            //XmlNodeList nodelistAstronaute = xmlDoc.GetElementsByTagName("Astronaute");
+
+            string nom = "";
+            int id = 0;
+
+            foreach (XmlNode nodeAstronaute in truc)
+            {
+                id = int.Parse(nodeAstronaute.SelectSingleNode("Id").InnerText);
+                nom = nodeAstronaute.SelectSingleNode("Nom").InnerText;
+                Astronaute a = new Astronaute(id, nom);                
+            }
         }
     }
 }

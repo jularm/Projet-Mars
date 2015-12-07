@@ -83,33 +83,33 @@ namespace Logiciel
 
 
 
-        public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
+        public void genereXml(XmlDocument xmlDoc2, XmlNode rootNode)
         {
-            XmlNode NodeJour = xmlDoc.CreateElement("Jour");
+            XmlNode NodeJour = xmlDoc2.CreateElement("Jour");
 
-            XmlNode NodeCompteRendu = xmlDoc.CreateElement("Compte_Rendu");
+            XmlNode NodeCompteRendu = xmlDoc2.CreateElement("Compte_Rendu");
             NodeCompteRendu.InnerText = CompteRendu.ToString();
             NodeJour.AppendChild(NodeCompteRendu);
 
-            XmlNode NodeNumero = xmlDoc.CreateElement("Numéro");
+            XmlNode NodeNumero = xmlDoc2.CreateElement("Numéro");
             NodeNumero.InnerText = Numero.ToString();
             NodeJour.AppendChild(NodeNumero);
 
-            XmlNode NodeSortie = xmlDoc.CreateElement("Sortie");
+            XmlNode NodeSortie = xmlDoc2.CreateElement("Sortie");
             NodeSortie.InnerText = Sortie.ToString();
             NodeJour.AppendChild(NodeSortie);
 
-            XmlNode NodeListeActivite = xmlDoc.CreateElement("Liste_Activité");
+            XmlNode NodeListeActivite = xmlDoc2.CreateElement("Liste_Activité");
             foreach (Activite a in ListeActivites)
             {
-                a.genereXml(xmlDoc, NodeListeActivite);
+                a.genereXml2(xmlDoc2, NodeListeActivite);
             }
             NodeJour.AppendChild(NodeListeActivite);
 
-            XmlNode NodeTabHoraire = xmlDoc.CreateElement("Tableau_Horaire");
+            XmlNode NodeTabHoraire = xmlDoc2.CreateElement("Tableau_Horaire");
             foreach (bool b in _tabHoraires)
             {
-                XmlNode NodeLibre = xmlDoc.CreateElement("Libre");
+                XmlNode NodeLibre = xmlDoc2.CreateElement("Libre");
                 NodeLibre.InnerText = b.ToString();
                 NodeTabHoraire.AppendChild(NodeLibre);
             }
@@ -121,9 +121,9 @@ namespace Logiciel
 
 
         // lecture xml et generation objets    
-        public void chargerXml(XmlDocument xmlDoc, Mission M)
+        public void chargerXml(XmlDocument xmlDoc2, Mission M)
         {
-            XmlNodeList nodelistJour = xmlDoc.GetElementsByTagName("Jour");
+            XmlNodeList nodelistJour = xmlDoc2.GetElementsByTagName("Jour");
 
             string CompteRendu = "";
             int num = 0;
@@ -146,7 +146,7 @@ namespace Logiciel
                     foreach (XmlNode Activite in nodelisteActivite)
                     {
                         Activite a = new Activite("");
-                        a.chargerXml(xmlDoc, M);
+                        a.chargerXml2(xmlDoc2, M);
                         listeActivites.Add(a);
                     }
 

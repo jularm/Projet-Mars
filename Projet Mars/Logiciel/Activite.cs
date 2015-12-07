@@ -108,6 +108,22 @@ namespace Logiciel
 
             XmlNode NodeNom = xmlDoc.CreateElement("Nom");
             NodeNom.InnerText = Nom.ToString();
+            NodeActivite.AppendChild(NodeNom); 
+
+            XmlNode NodeTexteDescriptif = xmlDoc.CreateElement("Texte_Descriptif");
+            NodeTexteDescriptif.InnerText = TexteDescriptif.ToString();
+            NodeActivite.AppendChild(NodeTexteDescriptif);
+
+            rootNode.AppendChild(NodeActivite);
+
+        }
+
+        public void genereXml2(XmlDocument xmlDoc, XmlNode rootNode)
+        {
+            XmlNode NodeActivite = xmlDoc.CreateElement("Activité");
+
+            XmlNode NodeNom = xmlDoc.CreateElement("Nom");
+            NodeNom.InnerText = Nom.ToString();
             NodeActivite.AppendChild(NodeNom);
 
             XmlNode NodeCompteRendu = xmlDoc.CreateElement("Compte_Rendu");
@@ -130,11 +146,8 @@ namespace Logiciel
             NodeMFin.InnerText = Fin.Minutes.ToString();
             NodeActivite.AppendChild(NodeMFin);
 
-            XmlNode NodeGps = xmlDoc.CreateElement("GPS");
             Lieu l = _gps;
             l.genereXml(xmlDoc, NodeActivite);
-
-            NodeActivite.AppendChild(NodeGps);
 
             XmlNode NodeListeAstr = xmlDoc.CreateElement("Liste_Astronaute");
             foreach (Astronaute a in _listAstronaute)
@@ -173,18 +186,53 @@ namespace Logiciel
                 debut.Minutes = int.Parse(nodeActivite.SelectSingleNode("Minute_Debut").InnerText);
                 fin.Minutes = int.Parse(nodeActivite.SelectSingleNode("Minute_Fin").InnerText);
 
-                gps = Lieu.Parse(nodeActivite.SelectSingleNode("GPS").InnerText,xmlDoc, M);
+                gps = Lieu.Parse(nodeActivite.SelectSingleNode("Lieu"),xmlDoc, M);
 
                 XmlNodeList nodelistAstronaute = nodeActivite.SelectNodes("Liste_Astronaute");
                 foreach (XmlNode nodeAstronaute in nodelistAstronaute)
                 {
                     Astronaute a = new Astronaute(0,"");
-                    a.chargerXml(xmlDoc, M);
+                    a.chargerXml2(xmlDoc, nodelistAstronaute);
                     listAstronaute.Add(a);
                 }
                 texteDescriptif = nodeActivite.SelectSingleNode("Texte_Descriptif").InnerText;
             }
             Activite act = new Activite(nom, debut, fin, texteDescriptif);            
+        }
+
+        public void chargerXml2(XmlDocument xmlDoc, Mission M)
+        {
+            XmlNodeList nodelistActivite = xmlDoc.GetElementsByTagName("Activité");
+
+            string nom = "";
+            string compteRendu = "";
+            Heure debut = new Heure(0, 0);
+            Heure fin = new Heure(0, 0);
+            Lieu gps = new Lieu();
+            List<Astronaute> listAstronaute = new List<Astronaute>();
+            string texteDescriptif = "";
+
+            foreach (XmlNode nodeActivite in nodelistActivite)
+            {
+                nom = nodeActivite.SelectSingleNode("Nom").InnerText;
+                compteRendu = nodeActivite.SelectSingleNode("Compte_Rendu").InnerText;
+                debut.Heures = int.Parse(nodeActivite.SelectSingleNode("Heure_Debut").InnerText);
+                fin.Heures = int.Parse(nodeActivite.SelectSingleNode("Heure_Fin").InnerText);
+                debut.Minutes = int.Parse(nodeActivite.SelectSingleNode("Minute_Debut").InnerText);
+                fin.Minutes = int.Parse(nodeActivite.SelectSingleNode("Minute_Fin").InnerText);
+
+                gps = Lieu.Parse(nodeActivite.SelectSingleNode("Lieu"), xmlDoc, M);
+
+                XmlNodeList nodelistAstronaute = nodeActivite.SelectNodes("Liste_Astronaute");
+                foreach (XmlNode nodeAstronaute in nodelistAstronaute)
+                {
+                    Astronaute a = new Astronaute(0, "");
+                    a.chargerXml2(xmlDoc, nodelistAstronaute);
+                    listAstronaute.Add(a);
+                }
+                texteDescriptif = nodeActivite.SelectSingleNode("Texte_Descriptif").InnerText;
+            }
+            Activite act = new Activite(nom, debut, fin, texteDescriptif);
         }
 
 

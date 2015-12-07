@@ -40,7 +40,7 @@ namespace Logiciel
         }
 
 
-        public static Lieu Parse(string test, XmlDocument xmlDoc, Mission M)
+        public static Lieu Parse(XmlNode test, XmlDocument xmlDoc, Mission M)
         {
             Lieu l = new Lieu();           
             Point coords = new Point(0, 0);
@@ -51,8 +51,46 @@ namespace Logiciel
             foreach (XmlNode nodeLieu in nodelistLieu)
             {
                 nomLieu = nodeLieu.SelectSingleNode("Nom").InnerText;
-                coords.X = int.Parse(nodeLieu.SelectSingleNode("Coordonnées").InnerText);
-                coords.Y = int.Parse(nodeLieu.SelectSingleNode("Coordonnées").InnerText);
+                string Coord = nodeLieu.SelectSingleNode("Coordonnées").InnerText;
+                
+                int i=0;
+                int j=0;
+                string numberX="";
+                string numberY = "";
+
+                foreach (char c in Coord)
+                {
+                    if (c== 'X')
+                    {
+                        j=i+3;
+                        do
+                        {
+                            numberX = numberX + Coord[j-1];
+                            j++;
+                        } while (Coord[j] == ',');
+                        coords.X=int.Parse(numberX);
+                    }
+
+                    if (c == 'Y')
+                    {
+                        j = i + 3;
+                        do
+                        {                            
+                            if (Coord[j - 1] == '}')
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                numberY = numberY + Coord[j - 1];
+                                j++;
+                            }
+                        } while (true);
+                        coords.Y = int.Parse(numberY);
+                    }
+                    i++;
+                }
+                        
             }
             l.Nom = nomLieu;
             l.Coords = coords;    

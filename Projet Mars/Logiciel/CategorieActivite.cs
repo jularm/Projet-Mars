@@ -18,7 +18,7 @@ namespace Logiciel
         public CategorieActivite(string nom)
         {
             _nom = nom;
-            _listActivite.Add(new Activite (nom));
+            _listActivite.Add(new Activite(nom));
         }
 
         public string Nom
@@ -70,23 +70,25 @@ namespace Logiciel
             XmlNodeList nodelistCategorieActivite = xmlDoc.GetElementsByTagName("Catégorie_Activité");
 
             string nom = "";
-            List<Activite> listActivite = new List<Activite>();
 
             foreach (XmlNode nodeCategorieActivite in nodelistCategorieActivite)
             {
+                List<Activite> listActivite = new List<Activite>();
+
                 nom = nodeCategorieActivite.SelectSingleNode("Nom").InnerText;
 
-                XmlNodeList nodelistActivite = nodeCategorieActivite.SelectNodes("Activité");
+                XmlNodeList nodelistActivite = nodeCategorieActivite.SelectNodes("Liste_Activité");
                 foreach (XmlNode nodeActivite in nodelistActivite)
                 {
                     Activite a = new Activite("");
                     a.chargerXml(xmlDoc, M);
+                    listActivite.Add(a);
                 }
-            }           
 
-            CategorieActivite c = new CategorieActivite(nom, listActivite);
-            M.AddCategorie(c);
+                CategorieActivite c = new CategorieActivite(nom, listActivite);
+                M.AddCategorie(c);
+            }
+
         }
-
     }
 }

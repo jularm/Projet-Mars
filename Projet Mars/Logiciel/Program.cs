@@ -54,27 +54,6 @@ namespace Logiciel
             {
                 _heuresMinutes = int.Parse(Convert.ToString(h) + Convert.ToString(m));
             }
-        }
-
-        public static Heure Parse(string test)
-        {
-            int heures = 0;
-            int minutes = 0;
-            List<string> prout = new List<string>();
-
-            foreach (char c in test)
-            {
-                prout.Add(c.ToString());
-            }
-
-            for (int i = 0; i < prout.Count; i++)
-            {
-                //
-                //
-            }
-            Heure h = new Heure(heures, minutes);
-            return h;
-        }
-
+        }        
     }
 }
