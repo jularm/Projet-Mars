@@ -44,7 +44,10 @@ namespace Logiciel
             NodeNom.InnerText = Nom.ToString();
             NodeAstronaute.AppendChild(NodeNom);
 
-            rootNode.AppendChild(NodeAstronaute);
+            if (Id != 0 && Nom != "")
+            {
+                rootNode.AppendChild(NodeAstronaute);
+            }
         }
 
         // lecture xml et generation objets
@@ -59,15 +62,7 @@ namespace Logiciel
             {
                 id = int.Parse(nodeAstronaute.SelectSingleNode("Id").InnerText);
                 nom = nodeAstronaute.SelectSingleNode("Nom").InnerText;
-                Astronaute a = new Astronaute(id, nom);
-                if (M.ListAstr.Contains(a) || a == new Astronaute(0,""))
-                {
-
-                }
-                else
-                {
-                    M.AddAstronaute(a);
-                }           
+                Astronaute a = new Astronaute(id, nom);                      
             }                       
         }
 

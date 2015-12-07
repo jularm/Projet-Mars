@@ -24,6 +24,7 @@ namespace Logiciel
         int jourSelec;
 
         Image sortie = Image.FromFile("..\\..\\..\\..\\astronaut.png");
+
         Point coordBase = new Point(90, 129); //origine du repère
         Button test;
         bool premClick = false;
@@ -122,6 +123,7 @@ namespace Logiciel
                 Astronaute A = new Astronaute(1, "Pierre");
                 Astronaute B = new Astronaute(2, "Paul");
                 Astronaute C = new Astronaute(3, "Jack");
+                Astronaute D = new Astronaute(4, "Phoebé");
 
                 // Astronautes.Show();
 
@@ -136,6 +138,8 @@ namespace Logiciel
                 M.AddAstronaute(A);
                 M.AddAstronaute(B);
                 M.AddAstronaute(C);
+                M.AddAstronaute(D);
+
 
                 //test
                 M.Calendar.Jours[0].Sortie = true;
@@ -159,16 +163,26 @@ namespace Logiciel
             xmlDoc = new XmlDocument();
 
             try
-            {
+            {                
                 M.genereXml(xmlDoc);
-                xmlDoc.Save(@"..\\..\\..\\sauvegarde1.xml");
+                xmlDoc.Save(@"..\\..\\..\\sauvegarde1.xml");                     
+            }
+            catch
+            {
+                MessageBox.Show("Echec sauvegarde 1 !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            try
+            {
                 M.genereXml2(xmlDoc2);
                 xmlDoc2.Save(@"..\\..\\..\\sauvegarde2.xml");
             }
             catch
             {
-                MessageBox.Show("Echec sauvegarde !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Echec sauvegarde 2 !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+                       
         }
 
         /// <summary>
