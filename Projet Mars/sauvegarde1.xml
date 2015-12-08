@@ -352,32 +352,8 @@
       <Nom>Vie Courante</Nom>
       <Liste_Activité>
         <Activité>
-          <Nom>Manger</Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-        <Activité>
-          <Nom>Dormir</Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-        <Activité>
-          <Nom>Entrainement</Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-        <Activité>
-          <Nom>privé</Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-        <Activité>
-          <Nom>Contrôle de santé</Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-        <Activité>
-          <Nom>Acte médical</Nom>
+          <Nom>
+          </Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
@@ -387,12 +363,168 @@
       <Nom>Science</Nom>
       <Liste_Activité>
         <Activité>
-          <Nom>Exploration en combinaison</Nom>
+          <Nom>
+          </Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+      </Liste_Activité>
+    </Catégorie_Activité>
+    <Catégorie_Activité>
+      <Nom>Maintenance</Nom>
+      <Liste_Activité>
+        <Activité>
+          <Nom>
+          </Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+      </Liste_Activité>
+    </Catégorie_Activité>
+    <Catégorie_Activité>
+      <Nom>Communication</Nom>
+      <Liste_Activité>
+        <Activité>
+          <Nom>
+          </Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+      </Liste_Activité>
+    </Catégorie_Activité>
+    <Catégorie_Activité>
+      <Nom>Reparation</Nom>
+      <Liste_Activité>
+        <Activité>
+          <Nom>
+          </Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+      </Liste_Activité>
+    </Catégorie_Activité>
+    <Catégorie_Activité>
+      <Nom>Urgence</Nom>
+      <Liste_Activité>
+        <Activité>
+          <Nom>
+          </Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+      </Liste_Activité>
+    </Catégorie_Activité>
+    <Catégorie_Activité>
+      <Nom>Living</Nom>
+      <Liste_Activité>
+        <Activité>
+          <Nom>
+          </Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+      </Liste_Activité>
+    </Catégorie_Activité>
+    <Catégorie_Activité>
+      <Nom>Science</Nom>
+      <Liste_Activité>
+        <Activité>
+          <Nom>
+          </Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+      </Liste_Activité>
+    </Catégorie_Activité>
+    <Catégorie_Activité>
+      <Nom>Maintenance</Nom>
+      <Liste_Activité>
+        <Activité>
+          <Nom>
+          </Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+      </Liste_Activité>
+    </Catégorie_Activité>
+    <Catégorie_Activité>
+      <Nom>Communication</Nom>
+      <Liste_Activité>
+        <Activité>
+          <Nom>
+          </Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+      </Liste_Activité>
+    </Catégorie_Activité>
+    <Catégorie_Activité>
+      <Nom>Reparation</Nom>
+      <Liste_Activité>
+        <Activité>
+          <Nom>
+          </Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+      </Liste_Activité>
+    </Catégorie_Activité>
+    <Catégorie_Activité>
+      <Nom>Emergency</Nom>
+      <Liste_Activité>
+        <Activité>
+          <Nom>
+          </Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+      </Liste_Activité>
+    </Catégorie_Activité>
+    <Catégorie_Activité>
+      <Nom>Living</Nom>
+      <Liste_Activité>
+        <Activité>
+          <Nom>Eating</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Exploration en véhicule</Nom>
+          <Nom>Sleeping</Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+        <Activité>
+          <Nom>Entertainment</Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+        <Activité>
+          <Nom>Private</Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+        <Activité>
+          <Nom>Health control</Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+        <Activité>
+          <Nom>Medical act</Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+      </Liste_Activité>
+    </Catégorie_Activité>
+    <Catégorie_Activité>
+      <Nom>Science</Nom>
+      <Liste_Activité>
+        <Activité>
+          <Nom>Exploration Space suit</Nom>
+          <Texte_Descriptif>
+          </Texte_Descriptif>
+        </Activité>
+        <Activité>
+          <Nom>Exploration Vehicule</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
@@ -407,12 +539,12 @@
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Expérience intérieure</Nom>
+          <Nom>Inside experiment</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Expérience extérieure</Nom>
+          <Nom>Outside experiment</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
@@ -422,37 +554,37 @@
       <Nom>Maintenance</Nom>
       <Liste_Activité>
         <Activité>
-          <Nom>Nettoyage</Nom>
+          <Nom>Cleaning</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Système de survie : air</Nom>
+          <Nom>LSS air system</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Système de survie : eau</Nom>
+          <Nom>LSS water system</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Système de survie : nourriture</Nom>
+          <Nom>LSS food system</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Système d'énergie</Nom>
+          <Nom>Power systems</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Combinaison spatiale</Nom>
+          <Nom>Space suit</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Autre</Nom>
+          <Nom>Other</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
@@ -462,12 +594,12 @@
       <Nom>Communication</Nom>
       <Liste_Activité>
         <Activité>
-          <Nom>Reçevoir Message</Nom>
+          <Nom>Sending message</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Envoyer Message</Nom>
+          <Nom>Receiving message</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
@@ -477,32 +609,32 @@
       <Nom>Reparation</Nom>
       <Liste_Activité>
         <Activité>
-          <Nom>Système de survie</Nom>
+          <Nom>LSS</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Système d'énergie</Nom>
+          <Nom>Power systems</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Système de communication</Nom>
+          <Nom>Communication</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Système de propulsion</Nom>
+          <Nom>Propulsion systems</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Habitation</Nom>
+          <Nom>Habitat</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
         <Activité>
-          <Nom>Combinaison spatiale</Nom>
+          <Nom>Space suit</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
@@ -514,10 +646,10 @@
       </Liste_Activité>
     </Catégorie_Activité>
     <Catégorie_Activité>
-      <Nom>Urgence</Nom>
+      <Nom>Emergency</Nom>
       <Liste_Activité>
         <Activité>
-          <Nom>Urgence</Nom>
+          <Nom>Emergency</Nom>
           <Texte_Descriptif>
           </Texte_Descriptif>
         </Activité>
