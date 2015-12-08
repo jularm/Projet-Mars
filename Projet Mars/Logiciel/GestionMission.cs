@@ -133,6 +133,24 @@ namespace Logiciel
 
                 // Astronautes.Show();
 
+                for (int i = 1; i < 501; i++)
+                {
+                    Jour j = new Jour(i);
+                    //Journée type par défaut :  
+                    j.AddAct(new Activite("Slepping", new Heure(0, 0), new Heure(7, 0), "Dormir c'est important"));
+                    j.AddAct(new Activite("Eating", new Heure(7, 0), new Heure(8, 0), "Manger c'est important"));
+                    j.AddAct(new Activite("Private", new Heure(8, 0), new Heure(12, 0), ""));
+                    j.AddAct(new Activite("Eating", new Heure(12, 0), new Heure(14, 0), "Manger c'est important"));
+                    j.AddAct(new Activite("Private", new Heure(14, 0), new Heure(19, 0), ""));
+                    j.AddAct(new Activite("Eating", new Heure(19, 0), new Heure(21, 0), "Manger c'est important"));
+                    j.AddAct(new Activite("Private", new Heure(21, 0), new Heure(23, 0), ""));
+                    j.AddAct(new Activite("Sleeping", new Heure(23, 0), new Heure(24, 40), "Dormir c'est important"));
+
+                    c.AddJours(j);
+                }
+                
+
+
                 M.Calendar = c;
                 M.AddCategorie(VieCourante);
                 M.AddCategorie(Science);
@@ -168,6 +186,8 @@ namespace Logiciel
         {
             // generation xml 
             xmlDoc = new XmlDocument();
+            xmlDoc2 = new XmlDocument();
+            
 
             try
             {                

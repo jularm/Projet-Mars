@@ -43,6 +43,12 @@ namespace Logiciel
             _listActivite.Remove(A);
         }
 
+        public List<Activite> ListActivite
+        {
+            get { return _listActivite; }
+            set { _listActivite = value; }
+        }
+
         // Generation Xml
         public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
         {

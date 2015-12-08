@@ -20,17 +20,8 @@ namespace Logiciel
 
         public Jour(int numero)
         {
-            _numero = numero;
-            //Journée type par défaut : 
-            _listeActivites.Add(new Activite("Sleeping", new Heure(0, 0), new Heure(7, 0), "Dormir c'est important"));
-            _listeActivites.Add(new Activite("Eating", new Heure(7, 0), new Heure(8, 0), "Manger c'est important"));
-            _listeActivites.Add(new Activite("Private", new Heure(8, 0), new Heure(12, 0), ""));
-            _listeActivites.Add(new Activite("Eating", new Heure(12, 0), new Heure(14, 0), "Manger c'est important"));
-            _listeActivites.Add(new Activite("Private", new Heure(14, 0), new Heure(19, 0), ""));
-            _listeActivites.Add(new Activite("Eating", new Heure(19, 0), new Heure(21, 0), "Manger c'est important"));
-            _listeActivites.Add(new Activite("Private", new Heure(21, 0), new Heure(23, 0), ""));
-            _listeActivites.Add(new Activite("Sleeping", new Heure(23, 0), new Heure(24, 40), "Dormir c'est important"));
-            _compteRendu = "test";
+            _numero = numero;            
+            _compteRendu = "La journée c'est bien passée";
             _sortie = false;
             for (int i = 0; i < 147; i++)
             {
@@ -42,10 +33,7 @@ namespace Logiciel
         {
             _numero = numero;
             _compteRendu = compteRendu;
-            _tabHoraires = tabHoraires;
-            // journée type : 
-            _listeActivites.Add(new Activite("Sleeping", new Heure(0, 0), new Heure(7, 0), "Dormir c'est important"));
-            _listeActivites.Add(new Activite("Eating", new Heure(10, 30), new Heure(13, 40), "Manger c'est important"));
+            _tabHoraires = tabHoraires;            
             _sortie = false;
             for (int i = 0; i < 147; i++)
             {
@@ -70,15 +58,27 @@ namespace Logiciel
             get { return _sortie; }
             set { _sortie = value; }
         }
+
         public bool[] TabHoraires
         {
             get { return _tabHoraires; }
             set { _tabHoraires = value; }
         }
+
         public List<Activite> ListeActivites
         {
             get { return _listeActivites; }
             set { _listeActivites = value; }
+        }
+
+        public void AddAct(Activite A)
+        {
+            _listeActivites.Add(A);
+        }
+
+        public void RemoveAct(Activite A)
+        {
+            _listeActivites.Remove(A);
         }
 
 
@@ -113,7 +113,7 @@ namespace Logiciel
                 NodeLibre.InnerText = b.ToString();
                 NodeTabHoraire.AppendChild(NodeLibre);
             }
-            NodeJour.AppendChild(NodeListeActivite);
+            NodeJour.AppendChild(NodeTabHoraire);
 
             rootNode.AppendChild(NodeJour);
 
@@ -121,53 +121,63 @@ namespace Logiciel
 
 
         // lecture xml et generation objets    
-        public void chargerXml(XmlDocument xmlDoc2, Mission M)
+        public void chargerXml(XmlNode Jour, Mission M)
         {
-            XmlNodeList nodelistJour = xmlDoc2.GetElementsByTagName("Jour");
+            XmlNodeList nodelistJour = Jour.ChildNodes;            
 
             string CompteRendu = "";
             int num = 0;
             bool sortie = false;
             bool[] tabHoraires = new bool[147];
 
-            foreach (XmlNode nodeJour in nodelistJour)
+            try
             {
-                CompteRendu = nodeJour.SelectSingleNode("Compte_rendu").InnerText;
-                num = int.Parse(nodeJour.SelectSingleNode("Numéro").InnerText);
-                sortie = bool.Parse(nodeJour.SelectSingleNode("Sortie").InnerText);
-
-                List<Activite> listeActivites = new List<Activite>();
-                Jour j = new Jour(CompteRendu, num, tabHoraires);
-
-                XmlNodeList nodelistActivite = nodeJour.SelectNodes("Liste_Activité");
-                foreach (XmlNode nodeActivite in nodelistActivite)
+                foreach (XmlNode nodeJour in nodelistJour)
                 {
-                    XmlNodeList nodelisteActivite = nodeActivite.SelectNodes("Activité");
-                    foreach (XmlNode Activite in nodelisteActivite)
+                    CompteRendu = nodeJour.SelectSingleNode("Compte_rendu").InnerText;
+                    num = int.Parse(nodeJour.SelectSingleNode("Numéro").InnerText);
+                    sortie = bool.Parse(nodeJour.SelectSingleNode("Sortie").InnerText);
+
+                    List<Activite> listeActivites = new List<Activite>();
+                    Jour j = new Jour(CompteRendu, num, tabHoraires);
+
+                    XmlNodeList nodelistActivite = nodeJour.SelectNodes("Liste_Activité");
+                    foreach (XmlNode nodeActivite in nodelistActivite)
                     {
-                        Activite a = new Activite("");
-                        a.chargerXml2(xmlDoc2, M);
-                        listeActivites.Add(a);
+                        XmlNodeList nodelisteActivite = nodeActivite.SelectNodes("Activité");
+                        foreach (XmlNode Activite in nodelisteActivite)
+                        {
+                            Activite a = new Activite("");
+                            // a.chargerXml2(xmlDoc2, M);
+                            listeActivites.Add(a);
+                        }
+
                     }
+                    j.ListeActivites = listeActivites;
 
-                }
-                j.ListeActivites = listeActivites;
-
-                XmlNodeList nodelistTabHoraire = nodeJour.SelectNodes("Tableau_Horaire");
-                foreach (XmlNode nodeListeLibre in nodelistTabHoraire)
-                {
-                    int i = 0;
-                    XmlNodeList nodelistLibre = nodeListeLibre.SelectNodes("Libre");
-                    foreach (XmlNode nodeLibre in nodelistLibre)
+                    XmlNodeList nodelistTabHoraire = nodeJour.SelectNodes("Tableau_Horaire");
+                    foreach (XmlNode nodeListeLibre in nodelistTabHoraire)
                     {
-                        tabHoraires[i] = bool.Parse(nodeLibre.InnerText);
-                        i++;
+                        int i = 0;
+                        XmlNodeList nodelistLibre = nodeListeLibre.SelectNodes("Libre");
+                        foreach (XmlNode nodeLibre in nodelistLibre)
+                        {
+                            tabHoraires[i] = bool.Parse(nodeLibre.InnerText);
+                            i++;
+                        }
                     }
-                }
-                j.TabHoraires = tabHoraires;
+                    j.TabHoraires = tabHoraires;
 
-                M.Calendar.Jours.Add(j);
+                    M.Calendar.Jours.Add(j);
+                }
+
             }
+            catch (Exception ex)
+            {
+                string er = ex.Message;
+                
+            }
+            
 
         }
     }

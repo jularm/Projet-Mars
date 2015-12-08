@@ -26,12 +26,7 @@ namespace Logiciel
             _jour = 1;
             _minute = 0;
             _heure = 0;
-            _seconde = 0;
-
-            for (int i = 0; i < 500; i++)
-            {
-                _Jours.Add(new Jour(i));
-            }
+            _seconde = 0;            
         }
 
         public CalendrierMartien(DateTime debut, DateTime fin, int jour, int heure, int minute, int seconde)
@@ -243,7 +238,7 @@ namespace Logiciel
                     foreach (XmlNode jour in nodelistJour)
                     {   
                         Jour j = new Jour(0);
-                        j.chargerXml(xmlDoc, M);
+                        j.chargerXml(jour, M);
                         c.Jours.Add(j);
                     }
                 }
