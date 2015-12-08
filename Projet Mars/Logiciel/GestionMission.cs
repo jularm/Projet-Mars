@@ -29,6 +29,8 @@ namespace Logiciel
         Button test;
         bool premClick = false;
         Graphics croix;
+        Graphics marque;
+
         public GestionMission()
         {
             InitializeComponent();
@@ -45,7 +47,7 @@ namespace Logiciel
             }
             catch
             {
-                MessageBox.Show("Initialisation Mission", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Initialisation Mission", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 CalendrierMartien c = new CalendrierMartien();
 
@@ -822,6 +824,16 @@ namespace Logiciel
             {
                 MessageBox.Show("La plage horaire selectionnée n'est pas disponible", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            //vers le form "ActiviteExploration"
+            if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule" || ItemSelect.Text == "Outside experiment")
+            {
+                //Faire afficher le point sur la carte d'exploration aux bonnes coordonnées
+                marque = Carte.CreateGraphics();
+
+                // à terminer !!!
+
+            }
         }
 
 
@@ -954,14 +966,26 @@ namespace Logiciel
             CoordX_TextChanged(new object(),new EventArgs());
         }
 
+
+        private void Parametres_Click(object sender, EventArgs e)
+        {
+            FenetreParametres FenetreParametres = new FenetreParametres();
+            FenetreParametres.Show();
+        }
+
+        private void ActExplo_Click(object sender, EventArgs e)
+        {         
+            ActiviteExploration.Visible = true;
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void listeAstronautes_SelectedIndexChanged(object sender, EventArgs e)
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
-
+            ActiviteExploration.Visible = false;
         }
 
 

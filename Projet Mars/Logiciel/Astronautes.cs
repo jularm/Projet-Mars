@@ -56,11 +56,11 @@ namespace Logiciel
             AstronautesMission.Items.Remove(s);
         }
 
-        private void ConfirmerAstronaute_Click(object sender, EventArgs e)
+        /*private void ConfirmerAstronaute_Click(object sender, EventArgs e)
         {
             Mission.ListAstr = listAstro; //à revoir
             this.Close();
-        }
+        }*/
 
            
     }
