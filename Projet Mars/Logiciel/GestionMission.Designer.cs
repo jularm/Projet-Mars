@@ -1301,10 +1301,12 @@
             // 
             // CompteRendu
             // 
+            this.CompteRendu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CompteRendu.Location = new System.Drawing.Point(503, 18);
             this.CompteRendu.Name = "CompteRendu";
             this.CompteRendu.Size = new System.Drawing.Size(158, 23);
             this.CompteRendu.TabIndex = 10;
+            this.CompteRendu.Tag = "";
             this.CompteRendu.Text = "Compte-rendu de la journée";
             this.CompteRendu.Click += new System.EventHandler(this.CompteRendu_Click);
             // 
@@ -1486,7 +1488,7 @@
             this.Niveau3.Controls.Add(this.listeAstronautes);
             this.Niveau3.Controls.Add(this.pictureBox1);
             this.Niveau3.Controls.Add(this.AnnulerNiv3);
-            this.Niveau3.Location = new System.Drawing.Point(36, 548);
+            this.Niveau3.Location = new System.Drawing.Point(12, 534);
             this.Niveau3.Name = "Niveau3";
             this.Niveau3.Size = new System.Drawing.Size(708, 504);
             this.Niveau3.TabIndex = 9;
@@ -1982,7 +1984,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // AnnulerNiv3
@@ -2051,7 +2052,7 @@
             this.ActiviteExploration.Controls.Add(this.pictureBox4);
             this.ActiviteExploration.Controls.Add(this.Carte);
             this.ActiviteExploration.Controls.Add(this.label11);
-            this.ActiviteExploration.Location = new System.Drawing.Point(0, 8);
+            this.ActiviteExploration.Location = new System.Drawing.Point(23, 49);
             this.ActiviteExploration.Name = "ActiviteExploration";
             this.ActiviteExploration.Size = new System.Drawing.Size(761, 563);
             this.ActiviteExploration.TabIndex = 71;
@@ -2095,11 +2096,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.ClientSize = new System.Drawing.Size(1370, 1062);
+            this.Controls.Add(this.Niveau3);
             this.Controls.Add(this.ActiviteExploration);
             this.Controls.Add(this.ActExplo);
             this.Controls.Add(this.Parametres);
-            this.Controls.Add(this.Niveau3);
             this.Controls.Add(this.DateT);
             this.Controls.Add(this.titreJour);
             this.Controls.Add(this.JourCourantMission);

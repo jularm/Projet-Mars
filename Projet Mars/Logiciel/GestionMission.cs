@@ -24,12 +24,19 @@ namespace Logiciel
         int jourSelec;
 
         Image sortie = Image.FromFile("..\\..\\..\\..\\astronaut.png");
+        Image scaphandrePasse = Image.FromFile("..\\..\\..\\..\\astronaut.png");
+        Image scaphandreFutur = Image.FromFile("..\\..\\..\\..\\astronaut.png");
+        Image vehiculePasse = Image.FromFile("..\\..\\..\\..\\astronaut.png");
+        Image vehiculeFutur = Image.FromFile("..\\..\\..\\..\\astronaut.png");
+        Image experiencePasse = Image.FromFile("..\\..\\..\\..\\astronaut.png");
+        Image experienceFutur = Image.FromFile("..\\..\\..\\..\\astronaut.png");
 
-        Point coordBase = new Point(90, 129); //origine du repère
+        Point coordBase = new Point(90, 129); //origine du repère carte niveau 3
+        
+
         Button test;
         bool premClick = false;
         Graphics croix;
-        Graphics marque;
 
         public GestionMission()
         {
@@ -518,8 +525,8 @@ namespace Logiciel
 
         private void ClickNiveau3(object sender, EventArgs e)
         {
-            //treeView1.Controls[0].Controls.Add(new CheckBox());
-            Button clickedButton = (Button)sender;
+           
+            Button clickedButton = (Button)sender; //cette fonction est appelée à chaque clique sur un bouton du planning, le sender fait référence au bouton sur lequel on a cliqué
 
             Activite act = M.Calendar.Jours.ElementAt(int.Parse(NduJNiv3.Text) - 1).ListeActivites.ElementAt(clickedButton.TabIndex); //activité à l'index i du jour concerné
             labelInvisible.Text = Convert.ToString(clickedButton.TabIndex);
@@ -845,15 +852,6 @@ namespace Logiciel
                 MessageBox.Show("La plage horaire selectionnée n'est pas disponible", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            //vers le form "ActiviteExploration"
-            if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule" || ItemSelect.Text == "Outside experiment")
-            {
-                //Faire afficher le point sur la carte d'exploration aux bonnes coordonnées
-                marque = Carte.CreateGraphics();
-
-                // à terminer !!!
-
-            }
         }
 
 
@@ -993,20 +991,90 @@ namespace Logiciel
             FenetreParametres.Show();
         }
 
+
         private void ActExplo_Click(object sender, EventArgs e)
         {         
             ActiviteExploration.Visible = true;
+
+            //List<Activite> listActExploration;
+            //List<int> listJoursExploration;
+            //Point repere = new Point(Carte.Location.X,Carte.Location.Y);
+
+            Point coordBaseExpl = new Point(175, 328); //origine du repère carte d'exploration
+
+            for (int i = 0; i < 500; i++) //on parcourt les jours
+            {
+                for (int j = 0; j < M.Calendar.Jours[i].ListeActivites.Count; j++) //on parcourt l'ensemble des activités du jour i
+                {
+                    if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit")
+                    {
+                        if (i <= int.Parse(JourCourantMission.Text))
+                        {
+                            PictureBox icone = new PictureBox();
+
+                            Carte.Controls.Add(icone);
+                            icone.Location = new Point(coordBaseExpl.X + Convert.ToInt32(Math.Round(M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X * 1.94)), coordBaseExpl.Y + Convert.ToInt32(Math.Round(M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y * 1.94)));
+                            icone.Image = scaphandrePasse;
+                            icone.Cursor = System.Windows.Forms.Cursors.Hand;
+                            icone.Tag = M.Calendar.Jours[i].ListeActivites[j];
+                            icone.Click += new System.EventHandler(this.ClickIconeCarte);
+                        }
+                        else
+                        {
+                            PictureBox icone = new PictureBox();
+
+                            Carte.Controls.Add(icone);
+                            icone.Location = new Point(coordBaseExpl.X + Convert.ToInt32(Math.Round(M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X * 1.94)), coordBaseExpl.Y + Convert.ToInt32(Math.Round(M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y * 1.94)));
+                            icone.Image = scaphandreFutur;
+                            icone.Cursor = System.Windows.Forms.Cursors.Hand;
+                            icone.Tag = M.Calendar.Jours[i].ListeActivites[j];
+                            icone.Click += new System.EventHandler(this.ClickIconeCarte);
+                        }
+                    }
+
+                    if(M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule")
+                    {
+                        if (i <= int.Parse(JourCourantMission.Text))
+                        {
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+
+                    if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
+                    {
+                        if (i <= int.Parse(JourCourantMission.Text))
+                        {
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }
+            }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void ClickIconeCarte(object sender, EventArgs e)
         {
-
+            PictureBox p = (PictureBox)sender;
+            Activite activiteClickee = (Activite)p.Tag;
+            
         }
+
+
+
+
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             ActiviteExploration.Visible = false;
         }
+
 
 
 
