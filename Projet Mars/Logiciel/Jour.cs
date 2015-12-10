@@ -27,6 +27,7 @@ namespace Logiciel
             {
                 _tabHoraires[i] = false;
             }
+
         }
 
         public Jour(string compteRendu, int numero, bool[] tabHoraires)

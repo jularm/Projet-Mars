@@ -56,12 +56,6 @@
     </Compile>
     <Compile Include="CalendrierMartien.cs" />
     <Compile Include="CategorieActivite.cs" />
-    <Compile Include="FenetreParametres.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FenetreParametres.Designer.cs">
-      <DependentUpon>FenetreParametres.cs</DependentUpon>
-    </Compile>
     <Compile Include="GestionMission.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,9 +78,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CompteRendu.resx">
       <DependentUpon>CompteRendu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FenetreParametres.resx">
-      <DependentUpon>FenetreParametres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionMission.resx">
       <DependentUpon>GestionMission.cs</DependentUpon>
@@ -134,6 +125,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HorairePM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LegendeCarte.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -949,49 +949,25 @@ namespace Logiciel
             
         }
 
-        private void CoordX_TextChanged(object sender, EventArgs e)
-        {
-            if (CoordY.Text != "" && CoordX.Text != "" && CoordX.Text != "-" && CoordY.Text != "-")
-            {
-                if (NomLieu.Text == "Base")
-                {
-                    NomLieu.Text = "";
-                }
-                pictureBox1.Refresh();
-
-                croix = pictureBox1.CreateGraphics();
-
-                if (int.Parse(CoordY.Text) >= 0)
-                {
-                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)) - 10, Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / 37.9))), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)) + 10, Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / 37.9))));
-                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)), Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / 37.9)) - 10), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)), Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / 37.9)) + 10));
-
-                }
-                else
-                {
-                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)) - 10, -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y)/37.9)))), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X)/37.9)) + 10, -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y)/37.9)))));
-                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)), -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / 37.9))) - 10), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text)  + coordBase.X)/ 37.9)), -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text)  - coordBase.Y)/ 37.9))) + 10));
-
-                }
-            }
-        }
-
-        private void CoordY_TextChanged(object sender, EventArgs e)
-        {
-            CoordX_TextChanged(new object(),new EventArgs());
-        }
-
-
-        private void Parametres_Click(object sender, EventArgs e)
-        {
-            FenetreParametres FenetreParametres = new FenetreParametres();
-            FenetreParametres.Show();
-        }
-
 
         private void ActExplo_Click(object sender, EventArgs e)
         {         
             //Referesh
+            InfoLieu.Text = "";
+            InfoActivite.Text = "";
+            InfoNumJour.Text = "";
+            InfoHDebut.Text = "";
+            InfoMDebut.Text = "";
+            InfoHFin.Text = "";
+            InfoMFin.Text = "";
+
+            InfoAstronautes.Items.Clear();
+            
+
+            InfoDescriptif.Text = "";
+            Carte.Controls.Clear();
+            Carte.Refresh();
+
             ActiviteExploration.Visible = true;
 
             //List<Activite> listActExploration;
@@ -1000,7 +976,7 @@ namespace Logiciel
 
             Point coordBaseExpl = new Point(175, 250); //origine du repère carte d'exploration
 
-            for (int i = 0; i < 500; i++) //on parcourt les jours
+            for (int i = int.Parse(PeriodeDebut.Text)-1; i < int.Parse(PeriodeFin.Text)-1; i++) //on parcourt les jours
             {
                 for (int j = 0; j < M.Calendar.Jours[i].ListeActivites.Count; j++) //on parcourt l'ensemble des activités du jour i
                 {
@@ -1017,24 +993,17 @@ namespace Logiciel
                         icone.Click += new System.EventHandler(this.ClickIconeCarte);
 
 
-                        //on place et on centre l'icône (+ou- 12 pour centrer l'icone de 24*24px)
-                        if (M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X >= 0 || M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y >= 0)
+                        //on place et on centre l'icône (- 12 pour centrer l'icone de 24*24px)
+                        
+                        if (M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y >= 0)
                         {
-                            icone.Location = new Point(coordBaseExpl.X + Convert.ToInt32(Math.Round(M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X * 1.94) - 12), coordBaseExpl.Y - Convert.ToInt32(Math.Round(M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y * 1.94)) - 12);
-                        }
-                        else if (M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X >= 0 || M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y < 0)
-                        {
-                            icone.Location = new Point(coordBaseExpl.X + Convert.ToInt32(Math.Round(M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X * 1.94) - 12), coordBaseExpl.Y - Convert.ToInt32(Math.Round(M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y * 1.94)) - 12);
-                        }
-                        else if (M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X < 0 || M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y < 0)
-                        {
-                            icone.Location = new Point(coordBaseExpl.X - Convert.ToInt32(Math.Round(M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X * 1.94) - 12), coordBaseExpl.Y - Convert.ToInt32(Math.Round(M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y * 1.94)) - 12);
-                        }
-                        else if (M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X < 0 || M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y >= 0)
-                        {
-                            icone.Location = new Point(coordBaseExpl.X - Convert.ToInt32(Math.Round(M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X * 1.94) - 12), coordBaseExpl.Y - Convert.ToInt32(Math.Round(M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y * 1.94)) - 12);
-                        }
+                            icone.Location = new Point(Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X + coordBase.X) / 37.9 * 1.94)) - 12, Convert.ToInt32(Math.Round((coordBase.Y - M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y) / 37.9 * 1.94)) - 12);
 
+                        }
+                        else
+                        {
+                            icone.Location = new Point(Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X + coordBase.X) / 37.9 * 1.94)) - 12, -1 * (Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y - coordBase.Y) / 37.9 * 1.94))) - 12);
+                        }
 
                         if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit")
                         {
@@ -1078,42 +1047,77 @@ namespace Logiciel
 
         private void ClickIconeCarte(object sender, EventArgs e)
         {
+            ActExplo_Click(new object(), new EventArgs());
             PictureBox p = (PictureBox)sender;
             Activite activiteClickee = (Activite)p.Tag;
             InfoLieu.Text = activiteClickee.Gps.Nom;
             InfoActivite.Text = activiteClickee.Nom;
-            InfoNumJour.Text = p.Controls[0].Name;
+            InfoNumJour.Text = p.Controls[0].Text;
             InfoHDebut.Text = Convert.ToString(activiteClickee.Debut.Heures);
             InfoMDebut.Text = Convert.ToString(activiteClickee.Debut.Minutes);
             InfoHFin.Text = Convert.ToString(activiteClickee.Fin.Heures);
             InfoMFin.Text = Convert.ToString(activiteClickee.Fin.Minutes);
-            /*for (int i = 0; i < activiteClickee.ListAstronaute.Count; i++)
+            for (int i = 0; i < activiteClickee.ListAstronaute.Count; i++)
             {
-                InfoAstronautes.Items = activiteClickee.ListAstronaute;
-            }*/
+                InfoAstronautes.Items.Add(activiteClickee.ListAstronaute[i].Nom);
+            }
             
             InfoDescriptif.Text = activiteClickee.TexteDescriptif;
         }
-
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             ActiviteExploration.Visible = false;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PeriodeDebut_TextChanged(object sender, EventArgs e)
         {
-
+            if (PeriodeDebut.Text != "" && PeriodeFin.Text != "" && int.Parse(PeriodeDebut.Text) > 0 && int.Parse(PeriodeDebut.Text)<=500)
+            {
+                ActExplo_Click(new object(), new EventArgs());
+            }           
         }
 
-        private void label12_Click(object sender, EventArgs e)
+        private void PeriodeFin_TextChanged(object sender, EventArgs e)
         {
-
+            if (PeriodeDebut.Text != "" && PeriodeFin.Text != "" && int.Parse(PeriodeDebut.Text) > 0 && int.Parse(PeriodeDebut.Text) <= 500)
+            {
+                ActExplo_Click(new object(), new EventArgs());
+            }
         }
 
-        private void Niveau3_Enter(object sender, EventArgs e)
+        private void CoordX_ValueChanged(object sender, EventArgs e)
         {
+            if (CoordY.Text != "" && CoordX.Text != "" && CoordX.Text != "-" && CoordY.Text != "-")
+            {
+                if (NomLieu.Text == "Base")
+                {
+                    NomLieu.Text = "";
+                }
+                pictureBox1.Refresh();
 
+                croix = pictureBox1.CreateGraphics();
+
+                if (int.Parse(CoordY.Text) >= 0)
+                {
+                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)) - 10, Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / 37.9))), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)) + 10, Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / 37.9))));
+                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)), Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / 37.9)) - 10), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)), Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / 37.9)) + 10));
+
+                }
+                else
+                {
+                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)) - 10, -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / 37.9)))), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)) + 10, -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / 37.9)))));
+                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)), -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / 37.9))) - 10), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)), -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / 37.9))) + 10));
+
+                }
+
+
+            }
+        }
+
+        private void CoordY_ValueChanged(object sender, EventArgs e)
+        {
+            CoordX_ValueChanged(new object(), new EventArgs());
         }
     }
 }
