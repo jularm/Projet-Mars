@@ -991,6 +991,7 @@ namespace Logiciel
 
         private void ActExplo_Click(object sender, EventArgs e)
         {         
+            //Referesh
             ActiviteExploration.Visible = true;
 
             //List<Activite> listActExploration;
@@ -1011,7 +1012,8 @@ namespace Logiciel
                         Carte.Controls.Add(icone);
 
                         icone.Cursor = System.Windows.Forms.Cursors.Hand;
-                        icone.Tag = M.Calendar.Jours[i].ListeActivites[j];
+                        icone.Tag = M.Calendar.Jours[i].ListeActivites[j]; // on associe l'activité à la picture box qui sert d'icône pour la récupérer après clic
+                        icone.Controls.Add(new Control(Convert.ToString(i))); //on ajoute un contrôle pour récupérer le numéro du jour
                         icone.Click += new System.EventHandler(this.ClickIconeCarte);
 
 
@@ -1077,7 +1079,20 @@ namespace Logiciel
         private void ClickIconeCarte(object sender, EventArgs e)
         {
             PictureBox p = (PictureBox)sender;
-            Activite activiteClickee = (Activite)p.Tag;            
+            Activite activiteClickee = (Activite)p.Tag;
+            InfoLieu.Text = activiteClickee.Gps.Nom;
+            InfoActivite.Text = activiteClickee.Nom;
+            InfoNumJour.Text = p.Controls[0].Name;
+            InfoHDebut.Text = Convert.ToString(activiteClickee.Debut.Heures);
+            InfoMDebut.Text = Convert.ToString(activiteClickee.Debut.Minutes);
+            InfoHFin.Text = Convert.ToString(activiteClickee.Fin.Heures);
+            InfoMFin.Text = Convert.ToString(activiteClickee.Fin.Minutes);
+            /*for (int i = 0; i < activiteClickee.ListAstronaute.Count; i++)
+            {
+                InfoAstronautes.Items = activiteClickee.ListAstronaute;
+            }*/
+            
+            InfoDescriptif.Text = activiteClickee.TexteDescriptif;
         }
 
 
@@ -1087,6 +1102,16 @@ namespace Logiciel
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Niveau3_Enter(object sender, EventArgs e)
         {
 
         }
