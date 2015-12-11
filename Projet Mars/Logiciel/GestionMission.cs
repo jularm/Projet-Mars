@@ -51,7 +51,7 @@ namespace Logiciel
                 xmlDoc2.Load(@"..\\..\\..\\sauvegarde2.xml");
                 M.chargerXml2(xmlDoc2, M);
 
-                M.Calendar.MiseAJour();      //Pour remettre les pendules à l'heure           
+                M.Calendar.MiseAJour();      //Pour remettre les pendules à l'heure 
             }
             catch
             {
@@ -139,7 +139,7 @@ namespace Logiciel
                 Astronaute C = new Astronaute(3, "Jack");
                 Astronaute D = new Astronaute(4, "Phoebé");
 
-                // Astronautes.Show();
+                //Astronautes.Show();
 
                 for (int i = 1; i < 501; i++)
                 {
@@ -185,8 +185,7 @@ namespace Logiciel
         {
             // generation xml 
             xmlDoc = new XmlDocument();
-            xmlDoc2 = new XmlDocument();
-            
+            xmlDoc2 = new XmlDocument();            
 
             try
             {                
