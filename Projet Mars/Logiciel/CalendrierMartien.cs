@@ -26,7 +26,7 @@ namespace Logiciel
             _jour = 1;
             _minute = 0;
             _heure = 0;
-            _seconde = 0;            
+            _seconde = 0;
         }
 
         public CalendrierMartien(DateTime debut, DateTime fin, int jour, int heure, int minute, int seconde)
@@ -236,13 +236,93 @@ namespace Logiciel
                 {
                     XmlNodeList nodelistJour = nodeJour.SelectNodes("Jour");
                     foreach (XmlNode jour in nodelistJour)
-                    {   
-                        Jour j = new Jour(0);
-                        j.chargerXml(jour, M);
+                    {
+                        string CompteRendu = "";
+                        int num = 0;
+                        bool[] tabHoraires = new bool[147];
+
+                        Jour j = new Jour(CompteRendu, num, tabHoraires);
+
+
+                        j.CompteRendu = jour.SelectSingleNode("Compte_Rendu").InnerText;
+                        j.Numero = int.Parse(jour.SelectSingleNode("Numéro").InnerText);
+                        j.Sortie = bool.Parse(jour.SelectSingleNode("Sortie").InnerText);
+
+                        List<Activite> listeActivites = new List<Activite>();
+
+
+                        XmlNodeList nodelistActivite = jour.SelectNodes("Liste_Activité");
+                        foreach (XmlNode nodeActivite in nodelistActivite)
+                        {
+                            XmlNodeList nodelisteActivite = nodeActivite.SelectNodes("Activité");
+
+                            foreach (XmlNode Activite in nodelisteActivite)
+                            {
+                                Heure debut = new Heure(0, 0);
+                                Heure fin = new Heure(0, 0);
+                                Lieu gps = new Lieu();
+                                List<Astronaute> listAstronaute = new List<Astronaute>();
+
+                                Activite a = new Activite("");
+
+                                a.Nom = Activite.SelectSingleNode("Nom").InnerText;
+                                a.CompteRendu = Activite.SelectSingleNode("Compte_Rendu").InnerText;
+                                debut.Heures = int.Parse(Activite.SelectSingleNode("Heure_Debut").InnerText);
+                                fin.Heures = int.Parse(Activite.SelectSingleNode("Heure_Fin").InnerText);
+                                debut.Minutes = int.Parse(Activite.SelectSingleNode("Minute_Debut").InnerText);
+                                fin.Minutes = int.Parse(Activite.SelectSingleNode("Minute_Fin").InnerText);
+
+                                a.Debut = debut;
+                                a.Fin = fin;
+
+                                gps = Lieu.Parse(Activite.SelectSingleNode("Lieu"));
+
+                                List<Astronaute> listAstr = new List<Astronaute>();
+
+                                XmlNodeList nodelistAstronaute = nodeActivite.SelectNodes("Liste_Astronaute");
+                                foreach (XmlNode nodeAstronaute in nodelistAstronaute)
+                                {
+                                    string nomAst = "";
+                                    int id = 0;
+                                    XmlNodeList nodeAstronautee = nodeAstronaute.SelectNodes("Astronaute");
+                                    foreach (XmlNode nodeAstro in nodeAstronautee)
+                                    {
+                                        id = int.Parse(nodeAstro.SelectSingleNode("Id").InnerText);
+                                        nomAst = nodeAstro.SelectSingleNode("Nom").InnerText;
+                                        Astronaute ast = new Astronaute(id, nomAst);
+                                        listAstr.Add(ast);
+                                    }
+                                }
+                                a.ListAstronaute = listAstr;
+                                a.TexteDescriptif = Activite.SelectSingleNode("Texte_Descriptif").InnerText;
+                                listeActivites.Add(a);
+                            }
+                        }
+
+                        j.ListeActivites = listeActivites;
+
+                        XmlNodeList nodelistTabHoraire = jour.SelectNodes("Tableau_Horaire");
+
+                        foreach (XmlNode nodeListeLibre in nodelistTabHoraire)
+                        {
+
+                            XmlNodeList nodelistLibre = nodeListeLibre.SelectNodes("Libre");
+                            foreach (XmlNode nodeLibre in nodelistLibre)
+                            {
+                                for (int i = 0; i < 147; i++)
+                                {
+                                    tabHoraires[i] = bool.Parse(nodeLibre.InnerText);
+                                }
+                            }
+                        }
+
+                        j.TabHoraires = tabHoraires;
                         c.Jours.Add(j);
                     }
                 }
             }
+
+            M.Calendar = c;
         }
     }
 }

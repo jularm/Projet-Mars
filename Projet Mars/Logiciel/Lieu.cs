@@ -40,60 +40,54 @@ namespace Logiciel
         }
 
 
-        public static Lieu Parse(XmlNode test, XmlDocument xmlDoc, Mission M)
+        public static Lieu Parse(XmlNode test)
         {
-            Lieu l = new Lieu();           
+            Lieu l = new Lieu();
             Point coords = new Point(0, 0);
-            string nomLieu="";
+            string nomLieu = "";
 
-            XmlNodeList nodelistLieu = xmlDoc.GetElementsByTagName("Lieu");
+            nomLieu = test.SelectSingleNode("Nom").InnerText;
+            string Coord = test.SelectSingleNode("Coordonnées").InnerText;
 
-            foreach (XmlNode nodeLieu in nodelistLieu)
+            int i = 0;
+            int j = 0;
+            string numberX = "";
+            string numberY = "";
+
+            foreach (char c in Coord)
             {
-                nomLieu = nodeLieu.SelectSingleNode("Nom").InnerText;
-                string Coord = nodeLieu.SelectSingleNode("Coordonnées").InnerText;
-                
-                int i=0;
-                int j=0;
-                string numberX="";
-                string numberY = "";
-
-                foreach (char c in Coord)
+                if (c == 'X')
                 {
-                    if (c== 'X')
+                    j = i + 3;
+                    do
                     {
-                        j=i+3;
-                        do
-                        {
-                            numberX = numberX + Coord[j-1];
-                            j++;
-                        } while (Coord[j] == ',');
-                        coords.X=int.Parse(numberX);
-                    }
-
-                    if (c == 'Y')
-                    {
-                        j = i + 3;
-                        do
-                        {                            
-                            if (Coord[j - 1] == '}')
-                            {
-                                break;
-                            }
-                            else
-                            {
-                                numberY = numberY + Coord[j - 1];
-                                j++;
-                            }
-                        } while (true);
-                        coords.Y = int.Parse(numberY);
-                    }
-                    i++;
+                        numberX = numberX + Coord[j - 1];
+                        j++;
+                    } while (Coord[j] == ',');
+                    coords.X = int.Parse(numberX);
                 }
-                        
+
+                if (c == 'Y')
+                {
+                    j = i + 3;
+                    do
+                    {
+                        if (Coord[j - 1] == '}')
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            numberY = numberY + Coord[j - 1];
+                            j++;
+                        }
+                    } while (true);
+                    coords.Y = int.Parse(numberY);
+                }
+                i++;
             }
             l.Nom = nomLieu;
-            l.Coords = coords;    
+            l.Coords = coords;
             return l;
         }
 

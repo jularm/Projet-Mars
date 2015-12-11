@@ -148,13 +148,9 @@ namespace Logiciel
                 XmlNodeList nodelistCalendrierMartien = nodeMission.SelectNodes("Calendrier_Mission");
                 foreach (XmlNode nodeCalendrierMartien in nodelistCalendrierMartien)
                 {
-                    calendar.chargerXml(xmlDoc, this);
-                    M.Calendar = calendar;
+                    calendar.chargerXml(xmlDoc, this);                   
                 }
             }
-
-            M.Calendar = calendar;
-
         }
     }
 }

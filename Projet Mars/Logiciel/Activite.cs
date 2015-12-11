@@ -187,39 +187,6 @@ namespace Logiciel
         }
 
 
-        public void chargerXml2(XmlDocument xmlDoc, Mission M)
-        {
-            XmlNodeList nodelistActivite = xmlDoc.GetElementsByTagName("Activité");
-
-            string nom="";
-            string compteRendu="";
-            Heure debut=new Heure (0,0);
-            Heure fin=new Heure (0,0);
-            Lieu gps= new Lieu();
-            List<Astronaute> listAstronaute = new List<Astronaute>();
-            string texteDescriptif="";
-
-            foreach (XmlNode nodeActivite in nodelistActivite)
-            {
-                nom = nodeActivite.SelectSingleNode("Nom").InnerText;
-                compteRendu = nodeActivite.SelectSingleNode("Compte_Rendu").InnerText;
-                debut.Heures = int.Parse(nodeActivite.SelectSingleNode("Heure_Debut").InnerText);
-                fin.Heures = int.Parse(nodeActivite.SelectSingleNode("Heure_Fin").InnerText);
-                debut.Minutes = int.Parse(nodeActivite.SelectSingleNode("Minute_Debut").InnerText);
-                fin.Minutes = int.Parse(nodeActivite.SelectSingleNode("Minute_Fin").InnerText);
-
-                gps = Lieu.Parse(nodeActivite.SelectSingleNode("Lieu"),xmlDoc, M);
-
-                XmlNodeList nodelistAstronaute = nodeActivite.SelectNodes("Liste_Astronaute");
-                foreach (XmlNode nodeAstronaute in nodelistAstronaute)
-                {
-                    Astronaute a = new Astronaute(0,"");
-                    a.chargerXml2(xmlDoc, nodelistAstronaute);
-                    listAstronaute.Add(a);
-                }
-                texteDescriptif = nodeActivite.SelectSingleNode("Texte_Descriptif").InnerText;
-            }
-            Activite act = new Activite(nom, debut, fin, texteDescriptif);            
-        }
+       
     }
 }

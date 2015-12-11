@@ -65,21 +65,7 @@ namespace Logiciel
                 Astronaute a = new Astronaute(id, nom);                      
             }                       
         }
-
-
-        public void chargerXml2(XmlDocument xmlDoc, XmlNodeList truc)
-        {
-            //XmlNodeList nodelistAstronaute = xmlDoc.GetElementsByTagName("Astronaute");
-
-            string nom = "";
-            int id = 0;
-
-            foreach (XmlNode nodeAstronaute in truc)
-            {
-                id = int.Parse(nodeAstronaute.SelectSingleNode("Id").InnerText);
-                nom = nodeAstronaute.SelectSingleNode("Nom").InnerText;
-                Astronaute a = new Astronaute(id, nom);                
-            }
-        }
+        
+        
     }
 }

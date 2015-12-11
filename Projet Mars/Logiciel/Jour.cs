@@ -27,6 +27,7 @@ namespace Logiciel
             {
                 _tabHoraires[i] = false;
             }
+
         }
 
         public Jour(string compteRendu, int numero, bool[] tabHoraires)
@@ -117,69 +118,7 @@ namespace Logiciel
 
             rootNode.AppendChild(NodeJour);
 
-        }
-
-
-        // lecture xml et generation objets    
-        public void chargerXml(XmlNode Jour, Mission M)
-        {
-            XmlNodeList nodelistJour = Jour.ChildNodes;            
-
-            string CompteRendu = "";
-            int num = 0;
-            bool sortie = false;
-            bool[] tabHoraires = new bool[147];
-
-            try
-            {
-                foreach (XmlNode nodeJour in nodelistJour)
-                {
-                    CompteRendu = nodeJour.SelectSingleNode("Compte_rendu").InnerText;
-                    num = int.Parse(nodeJour.SelectSingleNode("Numéro").InnerText);
-                    sortie = bool.Parse(nodeJour.SelectSingleNode("Sortie").InnerText);
-
-                    List<Activite> listeActivites = new List<Activite>();
-                    Jour j = new Jour(CompteRendu, num, tabHoraires);
-
-                    XmlNodeList nodelistActivite = nodeJour.SelectNodes("Liste_Activité");
-                    foreach (XmlNode nodeActivite in nodelistActivite)
-                    {
-                        XmlNodeList nodelisteActivite = nodeActivite.SelectNodes("Activité");
-                        foreach (XmlNode Activite in nodelisteActivite)
-                        {
-                            Activite a = new Activite("");
-                            // a.chargerXml2(xmlDoc2, M);
-                            listeActivites.Add(a);
-                        }
-
-                    }
-                    j.ListeActivites = listeActivites;
-
-                    XmlNodeList nodelistTabHoraire = nodeJour.SelectNodes("Tableau_Horaire");
-                    foreach (XmlNode nodeListeLibre in nodelistTabHoraire)
-                    {
-                        int i = 0;
-                        XmlNodeList nodelistLibre = nodeListeLibre.SelectNodes("Libre");
-                        foreach (XmlNode nodeLibre in nodelistLibre)
-                        {
-                            tabHoraires[i] = bool.Parse(nodeLibre.InnerText);
-                            i++;
-                        }
-                    }
-                    j.TabHoraires = tabHoraires;
-
-                    M.Calendar.Jours.Add(j);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                string er = ex.Message;
-                
-            }
-            
-
-        }
+        }       
     }
 }       
            
