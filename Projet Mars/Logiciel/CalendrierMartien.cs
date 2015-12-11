@@ -126,8 +126,8 @@ namespace Logiciel
         public void MiseAJour()
         {
             TimeSpan Ts = System.DateTime.Now - this._debut;
-            int test = Ts.Seconds;
-            for (int i = 0; i < Ts.Seconds; i++)
+            double ecart = Math.Round(Ts.TotalSeconds);
+            for (int i = 0; i < ecart; i++)
             {
                 if (this.Heure != 24)
                 {
