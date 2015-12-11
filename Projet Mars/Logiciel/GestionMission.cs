@@ -170,18 +170,7 @@ namespace Logiciel
                 M.AddAstronaute(A);
                 M.AddAstronaute(B);
                 M.AddAstronaute(C);
-                M.AddAstronaute(D);
-
-
-                /*
-                //test
-                M.Calendar.Jours[0].Sortie = true;
-                M.Calendar.Jours[11].Sortie = true;
-                M.Calendar.Jours[64].Sortie = true;
-                M.Calendar.Jours[124].Sortie = true;
-                M.Calendar.Jours[229].Sortie = true;
-                //test
-                */
+                M.AddAstronaute(D);               
             }           
 
             //création 
