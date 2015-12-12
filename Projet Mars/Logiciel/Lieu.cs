@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Xml;
-using System.Drawing; //pour pouvoir utiliser la structure point
+using System.Drawing; //pour pouvoir utiliser la structure Point
 
 
 

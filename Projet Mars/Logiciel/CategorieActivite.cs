@@ -10,10 +10,11 @@ using System.Xml;
 
 namespace Logiciel
 {
-    class CategorieActivite
+    //Contient les instances et les méthodes relative au nom des activités
+    class CategorieActivite 
     {
         private string _nom;
-        private List<Activite> _listActivite = new List<Activite>();
+        private List<Activite> _listActivite = new List<Activite>(); //Pour créer une liste d'activités par jour
 
         public CategorieActivite(string nom)
         {
