@@ -69,12 +69,6 @@
               <referencedTypeMoniker Id="28f7b24e-fd48-451c-a27e-895eb09566ef" LastKnownName="int" />
             </type_NamedElement>
           </property>
-          <property Id="ba82a86b-3a6e-42be-abf3-0daa9dbf764f" name="_Jours" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="a4992c2c-4882-44bb-b6c0-d99e39e402ce" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="a7212d62-4d72-493a-8dd4-8cdbc25648ac" LastKnownName="List&lt;Jour&gt;" />
-            </type_NamedElement>
-          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="9e7c37cf-5e14-4993-8c02-f66669796bce" name="Horloge" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -154,12 +148,6 @@
             <elementDefinition Id="065bb6b6-5933-47dd-b12a-f8a94c8fc286" />
             <type_NamedElement>
               <referencedTypeMoniker Id="3c802d9a-3a1f-4535-8a76-f68049db7f7d" LastKnownName="string" />
-            </type_NamedElement>
-          </property>
-          <property Id="8b7611af-d7bd-4cfb-b90e-29a0dbdf04e5" name="_listeActivites" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="773f8252-3764-44a0-8556-fcabf68174f3" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="3a44c776-7463-4662-85c4-a3b569be921f" LastKnownName="List&lt;Activite&gt;" />
             </type_NamedElement>
           </property>
           <property Id="27299280-4b9c-4674-a8c6-e6e7f168d7db" name="_tabHoraires" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -261,12 +249,6 @@
             <elementDefinition Id="233392a9-3e74-4e27-bca4-5fe4d8046ca9" />
             <type_NamedElement>
               <referencedTypeMoniker Id="e7579bdb-c0d6-4148-9e84-d292d5562647" LastKnownName="Lieu" />
-            </type_NamedElement>
-          </property>
-          <property Id="fbc16711-bfb0-4aa2-ac81-5cdd5d66ad60" name="_listeAstronaute" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="9fdb7e25-0075-40e5-a99c-a7bce35d8dbb" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="7131874b-08d8-4632-b6a4-76955814727f" LastKnownName="List&lt;Astronaute&gt;" />
             </type_NamedElement>
           </property>
           <property Id="ba8180c1-2a6e-4270-b950-fac08ecd5525" name="_texteDescriptif" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -376,12 +358,6 @@
               <referencedTypeMoniker Id="3c802d9a-3a1f-4535-8a76-f68049db7f7d" LastKnownName="string" />
             </type_NamedElement>
           </property>
-          <property Id="91454c06-90c6-4355-a582-cf5a3116bbf7" name="_listActivite" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="99264976-a85b-4546-ae78-dd86deffeeb3" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="3a44c776-7463-4662-85c4-a3b569be921f" LastKnownName="List&lt;Activite&gt;" />
-            </type_NamedElement>
-          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="9541e4a7-0900-452a-ae59-191d81136455" name="AddActivite" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -444,11 +420,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="a7212d62-4d72-493a-8dd4-8cdbc25648ac" name="List&lt;Jour&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Jour&gt;">
-        <elementDefinition Id="8a07153c-5145-4256-93c5-e9aca5291558" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="c86f77e0-70af-4002-9979-2c437e7180d8" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
         <elementDefinition Id="af1ba112-9d1d-4945-a76b-8b20fcff9913" />
       </referencedType>
@@ -481,16 +452,6 @@
     <packageHasNamedElement>
       <referencedType Id="e7579bdb-c0d6-4148-9e84-d292d5562647" name="Lieu" isAbstract="false" isLeaf="false" cachedFullName="Projet Mars::Lieu">
         <elementDefinition Id="cb12c113-340c-4914-9cbd-7c7dd845b430" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="7131874b-08d8-4632-b6a4-76955814727f" name="List&lt;Astronaute&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Astronaute&gt;">
-        <elementDefinition Id="15d0e1ea-70d9-4a6d-9d51-0525c215f0d0" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="3a44c776-7463-4662-85c4-a3b569be921f" name="List&lt;Activite&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Activite&gt;">
-        <elementDefinition Id="6b2c23d4-9770-4b96-a83f-5ae169b92b8c" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -581,23 +542,6 @@
             <elementDefinition Id="a30a3ee9-b406-4b90-ad74-a883a3b66d67" />
           </association>
         </targetEnds>
-        <ownedAttributesInternal>
-          <property Id="28038d9f-9d04-47c3-95f1-239f59788f88" name="_listAstronautes" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="4b47a4f2-b184-4684-9573-761cc7d20aba" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="7131874b-08d8-4632-b6a4-76955814727f" LastKnownName="List&lt;Astronaute&gt;" />
-            </type_NamedElement>
-          </property>
-          <property Id="1d3db2f3-195e-4c28-8c0f-60d4b4923453" name="_listCategorieActivite" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="348f1c99-2f29-4df2-a27c-ea7f4032a5db" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="9504c20c-ce80-4c86-9def-6e1feed98da9" LastKnownName="List&lt;CategorieActivite&gt;" />
-            </type_NamedElement>
-          </property>
-          <property Id="e914e9af-2203-44fa-9985-692d21223a04" name="_calendar : CalendrierMartien" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="cec65a66-62fd-4ce1-aaa3-b68146ba911b" />
-          </property>
-        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="1d800d8b-d45d-44b3-93ab-79ff5b115920" name="AddAstronaute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="6409a8c9-caef-4123-95f2-3a2e44757e8b" />
@@ -644,11 +588,6 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="9504c20c-ce80-4c86-9def-6e1feed98da9" name="List&lt;CategorieActivite&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;CategorieActivite&gt;">
-        <elementDefinition Id="32631d2c-820b-4f32-9459-867b935b0f34" />
-      </referencedType>
-    </packageHasNamedElement>
   </packagedElements>
   <package Id="407e6f78-6fca-4445-a20e-006ed31b61fb" name="Projet Mars">
     <elementDefinition Id="4447bcab-b6b3-44bc-8e22-dd9b3809bfce" />

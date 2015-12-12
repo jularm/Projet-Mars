@@ -13,16 +13,15 @@ using System.Xml;
 
 namespace Logiciel
 {
-    public partial class GestionMission : Form
+    //Form principal de l'application contenant le calendrier, le planning des activités, les fenêtres de modification des activités et la fiche d'exploration
+    public partial class GestionMission : Form 
     {
-
-        private Mission M = new Mission();
+        private Mission M = new Mission(); //Déclaration de la mission avec son calendrier, ses astronautes et ses activités
 
         XmlDocument xmlDoc = new XmlDocument();
         XmlDocument xmlDoc2 = new XmlDocument();
 
-        int jourSelec;
-
+        //Icônes pour les activités d'exploration
         Image sortie = Image.FromFile("..\\..\\..\\..\\astronaut.png");
         Image scaphandrePasse = Image.FromFile("..\\..\\..\\..\\astronautGray.png");
         Image scaphandreFutur = Image.FromFile("..\\..\\..\\..\\astronautGreen.png");
@@ -31,27 +30,38 @@ namespace Logiciel
         Image experiencePasse = Image.FromFile("..\\..\\..\\..\\chemicalGray.png");
         Image experienceFutur = Image.FromFile("..\\..\\..\\..\\chemicalGreen.png");
 
-        Point coordBase = new Point(Convert.ToInt32(Math.Round(90*37.9)), Convert.ToInt32(Math.Round(129*37.9))); //origine du repère carte niveau 3
-        //Point coordBase = new Point(90, 129);
-        Graphics croix;
+        //Carte niveau 3 :
+        static double echCarteNiv3 = 37.9; //Facteur d'échelle pour la carte de niveau 3 par rapport à la carte fournie
+        Point coordBase = new Point(Convert.ToInt32(Math.Round(90*echCarteNiv3)), Convert.ToInt32(Math.Round(129*echCarteNiv3))); //Origine du repère carte niveau 3
+        Graphics croix; //Pour dessiner une croix formée de 2 traits sur la carte (niveau 3)
+
+        //Carte fiche exploration :
+        Point coordBaseExpl = new Point(175, 250); //origine du repère carte d'exploration
+        static double echCarteExplo = 1.94; //Facteur d'échelle pour la carte de la fiche exploration par rapport à la carte au niveau 3
+
+        int jourSelec;
 
         Button test;
+
         bool premClick = false;
 
 
+
+        //INITIALISATION DE LA MISSION//
+        
+        //Ici sont chargés les fichiers XML et instanciés les objets de la classe "Mission"
         public GestionMission()
         {
             InitializeComponent();
             try
             {
-                // ici lecture de l'xml et generation des objets 
                 xmlDoc.Load(@"..\\..\\..\\sauvegarde1.xml");                
                 M.chargerXml(xmlDoc, M);
 
                 xmlDoc2.Load(@"..\\..\\..\\sauvegarde2.xml");
                 M.chargerXml2(xmlDoc2, M);
 
-                M.Calendar.MiseAJour();      //Pour remettre les pendules à l'heure 
+                M.Calendar.MiseAJour();//Pour remettre les pendules à l'heure 
             }
             catch
             {
@@ -133,33 +143,33 @@ namespace Logiciel
                 Emergency_act.Add(urgence);
                 CategorieActivite Urgence = new CategorieActivite("Emergency");
 
-                //à automatiser
+                //à automatiser (et ça ne marche pas !!!!!)
                 Astronaute A = new Astronaute(1, "Pierre");
                 Astronaute B = new Astronaute(2, "Paul");
                 Astronaute C = new Astronaute(3, "Jack");
                 Astronaute D = new Astronaute(4, "Phoebé");
-
                 //Astronautes.Show();
 
                 for (int i = 1; i < 501; i++)
                 {
                     Jour j = new Jour(i);
                     //Journée type par défaut :  
-                    j.AddAct(new Activite("Sleeping", new Heure(0, 0), new Heure(7, 0), "Dormir c'est important"));
+                    j.AddAct(new Activite("Sleeping", new Heure(0, 0), new Heure(7, 0), "Un repos bien mérité !"));
                     j.AddAct(new Activite("Eating", new Heure(7, 0), new Heure(8, 0), "Manger c'est important"));
                     j.AddAct(new Activite("Private", new Heure(8, 0), new Heure(12, 0), ""));
                     j.AddAct(new Activite("Eating", new Heure(12, 0), new Heure(14, 0), "Manger c'est important"));
                     j.AddAct(new Activite("Private", new Heure(14, 0), new Heure(19, 0), ""));
                     j.AddAct(new Activite("Eating", new Heure(19, 0), new Heure(21, 0), "Manger c'est important"));
                     j.AddAct(new Activite("Private", new Heure(21, 0), new Heure(23, 0), ""));
-                    j.AddAct(new Activite("Sleeping", new Heure(23, 0), new Heure(24, 40), "Dormir c'est important"));
+                    j.AddAct(new Activite("Sleeping", new Heure(23, 0), new Heure(24, 40), "Un repos bien mérité !"));
 
                     c.AddJours(j);
                 }
                 
-
+                //Ajout du calendrier, des activités et des astronautes à la mission :
 
                 M.Calendar = c;
+
                 M.AddCategorie(VieCourante);
                 M.AddCategorie(Science);
                 M.AddCategorie(Maintenance);
@@ -173,69 +183,203 @@ namespace Logiciel
                 M.AddAstronaute(D);               
             }           
 
-            //création 
+            //Calendrier
             timer1.Start();
             dureMission.Maximum = 500;
-            trackBar1.Maximum = 9;
-            trackBar1_Scroll(new Object(), new EventArgs());
+            trackBar1.Maximum = 9; //Permet l'affichage des jours de 50 en 50
+            trackBar1_Scroll(new Object(), new EventArgs()); //Pour différencier les jours d'un scroll à l'autre
         }
 
 
-        private void GestionMission_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // generation xml 
-            xmlDoc = new XmlDocument();
-            xmlDoc2 = new XmlDocument();            
-
-            try
-            {                
-                M.genereXml(xmlDoc);
-                xmlDoc.Save(@"..\\..\\..\\sauvegarde1.xml");                     
-            }
-            catch
-            {
-                MessageBox.Show("Echec sauvegarde 1 !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            try
-            {
-                M.genereXml2(xmlDoc2);
-                xmlDoc2.Save(@"..\\..\\..\\sauvegarde2.xml");
-            }
-            catch
-            {
-                MessageBox.Show("Echec sauvegarde 2 !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-                       
-        }
-
-        /// <summary>
-        /// Permet de remplacer le compte rendu précédent par le nouveau inscrit dans le Form "CompteRendu"
-        /// </summary>
-        /// <param name="compteRendu"></param>
+        //Permet de remplacer le compte rendu précédent par le nouveau inscrit dans le Form "CompteRendu"
         public void MiseAJourCompteRendu(string compteRendu)
         {
             M.Calendar.Jours[int.Parse( NumeroJour.Text)].CompteRendu = compteRendu;
         }
 
-        /// <summary>
-        /// Création d'un bouton par activité pour chaque jour
-        /// </summary>
-        /// <param name="n"></param>
-        public void CreerBoutons(int n) //n : numéro du jour, n-1 : emplacement du jour dans la liste
+
+
+        //NIVEAU 1//
+        //Contient le calendrier des jours de 1 à 500
+
+        //Donne l'heure qu'il est pour le jour martien de la mission
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            M.Calendar.Horloge();
+            heureMars.Text = M.Calendar.Heure.ToString() + " h " + M.Calendar.Minute.ToString() + " min " + M.Calendar.Seconde.ToString() + " s";
+            JourCourantMission.Text = M.Calendar.Day.ToString();
+            DateTerrestre.Text = Convert.ToString(DateTime.Now);
+            timer1.Start();
+        }
+
+        //A commenter
+        private void JourCourantMission_TextChanged(object sender, EventArgs e)
+        {
+            dureMission.Increment(1);
+            for (int i = 0; i < Niveau1.Controls.Count; i++)
+            {
+                if (Niveau1.Controls[i].Name.Contains("jour"))
+                {
+                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);
+                    /*bool check = false;
+                    for (int j = 0; j < M.Calendar.Jours[(50 * trackBar1.Value) + i +1].ListeActivites.Count; j++)
+                    {
+                        string nomActivite = M.Calendar.Jours[(50 * trackBar1.Value) + i +1].ListeActivites[j].Nom;
+                        if (nomActivite == "Exploration Space suit" || nomActivite == "Exploration Vehicule" || nomActivite == "Outside experiment")
+                        {
+                            check = true;
+                        }
+                    }
+                    if (check)
+                    {
+                        Niveau1.Controls[i + 1].BackgroundImage = sortie;
+                    }
+                    else
+                    {
+                        Niveau1.Controls[i + 1].BackgroundImage = null;
+                    }*/
+
+                    if (int.Parse(Niveau1.Controls[i].Text) < int.Parse(JourCourantMission.Text))
+                    {
+                        Niveau1.Controls[i].BackColor = Color.DimGray;
+                    }
+                    if (int.Parse(Niveau1.Controls[i].Text) == int.Parse(JourCourantMission.Text))
+                    {
+                        Niveau1.Controls[i].BackColor = Color.RoyalBlue;
+                    }
+                }
+            }
+        }
+
+        //A commenter
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+          //  JourCourantMission_TextChanged(new Object(), new EventArgs());           
+            for (int i = 0; i < Niveau1.Controls.Count; i++)
+            {
+                if (Niveau1.Controls[i].Name.Contains("jour"))
+                {
+                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);
+
+                    if (int.Parse(JourCourantMission.Text) == (50 * trackBar1.Value) + i +1)
+                    {
+                        Niveau1.Controls[i].BackColor = Color.RoyalBlue; //Jour courant en bleu
+                    }
+                    else
+                    {
+                        if (int.Parse(Niveau1.Controls[i].Text) < M.Calendar.Day)
+                        {
+                            Niveau1.Controls[i].BackColor = Color.DimGray; //Jour passé en gris
+                        }
+                        else
+                        {
+                            Niveau1.Controls[i].BackColor = Color.DarkGreen; //Jour futur en vert
+                        }
+                    }
+                }                
+            }
+
+            for (int i = 50 * trackBar1.Value; i < 50 * (trackBar1.Value + 1); i++)
+            {
+                if (Niveau1.Controls[i - 50 * trackBar1.Value].Name.Contains("jour"))
+                {
+                    if (M.Calendar.Jours[i].Sortie == true)
+                    {
+                        Niveau1.Controls[i - 50 * trackBar1.Value].BackgroundImage = sortie;
+                    }
+                    else
+                    {
+                        Niveau1.Controls[i - 50 * trackBar1.Value].BackgroundImage = null;
+                    }
+
+                }
+            }
+        }
+
+        //Permet d'accéder aux 50 prochains jours
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (trackBar1.Value < 9)
+            {
+                trackBar1.Value = trackBar1.Value + 1;
+            }
+            trackBar1_Scroll(sender, e);
+        }
+
+        //Permer d'accéder aux 50 jours précédents
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (trackBar1.Value > 0)
+            {
+                trackBar1.Value = trackBar1.Value - 1;
+            }
+            trackBar1_Scroll(sender, e);
+        }
+
+        //A commenter
+        private void jour_Click(object sender, EventArgs e)
+        {
+            if (premClick)
+            {
+                if (int.Parse(test.Text) == M.Calendar.Day)
+                {
+                    test.BackColor = Color.RoyalBlue;
+                }
+                else
+                {
+                    if (int.Parse(test.Text) < M.Calendar.Day)
+                    {
+                        test.BackColor = Color.DimGray;
+                    }
+                    else
+                    {
+                        test.BackColor = Color.DarkGreen;
+                    }
+                }
+            }
+            Button clickedButton = (Button)sender;
+            jourSelec = int.Parse(clickedButton.Text);
+            test = clickedButton;
+            premClick = true;
+
+            Niveau2.Show();
+            Niveau1.Hide();
+
+            NumeroJour.Text = clickedButton.Text;
+            NduJNiv3.Text = NumeroJour.Text;
+            if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
+            {
+                CreerActivite.Enabled = false;
+            }
+            else
+            {
+                CreerActivite.Enabled = true;
+            }
+            CreerBoutons(jourSelec);
+        }
+
+
+
+        //NIVEAU 2//
+        //Correspond au planning des activités
+
+        //Création d'un bouton par activité pour chaque jour
+        public void CreerBoutons(int n) //n : numéro du jour
         {
             boutonsMatin.Controls.Clear();
             boutonsApresMidi.Controls.Clear();
             Point pointDeBase = new Point(0, 0); //Point servant à la localisation des boutons
             int largeurActivite = 262; //Largeur fixée
-            Jour jourJ = M.Calendar.Jours.ElementAt(n - 1);
+            Jour jourJ = M.Calendar.Jours.ElementAt(n - 1); //n-1 : emplacement du jour dans la liste de jours
 
             //Recherche du nombre d'activités du jour n dans le calendrier
             for (int i = 0; i < jourJ.ListeActivites.Count; i++)
             {
                 Button bouton = new System.Windows.Forms.Button();
                 Activite Act = jourJ.ListeActivites.ElementAt(i);
+
+                //Définition d'une couleur par activité pour une meilleure lisibilité
                 switch (Act.Nom)
                 {
                     case "Eating":
@@ -323,35 +467,35 @@ namespace Logiciel
                         bouton.BackColor = Color.Snow;
                         break;
                 }
+
                 bouton.Cursor = System.Windows.Forms.Cursors.Hand;
                 bouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
                 bouton.Margin = new System.Windows.Forms.Padding(0);
 
-                Point localisation = new Point(pointDeBase.X, pointDeBase.Y);
+                Point localisation = new Point(pointDeBase.X, pointDeBase.Y); //Rq : 5px pour 10min
 
-                //On scinde le calendrier selon les cas avant 12h20 et après 12h20
+                //On scinde le planning selon les cas avant 12h20 et après 12h20 car il comporte 2 colonnes
                 if (Act.Debut.HeuresMinutes < 1220 && Act.Fin.HeuresMinutes <= 1220) //Si l'activité commence et se termine avant 12h20 (ou se termine à 12h20)
                 {
                     this.boutonsMatin.Controls.Add(bouton);
-
-                    localisation.Y += (Act.Debut.Heures * 6 + Act.Debut.Minutes / 10) * 5; //calcul du nb de tranches de 10min * 5px le matin                  
+                    localisation.Y += (Act.Debut.Heures * 6 + Act.Debut.Minutes / 10) * 5; //Calcul du nb de tranches de 10min * 5px le matin                  
                     bouton.Size = new System.Drawing.Size(largeurActivite, ((Act.Fin.Heures * 6 + Act.Fin.Minutes / 10) * 5) - localisation.Y - 1);
                 }
-                else //Si l'activité commence et se termine après 12h20
+                else //Si l'activité commence avant 12h20 et se termine après 12h20, ou si elle commence et se termine après 12h20
                 {
                     this.boutonsApresMidi.Controls.Add(bouton);
 
                     if ((Act.Debut.Heures * 6 + Act.Debut.Minutes / 10 - 74) * 5 < 0)
                     {
-                        localisation.Y += -1;
+                        localisation.Y += -1; //pour une activité à cheval sur les 2 colonnes, permet d'éliminer le trait noir supérieur ou inférieur du bouton
                     }
                     else
                     {
                         localisation.Y += (Act.Debut.Heures * 6 + Act.Debut.Minutes / 10 - 74) * 5;
                     }
-
                     bouton.Size = new System.Drawing.Size(largeurActivite, ((Act.Fin.Heures * 6 + Act.Fin.Minutes / 10 - 74) * 5) - localisation.Y - 1);
-                    if (Act.Debut.HeuresMinutes < 1220)
+
+                    if (Act.Debut.HeuresMinutes < 1220) //Si l'activité commence avant 12h20, il faut créer un 2eme bouton pour scinder l'activité en deux
                     {
                         Button bouttonBis = new Button();
                         this.boutonsMatin.Controls.Add(bouttonBis);
@@ -369,6 +513,7 @@ namespace Logiciel
                         bouttonBis.BackColor = bouton.BackColor;
                     }
                 }
+
                 bouton.Location = localisation;
                 bouton.Margin = new System.Windows.Forms.Padding(0);
                 bouton.Name = "Activite" + i;
@@ -379,265 +524,7 @@ namespace Logiciel
             }
         }
 
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            timer1.Stop();
-            M.Calendar.Horloge();
-            heureMars.Text = M.Calendar.Heure.ToString() + " h " + M.Calendar.Minute.ToString() + " min " + M.Calendar.Seconde.ToString() + " s";
-            JourCourantMission.Text = M.Calendar.Day.ToString();
-            DateTerrestre.Text = Convert.ToString(DateTime.Now);
-            timer1.Start();
-        }
-
-
-        private void JourCourantMission_TextChanged(object sender, EventArgs e)
-        {
-            dureMission.Increment(1);
-            for (int i = 0; i < Niveau1.Controls.Count; i++)
-            {
-                if (Niveau1.Controls[i].Name.Contains("jour"))
-                {
-                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);
-                    /*bool check = false;
-                    for (int j = 0; j < M.Calendar.Jours[(50 * trackBar1.Value) + i +1].ListeActivites.Count; j++)
-                    {
-                        string nomActivite = M.Calendar.Jours[(50 * trackBar1.Value) + i +1].ListeActivites[j].Nom;
-                        if (nomActivite == "Exploration Space suit" || nomActivite == "Exploration Vehicule" || nomActivite == "Outside experiment")
-                        {
-                            check = true;
-                        }
-                    }
-                    if (check)
-                    {
-                        Niveau1.Controls[i + 1].BackgroundImage = sortie;
-                    }
-                    else
-                    {
-                        Niveau1.Controls[i + 1].BackgroundImage = null;
-                    }*/
-
-                    if (int.Parse(Niveau1.Controls[i].Text) < int.Parse(JourCourantMission.Text))
-                    {
-                        Niveau1.Controls[i].BackColor = Color.DimGray;
-                    }
-                    if (int.Parse(Niveau1.Controls[i].Text) == int.Parse(JourCourantMission.Text))
-                    {
-                        Niveau1.Controls[i].BackColor = Color.RoyalBlue;
-                    }
-                }
-            }
-        }
-
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-          //  JourCourantMission_TextChanged(new Object(), new EventArgs());           
-            for (int i = 0; i < Niveau1.Controls.Count; i++)
-            {
-                if (Niveau1.Controls[i].Name.Contains("jour"))
-                {
-                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);
-
-                    if (int.Parse(JourCourantMission.Text) == (50 * trackBar1.Value) + i +1)
-                    {
-                        Niveau1.Controls[i].BackColor = Color.RoyalBlue;
-                    }
-                    else
-                    {
-                        if (int.Parse(Niveau1.Controls[i].Text) < M.Calendar.Day)
-                        {
-                            Niveau1.Controls[i].BackColor = Color.DimGray;
-                        }
-                        else
-                        {
-                            Niveau1.Controls[i].BackColor = Color.DarkGreen;
-                        }
-                    }
-                }                
-            }
-           for (int i = 50 * trackBar1.Value; i < 50 * (trackBar1.Value + 1); i++)
-            {
-                if (Niveau1.Controls[i - 50 * trackBar1.Value].Name.Contains("jour"))
-                {
-                    if (M.Calendar.Jours[i].Sortie == true)
-                    {
-                        Niveau1.Controls[i - 50 * trackBar1.Value].BackgroundImage = sortie;
-                    }
-                    else
-                    {
-                        Niveau1.Controls[i - 50 * trackBar1.Value].BackgroundImage = null;
-                    }
-
-                }
-            }
-        }
-
-        private void jour_Click(object sender, EventArgs e)
-        {
-            if (premClick)
-            {
-                if (int.Parse(test.Text) == M.Calendar.Day)
-                {
-                    test.BackColor = Color.RoyalBlue;
-                }
-                else
-                {
-                    if (int.Parse(test.Text) < M.Calendar.Day)
-                    {
-                        test.BackColor = Color.DimGray;
-                    }
-                    else
-                    {
-                        test.BackColor = Color.DarkGreen;
-                    }
-                }
-            }
-            Button clickedButton = (Button)sender;
-            jourSelec = int.Parse(clickedButton.Text);
-            test = clickedButton;
-            premClick = true;
-
-            Niveau2.Show();
-            Niveau1.Hide();
-
-            NumeroJour.Text = clickedButton.Text;
-            NduJNiv3.Text = NumeroJour.Text;
-            if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
-            {
-                CreerActivite.Enabled = false;
-            }
-            else
-            {
-                CreerActivite.Enabled = true;
-            }
-            CreerBoutons(jourSelec);
-        }
-
-
-        private void ClickNiveau3(object sender, EventArgs e)
-        {
-           
-            Button clickedButton = (Button)sender; //cette fonction est appelée à chaque clique sur un bouton du planning, le sender fait référence au bouton sur lequel on a cliqué
-
-            Activite act = M.Calendar.Jours.ElementAt(int.Parse(NduJNiv3.Text) - 1).ListeActivites.ElementAt(clickedButton.TabIndex); //activité à l'index i du jour concerné
-            labelInvisible.Text = Convert.ToString(clickedButton.TabIndex);
-
-            //Niveau2.Hide();
-            Niveau3.Show();
-
-            TitreNiv3.Text = "Modifier une activité";
-            texteDescriptif.Text = act.TexteDescriptif;
-            for (int i = 0; i < listeAstronautes.Items.Count; i++) //on décoche tous les astronautes par sécurité
-            {
-                listeAstronautes.Items[i].Checked = false;
-            }
-            for (int i = 0; i < act.ListAstronaute.Count; i++) //on coche les astronautes pour une activité donnée
-            {
-                for (int j = 0; j < listeAstronautes.Items.Count; j++)
-                {
-                    if (listeAstronautes.Items[j].Text == act.ListAstronaute[i].Nom)
-                    {
-                        listeAstronautes.Items[j].Checked = true;
-                    }
-                }
-            }
-
-            ItemSelect.Text = act.Nom;
-
-            HDebut.SelectedIndex = act.Debut.Heures;
-            MinDebut.SelectedIndex = act.Debut.Minutes / 10;
-            HFin.SelectedIndex = act.Fin.Heures;
-            MinFin.SelectedIndex = act.Fin.Minutes / 10;
-            CoordX.Text = Convert.ToString(act.Gps.Coords.X);
-            CoordY.Text = Convert.ToString(act.Gps.Coords.Y);
-            NomLieu.Text = act.Gps.Nom;
-
-            if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule" || ItemSelect.Text == "Outside experiment")
-            {
-                CoordX.Enabled = true;
-                CoordY.Enabled = true;
-                NomLieu.Enabled = true;
-                pictureBox1.Enabled = true;
-            }
-            else
-            {
-                CoordX.Enabled = false;
-                CoordY.Enabled = false;
-                NomLieu.Enabled = false;
-                pictureBox1.Enabled = false;
-                CoordX.Text = "0";
-                CoordY.Text = "0";
-                NomLieu.Text = "Base";
-            }
-
-            SupprimerNiv3.Visible = true;
-        }
-
-
-        private void AnnulerNiv3_Click(object sender, EventArgs e)
-        {
-            Niveau3.Hide();
-            Niveau2.Show();
-        }
-
-
-        private void CreerActivite_Click(object sender, EventArgs e)
-        {
-            TitreNiv3.Text = "Créer une activité";
-            SupprimerNiv3.Visible = false;
-
-            HDebut.SelectedIndex = -1;
-            MinDebut.SelectedIndex = -1;
-            HFin.SelectedIndex = -1;
-            MinFin.SelectedIndex = -1;
-
-            HDebut.Enabled = true;
-            MinDebut.Enabled = false;
-            HFin.Enabled = false;
-            MinFin.Enabled = false;
-
-            ItemSelect.Text = "";
-            for (int i = 0; i < listeAstronautes.Items.Count; i++)
-            {
-                listeAstronautes.Items[i].Checked = false;
-            }
-            CoordX.Text = "";
-            CoordY.Text = "";
-            texteDescriptif.Text = "";
-
-            Niveau3.Show();
-            //Niveau2.Hide();
-        }
-
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            if (trackBar1.Value > 0)
-            {
-                trackBar1.Value = trackBar1.Value - 1;
-            }
-            trackBar1_Scroll(sender, e);
-        }
-
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            if (trackBar1.Value < 9)
-            {
-                trackBar1.Value = trackBar1.Value + 1;
-            }
-            trackBar1_Scroll(sender, e);
-        }
-
-
-        private void RetourCalendrier_Click_1(object sender, EventArgs e)
-        {
-            JourCourantMission_TextChanged(new Object(), new EventArgs());
-            Niveau2.Hide();
-            Niveau1.Show();
-        }
-
-
+        //Permet de d'accéder au jour précédent
         private void JourPrecedent_Click(object sender, EventArgs e)
         {
             if (int.Parse(NumeroJour.Text) > 1)
@@ -645,10 +532,10 @@ namespace Logiciel
                 NumeroJour.Text = Convert.ToString(int.Parse(NumeroJour.Text) - 1);
             }
             NduJNiv3.Text = NumeroJour.Text;
-            CreerBoutons(int.Parse(NumeroJour.Text));
+            CreerBoutons(int.Parse(NumeroJour.Text)); //Génération des boutons des activités de ce jour
             if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
             {
-                CreerActivite.Enabled = false;
+                CreerActivite.Enabled = false; //On ne peut pas créer d'activités pour un jour passé
             }
             else
             {
@@ -656,7 +543,7 @@ namespace Logiciel
             }
         }
 
-
+        //Permet de d'accéder au jour suivant
         private void JourSuivant_Click(object sender, EventArgs e)
         {
             if (int.Parse(NumeroJour.Text) < 500)
@@ -675,203 +562,123 @@ namespace Logiciel
             }
         }
 
-
-        private void HDebut_SelectedValueChanged(object sender, EventArgs e)
+        //Accès au compte-rendu de la journée (dans un autre form)
+        private void CompteRendu_Click(object sender, EventArgs e)
         {
-            if (HDebut.SelectedIndex == 24)
-            {
-                MinDebut.Items.Remove("40");
-                MinDebut.Items.Remove("50");
-                MinDebut.SelectedText = "";
-            }
-            else if (MinDebut.Items.Count == 4)
-            {
-                MinDebut.Items.Add("40");
-                MinDebut.Items.Add("50");
-            }
-            MinDebut.Enabled = true;
+            CompteRendu cr = new CompteRendu(M.Calendar.Jours[int.Parse(NumeroJour.Text)].CompteRendu);
+            cr.CR += new CompteRendu.AjouterEventHandler(this.MiseAJourCompteRendu); //On ajoute le nouveau compte-rendu
+            cr.ShowDialog();
+        }
+
+        //Pour retourner au calendrier du niveau 1
+        private void RetourCalendrier_Click_1(object sender, EventArgs e)
+        {
+            JourCourantMission_TextChanged(new Object(), new EventArgs());
+            Niveau2.Hide();
+            Niveau1.Show();
         }
 
 
-        private void MinDebut_SelectedIndexChanged(object sender, EventArgs e)
+
+        //NIVEAU 3//
+        //On y accède de deux façons : en cliquant sur une activité pour la modifier ou en créant une nouvelle activité (Bouton "Créer une activité")
+
+        //Ici on accède au niveau 3 en cliquant sur un bouton représentant une activité
+        //(modification seulement, la création d'activité est gérée en cliquant sur un autre bouton)
+        private void ClickNiveau3(object sender, EventArgs e)
         {
-            HFin.Enabled = true;
-        }
+            //Cette fonction est appelée à chaque clique sur un bouton du planning, c'est le sender qui fait référence au bouton sur lequel on a cliqué
+            Button clickedButton = (Button)sender; 
 
+            Activite act = M.Calendar.Jours.ElementAt(int.Parse(NduJNiv3.Text) - 1).ListeActivites.ElementAt(clickedButton.TabIndex); //Activité à l'index i du jour concerné
+            labelInvisible.Text = Convert.ToString(clickedButton.TabIndex);
 
-        private void HFin_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (HFin.SelectedIndex == 24)
+            //Niveau2.Hide();
+            Niveau3.Show();
+
+            TitreNiv3.Text = "Modifier une activité";
+            texteDescriptif.Text = act.TexteDescriptif;
+            for (int i = 0; i < listeAstronautes.Items.Count; i++) //On décoche tous les astronautes par sécurité
             {
-                MinFin.Items.Remove("50");
-                MinFin.SelectedText = "";
+                listeAstronautes.Items[i].Checked = false;
             }
-            else if (MinFin.Items.Count == 5)
+            for (int i = 0; i < act.ListAstronaute.Count; i++) //On coche les astronautes pour l'activité concernée
             {
-                MinFin.Items.Add("50");
-            }
-            MinFin.Enabled = true;
-        }
-
-        private void listeActivites_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            if (listeActivites.SelectedNode.Level == 1)
-            {
-                ItemSelect.Text = listeActivites.SelectedNode.Text;
-                if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule" || ItemSelect.Text == "Outside experiment")
+                for (int j = 0; j < listeAstronautes.Items.Count; j++)
                 {
-                    CoordX.Enabled = true;
-                    CoordY.Enabled = true;
-                    NomLieu.Enabled = true;
-                    pictureBox1.Enabled = true;
-                }
-                else
-                {
-                    CoordX.Enabled = false;
-                    CoordY.Enabled = false;
-                    NomLieu.Enabled = false;
-                    pictureBox1.Enabled = false;
-                    CoordX.Text = "0";
-                    CoordY.Text = "0";
-                    NomLieu.Text = "Base";
-                }
-            }
-            else
-            {
-                ItemSelect.Text = "";
-            }
-        }
-
-
-        private void ConfirmerNiv3_Click(object sender, EventArgs e)
-        {
-            bool[] tab = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires;
-            bool[] erreurs = { true, false, false, false, false };
-            Jour jourj = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1];
-            Activite act = new Activite("");
-
-            if (TitreNiv3.Text == "Modifier une activité")
-            {
-                act = jourj.ListeActivites[int.Parse(labelInvisible.Text)];
-                changerUnePlageHoraire(act, jourj.TabHoraires, true);
-            }
-
-            for (int i = 0; i < tab.Length; i++)
-            {
-                if (tab[i])
-                {
-                    erreurs[1] = true;
-                }
-            }
-
-            if (ItemSelect.Text != "")
-            {
-                erreurs[4] = true;
-            }
-
-            if (HDebut.Text != "" && MinDebut.Text != "" && HFin.Text != "" && MinFin.Text != "" && (int.Parse(HDebut.Text) * 6 + int.Parse(MinDebut.Text) / 10 <= int.Parse(HFin.Text) * 6 + int.Parse(MinFin.Text) / 10 - 1))
-            {
-                erreurs[2] = true;
-
-                for (int i = int.Parse(HDebut.Text) * 6 + int.Parse(MinDebut.Text) / 10; i < int.Parse(HFin.Text) * 6 + int.Parse(MinFin.Text) / 10 ; i++)
-                {
-                    if (!tab[i])// si tab[i] est false, alors au moins un des emplacements demandés n'est pas disponible
+                    if (listeAstronautes.Items[j].Text == act.ListAstronaute[i].Nom)
                     {
-                        erreurs[0] = false;
+                        listeAstronautes.Items[j].Checked = true;
                     }
                 }
             }
+            ItemSelect.Text = act.Nom; //Dans le treeview des activités
+            HDebut.SelectedIndex = act.Debut.Heures;
+            MinDebut.SelectedIndex = act.Debut.Minutes / 10; //On divise par 10 pour avoir le numéro de l'index (ex : 10min -> index 1)
+            HFin.SelectedIndex = act.Fin.Heures;
+            MinFin.SelectedIndex = act.Fin.Minutes / 10;
+            CoordX.Text = Convert.ToString(act.Gps.Coords.X);
+            CoordY.Text = Convert.ToString(act.Gps.Coords.Y);
+            NomLieu.Text = act.Gps.Nom;
 
-            if (CoordX.Text != "" && CoordY.Text != "")
+            //On gère les champs en relation avec la carte en fonction de l'activité sélectionnée
+            if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule" || ItemSelect.Text == "Outside experiment")
             {
-                erreurs[3] = true;
+                //Si c'est une activité d'exploration, on a accès à la modification des coordonnées, du lieu et on peut cliquer sur la carte
+                CoordX.Enabled = true;
+                CoordY.Enabled = true;
+                NomLieu.Enabled = true;
+                pictureBox1.Enabled = true;
             }
-            if (erreurs[0] && erreurs[1] && erreurs[2] && erreurs[3] && erreurs[4])
+            else
             {
-                List<Astronaute> liA = new List<Astronaute>();
-                for (int i = 0; i < listeAstronautes.CheckedItems.Count; i++)
-                {
-                    liA.Add(new Astronaute(i, listeAstronautes.CheckedItems[i].Text));
-                }
-                if (TitreNiv3.Text == "Modifier une activité")
-                {
-                    act.Nom = ItemSelect.Text;
-                    act.Debut = new Heure(int.Parse(HDebut.Text), int.Parse(MinDebut.Text));
-                    act.Fin = new Heure(int.Parse(HFin.Text), int.Parse(MinFin.Text));
-
-                    act.TexteDescriptif = texteDescriptif.Text;
-                    act.ListAstronaute = liA;
-                    act.Gps = new Lieu(NomLieu.Text, new Point(int.Parse(CoordX.Text), int.Parse(CoordY.Text)));
-                }
-                else
-                {
-                    act = new Activite(ItemSelect.Text, new Heure(int.Parse(HDebut.Text), int.Parse(MinDebut.Text)), new Heure(int.Parse(HFin.Text), int.Parse(MinFin.Text)), texteDescriptif.Text, liA, new Lieu(NomLieu.Text, new Point(int.Parse(CoordX.Text), int.Parse(CoordY.Text))));
-                    jourj.ListeActivites.Add(act);
-                }
-
-                changerUnePlageHoraire(act, jourj.TabHoraires, false);
-                CreerBoutons(int.Parse(NduJNiv3.Text));
-                Niveau3.Hide();
-                Niveau2.Show();
-                if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
-                {
-                    CreerActivite.Enabled = false;
-                }
-                else
-                {
-                    CreerActivite.Enabled = true;
-                }
+                //Pour toute autre activité les champs sont vérouillés et pré-remplis car les astronautes restent à la base
+                CoordX.Enabled = false;
+                CoordY.Enabled = false;
+                NomLieu.Enabled = false;
+                pictureBox1.Enabled = false;
+                CoordX.Text = "0";
+                CoordY.Text = "0";
+                NomLieu.Text = "Base";
             }
-            else if (!erreurs[4])
-            {
-                MessageBox.Show("Veuillez sélectionner une activité", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (!erreurs[3])
-            {
-                MessageBox.Show("Les coordonnées rentrées ne sont pas valides", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (!erreurs[2])
-            {
-                MessageBox.Show("La plage horaire selectionnée n'est pas valide", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (!erreurs[1])
-            {
-                MessageBox.Show("Aucune plage horaire disponible dans la journée, supprimez d'abord des activités", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (!erreurs[0])
-            {
-                MessageBox.Show("La plage horaire selectionnée n'est pas disponible", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
+            //Dans le cas d'une modification, le bouton "Supprimer l'activité" est accessible (ce n'est pas le cas pour une création)
+            SupprimerNiv3.Visible = true; 
         }
 
-
-        private void changerUnePlageHoraire(Activite act, bool[] tab, bool disponible) //à commenter
+        // Accès au niveau 3 pour créer une activité
+        private void CreerActivite_Click(object sender, EventArgs e)
         {
-            for (int i = act.Debut.Heures * 6 + act.Debut.Minutes / 10; i < act.Fin.Heures * 6 + act.Fin.Minutes / 10 ; i++)
+            TitreNiv3.Text = "Créer une activité";
+            SupprimerNiv3.Visible = false; //Le bouton de suppression d'activité n'apparaît pas par soucis de cohérence
+
+            HDebut.SelectedIndex = -1;
+            MinDebut.SelectedIndex = -1;
+            HFin.SelectedIndex = -1;
+            MinFin.SelectedIndex = -1;
+
+            HDebut.Enabled = true; //On déverrouille les champs au fur et à mesure
+            MinDebut.Enabled = false;
+            HFin.Enabled = false;
+            MinFin.Enabled = false;
+
+            ItemSelect.Text = "";
+
+            for (int i = 0; i < listeAstronautes.Items.Count; i++)
             {
-                tab[i] = disponible;
+                listeAstronautes.Items[i].Checked = false;
             }
+
+            CoordX.Text = "";
+            CoordY.Text = "";
+
+            texteDescriptif.Text = "";
+
+            Niveau3.Show();
+            //Niveau2.Hide();
         }
 
-
-        private void SupprimerNiv3_Click(object sender, EventArgs e)
-        {
-            Activite act = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].ListeActivites[int.Parse(labelInvisible.Text)];
-            M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].ListeActivites.RemoveAt(int.Parse(labelInvisible.Text));
-
-            changerUnePlageHoraire(act, M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires, true);
-
-            CreerBoutons(int.Parse(NduJNiv3.Text)); //on réactualise les boutons du niveau 2 et donc les indices de la liste d'activités
-
-            Niveau2.Show();
-            Niveau3.Hide();
-        }
-
-
- 
-
-
+        //A revoir
+        //Verrouille ou déverrouille les champs en fonction du jour passé ou futur
         private void CreerActivite_EnabledChanged(object sender, EventArgs e)
         {
             if (!CreerActivite.Enabled)
@@ -902,28 +709,257 @@ namespace Logiciel
             }
         }
 
-
-        private void CompteRendu_Click(object sender, EventArgs e)
+        //Conrôle des valeurs autorisées pour les heures et les minutes de début de l'activité
+        private void HDebut_SelectedValueChanged(object sender, EventArgs e)
         {
-            CompteRendu cr = new CompteRendu(M.Calendar.Jours[int.Parse(NumeroJour.Text)].CompteRendu);
-            cr.CR += new CompteRendu.AjouterJourEventHandler(this.MiseAJourCompteRendu);
-            cr.ShowDialog();
+            if (HDebut.SelectedIndex == 24)
+            {
+                MinDebut.Items.Remove("40"); //Une activité ne peut pas commencer à 24h40
+                MinDebut.Items.Remove("50"); //24h50 n'existe pas
+                MinDebut.SelectedText = "";
+            }
+            //Si l'heure sélectionnée n'est pas 24, il faut remettre toutes les possibilités pour les minutes
+            else if (MinDebut.Items.Count == 4)
+            {
+                MinDebut.Items.Add("40");
+                MinDebut.Items.Add("50");
+            }
+            MinDebut.Enabled = true;
         }
 
+        //Déverrouille le champ concernant l'heure de fin une fois les minutes de l'heure de début remplies
+        private void MinDebut_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HFin.Enabled = true;
+        }
 
+        //Conrôle des valeurs autorisées pour les heures et les minutes de fin de l'activité
+        private void HFin_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (HFin.SelectedIndex == 24)
+            {
+                MinFin.Items.Remove("50"); //
+                MinFin.SelectedText = "";
+            }
+            else if (MinFin.Items.Count == 5)
+            {
+                MinFin.Items.Add("50");
+            }
+            MinFin.Enabled = true;
+        }
+
+        //Affiche le nom de l'activité sélectionnée dans le treeview et gère l'accès aux champs de la carte en fonction de l'activité
+        private void listeActivites_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (listeActivites.SelectedNode.Level == 1)
+            {
+                ItemSelect.Text = listeActivites.SelectedNode.Text;
+                if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule" || ItemSelect.Text == "Outside experiment")
+                {
+                    //Les champs de la carte sont accessibles
+                    CoordX.Enabled = true;
+                    CoordY.Enabled = true;
+                    NomLieu.Enabled = true;
+                    pictureBox1.Enabled = true;
+                }
+                else
+                {
+                    CoordX.Enabled = false;
+                    CoordY.Enabled = false;
+                    NomLieu.Enabled = false;
+                    pictureBox1.Enabled = false;
+                    CoordX.Text = "0";
+                    CoordY.Text = "0";
+                    NomLieu.Text = "Base";
+                }
+            }
+            else
+            {
+                //On n'affiche pas les activités correspondant aux noeuds ("Living", "Science"...)
+                ItemSelect.Text = "";
+            }
+        }
+
+        //Bouton de retour au niveau 2 sans enregistrer les modifications
+        private void AnnulerNiv3_Click(object sender, EventArgs e)
+        {
+            Niveau3.Hide();
+            Niveau2.Show();
+        }
+
+        //Parcours l'ensemble des activités du jour et attribue la disponibilité des crénaux (true ou false)
+        //Cette fonction permet aux activités de ne pas se chevaucher
+        private void changerUnePlageHoraire(Activite act, bool[] tab, bool disponible)
+        {
+            for (int i = act.Debut.Heures * 6 + act.Debut.Minutes / 10; i < act.Fin.Heures * 6 + act.Fin.Minutes / 10; i++)
+            {
+                tab[i] = disponible;
+            }
+        }
+
+        //Vérifie la cohérence des informations rentrées dans les champs au niveau 3 
+        //Enregistre les modifications s'il n'y a pas d'erreur
+        private void ConfirmerNiv3_Click(object sender, EventArgs e)
+        {
+            bool[] tab = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires; //Tableau de disponibilité des activités du jour
+            bool[] erreurs = { true, false, false, false }; //Tableau d'erreurs
+            Jour jourj = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1];
+            Activite act = new Activite("");
+
+            if (TitreNiv3.Text == "Modifier une activité")
+            {
+                act = jourj.ListeActivites[int.Parse(labelInvisible.Text)];
+                changerUnePlageHoraire(act, jourj.TabHoraires, true);
+            }
+
+            for (int i = 0; i < tab.Length; i++)
+            {
+                if (tab[i])
+                {
+                    erreurs[1] = true;
+                }
+            }
+
+            //Sélection d'une activité
+            if (ItemSelect.Text != "")
+            {
+                erreurs[3] = true;
+            }
+
+            //Si l'heure (minutes comprises) de fin est antérieure à l'heure (minutes comprises) de début
+            if (HDebut.Text != "" && MinDebut.Text != "" && HFin.Text != "" && MinFin.Text != "" && (int.Parse(HDebut.Text) * 6 + int.Parse(MinDebut.Text) / 10 <= int.Parse(HFin.Text) * 6 + int.Parse(MinFin.Text) / 10 - 1))
+            {
+                erreurs[2] = true;
+
+                for (int i = int.Parse(HDebut.Text) * 6 + int.Parse(MinDebut.Text) / 10; i < int.Parse(HFin.Text) * 6 + int.Parse(MinFin.Text) / 10 ; i++)
+                {
+                    if (!tab[i])//Si tab[i] est false, alors au moins un des emplacements demandés n'est pas disponible
+                    {
+                        erreurs[0] = false;
+                    }
+                }
+            }
+
+            if (erreurs[0] && erreurs[1] && erreurs[2] && erreurs[3]) //Si pas d'erreurs
+            {
+                List<Astronaute> liA = new List<Astronaute>();
+                for (int i = 0; i < listeAstronautes.CheckedItems.Count; i++)
+                {
+                    liA.Add(new Astronaute(i, listeAstronautes.CheckedItems[i].Text));
+                }
+                if (TitreNiv3.Text == "Modifier une activité")
+                {
+                    act.Nom = ItemSelect.Text;
+                    act.Debut = new Heure(int.Parse(HDebut.Text), int.Parse(MinDebut.Text));
+                    act.Fin = new Heure(int.Parse(HFin.Text), int.Parse(MinFin.Text));
+
+                    act.TexteDescriptif = texteDescriptif.Text;
+                    act.ListAstronaute = liA;
+                    act.Gps = new Lieu(NomLieu.Text, new Point(int.Parse(CoordX.Text), int.Parse(CoordY.Text)));
+                }
+                else //Création d'une activité et ajout à la liste pour le jour concerné
+                {
+                    act = new Activite(ItemSelect.Text, new Heure(int.Parse(HDebut.Text), int.Parse(MinDebut.Text)), new Heure(int.Parse(HFin.Text), int.Parse(MinFin.Text)), texteDescriptif.Text, liA, new Lieu(NomLieu.Text, new Point(int.Parse(CoordX.Text), int.Parse(CoordY.Text))));
+                    jourj.ListeActivites.Add(act);
+                }
+
+                changerUnePlageHoraire(act, jourj.TabHoraires, false); //L'activité occupe maintenant la plage horaire
+                CreerBoutons(int.Parse(NduJNiv3.Text)); //On crée le bouton associé
+
+                Niveau3.Hide();
+                Niveau2.Show();
+
+                if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
+                {
+                    CreerActivite.Enabled = false;
+                }
+                else
+                {
+                    CreerActivite.Enabled = true;
+                }
+            }
+            //En cas d'erreur, on affiche des messages spécifiques et il est impossible d'enregistrer l'activité
+            else if (!erreurs[3])
+            {
+                MessageBox.Show("Veuillez sélectionner une activité", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!erreurs[2])
+            {
+                MessageBox.Show("La plage horaire selectionnée n'est pas valide", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!erreurs[1])
+            {
+                MessageBox.Show("Aucune plage horaire disponible dans la journée, supprimez d'abord des activités", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!erreurs[0])
+            {
+                MessageBox.Show("La plage horaire selectionnée n'est pas disponible", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        //Supprime l'activité sélectionnée
+        private void SupprimerNiv3_Click(object sender, EventArgs e)
+        {
+            Activite act = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].ListeActivites[int.Parse(labelInvisible.Text)];
+            M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].ListeActivites.RemoveAt(int.Parse(labelInvisible.Text));
+
+            changerUnePlageHoraire(act, M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires, true); //Libère la plage horaire de l'activité supprimée
+
+            CreerBoutons(int.Parse(NduJNiv3.Text)); //On réactualise les boutons du niveau 2 et donc les indices de la liste d'activités
+
+            Niveau2.Show();
+            Niveau3.Hide();
+        }
+
+        //On positionne la croix en fonction des coordonnées rentrées dans les champs X et Y
+        private void CoordX_ValueChanged(object sender, EventArgs e)
+        {
+            if (CoordY.Text != "" && CoordX.Text != "" && CoordX.Text != "-" && CoordY.Text != "-")
+            {
+                if (NomLieu.Text == "Base")
+                {
+                    NomLieu.Text = "";
+                }
+
+                pictureBox1.Refresh(); //Pour n'avoir qu'une seule croix à la fois sur la carte
+
+                croix = pictureBox1.CreateGraphics();
+
+                //On dessine les 2 branches de la croix selon les coordonnées indiquées pour X et Y
+                if (int.Parse(CoordY.Text) >= 0)
+                {
+                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / echCarteNiv3)) - 10, Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / echCarteNiv3))), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / echCarteNiv3)) + 10, Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / echCarteNiv3))));
+                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / echCarteNiv3)), Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / echCarteNiv3)) - 10), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / echCarteNiv3)), Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / echCarteNiv3)) + 10));
+
+                }
+                else
+                {
+                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / echCarteNiv3)) - 10, -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / echCarteNiv3)))), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / echCarteNiv3)) + 10, -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / echCarteNiv3)))));
+                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / echCarteNiv3)), -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / echCarteNiv3))) - 10), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / echCarteNiv3)), -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / echCarteNiv3))) + 10));
+                }
+            }
+        }
+
+        //Même traitement pour le champ de la coordonnée en Y
+        private void CoordY_ValueChanged(object sender, EventArgs e)
+        {
+            CoordX_ValueChanged(new object(), new EventArgs());
+        }
+
+        //Affiche les coordonnées en X et en Y d'après le clic sur la carte
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            Point positionSouris = new Point(Convert.ToInt32(Math.Round(e.X * 37.9)), Convert.ToInt32(Math.Round(e.Y * 37.9))); //37.9=facteur d'échelle
-            if (pictureBox1.Enabled)
-            {
-                
+            Point positionSouris = new Point(Convert.ToInt32(Math.Round(e.X * echCarteNiv3)), Convert.ToInt32(Math.Round(e.Y * echCarteNiv3))); //echCarteNiv3=facteur d'échelle
+            if (pictureBox1.Enabled) //Si l'activité sélectionnée est une activité d'exploration
+            {            
                 if (NomLieu.Text == "Base")
                 {
                     NomLieu.Text = "";
                 }
                 
-                CoordX.Text = Convert.ToString((positionSouris.X - coordBase.X)); // la valeur du textbox a changé, on actualise la croix avec les nouvelles coordonnées
-                if (e.Y < coordBase.Y) // sur les machines un peu lentes, on constate l'apparition éclair d'une croix fantome calculée sur l'ancienne valeur de Y 
+                //Calcul de la position de la croix en fonction de la position du clic par rapport au cadran dans lequel le clic se situe
+                CoordX.Text = Convert.ToString((positionSouris.X - coordBase.X)); //La valeur du champ a changé, on actualise la croix avec les nouvelles coordonnées
+                if (e.Y < coordBase.Y) //Sur les machines un peu lentes, on constate l'apparition éclair d'une croix fantome calculée sur l'ancienne valeur de Y 
                 {
                     CoordY.Text = Convert.ToString(-1 * (positionSouris.Y - coordBase.Y));
                 }
@@ -935,10 +971,12 @@ namespace Logiciel
             else
             {
 
-            }
-            
+            }  
         }
 
+
+        //ACTIVITE D'EXPLORATION//
+        //Ce groupbox contient la carte d'exploration avec icônes cliquables
 
         private void ActExplo_Click(object sender, EventArgs e)
         {         
@@ -950,25 +988,17 @@ namespace Logiciel
             InfoMDebut.Text = "";
             InfoHFin.Text = "";
             InfoMFin.Text = "";
-
             InfoAstronautes.Items.Clear();
-            
-
             InfoDescriptif.Text = "";
             Carte.Controls.Clear();
             Carte.Refresh();
 
             ActiviteExploration.Visible = true;
-
-            //List<Activite> listActExploration;
-            //List<int> listJoursExploration;
-            //Point repere = new Point(Carte.Location.X,Carte.Location.Y);
-
-            Point coordBaseExpl = new Point(175, 250); //origine du repère carte d'exploration
-
-            for (int i = int.Parse(PeriodeDebut.Text)-1; i < int.Parse(PeriodeFin.Text)-1; i++) //on parcourt les jours
+       
+            //On affiche l'icône en fonction du numéro du jour (passé ou futur) et du type d'activité
+            for (int i = int.Parse(PeriodeDebut.Text)-1; i < int.Parse(PeriodeFin.Text)-1; i++) //On parcourt les jours
             {
-                for (int j = 0; j < M.Calendar.Jours[i].ListeActivites.Count; j++) //on parcourt l'ensemble des activités du jour i
+                for (int j = 0; j < M.Calendar.Jours[i].ListeActivites.Count; j++) //On parcourt l'ensemble des activités du jour i
                 {
                     if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
                     {
@@ -976,25 +1006,22 @@ namespace Logiciel
                         icone.BackColor = Color.Transparent;
                         icone.Size = new Size(24, 24);
                         Carte.Controls.Add(icone);
-
                         icone.Cursor = System.Windows.Forms.Cursors.Hand;
-                        icone.Tag = M.Calendar.Jours[i].ListeActivites[j]; // on associe l'activité à la picture box qui sert d'icône pour la récupérer après clic
-                        icone.Controls.Add(new Control(Convert.ToString(i))); //on ajoute un contrôle pour récupérer le numéro du jour
+                        icone.Tag = M.Calendar.Jours[i].ListeActivites[j]; //On associe l'activité à la picture box qui sert d'icône pour la récupérer après clic
+                        icone.Controls.Add(new Control(Convert.ToString(i))); //On ajoute un contrôle pour récupérer le numéro du jour
                         icone.Click += new System.EventHandler(this.ClickIconeCarte);
 
-
-                        //on place et on centre l'icône (- 12 pour centrer l'icone de 24*24px)
-                        
+                        //On place et on centre l'icône (-12 en X et en Y pour centrer l'icone de 24*24px)                       
                         if (M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y >= 0)
                         {
-                            icone.Location = new Point(Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X + coordBase.X) / 37.9 * 1.94)) - 12, Convert.ToInt32(Math.Round((coordBase.Y - M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y) / 37.9 * 1.94)) - 12);
-
+                            icone.Location = new Point(Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X + coordBase.X) / echCarteNiv3 * echCarteExplo)) - 12, Convert.ToInt32(Math.Round((coordBase.Y - M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y) / echCarteNiv3 * echCarteExplo)) - 12);
                         }
                         else
                         {
-                            icone.Location = new Point(Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X + coordBase.X) / 37.9 * 1.94)) - 12, -1 * (Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y - coordBase.Y) / 37.9 * 1.94))) - 12);
+                            icone.Location = new Point(Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X + coordBase.X) / echCarteNiv3 * echCarteExplo)) - 12, -1 * (Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y - coordBase.Y) / echCarteNiv3 * echCarteExplo))) - 12);
                         }
 
+                        //Affichage de l'icône correspondant au type d'activité et distinction entre passé/futur
                         if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit")
                         {
                             if (i <= int.Parse(JourCourantMission.Text))
@@ -1006,7 +1033,6 @@ namespace Logiciel
                                 icone.Image = scaphandreFutur;
                             }
                         }
-
                         if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule")
                         {
                             if (i <= int.Parse(JourCourantMission.Text))
@@ -1018,7 +1044,6 @@ namespace Logiciel
                                 icone.Image = vehiculeFutur;
                             }
                         }
-
                         if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
                         {
                             if (i <= int.Parse(JourCourantMission.Text))
@@ -1035,6 +1060,7 @@ namespace Logiciel
             }
         }
 
+        //Affiche les informations relatives à l'activité (icône cliqué)
         private void ClickIconeCarte(object sender, EventArgs e)
         {
             ActExplo_Click(new object(), new EventArgs());
@@ -1042,7 +1068,7 @@ namespace Logiciel
             Activite activiteClickee = (Activite)p.Tag;
             InfoLieu.Text = activiteClickee.Gps.Nom;
             InfoActivite.Text = activiteClickee.Nom;
-            InfoNumJour.Text = p.Controls[0].Text;
+            InfoNumJour.Text = Convert.ToString(Convert.ToInt32(p.Controls[0].Text) + 1);
             InfoHDebut.Text = Convert.ToString(activiteClickee.Debut.Heures);
             InfoMDebut.Text = Convert.ToString(activiteClickee.Debut.Minutes);
             InfoHFin.Text = Convert.ToString(activiteClickee.Fin.Heures);
@@ -1051,15 +1077,10 @@ namespace Logiciel
             {
                 InfoAstronautes.Items.Add(activiteClickee.ListAstronaute[i].Nom);
             }
-            
             InfoDescriptif.Text = activiteClickee.TexteDescriptif;
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            ActiviteExploration.Visible = false;
-        }
-
+        //Affichage des icônes compris entre deux jours (les icônes des jours mentionnés sont affichés également) :
         private void PeriodeDebut_TextChanged(object sender, EventArgs e)
         {
             if (PeriodeDebut.Text != "" && PeriodeFin.Text != "" && int.Parse(PeriodeDebut.Text) > 0 && int.Parse(PeriodeDebut.Text)<=500)
@@ -1067,7 +1088,6 @@ namespace Logiciel
                 ActExplo_Click(new object(), new EventArgs());
             }           
         }
-
         private void PeriodeFin_TextChanged(object sender, EventArgs e)
         {
             if (PeriodeDebut.Text != "" && PeriodeFin.Text != "" && int.Parse(PeriodeDebut.Text) > 0 && int.Parse(PeriodeDebut.Text) <= 500)
@@ -1076,38 +1096,43 @@ namespace Logiciel
             }
         }
 
-        private void CoordX_ValueChanged(object sender, EventArgs e)
+        //Retour au calendrier ou au planning (selon le niveau où on a cliqué)
+        private void Retour_Click(object sender, EventArgs e)
         {
-            if (CoordY.Text != "" && CoordX.Text != "" && CoordX.Text != "-" && CoordY.Text != "-")
-            {
-                if (NomLieu.Text == "Base")
-                {
-                    NomLieu.Text = "";
-                }
-                pictureBox1.Refresh();
-
-                croix = pictureBox1.CreateGraphics();
-
-                if (int.Parse(CoordY.Text) >= 0)
-                {
-                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)) - 10, Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / 37.9))), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)) + 10, Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / 37.9))));
-                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)), Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / 37.9)) - 10), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)), Convert.ToInt32(Math.Round((coordBase.Y - double.Parse(CoordY.Text)) / 37.9)) + 10));
-
-                }
-                else
-                {
-                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)) - 10, -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / 37.9)))), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)) + 10, -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / 37.9)))));
-                    croix.DrawLine(new Pen(Color.Black), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)), -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / 37.9))) - 10), new Point(Convert.ToInt32(Math.Round((double.Parse(CoordX.Text) + coordBase.X) / 37.9)), -1 * (Convert.ToInt32(Math.Round((double.Parse(CoordY.Text) - coordBase.Y) / 37.9))) + 10));
-
-                }
-
-
-            }
+            ActiviteExploration.Visible = false;
         }
 
-        private void CoordY_ValueChanged(object sender, EventArgs e)
+
+
+        //FERMETURE DE L'APPLICATION
+
+        //A la fermeture de l'application, 2 fichiers XML sont générés pour sauvegarder l'ensemble des données
+
+        private void GestionMission_FormClosing(object sender, FormClosingEventArgs e)
         {
-            CoordX_ValueChanged(new object(), new EventArgs());
+            //Génération XML 
+            xmlDoc = new XmlDocument();
+            xmlDoc2 = new XmlDocument();
+
+            try
+            {
+                M.genereXml(xmlDoc);
+                xmlDoc.Save(@"..\\..\\..\\sauvegarde1.xml");
+            }
+            catch
+            {
+                MessageBox.Show("Echec sauvegarde 1 !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            try
+            {
+                M.genereXml2(xmlDoc2);
+                xmlDoc2.Save(@"..\\..\\..\\sauvegarde2.xml");
+            }
+            catch
+            {
+                MessageBox.Show("Echec sauvegarde 2 !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

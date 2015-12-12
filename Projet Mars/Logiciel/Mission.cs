@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace Logiciel
 {
-    class Mission
+    class Mission //
     {
         private List<Astronaute> _listAstronautes = new List<Astronaute>();
         private List<CategorieActivite> _listCategorieActivite = new List<CategorieActivite>();

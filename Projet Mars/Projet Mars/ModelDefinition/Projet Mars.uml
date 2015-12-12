@@ -194,25 +194,6 @@
                 LastKnownLocation="Projet Mars.uml" />
             </type_NamedElement>
           </property>
-          <property
-            Id="a4992c2c-4882-44bb-b6c0-d99e39e402ce"
-            name="_Jours"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="8a07153c-5145-4256-93c5-e9aca5291558"
-                LastKnownName="List&lt;Jour&gt;"
-                LastKnownLocation="Projet Mars.uml" />
-            </type_NamedElement>
-          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -382,25 +363,6 @@
               <undefinedTypeMoniker
                 Id="6ff8ae6f-c166-4b19-83a1-2510bdd23121"
                 LastKnownName="string"
-                LastKnownLocation="Projet Mars.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="773f8252-3764-44a0-8556-fcabf68174f3"
-            name="_listeActivites"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="6b2c23d4-9770-4b96-a83f-5ae169b92b8c"
-                LastKnownName="List&lt;Activite&gt;"
                 LastKnownLocation="Projet Mars.uml" />
             </type_NamedElement>
           </property>
@@ -692,25 +654,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="9fdb7e25-0075-40e5-a99c-a7bce35d8dbb"
-            name="_listeAstronaute"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="15d0e1ea-70d9-4a6d-9d51-0525c215f0d0"
-                LastKnownName="List&lt;Astronaute&gt;"
-                LastKnownLocation="Projet Mars.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="aeac2fe4-b94e-4636-a180-40a240493faf"
             name="_texteDescriptif"
             visibility="Private"
@@ -986,25 +929,6 @@
               <undefinedTypeMoniker
                 Id="6ff8ae6f-c166-4b19-83a1-2510bdd23121"
                 LastKnownName="string"
-                LastKnownLocation="Projet Mars.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="99264976-a85b-4546-ae78-dd86deffeeb3"
-            name="_listActivite"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="6b2c23d4-9770-4b96-a83f-5ae169b92b8c"
-                LastKnownName="List&lt;Activite&gt;"
                 LastKnownLocation="Projet Mars.uml" />
             </type_NamedElement>
           </property>
@@ -1338,58 +1262,6 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
-        <ownedAttributesInternal>
-          <property
-            Id="4b47a4f2-b184-4684-9573-761cc7d20aba"
-            name="_listAstronautes"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="15d0e1ea-70d9-4a6d-9d51-0525c215f0d0"
-                LastKnownName="List&lt;Astronaute&gt;"
-                LastKnownLocation="Projet Mars.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="348f1c99-2f29-4df2-a27c-ea7f4032a5db"
-            name="_listCategorieActivite"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="32631d2c-820b-4f32-9459-867b935b0f34"
-                LastKnownName="List&lt;CategorieActivite&gt;"
-                LastKnownLocation="Projet Mars.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="cec65a66-62fd-4ce1-aaa3-b68146ba911b"
-            name="_calendar : CalendrierMartien"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="6409a8c9-caef-4123-95f2-3a2e44757e8b"

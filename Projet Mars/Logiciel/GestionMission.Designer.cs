@@ -169,8 +169,10 @@
             this.NumeroJour = new System.Windows.Forms.Label();
             this.CreerActivite = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label16 = new System.Windows.Forms.Label();
             this.boutonsMatin = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.boutonsApresMidi = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.Niveau3 = new System.Windows.Forms.GroupBox();
@@ -212,6 +214,7 @@
             this.DateT = new System.Windows.Forms.Label();
             this.ActExplo = new System.Windows.Forms.Button();
             this.ActiviteExploration = new System.Windows.Forms.GroupBox();
+            this.Retour = new System.Windows.Forms.PictureBox();
             this.LegendeCarte = new System.Windows.Forms.PictureBox();
             this.PeriodeDebut = new System.Windows.Forms.TextBox();
             this.PeriodeFin = new System.Windows.Forms.TextBox();
@@ -237,7 +240,6 @@
             this.InfoActivite = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.InfoLieu = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Carte = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -259,8 +261,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CoordX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ActiviteExploration.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Retour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LegendeCarte)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Carte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1318,7 +1320,7 @@
             this.Niveau2.Controls.Add(this.NumeroJour);
             this.Niveau2.Controls.Add(this.CreerActivite);
             this.Niveau2.Controls.Add(this.splitContainer1);
-            this.Niveau2.Location = new System.Drawing.Point(767, 67);
+            this.Niveau2.Location = new System.Drawing.Point(724, 9);
             this.Niveau2.Name = "Niveau2";
             this.Niveau2.Size = new System.Drawing.Size(710, 504);
             this.Niveau2.TabIndex = 65;
@@ -1340,20 +1342,20 @@
             // TrancheHoraire2
             // 
             this.TrancheHoraire2.AutoSize = true;
-            this.TrancheHoraire2.Location = new System.Drawing.Point(350, 85);
+            this.TrancheHoraire2.Location = new System.Drawing.Point(375, 85);
             this.TrancheHoraire2.Name = "TrancheHoraire2";
-            this.TrancheHoraire2.Size = new System.Drawing.Size(70, 13);
+            this.TrancheHoraire2.Size = new System.Drawing.Size(37, 13);
             this.TrancheHoraire2.TabIndex = 13;
-            this.TrancheHoraire2.Text = "12h20-24h40";
+            this.TrancheHoraire2.Text = "12h20";
             // 
             // TranchHoraire1
             // 
             this.TranchHoraire1.AutoSize = true;
-            this.TranchHoraire1.Location = new System.Drawing.Point(6, 85);
+            this.TranchHoraire1.Location = new System.Drawing.Point(27, 85);
             this.TranchHoraire1.Name = "TranchHoraire1";
-            this.TranchHoraire1.Size = new System.Drawing.Size(70, 13);
+            this.TranchHoraire1.Size = new System.Drawing.Size(37, 13);
             this.TranchHoraire1.TabIndex = 12;
-            this.TranchHoraire1.Text = "00h00-12h20";
+            this.TranchHoraire1.Text = "00h00";
             // 
             // label1
             // 
@@ -1437,16 +1439,27 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label16);
             this.splitContainer1.Panel1.Controls.Add(this.boutonsMatin);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox6);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.label17);
             this.splitContainer1.Panel2.Controls.Add(this.boutonsApresMidi);
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox5);
             this.splitContainer1.Size = new System.Drawing.Size(698, 400);
             this.splitContainer1.SplitterDistance = 344;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(22, 383);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(37, 13);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "12h20";
             // 
             // boutonsMatin
             // 
@@ -1463,6 +1476,15 @@
             this.pictureBox6.Size = new System.Drawing.Size(45, 376);
             this.pictureBox6.TabIndex = 8;
             this.pictureBox6.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(21, 383);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(37, 13);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "24h40";
             // 
             // boutonsApresMidi
             // 
@@ -2085,6 +2107,7 @@
             // 
             // ActiviteExploration
             // 
+            this.ActiviteExploration.Controls.Add(this.Retour);
             this.ActiviteExploration.Controls.Add(this.LegendeCarte);
             this.ActiviteExploration.Controls.Add(this.PeriodeDebut);
             this.ActiviteExploration.Controls.Add(this.PeriodeFin);
@@ -2110,9 +2133,9 @@
             this.ActiviteExploration.Controls.Add(this.InfoActivite);
             this.ActiviteExploration.Controls.Add(this.label12);
             this.ActiviteExploration.Controls.Add(this.InfoLieu);
-            this.ActiviteExploration.Controls.Add(this.pictureBox4);
             this.ActiviteExploration.Controls.Add(this.Carte);
             this.ActiviteExploration.Controls.Add(this.label11);
+            this.ActiviteExploration.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ActiviteExploration.Location = new System.Drawing.Point(6, 34);
             this.ActiviteExploration.Name = "ActiviteExploration";
             this.ActiviteExploration.Size = new System.Drawing.Size(761, 563);
@@ -2120,6 +2143,17 @@
             this.ActiviteExploration.TabStop = false;
             this.ActiviteExploration.Text = "Carte d\'exploration";
             this.ActiviteExploration.Visible = false;
+            // 
+            // Retour
+            // 
+            this.Retour.Image = global::Logiciel.Properties.Resources._return;
+            this.Retour.Location = new System.Drawing.Point(718, 13);
+            this.Retour.Name = "Retour";
+            this.Retour.Size = new System.Drawing.Size(29, 29);
+            this.Retour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Retour.TabIndex = 38;
+            this.Retour.TabStop = false;
+            this.Retour.Click += new System.EventHandler(this.Retour_Click);
             // 
             // LegendeCarte
             // 
@@ -2182,6 +2216,7 @@
             this.InfoAstronautes.Name = "InfoAstronautes";
             this.InfoAstronautes.Size = new System.Drawing.Size(202, 82);
             this.InfoAstronautes.TabIndex = 30;
+         
             // 
             // label22
             // 
@@ -2348,17 +2383,6 @@
             this.InfoLieu.TabIndex = 12;
             this.InfoLieu.Text = "Lieu";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::Logiciel.Properties.Resources.calendar1;
-            this.pictureBox4.Location = new System.Drawing.Point(711, 18);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(34, 35);
-            this.pictureBox4.TabIndex = 11;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
             // Carte
             // 
             this.Carte.Image = global::Logiciel.Properties.Resources.nanedi_valles;
@@ -2384,7 +2408,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.ActiviteExploration);
             this.Controls.Add(this.ActExplo);
             this.Controls.Add(this.DateT);
@@ -2413,7 +2437,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.JourSuivant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.JourPrecedent)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -2425,8 +2451,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ActiviteExploration.ResumeLayout(false);
             this.ActiviteExploration.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Retour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LegendeCarte)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Carte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2550,7 +2576,6 @@
         private System.Windows.Forms.GroupBox ActiviteExploration;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox Carte;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label InfoLieu;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
@@ -2578,6 +2603,9 @@
         private System.Windows.Forms.PictureBox LegendeCarte;
         private System.Windows.Forms.NumericUpDown CoordX;
         private System.Windows.Forms.NumericUpDown CoordY;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.PictureBox Retour;
 
 
     }
