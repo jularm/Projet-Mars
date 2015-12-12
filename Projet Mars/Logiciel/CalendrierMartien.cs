@@ -124,10 +124,70 @@ namespace Logiciel
         }
 
         public void MiseAJour()
-        {
+        {              
             TimeSpan Ts = System.DateTime.Now - this._debut;
+            int j = 0;
+            int h = 0;
+            int m = 0;
+            int s = 0;
+            h = this._debut.Hour;
+            m = this._debut.Minute;
+            s = this._debut.Second;
             double ecart = Math.Round(Ts.TotalSeconds);
+
             for (int i = 0; i < ecart; i++)
+            {
+                if ( h != 24)
+                {
+                    if (m < 59)
+                    {
+                        if (s < 59)
+                        {
+                            s++;
+                        }
+                        else
+                        {
+                            m++;
+                            s = 0;
+                        }
+                    }
+                    else
+                    {
+                        h++;
+                        m = 0;
+                    }
+                }
+                else
+                {
+                    if (m < 39)
+                    {
+                        if (s < 59)
+                        {
+                            s++;
+                        }
+                        else
+                        {
+                            m++;
+                            s = 0;
+                        }
+                    }
+
+                    else
+                    {
+                        h = 0;
+                        m = 0;
+                        j++;
+                    }
+                }
+            }
+
+            this.Day = j;
+            this.Heure = h;
+            this.Minute = m;
+            this.Seconde = s;
+
+
+          /*  for (int i = 0; i < ecart; i++)
             {
                 if (this.Heure != 24)
                 {
@@ -171,7 +231,7 @@ namespace Logiciel
                         this.Day++;
                     }
                 }
-            }
+            }     */
         }
 
 
@@ -272,8 +332,8 @@ namespace Logiciel
                                 debut.Minutes = int.Parse(Activite.SelectSingleNode("Minute_Debut").InnerText);
                                 fin.Minutes = int.Parse(Activite.SelectSingleNode("Minute_Fin").InnerText);
 
-                                a.Debut = debut;
-                                a.Fin = fin;
+                                a.Debut = new Heure(debut.Heures, debut.Minutes);
+                                a.Fin = new Heure(fin.Heures, fin.Minutes);
 
                                 gps = Lieu.Parse(Activite.SelectSingleNode("Lieu"));
 

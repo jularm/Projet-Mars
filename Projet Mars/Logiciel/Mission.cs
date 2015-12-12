@@ -86,8 +86,7 @@ namespace Logiciel
             {
                 a.genereXml(xmlDoc, NodelistCategorieActivite);
             }
-            NodeMission.AppendChild(NodelistCategorieActivite);
-
+            NodeMission.AppendChild(NodelistCategorieActivite);        
            
             xmlDoc.AppendChild(NodeMission);
         }

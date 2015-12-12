@@ -21,7 +21,7 @@ namespace Logiciel
         public Jour(int numero)
         {
             _numero = numero;            
-            _compteRendu = "La journée c'est bien passée";
+            _compteRendu = "La journée s'est bien passée";
             _sortie = false;
             for (int i = 0; i < 147; i++)
             {
