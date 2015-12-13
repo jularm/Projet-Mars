@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace Logiciel
 {
-    class Mission //
+    class Mission 
     {
         private List<Astronaute> _listAstronautes = new List<Astronaute>();
         private List<CategorieActivite> _listCategorieActivite = new List<CategorieActivite>();
@@ -25,11 +25,29 @@ namespace Logiciel
             _listCategorieActivite = listCategorieActivite;
         }
 
+
         public CalendrierMartien Calendar
         {
             get { return _calendar; }
             set { _calendar = value; }
         }
+
+        public List<CategorieActivite> Listcat
+        {
+            get { return _listCategorieActivite; }
+        }
+
+        private List<CategorieActivite> Listcate
+        {
+            set { _listCategorieActivite = value; }
+        }
+
+        public List<Astronaute> ListAstr
+        {
+            get { return _listAstronautes; }
+            set { _listAstronautes = value; }
+        }
+
 
         public void AddAstronaute(Astronaute a)
         {
@@ -51,22 +69,7 @@ namespace Logiciel
             _listCategorieActivite.Remove(a);
         }
 
-        public List<Astronaute> ListAstr
-        {
-            get { return _listAstronautes; }
-            set { _listAstronautes = value; }
-        }
-        
-        
-        public List<CategorieActivite> Listcat
-        {
-            get { return _listCategorieActivite; }
-        }
-
-        private List<CategorieActivite> Listcate
-        {
-            set { _listCategorieActivite = value; }
-        } 
+                
 
 
         // Generation Xml

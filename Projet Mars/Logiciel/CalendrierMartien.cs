@@ -69,11 +69,6 @@ namespace Logiciel
             get { return _Jours; }
         }
 
-        public void AddJours(Jour J)
-        {
-            _Jours.Add(J);
-        }
-
         public DateTime Fin
         {
             get { return _fin; }
@@ -85,6 +80,13 @@ namespace Logiciel
             get { return _debut; }
             set { _debut = value; }
         }
+
+
+        public void AddJours(Jour J)
+        {
+            _Jours.Add(J);
+        }
+
 
         public void Horloge()
         {

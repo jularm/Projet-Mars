@@ -22,17 +22,24 @@ namespace Logiciel
             _listActivite.Add(new Activite(nom));
         }
 
+        public CategorieActivite(string nom, List<Activite> listActivite)
+        {
+            _nom = nom;
+            _listActivite = listActivite;
+        }
+
         public string Nom
         {
             get { return _nom; }
             set { _nom = value; }
         }
 
-        public CategorieActivite(string nom, List<Activite> listActivite)
+        public List<Activite> ListActivite
         {
-            _nom = nom;
-            _listActivite = listActivite;
+            get { return _listActivite; }
+            set { _listActivite = value; }
         }
+
 
         public void AddActivite(Activite A)
         {
@@ -44,11 +51,7 @@ namespace Logiciel
             _listActivite.Remove(A);
         }
 
-        public List<Activite> ListActivite
-        {
-            get { return _listActivite; }
-            set { _listActivite = value; }
-        }
+        
 
         // Generation Xml
         public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
@@ -95,7 +98,6 @@ namespace Logiciel
                 CategorieActivite c = new CategorieActivite(nom, listActivite);
                 M.AddCategorie(c);
             }
-
         }
     }
 }

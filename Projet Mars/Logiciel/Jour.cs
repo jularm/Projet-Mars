@@ -14,9 +14,8 @@ namespace Logiciel
         private string _compteRendu;
         private int _numero;
         private bool _sortie;
-        private bool[] _tabHoraires = new bool[148]; // (avant 149) ca change pas et on compte 148 cran donc de 0 à 147
+        private bool[] _tabHoraires = new bool[148]; //Il y a 148 crénaux de 10min dans une journée de 24h40
         private List<Activite> _listeActivites = new List<Activite>();
-
 
         public Jour(int numero)
         {
@@ -27,7 +26,6 @@ namespace Logiciel
             {
                 _tabHoraires[i] = false;
             }
-
         }
 
         public Jour(string compteRendu, int numero, bool[] tabHoraires)
@@ -71,6 +69,7 @@ namespace Logiciel
             get { return _listeActivites; }
             set { _listeActivites = value; }
         }
+
 
         public void AddAct(Activite A)
         {

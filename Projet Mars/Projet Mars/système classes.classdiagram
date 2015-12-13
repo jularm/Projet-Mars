@@ -104,31 +104,41 @@
       <class Id="fd8c217c-d8f7-490a-86c1-fb7d7a4ccbe0" name="Jour" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="fa98e4b1-30c4-4447-9701-763cedbf032b" />
         <targetEnds>
-          <association Id="d87a5a4e-55d7-4946-9959-4b6ba23c73e4" isDerived="false" sourceEndRoleName="Jour" targetEndRoleName="Activite" isLeaf="false" isAbstract="false">
+          <association Id="965f6550-cb8a-428e-b461-8e1d5514913e" isDerived="false" sourceEndRoleName="Jour" targetEndRoleName="Activite" isLeaf="false" isAbstract="false">
             <classMoniker Id="93869af9-c340-45f7-9436-326a581a3021" LastKnownName="Activite" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="96a581a4-c105-45cd-9308-2318bc205a38" name="Jour" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="d34c49a8-249f-4f2e-b9cc-2f458be92695" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="ed5ac798-5fa1-4be7-be54-e8e72972e2e1" name="Activite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                <memberEnd Id="612f62a1-56e6-4a65-9507-c8c9742bfc58" name="Jour" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
                   <lowerValueInternal>
-                    <literalString Id="03d18abf-e059-4d8b-a84e-486a2b418e52" name="Lower" value="1">
-                      <elementDefinition Id="316708d4-ab5c-4d3a-9dcb-215ea513e1fb" />
+                    <literalString Id="fd631ce2-7f54-4254-8d4a-8ae749d6e407" name="Lower" value="0">
+                      <elementDefinition Id="b5394b0a-a6af-401e-8147-d5d116ce2f2f" />
                     </literalString>
                   </lowerValueInternal>
                   <upperValueInternal>
-                    <literalString Id="1a42a9c7-79ed-4fe8-8169-b9fb462c1833" name="Upper" value="*">
-                      <elementDefinition Id="aba7bbae-9b4f-4bd8-8b66-4a7fbfa53d87" />
+                    <literalString Id="ad6f36ae-2871-46ef-b19b-69c134145e6d" name="Upper" value="*">
+                      <elementDefinition Id="7d0599c3-89d8-42ab-8243-fbfb9097118c" />
                     </literalString>
                   </upperValueInternal>
-                  <elementDefinition Id="69fb5e09-a2c4-4872-ad95-426d22523772" />
+                  <elementDefinition Id="35003724-b8de-4258-aec1-f4c0ba664d14" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="61820d80-e052-45f9-ba5c-4b60ea0566f8" name="Activite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="65e57d6d-9066-4952-9996-7f4fea9bb67c" name="Lower" value="1">
+                      <elementDefinition Id="81acb47e-288f-422e-ac94-1809dfba10b1" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="480cd8dc-3373-4711-8088-3540d6821ef6" name="Upper" value="*">
+                      <elementDefinition Id="f7b5e3ad-0077-46ea-8b0c-2e19e72c4285" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="2354b34c-103c-4209-aa05-c75b7473abd8" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="b49dcbf5-2e88-4fb9-bdf8-1a182bda1b8f" />
+            <elementDefinition Id="69808041-a84f-4e88-bf85-2a0a80b10d22" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
@@ -157,6 +167,50 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="ac6ef2e7-545a-4cc6-9ec9-4c534e52090a" name="AddAct" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7914f23b-d2d8-43b6-9fe4-3214a39b6312" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1e1eb25e-94c6-48a2-a795-0076e5016cf7" direction="Return" isUnique="false">
+                  <elementDefinition Id="4abed72e-0842-4555-abd5-1d799a02249f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c57d6264-7027-484d-835e-d865833a3090" name="A" direction="In" isUnique="false">
+                  <elementDefinition Id="43ba152f-f691-4d4d-b87e-b976aa6b4830" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a69ac920-239c-4b34-a1ca-fe517eba7062" LastKnownName="Activite" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="5bcd2bba-e973-4878-a8c3-d587b47df343" name="RemoveAct" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f7ec8b9d-1866-4276-9a63-e079b70be008" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="40384f1b-f084-4065-b2f5-e80294538375" direction="Return" isUnique="false">
+                  <elementDefinition Id="33c4d863-b6ad-4bcf-a925-c79e2c013514" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="92999daa-b5d5-4526-8706-b8173283b46b" name="A" direction="In" isUnique="false">
+                  <elementDefinition Id="e80f064f-7307-495b-96e9-b76aa058bde0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a69ac920-239c-4b34-a1ca-fe517eba7062" LastKnownName="Activite" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -168,6 +222,16 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="d7a643ea-2e04-49d2-88ad-e0a4bfe54bfc" name="Activite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="74d5b70c-1bc5-45a3-8527-a0c0738904e5" name="Lower" value="1">
+                      <elementDefinition Id="a64cd0f2-0b12-4f6e-ae22-7a56bd7cce52" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="dd2c953f-02ce-429c-8cd5-610bdcffcd6e" name="Upper" value="*">
+                      <elementDefinition Id="f296e84e-b209-4e28-a24a-dc5a8e04786b" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="fc585c82-5818-4caf-b054-9f2ae8c8cdf3" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -194,6 +258,16 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="e6a7e3b3-1972-42cb-ab89-c76023000302" name="Activite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="0a21a877-6005-4c0e-bf88-9e2426333459" name="Lower" value="1">
+                      <elementDefinition Id="449ecefb-8a6a-4771-bd5a-779144b80d45" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="26397b51-849e-433e-996c-12b277a4ba2b" name="Upper" value="*">
+                      <elementDefinition Id="42c2d118-e433-4ed2-b906-09db5deffb01" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="8f0c1e60-7028-405b-b9bd-eff86a34e588" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -204,32 +278,6 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="a29bfaa3-ff7f-4bbe-b32b-936fa3cbf953" />
-          </association>
-          <association Id="575667e2-ca2e-4658-8dd6-753fee006e39" isDerived="false" sourceEndRoleName="Activite" targetEndRoleName="CategorieActivite" isLeaf="false" isAbstract="false">
-            <classMoniker Id="840c7a99-7de2-4e9f-b682-1f95df3b1250" LastKnownName="CategorieActivite" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="5f950814-9d68-4a1a-b5ec-2d29938d90d1" name="Activite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="732903a4-cc36-49b1-a730-ecd565bca43e" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="5f39f647-a1c0-47ae-86a3-c06edcc9661b" name="CategorieActivite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="c79be82d-458d-4112-bb1c-392b4bb1bd44" name="Lower" value="1">
-                      <elementDefinition Id="61c1ea5e-219c-438c-b310-1513351858a5" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="bd2ce36b-330f-40dd-9433-8a2c151d6289" name="Upper" value="1">
-                      <elementDefinition Id="910806fa-fc5b-440b-b6c3-6640c766dcc1" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="1cf295a5-6859-40f3-9264-700ae8974361" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="53d194e0-5eda-477e-9410-ed7a431439f8" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
@@ -275,15 +323,18 @@
             <elementDefinition Id="1808eb7e-cefc-4de9-936f-353d360d60b0" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="0f17d1b8-a303-4003-9588-c777056115db" name="Astronaute" direction="In" isUnique="false">
-                  <elementDefinition Id="44415c4b-2ac3-447d-939d-9801553ba408" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="8ac3854a-abeb-4156-a567-c353ef5e2084" direction="Return" isUnique="false">
                   <elementDefinition Id="31d2d31c-d49c-4aa1-ab14-80265db91767" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="184eb3c5-ea31-476c-9fea-a46f201c9e69" name="a" direction="In" isUnique="false">
+                  <elementDefinition Id="89c50325-f087-4c1e-b567-161ac0af7b2f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f7f45a8e-c554-4cc4-9843-3872ae93e505" LastKnownName="Astronaute" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -293,15 +344,18 @@
             <elementDefinition Id="2e9716fb-cb17-4498-8310-bd65e25dc42a" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="27428080-2a7e-4396-9f36-ec7d6b6a22d5" name="Astronaute" direction="In" isUnique="false">
-                  <elementDefinition Id="64467a01-d217-4767-b8d0-33f3103cac7d" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="dda2ad3e-d9fa-48ef-b639-7e62855be432" direction="Return" isUnique="false">
                   <elementDefinition Id="2b46cc2b-28fb-4716-94f7-fd4d91c45d2e" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="250e33d8-e111-47ff-9d30-6ce4a2d55339" name="a" direction="In" isUnique="false">
+                  <elementDefinition Id="03eeb6e2-f9b6-419a-821c-77e3be14ee53" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f7f45a8e-c554-4cc4-9843-3872ae93e505" LastKnownName="Astronaute" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -351,6 +405,34 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="840c7a99-7de2-4e9f-b682-1f95df3b1250" name="CategorieActivite" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="1ab7df5a-2473-46f7-ad3b-79ed6e12f68e" />
+        <targetEnds>
+          <association Id="31dce26c-400f-46d7-89fe-d1e35cd597a8" isDerived="false" sourceEndRoleName="CategorieActivite" targetEndRoleName="Activite" isLeaf="false" isAbstract="false">
+            <classMoniker Id="93869af9-c340-45f7-9436-326a581a3021" LastKnownName="Activite" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="52704b5a-3216-4e38-a76f-ceeb84467e4e" name="CategorieActivite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ea4eef9c-7885-4d7a-880f-c0abee48b187" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7d440077-5519-4fc4-a340-b8ab2a8c2667" name="Activite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="660517b8-ea54-4ed6-a883-dedee78b9287" name="Lower" value="1">
+                      <elementDefinition Id="15fa1957-a030-49f5-abd9-c8e5f4cb5f93" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="a6031dc6-6216-41f1-b298-955bbcd335c5" name="Upper" value="*">
+                      <elementDefinition Id="2835d89a-0dce-446b-85e5-0c80dc6c0bf5" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="47194df6-8619-41d0-9eb6-0e04f6353ddd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a928be13-e6ee-4518-b4ce-9d1ff29ef00c" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="5da0793e-47b4-4bc7-b640-6aeac5c5ad73" name="_nom" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="02fdaaa8-761f-444a-a663-93633faeb73d" />
@@ -364,15 +446,18 @@
             <elementDefinition Id="048e0e38-cd8b-4880-bef7-f441abaf8931" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="e5e90df4-19be-4308-8864-4a9bc69e6926" name="Activite" direction="In" isUnique="false">
-                  <elementDefinition Id="579d6d5b-a936-44e5-ba76-58a52467a07e" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="c89d1e8c-ad13-4a6f-96c1-e358ed083c5e" direction="Return" isUnique="false">
                   <elementDefinition Id="0bdf00e2-9ad9-4051-b4f0-6a655d2ec9bf" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c4c31603-ecd2-43cd-a5a7-1747009ab40f" name="A" direction="In" isUnique="false">
+                  <elementDefinition Id="610edce4-6fa4-46ec-89eb-60642a329d6c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a69ac920-239c-4b34-a1ca-fe517eba7062" LastKnownName="Activite" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -382,15 +467,18 @@
             <elementDefinition Id="dd5414a3-3574-44e8-9cea-aa842147bcd6" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="3a18e649-a8f7-411d-ab08-1138cfefed49" name="Activite" direction="In" isUnique="false">
-                  <elementDefinition Id="6469dfae-e495-4d74-af44-2863802a5d4b" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="06600c38-afcb-47ee-b834-f27e690b8e17" direction="Return" isUnique="false">
                   <elementDefinition Id="97e97ca2-5aa1-4768-b717-da8f47d6981d" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8033abf1-58f2-4ca3-a938-6fd4f5760563" name="A" direction="In" isUnique="false">
+                  <elementDefinition Id="7b3a903c-99ce-4dcc-b19c-ef5aead6b79d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a69ac920-239c-4b34-a1ca-fe517eba7062" LastKnownName="Activite" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -478,6 +566,16 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="6313b181-219f-4aab-a576-a86c79fde44c" name="Mission" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="87c8e712-b643-4d3e-a117-856b42e3c524" name="Lower" value="1">
+                      <elementDefinition Id="4809ba70-5d39-4d00-a13b-cc44fdc14034" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="9e668aa8-8dce-4bf5-a83a-2ddbace374d0" name="Upper" value="*">
+                      <elementDefinition Id="99a6d4f4-d553-4b12-b905-c712eba189c0" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="356366d8-711d-4b22-8493-34ba9f33f2fd" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -504,6 +602,16 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="b9bd1af0-d381-45ea-994a-2a9eb3f48cd6" name="Mission" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="7fd5112a-9e6e-4646-8fa1-2dd4ace8f5fa" name="Lower" value="1">
+                      <elementDefinition Id="9944f731-1c57-4559-971c-215cc8999465" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="ad64c7fd-5883-428f-a945-ff8cd219b40e" name="Upper" value="*">
+                      <elementDefinition Id="bb83f832-1cdb-47c6-9f67-c5a7ae731778" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="585ef206-f04a-4922-9b5b-9804e6b454f1" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -525,21 +633,21 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="93410142-770c-4fdf-b3a5-613ac1099bf0" />
           </association>
-          <association Id="ee50282b-ae50-4424-b6bd-a82cba52e5ae" isDerived="false" sourceEndRoleName="Mission" targetEndRoleName="CalendrierMartien" isLeaf="false" isAbstract="false">
+          <association Id="e90b4616-7f62-4567-9121-61539c4abcb6" isDerived="false" sourceEndRoleName="Mission" targetEndRoleName="CalendrierMartien" isLeaf="false" isAbstract="false">
             <classMoniker Id="6dca6daa-3304-44e1-bbf7-414422d1c044" LastKnownName="CalendrierMartien" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="e8583197-347a-4752-b17e-80119408cd3a" name="Mission" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="490e284c-9016-41af-897b-5a0fc5d498eb" />
+                <memberEnd Id="514a5647-321b-41a3-9595-5c55fe1f3c02" name="Mission" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6db635fa-d4ac-4feb-90bd-7aaa2cbd0484" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="e523202e-0430-42e0-ac9c-556fdd5467f3" name="CalendrierMartien" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="d3db32c1-be21-46d3-bac6-715406aae28b" />
+                <memberEnd Id="e45b5ae7-6bdc-4cc9-b1f1-a6a678ec1454" name="CalendrierMartien" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="8d2a3ed6-7230-4c0e-b752-52ec26c8ee0f" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="a30a3ee9-b406-4b90-ad74-a883a3b66d67" />
+            <elementDefinition Id="bbe9b562-1da9-4fe1-b5dd-44bf7e3b1d43" />
           </association>
         </targetEnds>
         <ownedOperationsInternal>
@@ -547,15 +655,18 @@
             <elementDefinition Id="6409a8c9-caef-4123-95f2-3a2e44757e8b" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="971d8051-8193-428f-9272-d6394b11ab3d" name="Astronaute" direction="In" isUnique="false">
-                  <elementDefinition Id="7eea49f2-b2e0-4c26-9333-d85710109caa" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="373c62fc-3704-43c6-b126-258fda792109" direction="Return" isUnique="false">
                   <elementDefinition Id="7d76e470-cf2d-4be7-b458-08c3dd271c18" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8a9afdf5-7a20-4bda-9474-694fc36ff9ee" name="a" direction="In" isUnique="false">
+                  <elementDefinition Id="b2cd20b0-3b37-4f29-9e27-07e5d42e5320" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f7f45a8e-c554-4cc4-9843-3872ae93e505" LastKnownName="Astronaute" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -565,11 +676,6 @@
             <elementDefinition Id="a33a6a23-b368-4fd4-a5b0-b731d93bf9fe" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="351566f0-e1a3-45c7-a428-24efbc212bd6" name="Astronaute" direction="In" isUnique="false">
-                  <elementDefinition Id="afced14d-0ce4-48bc-8861-1bac280cd596" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="d3875fb6-e0c8-42d5-bb4c-c3bd21593603" direction="Return" isUnique="false">
                   <elementDefinition Id="562f620f-05ad-48ba-a994-2304d2c03472" />
                   <type_NamedElement>
@@ -577,17 +683,76 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="df2eb63e-6ce2-4a37-9971-686ec095c320" name="a" direction="In" isUnique="false">
+                  <elementDefinition Id="3d8cc306-8625-410e-bb6d-8439c0ead905" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f7f45a8e-c554-4cc4-9843-3872ae93e505" LastKnownName="Astronaute" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="e5e77f1e-cc6d-40b4-ac14-512d2738b9eb" name="RemoveCategorie) : void" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="e5e77f1e-cc6d-40b4-ac14-512d2738b9eb" name="RemoveCategorie" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="b175a923-91f1-46d9-9b96-030c322e99a3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="09942d81-2259-41c6-8f58-e17f092998c2" direction="Return" isUnique="false">
+                  <elementDefinition Id="b9cae6f6-10db-41c8-85b1-dd5212c22cd4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0ad32539-1fae-4259-a3d7-1270c57f65ee" name="a" direction="In" isUnique="false">
+                  <elementDefinition Id="a4fddf61-1e61-42c0-907c-0d3c22f03962" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="11ea578b-e21d-48bf-a574-34c848951a29" LastKnownName="CategorieActivite" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
-          <operation Id="8a06a516-8f72-4193-8640-cb7e30c86916" name="AddCategorie) : void" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="8a06a516-8f72-4193-8640-cb7e30c86916" name="AddCategorie" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="789936ae-19b8-48ec-b4d3-83860df51d80" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="808c3abf-d2e1-41b4-b96c-f456b2f17470" direction="Return" isUnique="false">
+                  <elementDefinition Id="5e871a00-f598-4673-a4a6-3680d1b2b9b6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="810952e6-d967-4b44-9cf2-8e27f6796718" name="a" direction="In" isUnique="false">
+                  <elementDefinition Id="0a57f701-e2bc-45b8-b0b1-d896a5c36c12" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="11ea578b-e21d-48bf-a574-34c848951a29" LastKnownName="CategorieActivite" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="11ea578b-e21d-48bf-a574-34c848951a29" name="CategorieActivite" isAbstract="false" isLeaf="false" cachedFullName="Projet Mars::CategorieActivite">
+        <elementDefinition Id="1ab7df5a-2473-46f7-ad3b-79ed6e12f68e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f7f45a8e-c554-4cc4-9843-3872ae93e505" name="Astronaute" isAbstract="false" isLeaf="false" cachedFullName="Projet Mars::Astronaute">
+        <elementDefinition Id="b8ea8360-5179-4b16-9c03-3721ea00965d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a69ac920-239c-4b34-a1ca-fe517eba7062" name="Activite" isAbstract="false" isLeaf="false" cachedFullName="Projet Mars::Activite">
+        <elementDefinition Id="586b8dc4-72f6-40a2-8ff7-88951470697f" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="407e6f78-6fca-4445-a20e-006ed31b61fb" name="Projet Mars">
     <elementDefinition Id="4447bcab-b6b3-44bc-8e22-dd9b3809bfce" />

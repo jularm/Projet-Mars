@@ -16,14 +16,30 @@ namespace Logiciel
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new GestionMission());
-        }
-        
+        }    
     }
-    public struct Heure //La structure permet la factorisation de code de la même manière qu'une classe mais en plus léger donc plus utilisable pour des petits éléments
+
+    //On crée une structure Heure pour faciliter la gestion de la création des boutons d'activité
+    public struct Heure 
     {
         int _heures;
         int _minutes;
         int _heuresMinutes;
+
+        public Heure(int h, int m)
+        {
+            _heures = h;
+            _minutes = m;
+            if (m == 0)//Pour les besoins de cet attribut, on double le zéro pour que 8h00 devienne 800 et non 80 
+            {
+                _heuresMinutes = int.Parse(Convert.ToString(h) + "00");
+            }
+            else
+            {
+                _heuresMinutes = int.Parse(Convert.ToString(h) + Convert.ToString(m));
+            }
+        }
+
 
         public int HeuresMinutes
         {
@@ -40,20 +56,6 @@ namespace Logiciel
         {
             get { return _minutes; }
             set { _minutes = value; }
-        }
-
-        public Heure(int h, int m)
-        {
-            _heures = h;
-            _minutes = m;
-            if (m == 0)// pour les besoins de cet attribut, on double le zéro pour que 8h00 devienne 800 et non 80 
-            {
-                _heuresMinutes = int.Parse(Convert.ToString(h) + "00");
-            }
-            else
-            {
-                _heuresMinutes = int.Parse(Convert.ToString(h) + Convert.ToString(m));
-            }
-        }        
+        }                
     }
 }

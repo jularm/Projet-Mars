@@ -13,7 +13,9 @@ using System.Xml;
 
 namespace Logiciel
 {
-    //Form principal de l'application contenant le calendrier, le planning des activités, les fenêtres de modification des activités et la fiche d'exploration
+    /// <summary>
+    /// Form principal de l'application contenant le calendrier, le planning des activités, les fenêtres de modification des activités et la fiche d'exploration
+    /// </summary>
     public partial class GestionMission : Form 
     {
         private Mission M = new Mission(); //Déclaration de la mission avec son calendrier, ses astronautes et ses activités
@@ -49,7 +51,9 @@ namespace Logiciel
 
         //INITIALISATION DE LA MISSION//
         
-        //Ici sont chargés les fichiers XML et instanciés les objets de la classe "Mission"
+        /// <summary>
+        /// Ici sont chargés les fichiers XML et instanciés les objets de la classe "Mission"
+        /// </summary>
         public GestionMission()
         {
             InitializeComponent();
@@ -191,7 +195,10 @@ namespace Logiciel
         }
 
 
-        //Permet de remplacer le compte rendu précédent par le nouveau inscrit dans le Form "CompteRendu"
+        /// <summary>
+        /// Permet de remplacer le compte rendu précédent par le nouveau inscrit dans le Form "CompteRendu"
+        /// </summary>
+        /// <param name="compteRendu"></param>
         public void MiseAJourCompteRendu(string compteRendu)
         {
             M.Calendar.Jours[int.Parse( NumeroJour.Text)].CompteRendu = compteRendu;
@@ -202,7 +209,11 @@ namespace Logiciel
         //NIVEAU 1//
         //Contient le calendrier des jours de 1 à 500
 
-        //Donne l'heure qu'il est pour le jour martien de la mission
+        /// <summary>
+        /// Donne l'heure qu'il est pour le jour martien de la mission
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
@@ -297,7 +308,11 @@ namespace Logiciel
             }
         }
 
-        //Permet d'accéder aux 50 prochains jours
+        /// <summary>
+        /// Permet d'accéder aux 50 prochains jours
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             if (trackBar1.Value < 9)
@@ -307,7 +322,11 @@ namespace Logiciel
             trackBar1_Scroll(sender, e);
         }
 
-        //Permer d'accéder aux 50 jours précédents
+        /// <summary>
+        /// Permer d'accéder aux 50 jours précédents
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (trackBar1.Value > 0)
@@ -364,8 +383,11 @@ namespace Logiciel
         //NIVEAU 2//
         //Correspond au planning des activités
 
-        //Création d'un bouton par activité pour chaque jour
-        public void CreerBoutons(int n) //n : numéro du jour
+        /// <summary>
+        /// Création d'un bouton par activité pour chaque jour
+        /// </summary>
+        /// <param name="n">n : numéro du jour</param>
+        public void CreerBoutons(int n)
         {
             boutonsMatin.Controls.Clear();
             boutonsApresMidi.Controls.Clear();
@@ -503,7 +525,7 @@ namespace Logiciel
                         bouttonBis.Size = new System.Drawing.Size(largeurActivite, 370 - ((Act.Debut.Heures * 6 + Act.Debut.Minutes / 10) * 5) - localisation.Y);
                         bouttonBis.Margin = new System.Windows.Forms.Padding(0);
                         bouttonBis.Name = "ActiviteBis" + i;
-                        bouttonBis.TabIndex = i;
+                        bouttonBis.Tag = jourJ.ListeActivites[i];
                         bouttonBis.Text = Act.Nom;
                         bouttonBis.UseVisualStyleBackColor = false;
                         bouttonBis.Click += new System.EventHandler(this.ClickNiveau3);
@@ -517,14 +539,18 @@ namespace Logiciel
                 bouton.Location = localisation;
                 bouton.Margin = new System.Windows.Forms.Padding(0);
                 bouton.Name = "Activite" + i;
-                bouton.TabIndex = i;
+                bouton.Tag = jourJ.ListeActivites[i];
                 bouton.Text = Act.Nom;
                 bouton.UseVisualStyleBackColor = false;
                 bouton.Click += new System.EventHandler(this.ClickNiveau3);
             }
         }
 
-        //Permet de d'accéder au jour précédent
+        /// <summary>
+        /// Permet de d'accéder au jour précédent
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void JourPrecedent_Click(object sender, EventArgs e)
         {
             if (int.Parse(NumeroJour.Text) > 1)
@@ -543,7 +569,11 @@ namespace Logiciel
             }
         }
 
-        //Permet de d'accéder au jour suivant
+        /// <summary>
+        /// Permet de d'accéder au jour suivant
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void JourSuivant_Click(object sender, EventArgs e)
         {
             if (int.Parse(NumeroJour.Text) < 500)
@@ -562,7 +592,11 @@ namespace Logiciel
             }
         }
 
-        //Accès au compte-rendu de la journée (dans un autre form)
+        /// <summary>
+        /// Accès au compte-rendu de la journée (dans un autre form)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CompteRendu_Click(object sender, EventArgs e)
         {
             CompteRendu cr = new CompteRendu(M.Calendar.Jours[int.Parse(NumeroJour.Text)].CompteRendu);
@@ -570,7 +604,11 @@ namespace Logiciel
             cr.ShowDialog();
         }
 
-        //Pour retourner au calendrier du niveau 1
+        /// <summary>
+        /// Pour retourner au calendrier du niveau 1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RetourCalendrier_Click_1(object sender, EventArgs e)
         {
             JourCourantMission_TextChanged(new Object(), new EventArgs());
@@ -582,16 +620,21 @@ namespace Logiciel
 
         //NIVEAU 3//
         //On y accède de deux façons : en cliquant sur une activité pour la modifier ou en créant une nouvelle activité (Bouton "Créer une activité")
-
-        //Ici on accède au niveau 3 en cliquant sur un bouton représentant une activité
-        //(modification seulement, la création d'activité est gérée en cliquant sur un autre bouton)
+       
+        /// <summary>
+        /// Ici on accède au niveau 3 en cliquant sur un bouton représentant une activité
+        /// (modification seulement, la création d'activité est gérée en cliquant sur un autre bouton)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickNiveau3(object sender, EventArgs e)
         {
             //Cette fonction est appelée à chaque clique sur un bouton du planning, c'est le sender qui fait référence au bouton sur lequel on a cliqué
             Button clickedButton = (Button)sender; 
 
-            Activite act = M.Calendar.Jours.ElementAt(int.Parse(NduJNiv3.Text) - 1).ListeActivites.ElementAt(clickedButton.TabIndex); //Activité à l'index i du jour concerné
-            labelInvisible.Text = Convert.ToString(clickedButton.TabIndex);
+            Activite act = (Activite)clickedButton.Tag; 
+            
+            ConfirmerNiv3.Tag = act;
 
             //Niveau2.Hide();
             Niveau3.Show();
@@ -645,7 +688,11 @@ namespace Logiciel
             SupprimerNiv3.Visible = true; 
         }
 
-        // Accès au niveau 3 pour créer une activité
+        /// <summary>
+        /// Accès au niveau 3 pour créer une activité
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreerActivite_Click(object sender, EventArgs e)
         {
             TitreNiv3.Text = "Créer une activité";
@@ -709,7 +756,11 @@ namespace Logiciel
             }
         }
 
-        //Conrôle des valeurs autorisées pour les heures et les minutes de début de l'activité
+        /// <summary>
+        /// Conrôle des valeurs autorisées pour les heures et les minutes de début de l'activité
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HDebut_SelectedValueChanged(object sender, EventArgs e)
         {
             if (HDebut.SelectedIndex == 24)
@@ -727,18 +778,26 @@ namespace Logiciel
             MinDebut.Enabled = true;
         }
 
-        //Déverrouille le champ concernant l'heure de fin une fois les minutes de l'heure de début remplies
+        /// <summary>
+        /// Déverrouille le champ concernant l'heure de fin une fois les minutes de l'heure de début remplies
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MinDebut_SelectedIndexChanged(object sender, EventArgs e)
         {
             HFin.Enabled = true;
         }
 
-        //Conrôle des valeurs autorisées pour les heures et les minutes de fin de l'activité
+        /// <summary>
+        /// Conrôle des valeurs autorisées pour les heures et les minutes de fin de l'activité
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HFin_SelectedValueChanged(object sender, EventArgs e)
         {
             if (HFin.SelectedIndex == 24)
             {
-                MinFin.Items.Remove("50"); //
+                MinFin.Items.Remove("50");
                 MinFin.SelectedText = "";
             }
             else if (MinFin.Items.Count == 5)
@@ -748,7 +807,11 @@ namespace Logiciel
             MinFin.Enabled = true;
         }
 
-        //Affiche le nom de l'activité sélectionnée dans le treeview et gère l'accès aux champs de la carte en fonction de l'activité
+        /// <summary>
+        /// Affiche le nom de l'activité sélectionnée dans le treeview et gère l'accès aux champs de la carte en fonction de l'activité
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listeActivites_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (listeActivites.SelectedNode.Level == 1)
@@ -780,15 +843,24 @@ namespace Logiciel
             }
         }
 
-        //Bouton de retour au niveau 2 sans enregistrer les modifications
+        /// <summary>
+        /// Bouton de retour au niveau 2 sans enregistrer les modifications
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AnnulerNiv3_Click(object sender, EventArgs e)
         {
             Niveau3.Hide();
             Niveau2.Show();
         }
 
-        //Parcours l'ensemble des activités du jour et attribue la disponibilité des crénaux (true ou false)
-        //Cette fonction permet aux activités de ne pas se chevaucher
+        /// <summary>
+        /// Parcours l'ensemble des activités du jour et attribue la disponibilité des crénaux (true ou false)
+        /// Cette fonction permet aux activités de ne pas se chevaucher
+        /// </summary>
+        /// <param name="act"></param>
+        /// <param name="tab">tableau contenant les disponibilités des crénaux</param>
+        /// <param name="disponible"></param>
         private void changerUnePlageHoraire(Activite act, bool[] tab, bool disponible)
         {
             for (int i = act.Debut.Heures * 6 + act.Debut.Minutes / 10; i < act.Fin.Heures * 6 + act.Fin.Minutes / 10; i++)
@@ -797,8 +869,12 @@ namespace Logiciel
             }
         }
 
-        //Vérifie la cohérence des informations rentrées dans les champs au niveau 3 
-        //Enregistre les modifications s'il n'y a pas d'erreur
+        /// <summary>
+        /// Vérifie la cohérence des informations rentrées dans les champs au niveau 3 
+        /// Enregistre les modifications s'il n'y a pas d'erreur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ConfirmerNiv3_Click(object sender, EventArgs e)
         {
             bool[] tab = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires; //Tableau de disponibilité des activités du jour
@@ -808,7 +884,7 @@ namespace Logiciel
 
             if (TitreNiv3.Text == "Modifier une activité")
             {
-                act = jourj.ListeActivites[int.Parse(labelInvisible.Text)];
+                act = (Activite)ConfirmerNiv3.Tag;
                 changerUnePlageHoraire(act, jourj.TabHoraires, true);
             }
 
@@ -897,11 +973,15 @@ namespace Logiciel
             }
         }
 
-        //Supprime l'activité sélectionnée
+        /// <summary>
+        /// Supprime l'activité sélectionnée
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SupprimerNiv3_Click(object sender, EventArgs e)
         {
-            Activite act = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].ListeActivites[int.Parse(labelInvisible.Text)];
-            M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].ListeActivites.RemoveAt(int.Parse(labelInvisible.Text));
+            Activite act = (Activite)ConfirmerNiv3.Tag;
+            M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].ListeActivites.Remove(act);
 
             changerUnePlageHoraire(act, M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires, true); //Libère la plage horaire de l'activité supprimée
 
@@ -911,7 +991,11 @@ namespace Logiciel
             Niveau3.Hide();
         }
 
-        //On positionne la croix en fonction des coordonnées rentrées dans les champs X et Y
+        /// <summary>
+        /// On positionne la croix en fonction des coordonnées rentrées dans les champs X et Y
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CoordX_ValueChanged(object sender, EventArgs e)
         {
             if (CoordY.Text != "" && CoordX.Text != "" && CoordX.Text != "-" && CoordY.Text != "-")
@@ -940,13 +1024,21 @@ namespace Logiciel
             }
         }
 
-        //Même traitement pour le champ de la coordonnée en Y
+        /// <summary>
+        /// Même traitement pour le champ de la coordonnée en Y
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CoordY_ValueChanged(object sender, EventArgs e)
         {
             CoordX_ValueChanged(new object(), new EventArgs());
         }
 
-        //Affiche les coordonnées en X et en Y d'après le clic sur la carte
+        /// <summary>
+        /// Affiche les coordonnées en X et en Y d'après le clic sur la carte
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
             Point positionSouris = new Point(Convert.ToInt32(Math.Round(e.X * echCarteNiv3)), Convert.ToInt32(Math.Round(e.Y * echCarteNiv3))); //echCarteNiv3=facteur d'échelle
@@ -978,6 +1070,11 @@ namespace Logiciel
         //ACTIVITE D'EXPLORATION//
         //Ce groupbox contient la carte d'exploration avec icônes cliquables
 
+        /// <summary>
+        /// Permet d'afficher la fiche d'exploration avec les icônes placés sur la carte
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ActExplo_Click(object sender, EventArgs e)
         {         
             //Referesh
@@ -1060,7 +1157,12 @@ namespace Logiciel
             }
         }
 
-        //Affiche les informations relatives à l'activité (icône cliqué)
+       
+        /// <summary>
+        /// Affiche les informations relatives à l'activité (icône cliqué)
+        /// </summary>
+        /// <param name="sender">Picturebox utilisée pour afficher les informations</param>
+        /// <param name="e"></param>
         private void ClickIconeCarte(object sender, EventArgs e)
         {
             ActExplo_Click(new object(), new EventArgs());
@@ -1080,10 +1182,14 @@ namespace Logiciel
             InfoDescriptif.Text = activiteClickee.TexteDescriptif;
         }
 
-        //Affichage des icônes compris entre deux jours (les icônes des jours mentionnés sont affichés également) :
+        /// <summary>
+        /// Affichage des icônes compris entre deux jours (les icônes des jours mentionnés sont affichés également)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PeriodeDebut_TextChanged(object sender, EventArgs e)
         {
-            if (PeriodeDebut.Text != "" && PeriodeFin.Text != "" && int.Parse(PeriodeDebut.Text) > 0 && int.Parse(PeriodeDebut.Text)<=500)
+            if (PeriodeDebut.Text != "" && PeriodeFin.Text != "" && int.Parse(PeriodeDebut.Text) > 0 && int.Parse(PeriodeDebut.Text) <= 500)
             {
                 ActExplo_Click(new object(), new EventArgs());
             }           
@@ -1096,18 +1202,25 @@ namespace Logiciel
             }
         }
 
-        //Retour au calendrier ou au planning (selon le niveau où on a cliqué)
+        /// <summary>
+        /// Retour au calendrier ou au planning (selon le niveau où on a cliqué)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Retour_Click(object sender, EventArgs e)
         {
-            ActiviteExploration.Visible = false;
+            ActiviteExploration.Visible = false;            
         }
 
 
 
         //FERMETURE DE L'APPLICATION
 
-        //A la fermeture de l'application, 2 fichiers XML sont générés pour sauvegarder l'ensemble des données
-
+        /// <summary>
+        /// A la fermeture de l'application, 2 fichiers XML sont générés pour sauvegarder l'ensemble des données
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GestionMission_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Génération XML 

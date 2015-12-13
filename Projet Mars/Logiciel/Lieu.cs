@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Xml;
-using System.Drawing; //pour pouvoir utiliser la structure Point
+using System.Drawing; //Pour pouvoir utiliser la structure Point
 
 
 
@@ -15,6 +15,18 @@ namespace Logiciel
     {
         private string _nom;
         private Point _coords;
+
+        public Lieu(string nom, Point point)
+        {
+            _nom = nom;
+            _coords = point;
+        }
+
+        public Lieu()
+        {
+            _nom = "Base";
+            _coords = new Point(0, 0);
+        }
 
         public Point Coords
         {
@@ -28,16 +40,7 @@ namespace Logiciel
             set { _nom = value; }
         }
 
-        public Lieu(string nom, Point point)
-        {
-            _nom = nom;
-            _coords = point;
-        }
-        public Lieu()
-        {
-            _nom = "Base";
-            _coords = new Point(0, 0);
-        }
+
 
 
         public static Lieu Parse(XmlNode test)
@@ -105,7 +108,6 @@ namespace Logiciel
             NodeLieu.AppendChild(NodeCoords);
 
             rootNode.AppendChild(NodeLieu);
-
         }
 
         // lecture xml et generation objets
@@ -124,7 +126,5 @@ namespace Logiciel
             }
             Lieu L = new Lieu(nom, coords);        
         }
-
-
     }
 }

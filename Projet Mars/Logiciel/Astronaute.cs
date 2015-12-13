@@ -31,6 +31,8 @@ namespace Logiciel
             get { return _nom; }
         }
 
+
+
         // Generation Xml
         public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
         {
@@ -64,8 +66,6 @@ namespace Logiciel
                 nom = nodeAstronaute.SelectSingleNode("Nom").InnerText;
                 Astronaute a = new Astronaute(id, nom);                      
             }                       
-        }
-        
-        
+        }    
     }
 }

@@ -23,7 +23,6 @@ namespace Logiciel
 
 
         public Activite(string nom)
-
         {
             _nom = nom;
             _debut = new Heure (0,0);
@@ -34,12 +33,12 @@ namespace Logiciel
             _listAstronaute.Add (new Astronaute(0,""));
             _compteRendu = "";
         }
+
         public Activite(string nom, string texteDescriptif)
             : this(nom)
         {
             _texteDescriptif = texteDescriptif;
         }
-
 
         public Activite(string nom, Heure debut, Heure fin, string texteDescriptif)
             : this(nom)
@@ -48,6 +47,7 @@ namespace Logiciel
             _fin = fin;
             _texteDescriptif = texteDescriptif;
         }
+
         public Activite(string nom, Heure debut, Heure fin, string texteDescriptif, List<Astronaute> listAst, Lieu lieu)
             : this(nom, debut, fin, texteDescriptif)
         {
@@ -55,20 +55,10 @@ namespace Logiciel
             _gps = lieu;
         }
 
-        internal List<Astronaute> ListAstronaute
+        public List<Astronaute> ListAstronaute
         {
             get { return _listAstronaute; }
             set { _listAstronaute = value; }
-        }
-
-        public void AddAstronaute(Astronaute a)
-        {
-            _listAstronaute.Add(a);
-        }
-
-        public void RemoveAstronaute(Astronaute a)
-        {
-            _listAstronaute.Remove(a);
         }
 
         public string CompteRendu
@@ -105,6 +95,19 @@ namespace Logiciel
             get { return _nom; }
             set { _nom = value; }
         }
+
+
+        public void AddAstronaute(Astronaute a)
+        {
+            _listAstronaute.Add(a);
+        }
+
+        public void RemoveAstronaute(Astronaute a)
+        {
+            _listAstronaute.Remove(a);
+        }
+
+
 
 
         // Generation Xml
@@ -167,7 +170,6 @@ namespace Logiciel
             NodeActivite.AppendChild(NodeTexteDescriptif);
 
             rootNode.AppendChild(NodeActivite);
-
         }
 
         // lecture xml et generation objets
@@ -184,9 +186,6 @@ namespace Logiciel
                 texteDescriptif = nodeActivite.SelectSingleNode("Texte_Descriptif").InnerText;
             }
             Activite act = new Activite(nom, texteDescriptif);
-        }
-
-
-       
+        }      
     }
 }
