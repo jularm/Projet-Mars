@@ -22,7 +22,7 @@ namespace Logiciel
             InitializeComponent();
         }*/
 
-        public List<Astronaute> Astro()
+        /*public List<Astronaute> Astro()
         {
             InitializeComponent();
             SupprimerAstronaute.Enabled = false;
@@ -30,7 +30,7 @@ namespace Logiciel
             InitializeComponent();
 
             return listAstro;
-        }
+        }*/
         
 
         private void AjouterAstronaute_Click(object sender, EventArgs e)
