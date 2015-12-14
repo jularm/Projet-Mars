@@ -212,35 +212,35 @@
             this.JourCourantMission = new System.Windows.Forms.Label();
             this.DateT = new System.Windows.Forms.Label();
             this.ActExplo = new System.Windows.Forms.Button();
-            this.ActiviteExploration = new System.Windows.Forms.GroupBox();
-            this.Retour = new System.Windows.Forms.PictureBox();
-            this.LegendeCarte = new System.Windows.Forms.PictureBox();
-            this.PeriodeDebut = new System.Windows.Forms.TextBox();
-            this.PeriodeFin = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.InfoAstronautes = new System.Windows.Forms.ListBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.InfoDescriptif = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.InfoMFin = new System.Windows.Forms.Label();
-            this.InfoMDebut = new System.Windows.Forms.Label();
-            this.InfoHFin = new System.Windows.Forms.Label();
-            this.InfoHDebut = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
-            this.InfoNumJour = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.InfoActivite = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.InfoLieu = new System.Windows.Forms.Label();
-            this.Carte = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.Carte = new System.Windows.Forms.PictureBox();
+            this.InfoLieu = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.InfoActivite = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.InfoNumJour = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.InfoHDebut = new System.Windows.Forms.Label();
+            this.InfoHFin = new System.Windows.Forms.Label();
+            this.InfoMDebut = new System.Windows.Forms.Label();
+            this.InfoMFin = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.InfoDescriptif = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.InfoAstronautes = new System.Windows.Forms.ListBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.PeriodeFin = new System.Windows.Forms.TextBox();
+            this.PeriodeDebut = new System.Windows.Forms.TextBox();
+            this.LegendeCarte = new System.Windows.Forms.PictureBox();
+            this.Retour = new System.Windows.Forms.PictureBox();
+            this.ActiviteExploration = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.Niveau1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -259,10 +259,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.CoordY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoordX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.ActiviteExploration.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Retour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LegendeCarte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Carte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LegendeCarte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Retour)).BeginInit();
+            this.ActiviteExploration.SuspendLayout();
             this.SuspendLayout();
             // 
             // heureMars
@@ -2094,6 +2094,265 @@
             this.ActExplo.UseVisualStyleBackColor = true;
             this.ActExplo.Click += new System.EventHandler(this.ActExplo_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(266, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(244, 29);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Activités d\'exploration";
+            this.label11.Visible = false;
+            // 
+            // Carte
+            // 
+            this.Carte.Image = global::Logiciel.Properties.Resources.nanedi_valles;
+            this.Carte.Location = new System.Drawing.Point(247, 42);
+            this.Carte.Name = "Carte";
+            this.Carte.Size = new System.Drawing.Size(274, 513);
+            this.Carte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Carte.TabIndex = 3;
+            this.Carte.TabStop = false;
+            // 
+            // InfoLieu
+            // 
+            this.InfoLieu.AutoSize = true;
+            this.InfoLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InfoLieu.ForeColor = System.Drawing.Color.Sienna;
+            this.InfoLieu.Location = new System.Drawing.Point(539, 63);
+            this.InfoLieu.Name = "InfoLieu";
+            this.InfoLieu.Size = new System.Drawing.Size(39, 18);
+            this.InfoLieu.TabIndex = 12;
+            this.InfoLieu.Text = "Lieu";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(539, 89);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 13);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Activité :";
+            // 
+            // InfoActivite
+            // 
+            this.InfoActivite.AutoSize = true;
+            this.InfoActivite.Location = new System.Drawing.Point(586, 89);
+            this.InfoActivite.Name = "InfoActivite";
+            this.InfoActivite.Size = new System.Drawing.Size(22, 13);
+            this.InfoActivite.TabIndex = 14;
+            this.InfoActivite.Text = "act";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(540, 108);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Jour n°";
+            // 
+            // InfoNumJour
+            // 
+            this.InfoNumJour.AutoSize = true;
+            this.InfoNumJour.Location = new System.Drawing.Point(577, 109);
+            this.InfoNumJour.Name = "InfoNumJour";
+            this.InfoNumJour.Size = new System.Drawing.Size(13, 13);
+            this.InfoNumJour.TabIndex = 16;
+            this.InfoNumJour.Text = "0";
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(542, 289);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(57, 13);
+            this.label.TabIndex = 17;
+            this.label.Text = "Descriptif :";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(540, 129);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 13);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Début :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(541, 151);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(27, 13);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "Fin :";
+            // 
+            // InfoHDebut
+            // 
+            this.InfoHDebut.AutoSize = true;
+            this.InfoHDebut.Location = new System.Drawing.Point(583, 130);
+            this.InfoHDebut.Name = "InfoHDebut";
+            this.InfoHDebut.Size = new System.Drawing.Size(19, 13);
+            this.InfoHDebut.TabIndex = 20;
+            this.InfoHDebut.Text = "hh";
+            // 
+            // InfoHFin
+            // 
+            this.InfoHFin.AutoSize = true;
+            this.InfoHFin.Location = new System.Drawing.Point(584, 151);
+            this.InfoHFin.Name = "InfoHFin";
+            this.InfoHFin.Size = new System.Drawing.Size(19, 13);
+            this.InfoHFin.TabIndex = 21;
+            this.InfoHFin.Text = "hh";
+            // 
+            // InfoMDebut
+            // 
+            this.InfoMDebut.AutoSize = true;
+            this.InfoMDebut.Location = new System.Drawing.Point(609, 130);
+            this.InfoMDebut.Name = "InfoMDebut";
+            this.InfoMDebut.Size = new System.Drawing.Size(23, 13);
+            this.InfoMDebut.TabIndex = 22;
+            this.InfoMDebut.Text = "mm";
+            // 
+            // InfoMFin
+            // 
+            this.InfoMFin.AutoSize = true;
+            this.InfoMFin.Location = new System.Drawing.Point(610, 151);
+            this.InfoMFin.Name = "InfoMFin";
+            this.InfoMFin.Size = new System.Drawing.Size(23, 13);
+            this.InfoMFin.TabIndex = 23;
+            this.InfoMFin.Text = "mm";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(598, 130);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(13, 13);
+            this.label18.TabIndex = 24;
+            this.label18.Text = "h";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(599, 151);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(13, 13);
+            this.label19.TabIndex = 25;
+            this.label19.Text = "h";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(626, 130);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(23, 13);
+            this.label20.TabIndex = 26;
+            this.label20.Text = "min";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(627, 151);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(23, 13);
+            this.label21.TabIndex = 27;
+            this.label21.Text = "min";
+            // 
+            // InfoDescriptif
+            // 
+            this.InfoDescriptif.Enabled = false;
+            this.InfoDescriptif.Location = new System.Drawing.Point(544, 309);
+            this.InfoDescriptif.MaxLength = 400;
+            this.InfoDescriptif.Multiline = true;
+            this.InfoDescriptif.Name = "InfoDescriptif";
+            this.InfoDescriptif.Size = new System.Drawing.Size(203, 242);
+            this.InfoDescriptif.TabIndex = 28;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(540, 176);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(122, 13);
+            this.label22.TabIndex = 29;
+            this.label22.Text = "Astronautes concernés :";
+            // 
+            // InfoAstronautes
+            // 
+            this.InfoAstronautes.FormattingEnabled = true;
+            this.InfoAstronautes.Location = new System.Drawing.Point(543, 194);
+            this.InfoAstronautes.Name = "InfoAstronautes";
+            this.InfoAstronautes.Size = new System.Drawing.Size(202, 82);
+            this.InfoAstronautes.TabIndex = 30;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 67);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(122, 13);
+            this.label23.TabIndex = 31;
+            this.label23.Text = "Recherche par période :";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 89);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(54, 13);
+            this.label24.TabIndex = 32;
+            this.label24.Text = "Du jour n°";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 116);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(52, 13);
+            this.label25.TabIndex = 34;
+            this.label25.Text = "au jour n°";
+            // 
+            // PeriodeFin
+            // 
+            this.PeriodeFin.Location = new System.Drawing.Point(60, 114);
+            this.PeriodeFin.Name = "PeriodeFin";
+            this.PeriodeFin.Size = new System.Drawing.Size(39, 20);
+            this.PeriodeFin.TabIndex = 35;
+            this.PeriodeFin.Text = "500";
+            this.PeriodeFin.TextChanged += new System.EventHandler(this.PeriodeFin_TextChanged);
+            // 
+            // PeriodeDebut
+            // 
+            this.PeriodeDebut.Location = new System.Drawing.Point(60, 88);
+            this.PeriodeDebut.Name = "PeriodeDebut";
+            this.PeriodeDebut.Size = new System.Drawing.Size(39, 20);
+            this.PeriodeDebut.TabIndex = 36;
+            this.PeriodeDebut.Text = "1";
+            this.PeriodeDebut.TextChanged += new System.EventHandler(this.PeriodeDebut_TextChanged);
+            // 
+            // LegendeCarte
+            // 
+            this.LegendeCarte.Image = global::Logiciel.Properties.Resources.LegendeCarte;
+            this.LegendeCarte.Location = new System.Drawing.Point(6, 231);
+            this.LegendeCarte.Name = "LegendeCarte";
+            this.LegendeCarte.Size = new System.Drawing.Size(235, 200);
+            this.LegendeCarte.TabIndex = 37;
+            this.LegendeCarte.TabStop = false;
+            // 
+            // Retour
+            // 
+            this.Retour.Image = global::Logiciel.Properties.Resources._return;
+            this.Retour.Location = new System.Drawing.Point(718, 13);
+            this.Retour.Name = "Retour";
+            this.Retour.Size = new System.Drawing.Size(29, 29);
+            this.Retour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Retour.TabIndex = 38;
+            this.Retour.TabStop = false;
+            this.Retour.Click += new System.EventHandler(this.Retour_Click);
+            // 
             // ActiviteExploration
             // 
             this.ActiviteExploration.Controls.Add(this.Retour);
@@ -2132,265 +2391,6 @@
             this.ActiviteExploration.TabStop = false;
             this.ActiviteExploration.Text = "Carte d\'exploration";
             this.ActiviteExploration.Visible = false;
-            // 
-            // Retour
-            // 
-            this.Retour.Image = global::Logiciel.Properties.Resources._return;
-            this.Retour.Location = new System.Drawing.Point(718, 13);
-            this.Retour.Name = "Retour";
-            this.Retour.Size = new System.Drawing.Size(29, 29);
-            this.Retour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Retour.TabIndex = 38;
-            this.Retour.TabStop = false;
-            this.Retour.Click += new System.EventHandler(this.Retour_Click);
-            // 
-            // LegendeCarte
-            // 
-            this.LegendeCarte.Image = global::Logiciel.Properties.Resources.LegendeCarte;
-            this.LegendeCarte.Location = new System.Drawing.Point(6, 231);
-            this.LegendeCarte.Name = "LegendeCarte";
-            this.LegendeCarte.Size = new System.Drawing.Size(235, 200);
-            this.LegendeCarte.TabIndex = 37;
-            this.LegendeCarte.TabStop = false;
-            // 
-            // PeriodeDebut
-            // 
-            this.PeriodeDebut.Location = new System.Drawing.Point(60, 88);
-            this.PeriodeDebut.Name = "PeriodeDebut";
-            this.PeriodeDebut.Size = new System.Drawing.Size(39, 20);
-            this.PeriodeDebut.TabIndex = 36;
-            this.PeriodeDebut.Text = "1";
-            this.PeriodeDebut.TextChanged += new System.EventHandler(this.PeriodeDebut_TextChanged);
-            // 
-            // PeriodeFin
-            // 
-            this.PeriodeFin.Location = new System.Drawing.Point(60, 114);
-            this.PeriodeFin.Name = "PeriodeFin";
-            this.PeriodeFin.Size = new System.Drawing.Size(39, 20);
-            this.PeriodeFin.TabIndex = 35;
-            this.PeriodeFin.Text = "500";
-            this.PeriodeFin.TextChanged += new System.EventHandler(this.PeriodeFin_TextChanged);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 116);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(52, 13);
-            this.label25.TabIndex = 34;
-            this.label25.Text = "au jour n°";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 89);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(54, 13);
-            this.label24.TabIndex = 32;
-            this.label24.Text = "Du jour n°";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 67);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(122, 13);
-            this.label23.TabIndex = 31;
-            this.label23.Text = "Recherche par période :";
-            // 
-            // InfoAstronautes
-            // 
-            this.InfoAstronautes.FormattingEnabled = true;
-            this.InfoAstronautes.Location = new System.Drawing.Point(543, 194);
-            this.InfoAstronautes.Name = "InfoAstronautes";
-            this.InfoAstronautes.Size = new System.Drawing.Size(202, 82);
-            this.InfoAstronautes.TabIndex = 30;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(540, 176);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(122, 13);
-            this.label22.TabIndex = 29;
-            this.label22.Text = "Astronautes concernés :";
-            // 
-            // InfoDescriptif
-            // 
-            this.InfoDescriptif.Enabled = false;
-            this.InfoDescriptif.Location = new System.Drawing.Point(544, 309);
-            this.InfoDescriptif.MaxLength = 400;
-            this.InfoDescriptif.Multiline = true;
-            this.InfoDescriptif.Name = "InfoDescriptif";
-            this.InfoDescriptif.Size = new System.Drawing.Size(203, 242);
-            this.InfoDescriptif.TabIndex = 28;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(627, 151);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(23, 13);
-            this.label21.TabIndex = 27;
-            this.label21.Text = "min";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(626, 130);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(23, 13);
-            this.label20.TabIndex = 26;
-            this.label20.Text = "min";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(599, 151);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(13, 13);
-            this.label19.TabIndex = 25;
-            this.label19.Text = "h";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(598, 130);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(13, 13);
-            this.label18.TabIndex = 24;
-            this.label18.Text = "h";
-            // 
-            // InfoMFin
-            // 
-            this.InfoMFin.AutoSize = true;
-            this.InfoMFin.Location = new System.Drawing.Point(610, 151);
-            this.InfoMFin.Name = "InfoMFin";
-            this.InfoMFin.Size = new System.Drawing.Size(23, 13);
-            this.InfoMFin.TabIndex = 23;
-            this.InfoMFin.Text = "mm";
-            // 
-            // InfoMDebut
-            // 
-            this.InfoMDebut.AutoSize = true;
-            this.InfoMDebut.Location = new System.Drawing.Point(609, 130);
-            this.InfoMDebut.Name = "InfoMDebut";
-            this.InfoMDebut.Size = new System.Drawing.Size(23, 13);
-            this.InfoMDebut.TabIndex = 22;
-            this.InfoMDebut.Text = "mm";
-            // 
-            // InfoHFin
-            // 
-            this.InfoHFin.AutoSize = true;
-            this.InfoHFin.Location = new System.Drawing.Point(584, 151);
-            this.InfoHFin.Name = "InfoHFin";
-            this.InfoHFin.Size = new System.Drawing.Size(19, 13);
-            this.InfoHFin.TabIndex = 21;
-            this.InfoHFin.Text = "hh";
-            // 
-            // InfoHDebut
-            // 
-            this.InfoHDebut.AutoSize = true;
-            this.InfoHDebut.Location = new System.Drawing.Point(583, 130);
-            this.InfoHDebut.Name = "InfoHDebut";
-            this.InfoHDebut.Size = new System.Drawing.Size(19, 13);
-            this.InfoHDebut.TabIndex = 20;
-            this.InfoHDebut.Text = "hh";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(541, 151);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(27, 13);
-            this.label15.TabIndex = 19;
-            this.label15.Text = "Fin :";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(540, 129);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 13);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "Début :";
-            // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(542, 289);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(57, 13);
-            this.label.TabIndex = 17;
-            this.label.Text = "Descriptif :";
-            // 
-            // InfoNumJour
-            // 
-            this.InfoNumJour.AutoSize = true;
-            this.InfoNumJour.Location = new System.Drawing.Point(577, 109);
-            this.InfoNumJour.Name = "InfoNumJour";
-            this.InfoNumJour.Size = new System.Drawing.Size(13, 13);
-            this.InfoNumJour.TabIndex = 16;
-            this.InfoNumJour.Text = "0";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(540, 108);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 13);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Jour n°";
-            // 
-            // InfoActivite
-            // 
-            this.InfoActivite.AutoSize = true;
-            this.InfoActivite.Location = new System.Drawing.Point(586, 89);
-            this.InfoActivite.Name = "InfoActivite";
-            this.InfoActivite.Size = new System.Drawing.Size(22, 13);
-            this.InfoActivite.TabIndex = 14;
-            this.InfoActivite.Text = "act";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(539, 89);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 13);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Activité :";
-            // 
-            // InfoLieu
-            // 
-            this.InfoLieu.AutoSize = true;
-            this.InfoLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InfoLieu.ForeColor = System.Drawing.Color.Sienna;
-            this.InfoLieu.Location = new System.Drawing.Point(539, 63);
-            this.InfoLieu.Name = "InfoLieu";
-            this.InfoLieu.Size = new System.Drawing.Size(39, 18);
-            this.InfoLieu.TabIndex = 12;
-            this.InfoLieu.Text = "Lieu";
-            // 
-            // Carte
-            // 
-            this.Carte.Image = global::Logiciel.Properties.Resources.nanedi_valles;
-            this.Carte.Location = new System.Drawing.Point(247, 42);
-            this.Carte.Name = "Carte";
-            this.Carte.Size = new System.Drawing.Size(274, 513);
-            this.Carte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Carte.TabIndex = 3;
-            this.Carte.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(266, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(244, 29);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Activités d\'exploration";
-            this.label11.Visible = false;
             // 
             // GestionMission
             // 
@@ -2437,11 +2437,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.CoordY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoordX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Carte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LegendeCarte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Retour)).EndInit();
             this.ActiviteExploration.ResumeLayout(false);
             this.ActiviteExploration.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Retour)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LegendeCarte)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Carte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2560,39 +2560,39 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button CompteRendu;
         private System.Windows.Forms.Button ActExplo;
-        private System.Windows.Forms.GroupBox ActiviteExploration;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox Carte;
-        private System.Windows.Forms.Label InfoLieu;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label InfoMFin;
-        private System.Windows.Forms.Label InfoMDebut;
-        private System.Windows.Forms.Label InfoHFin;
-        private System.Windows.Forms.Label InfoHDebut;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Label InfoNumJour;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label InfoActivite;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox InfoDescriptif;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ListBox InfoAstronautes;
-        private System.Windows.Forms.TextBox PeriodeDebut;
-        private System.Windows.Forms.TextBox PeriodeFin;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.PictureBox LegendeCarte;
         private System.Windows.Forms.NumericUpDown CoordX;
         private System.Windows.Forms.NumericUpDown CoordY;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox Carte;
+        private System.Windows.Forms.Label InfoLieu;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label InfoActivite;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label InfoNumJour;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label InfoHDebut;
+        private System.Windows.Forms.Label InfoHFin;
+        private System.Windows.Forms.Label InfoMDebut;
+        private System.Windows.Forms.Label InfoMFin;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox InfoDescriptif;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ListBox InfoAstronautes;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox PeriodeFin;
+        private System.Windows.Forms.TextBox PeriodeDebut;
+        private System.Windows.Forms.PictureBox LegendeCarte;
         private System.Windows.Forms.PictureBox Retour;
+        private System.Windows.Forms.GroupBox ActiviteExploration;
 
 
     }

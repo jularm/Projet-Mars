@@ -39,9 +39,7 @@ namespace Logiciel
             get { return _nom; }
             set { _nom = value; }
         }
-
-
-
+        
 
         public static Lieu Parse(XmlNode test)
         {
