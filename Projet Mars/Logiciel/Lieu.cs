@@ -62,9 +62,16 @@ namespace Logiciel
                     j = i + 3;
                     do
                     {
-                        numberX = numberX + Coord[j - 1];
-                        j++;
-                    } while (Coord[j] == ',');
+                        if (Coord[j - 1] == ',')
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            numberX = numberX + Coord[j - 1];
+                            j++;
+                        }
+                    } while (true);
                     coords.X = int.Parse(numberX);
                 }
 

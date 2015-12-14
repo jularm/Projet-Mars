@@ -291,10 +291,11 @@ namespace Logiciel
                                 a.Fin = new Heure(fin.Heures, fin.Minutes);
 
                                 gps = Lieu.Parse(Activite.SelectSingleNode("Lieu"));
+                                a.Gps = gps;
 
                                 List<Astronaute> listAstr = new List<Astronaute>();
 
-                                XmlNodeList nodelistAstronaute = nodeActivite.SelectNodes("Liste_Astronaute");
+                                XmlNodeList nodelistAstronaute = Activite.SelectNodes("Liste_Astronaute");
                                 foreach (XmlNode nodeAstronaute in nodelistAstronaute)
                                 {
                                     string nomAst = "";
