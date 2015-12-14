@@ -301,7 +301,7 @@ namespace Logiciel
                     {
                         string CompteRendu = "";
                         int num = 0;
-                        bool[] tabHoraires = new bool[147];
+                        bool[] tabHoraires = new bool[148];
 
                         Jour j = new Jour(CompteRendu, num, tabHoraires);
 
@@ -363,21 +363,21 @@ namespace Logiciel
 
                         j.ListeActivites = listeActivites;
 
-                        XmlNodeList nodelistTabHoraire = jour.SelectNodes("Tableau_Horaire");
 
-                        foreach (XmlNode nodeListeLibre in nodelistTabHoraire)
-                        {
-
-                            XmlNodeList nodelistLibre = nodeListeLibre.SelectNodes("Libre");
-                            int i = 0;
-                            foreach (XmlNode nodeLibre in nodelistLibre)
-                            {   
-                                tabHoraires[i] = bool.Parse(nodeLibre.InnerText);
-                                i++;                                
+                            XmlNodeList nodelistTabHoraire = jour.SelectNodes("Tableau_Horaire");
+                            foreach (XmlNode nodeListeLibre in nodelistTabHoraire)
+                            {
+                                XmlNodeList nodelistLibre = nodeListeLibre.SelectNodes("Libre");
+                                int i = 0;
+                                foreach (XmlNode nodeLibre in nodelistLibre)
+                                {
+                                    tabHoraires[i] = bool.Parse(nodeLibre.InnerText);
+                                    i++;
+                                }
                             }
-                        }
 
-                        j.TabHoraires = tabHoraires;
+                            j.TabHoraires = tabHoraires;
+                        
                         c.Jours.Add(j);
                     }
                 }
