@@ -2384,7 +2384,7 @@
             this.ActiviteExploration.Controls.Add(this.Carte);
             this.ActiviteExploration.Controls.Add(this.label11);
             this.ActiviteExploration.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ActiviteExploration.Location = new System.Drawing.Point(6, 34);
+            this.ActiviteExploration.Location = new System.Drawing.Point(656, 12);
             this.ActiviteExploration.Name = "ActiviteExploration";
             this.ActiviteExploration.Size = new System.Drawing.Size(761, 563);
             this.ActiviteExploration.TabIndex = 71;

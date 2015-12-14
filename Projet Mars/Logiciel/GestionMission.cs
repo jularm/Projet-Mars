@@ -632,9 +632,13 @@ namespace Logiciel
         /// <param name="e"></param>
         private void ClickNiveau3(object sender, EventArgs e)
         {
-            //Cette fonction est appelée à chaque clique sur un bouton du planning, c'est le sender qui fait référence au bouton sur lequel on a cliqué
-            Button clickedButton = (Button)sender; 
+            foreach (Astronaute a in M.ListAstr)
+            {
+                listeAstronautes.Items.Add(a.Nom);
+            }
 
+            //Cette fonction est appelée à chaque clique sur un bouton du planning, c'est le sender qui fait référence au bouton sur lequel on a cliqué
+            Button clickedButton = (Button)sender;            
             Activite act = (Activite)clickedButton.Tag; 
             
             ConfirmerNiv3.Tag = act;
@@ -698,6 +702,12 @@ namespace Logiciel
         /// <param name="e"></param>
         private void CreerActivite_Click(object sender, EventArgs e)
         {
+
+            foreach (Astronaute a in M.ListAstr)
+            {
+                listeAstronautes.Items.Add(a.Nom);
+            }
+
             TitreNiv3.Text = "Créer une activité";
             SupprimerNiv3.Visible = false; //Le bouton de suppression d'activité n'apparaît pas par soucis de cohérence
 
