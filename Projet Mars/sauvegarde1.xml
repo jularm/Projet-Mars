@@ -1,399 +1,137 @@
 <Mission>
-  <Liste_Astronaute />
+  <Liste_Astronaute>
+    <Astronaute>
+      <Id>1</Id>
+      <Nom>Pierre</Nom>
+    </Astronaute>
+    <Astronaute>
+      <Id>2</Id>
+      <Nom>Paul</Nom>
+    </Astronaute>
+    <Astronaute>
+      <Id>3</Id>
+      <Nom>Jack</Nom>
+    </Astronaute>
+    <Astronaute>
+      <Id>4</Id>
+      <Nom>Phoebé</Nom>
+    </Astronaute>
+  </Liste_Astronaute>
   <Liste_Catégorie_Activité>
     <Catégorie_Activité>
-      <Nom>Living</Nom>
+      <NomCatégorie>Living</NomCatégorie>
       <Liste_Activité>
         <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
+          <NomActivité>Eating</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Sleeping</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Entertainment</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Private</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Health control</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Medical act</NomActivité>
         </Activité>
       </Liste_Activité>
     </Catégorie_Activité>
     <Catégorie_Activité>
-      <Nom>Science</Nom>
+      <NomCatégorie>Science</NomCatégorie>
       <Liste_Activité>
         <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
+          <NomActivité>Exploration Space suit</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Exploration Vehicule</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Briefing</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Debriefing</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Inside experiment</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Outside experiment</NomActivité>
         </Activité>
       </Liste_Activité>
     </Catégorie_Activité>
     <Catégorie_Activité>
-      <Nom>Maintenance</Nom>
+      <NomCatégorie>Maintenance</NomCatégorie>
       <Liste_Activité>
         <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
+          <NomActivité>Cleaning</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>LSS air system</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>LSS water system</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>LSS food system</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Power systems</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Space suit</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Other</NomActivité>
         </Activité>
       </Liste_Activité>
     </Catégorie_Activité>
     <Catégorie_Activité>
-      <Nom>Communication</Nom>
+      <NomCatégorie>Communication</NomCatégorie>
       <Liste_Activité>
         <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
+          <NomActivité>Sending message</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Receiving message</NomActivité>
         </Activité>
       </Liste_Activité>
     </Catégorie_Activité>
     <Catégorie_Activité>
-      <Nom>Reparation</Nom>
+      <NomCatégorie>Reparation</NomCatégorie>
       <Liste_Activité>
         <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
+          <NomActivité>LSS</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Power systems</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Communication</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Propulsion systems</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Habitat</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Space suit</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Vehicule</NomActivité>
         </Activité>
       </Liste_Activité>
     </Catégorie_Activité>
     <Catégorie_Activité>
-      <Nom>Emergency</Nom>
+      <NomCatégorie>Emergency</NomCatégorie>
       <Liste_Activité>
         <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Living</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Science</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Maintenance</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Communication</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Reparation</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Emergency</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Living</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Science</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Maintenance</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Communication</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Reparation</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Emergency</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Living</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Science</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Maintenance</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Communication</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Reparation</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Emergency</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Living</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Science</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Maintenance</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Communication</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Reparation</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Emergency</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Living</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Science</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Maintenance</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Communication</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Reparation</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
-        </Activité>
-      </Liste_Activité>
-    </Catégorie_Activité>
-    <Catégorie_Activité>
-      <Nom>Emergency</Nom>
-      <Liste_Activité>
-        <Activité>
-          <Nom>
-          </Nom>
-          <Texte_Descriptif>
-          </Texte_Descriptif>
+          <NomActivité>Emergency</NomActivité>
         </Activité>
       </Liste_Activité>
     </Catégorie_Activité>

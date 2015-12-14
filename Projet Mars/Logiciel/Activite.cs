@@ -115,13 +115,9 @@ namespace Logiciel
         {
             XmlNode NodeActivite = xmlDoc.CreateElement("Activité");
 
-            XmlNode NodeNom = xmlDoc.CreateElement("Nom");
+            XmlNode NodeNom = xmlDoc.CreateElement("NomActivité");
             NodeNom.InnerText = Nom.ToString();
-            NodeActivite.AppendChild(NodeNom); 
-
-            XmlNode NodeTexteDescriptif = xmlDoc.CreateElement("Texte_Descriptif");
-            NodeTexteDescriptif.InnerText = TexteDescriptif.ToString();
-            NodeActivite.AppendChild(NodeTexteDescriptif);
+            NodeActivite.AppendChild(NodeNom);            
 
             rootNode.AppendChild(NodeActivite);
 
@@ -171,21 +167,6 @@ namespace Logiciel
 
             rootNode.AppendChild(NodeActivite);
         }
-
-        // lecture xml et generation objets
-        public void chargerXml(XmlDocument xmlDoc, Mission M)
-        {
-            XmlNodeList nodelistActivite = xmlDoc.GetElementsByTagName("Activité");
-
-            string nom = "";
-            string texteDescriptif = "";
-
-            foreach (XmlNode nodeActivite in nodelistActivite)
-            {
-                nom = nodeActivite.SelectSingleNode("Nom").InnerText;
-                texteDescriptif = nodeActivite.SelectSingleNode("Texte_Descriptif").InnerText;
-            }
-            Activite act = new Activite(nom, texteDescriptif);
-        }      
+    
     }
 }

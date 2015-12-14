@@ -51,21 +51,6 @@ namespace Logiciel
                 rootNode.AppendChild(NodeAstronaute);
             }
         }
-
-        // lecture xml et generation objets
-        public void chargerXml(XmlDocument xmlDoc, Mission M)
-        { 
-            XmlNodeList nodelistAstronaute = xmlDoc.GetElementsByTagName("Astronaute");
-            
-            string nom = "";
-            int id = 0;
-
-            foreach (XmlNode nodeAstronaute in nodelistAstronaute)
-            {
-                id = int.Parse(nodeAstronaute.SelectSingleNode("Id").InnerText);
-                nom = nodeAstronaute.SelectSingleNode("Nom").InnerText;
-                Astronaute a = new Astronaute(id, nom);                      
-            }                       
-        }    
+              
     }
 }

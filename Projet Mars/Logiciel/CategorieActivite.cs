@@ -58,7 +58,7 @@ namespace Logiciel
         {
             XmlNode NodeCategorieActivite = xmlDoc.CreateElement("Catégorie_Activité");
 
-            XmlNode NodeNom = xmlDoc.CreateElement("Nom");
+            XmlNode NodeNom = xmlDoc.CreateElement("NomCatégorie");
             NodeNom.InnerText = Nom.ToString();
             NodeCategorieActivite.AppendChild(NodeNom);
 
@@ -74,30 +74,7 @@ namespace Logiciel
 
         }
 
-        // lecture xml et generation objets
-        public void chargerXml(XmlDocument xmlDoc, Mission M)
-        {
-            XmlNodeList nodelistCategorieActivite = xmlDoc.GetElementsByTagName("Catégorie_Activité");
-
-            string nom = "";
-
-            foreach (XmlNode nodeCategorieActivite in nodelistCategorieActivite)
-            {
-                List<Activite> listActivite = new List<Activite>();
-
-                nom = nodeCategorieActivite.SelectSingleNode("Nom").InnerText;
-
-                XmlNodeList nodelistActivite = nodeCategorieActivite.SelectNodes("Liste_Activité");
-                foreach (XmlNode nodeActivite in nodelistActivite)
-                {
-                    Activite a = new Activite("");
-                    a.chargerXml(xmlDoc, M);
-                    listActivite.Add(a);
-                }
-
-                CategorieActivite c = new CategorieActivite(nom, listActivite);
-                M.AddCategorie(c);
-            }
-        }
+       
+           
     }
 }

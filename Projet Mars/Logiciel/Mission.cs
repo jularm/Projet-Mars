@@ -114,26 +114,65 @@ namespace Logiciel
             XmlNodeList nodelistMission = xmlDoc.GetElementsByTagName("Mission");
 
             List<Astronaute> listAstronautes = new List<Astronaute>();
-            List<CategorieActivite> listCategorieActivite = new List<CategorieActivite>();            
+            List<CategorieActivite> listCategorieActivite = new List<CategorieActivite>();
 
             foreach (XmlNode nodeMission in nodelistMission)
             {
+
                 XmlNodeList nodelistAstronautes = nodeMission.SelectNodes("Liste_Astronaute");
                 foreach (XmlNode nodeAstronautes in nodelistAstronautes)
                 {
-                    Astronaute a = new Astronaute(0, "");
-                    a.chargerXml(xmlDoc, this);                    
+                    XmlNodeList nodelistAstronaute = xmlDoc.GetElementsByTagName("Astronaute");
+
+                    string nom = "";
+                    int id = 0;
+
+                    foreach (XmlNode nodeAstronaute in nodelistAstronaute)
+                    {
+                        id = int.Parse(nodeAstronaute.SelectSingleNode("Id").InnerText);
+                        nom = nodeAstronaute.SelectSingleNode("Nom").InnerText;
+                        Astronaute a = new Astronaute(id, nom);
+                        M._listAstronautes.Add(a);
+                    }
                 }
-                
+
+
                 XmlNodeList nodelistCategorieActivite = nodeMission.SelectNodes("Liste_Catégorie_Activité");
                 foreach (XmlNode nodeCategorieActivite in nodelistCategorieActivite)
                 {
                     CategorieActivite cat = new CategorieActivite("");
-                    cat.chargerXml(xmlDoc, this);                   
-                } 
+                    XmlNodeList nodelisteCategorieActivite = xmlDoc.GetElementsByTagName("Catégorie_Activité");
+
+                    string nom = "";
+                    foreach (XmlNode nodeCategoriedActivite in nodelisteCategorieActivite)
+                    {
+                        List<Activite> listActivite = new List<Activite>();
+
+                        nom = nodeCategoriedActivite.SelectSingleNode("NomCatégorie").InnerText;
+
+                        XmlNodeList nodelistActivite = nodeCategoriedActivite.SelectNodes("Liste_Activité");
+                        foreach (XmlNode nodeActivite in nodelistActivite)
+                        {
+                            Activite a = new Activite("");
+                            XmlNodeList nodelisteActivite = xmlDoc.GetElementsByTagName("Activité");
+
+                            string nome = "";
+                            
+                            foreach (XmlNode nodeActivitee in nodelisteActivite)
+                            {
+                                nome = nodeActivitee.SelectSingleNode("NomActivité").InnerText;
+                                                          }
+                            Activite act = new Activite(nome);
+                            listActivite.Add(act);
+                        }
+
+                        CategorieActivite c = new CategorieActivite(nom, listActivite);
+                        M.AddCategorie(c);
+                    }
+                }
             }
 
-            M.ListAstr = listAstronautes;
+           
             M.Listcate = Listcat;
             
         }
