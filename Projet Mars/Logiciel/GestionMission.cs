@@ -632,6 +632,7 @@ namespace Logiciel
         /// <param name="e"></param>
         private void ClickNiveau3(object sender, EventArgs e)
         {
+            listeAstronautes.Clear();
             foreach (Astronaute a in M.ListAstr)
             {
                 listeAstronautes.Items.Add(a.Nom);
@@ -702,7 +703,7 @@ namespace Logiciel
         /// <param name="e"></param>
         private void CreerActivite_Click(object sender, EventArgs e)
         {
-
+            listeAstronautes.Clear();
             foreach (Astronaute a in M.ListAstr)
             {
                 listeAstronautes.Items.Add(a.Nom);
