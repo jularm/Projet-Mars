@@ -632,6 +632,10 @@ namespace Logiciel
         /// <param name="e"></param>
         private void ClickNiveau3(object sender, EventArgs e)
         {
+            if (!CreerActivite.Enabled)
+            {
+                HDebut.Enabled = false;
+            }
             listeAstronautes.Clear();
             foreach (Astronaute a in M.ListAstr)
             {
@@ -737,39 +741,6 @@ namespace Logiciel
             Niveau3.Show();
             //Niveau2.Hide();
         }
-
-        //A revoir
-        //Verrouille ou déverrouille les champs en fonction du jour passé ou futur
-        private void CreerActivite_EnabledChanged(object sender, EventArgs e)
-        {
-            if (!CreerActivite.Enabled)
-            {
-                HDebut.Enabled = false;
-                MinDebut.Enabled = false;
-                HFin.Enabled = false;
-                MinFin.Enabled = false;
-                texteDescriptif.Enabled = false;
-                listeActivites.Enabled = false;
-                CoordX.Enabled = false;
-                CoordY.Enabled = false;
-                listeAstronautes.Enabled = false;
-                NomLieu.Enabled = false;
-            }
-            else
-            {
-                HDebut.Enabled = true;
-                MinDebut.Enabled = true;
-                HFin.Enabled = true;
-                MinFin.Enabled = true;
-                texteDescriptif.Enabled = true;
-                listeActivites.Enabled = true;
-                CoordX.Enabled = true;
-                CoordY.Enabled = true;
-                listeAstronautes.Enabled = true;
-                NomLieu.Enabled = true;
-            }
-        }
-
         /// <summary>
         /// Conrôle des valeurs autorisées pour les heures et les minutes de début de l'activité
         /// </summary>
@@ -777,19 +748,26 @@ namespace Logiciel
         /// <param name="e"></param>
         private void HDebut_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (HDebut.SelectedIndex == 24)
+            if (!CreerActivite.Enabled)
             {
-                MinDebut.Items.Remove("40"); //Une activité ne peut pas commencer à 24h40
-                MinDebut.Items.Remove("50"); //24h50 n'existe pas
-                MinDebut.SelectedText = "";
+                MinDebut.Enabled = false;
             }
-            //Si l'heure sélectionnée n'est pas 24, il faut remettre toutes les possibilités pour les minutes
-            else if (MinDebut.Items.Count == 4)
+            else
             {
-                MinDebut.Items.Add("40");
-                MinDebut.Items.Add("50");
+                if (HDebut.SelectedIndex == 24)
+                {
+                    MinDebut.Items.Remove("40"); //Une activité ne peut pas commencer à 24h40
+                    MinDebut.Items.Remove("50"); //24h50 n'existe pas
+                    MinDebut.SelectedText = "";
+                }
+                //Si l'heure sélectionnée n'est pas 24, il faut remettre toutes les possibilités pour les minutes
+                else if (MinDebut.Items.Count == 4)
+                {
+                    MinDebut.Items.Add("40");
+                    MinDebut.Items.Add("50");
+                }
+                MinDebut.Enabled = true;
             }
-            MinDebut.Enabled = true;
         }
 
         /// <summary>
@@ -799,7 +777,14 @@ namespace Logiciel
         /// <param name="e"></param>
         private void MinDebut_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HFin.Enabled = true;
+            if (!CreerActivite.Enabled)
+            {
+                HFin.Enabled = false;
+            }
+            else
+            {
+                HFin.Enabled = true;
+            } 
         }
 
         /// <summary>
@@ -809,16 +794,23 @@ namespace Logiciel
         /// <param name="e"></param>
         private void HFin_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (HFin.SelectedIndex == 24)
+            if (!CreerActivite.Enabled)
             {
-                MinFin.Items.Remove("50");
-                MinFin.SelectedText = "";
+                MinFin.Enabled = false;
             }
-            else if (MinFin.Items.Count == 5)
+            else
             {
-                MinFin.Items.Add("50");
+                if (HFin.SelectedIndex == 24)
+                {
+                    MinFin.Items.Remove("50");
+                    MinFin.SelectedText = "";
+                }
+                else if (MinFin.Items.Count == 5)
+                {
+                    MinFin.Items.Add("50");
+                }
+                MinFin.Enabled = true;
             }
-            MinFin.Enabled = true;
         }
 
         /// <summary>
