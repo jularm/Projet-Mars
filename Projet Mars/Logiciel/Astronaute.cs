@@ -31,6 +31,10 @@ namespace Logiciel
             get { return _nom; }
         }
 
+        public override string ToString()
+        {
+            return _nom;
+        }
 
 
         // Generation Xml
@@ -50,6 +54,8 @@ namespace Logiciel
             {
                 rootNode.AppendChild(NodeAstronaute);
             }
+
+           // rootNode.AppendChild(NodeAstronaute);
         }
               
     }

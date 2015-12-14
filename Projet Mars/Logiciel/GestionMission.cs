@@ -635,7 +635,7 @@ namespace Logiciel
             listeAstronautes.Clear();
             foreach (Astronaute a in M.ListAstr)
             {
-                listeAstronautes.Items.Add(a.Nom);
+                listeAstronautes.Items.Add(a.ToString());
             }
 
             //Cette fonction est appelée à chaque clique sur un bouton du planning, c'est le sender qui fait référence au bouton sur lequel on a cliqué
@@ -706,7 +706,7 @@ namespace Logiciel
             listeAstronautes.Clear();
             foreach (Astronaute a in M.ListAstr)
             {
-                listeAstronautes.Items.Add(a.Nom);
+                listeAstronautes.Items.Add(a.ToString());
             }
 
             TitreNiv3.Text = "Créer une activité";
@@ -933,10 +933,31 @@ namespace Logiciel
             if (erreurs[0] && erreurs[1] && erreurs[2] && erreurs[3]) //Si pas d'erreurs
             {
                 List<Astronaute> liA = new List<Astronaute>();
-                for (int i = 0; i < listeAstronautes.CheckedItems.Count; i++)
+
+                for (int i = 0; i < listeAstronautes.Items.Count; i++)
+                {
+                    if (listeAstronautes.Items[i].Checked == true)
+                    {
+                        for (int j = 0; j < M.ListAstr.Count; j++)
+                        {
+                            if (M.ListAstr[j].Nom == listeAstronautes.Items[i].Text)
+                            {
+                                if (i == j)
+                                {
+                                    liA.Add(M.ListAstr[j]);
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+
+
+                /*for (int i = 0; i < listeAstronautes.CheckedItems.Count; i++)
                 {
                     liA.Add(new Astronaute(i, listeAstronautes.CheckedItems[i].Text));
-                }
+                }*/
                 if (TitreNiv3.Text == "Modifier une activité")
                 {
                     act.Nom = ItemSelect.Text;

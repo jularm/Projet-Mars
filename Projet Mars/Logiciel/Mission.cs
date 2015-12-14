@@ -140,12 +140,12 @@ namespace Logiciel
                 XmlNodeList nodelistCategorieActivite = nodeMission.SelectNodes("Liste_Catégorie_Activité");
                 foreach (XmlNode nodeCategorieActivite in nodelistCategorieActivite)
                 {
-                    CategorieActivite cat = new CategorieActivite("");
-                    XmlNodeList nodelisteCategorieActivite = xmlDoc.GetElementsByTagName("Catégorie_Activité");
-
-                    string nom = "";
+                    XmlNodeList nodelisteCategorieActivite = nodeCategorieActivite.SelectNodes("Catégorie_Activité");
+                    
                     foreach (XmlNode nodeCategoriedActivite in nodelisteCategorieActivite)
                     {
+                        string nom = "";
+
                         List<Activite> listActivite = new List<Activite>();
 
                         nom = nodeCategoriedActivite.SelectSingleNode("NomCatégorie").InnerText;
@@ -153,17 +153,16 @@ namespace Logiciel
                         XmlNodeList nodelistActivite = nodeCategoriedActivite.SelectNodes("Liste_Activité");
                         foreach (XmlNode nodeActivite in nodelistActivite)
                         {
-                            Activite a = new Activite("");
-                            XmlNodeList nodelisteActivite = xmlDoc.GetElementsByTagName("Activité");
-
                             string nome = "";
-                            
+
+                            XmlNodeList nodelisteActivite = nodeActivite.SelectNodes("Activité"); 
                             foreach (XmlNode nodeActivitee in nodelisteActivite)
                             {
                                 nome = nodeActivitee.SelectSingleNode("NomActivité").InnerText;
-                                                          }
-                            Activite act = new Activite(nome);
-                            listActivite.Add(act);
+                                Activite act = new Activite(nome);
+                                listActivite.Add(act);
+                            }                            
+                            
                         }
 
                         CategorieActivite c = new CategorieActivite(nom, listActivite);

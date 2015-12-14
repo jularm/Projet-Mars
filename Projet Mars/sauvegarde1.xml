@@ -22,7 +22,22 @@
       <NomCatégorie>Living</NomCatégorie>
       <Liste_Activité>
         <Activité>
-          <NomActivité>Emergency</NomActivité>
+          <NomActivité>Eating</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Sleeping</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Entertainment</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Private</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Health control</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Medical act</NomActivité>
         </Activité>
       </Liste_Activité>
     </Catégorie_Activité>
@@ -30,7 +45,22 @@
       <NomCatégorie>Science</NomCatégorie>
       <Liste_Activité>
         <Activité>
-          <NomActivité>Emergency</NomActivité>
+          <NomActivité>Exploration Space suit</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Exploration Vehicule</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Briefing</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Debriefing</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Inside experiment</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Outside experiment</NomActivité>
         </Activité>
       </Liste_Activité>
     </Catégorie_Activité>
@@ -38,7 +68,25 @@
       <NomCatégorie>Maintenance</NomCatégorie>
       <Liste_Activité>
         <Activité>
-          <NomActivité>Emergency</NomActivité>
+          <NomActivité>Cleaning</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>LSS air system</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>LSS water system</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>LSS food system</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Power systems</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Space suit</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Other</NomActivité>
         </Activité>
       </Liste_Activité>
     </Catégorie_Activité>
@@ -46,7 +94,10 @@
       <NomCatégorie>Communication</NomCatégorie>
       <Liste_Activité>
         <Activité>
-          <NomActivité>Emergency</NomActivité>
+          <NomActivité>Sending message</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Receiving message</NomActivité>
         </Activité>
       </Liste_Activité>
     </Catégorie_Activité>
@@ -54,7 +105,25 @@
       <NomCatégorie>Reparation</NomCatégorie>
       <Liste_Activité>
         <Activité>
-          <NomActivité>Emergency</NomActivité>
+          <NomActivité>LSS</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Power systems</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Communication</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Propulsion systems</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Habitat</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Space suit</NomActivité>
+        </Activité>
+        <Activité>
+          <NomActivité>Vehicule</NomActivité>
         </Activité>
       </Liste_Activité>
     </Catégorie_Activité>
