@@ -15,11 +15,21 @@ namespace Logiciel
         static int Id=0;
         private List<Astronaute> listAstro = new List<Astronaute>();
 
-        public Astronautes()
+        /*public Astronautes()
         {
             SupprimerAstronaute.Enabled = false;
             AjouterAstronaute.Enabled = false;
             InitializeComponent();
+        }*/
+
+        public List<Astronaute> Astro()
+        {
+            InitializeComponent();
+            SupprimerAstronaute.Enabled = false;
+            AjouterAstronaute.Enabled = false;
+            InitializeComponent();
+
+            return listAstro;
         }
         
 
@@ -56,11 +66,12 @@ namespace Logiciel
             AstronautesMission.Items.Remove(s);
         }
 
-        /*private void ConfirmerAstronaute_Click(object sender, EventArgs e)
+        
+        private void ConfirmerAstronaute_Click(object sender, EventArgs e)
         {
-            Mission.ListAstr = listAstro; //à revoir
+           
             this.Close();
-        }*/
+        }
 
            
     }

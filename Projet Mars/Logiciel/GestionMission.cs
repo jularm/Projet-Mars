@@ -148,12 +148,16 @@ namespace Logiciel
                 CategorieActivite Urgence = new CategorieActivite("Emergency");
 
                 //à automatiser (et ça ne marche pas !!!!!)
+
                 Astronaute A = new Astronaute(1, "Pierre");
                 Astronaute B = new Astronaute(2, "Paul");
                 Astronaute C = new Astronaute(3, "Jack");
                 Astronaute D = new Astronaute(4, "Phoebé");
-                //Astronautes.Show();
+                List<Astronaute> ListAtr= new List<Astronaute>();
 
+                Astronautes InitAstr = new Astronautes();
+                
+                 
                 for (int i = 1; i < 501; i++)
                 {
                     Jour j = new Jour(i);
@@ -205,6 +209,32 @@ namespace Logiciel
         }
 
 
+        public void KanKonSor()
+        {
+            int test = 0;            
+            for (int i = 0; i < M.Calendar.Jours.Count; i++)
+            {
+                bool SorOuSorPa = false;
+                test = M.Calendar.Jours[i].ListeActivites.Count;
+                for (int j = 0; j < test; j++)
+                {
+                    if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
+                    {
+                        SorOuSorPa = true;
+                    }
+
+                    if (SorOuSorPa)
+                    {
+                        M.Calendar.Jours[i].Sortie = true;
+                    }
+                    else
+                    {
+                        M.Calendar.Jours[i].Sortie = false;
+                    }
+                }
+            }
+        }
+
 
         //NIVEAU 1//
         //Contient le calendrier des jours de 1 à 500
@@ -217,7 +247,7 @@ namespace Logiciel
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
-            M.Calendar.Horloge();
+            M.Calendar.Horloge();            
             heureMars.Text = M.Calendar.Heure.ToString() + " h " + M.Calendar.Minute.ToString() + " min " + M.Calendar.Seconde.ToString() + " s";
             JourCourantMission.Text = M.Calendar.Day.ToString();
             DateTerrestre.Text = Convert.ToString(DateTime.Now);
@@ -232,24 +262,7 @@ namespace Logiciel
             {
                 if (Niveau1.Controls[i].Name.Contains("jour"))
                 {
-                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);
-                    /*bool check = false;
-                    for (int j = 0; j < M.Calendar.Jours[(50 * trackBar1.Value) + i +1].ListeActivites.Count; j++)
-                    {
-                        string nomActivite = M.Calendar.Jours[(50 * trackBar1.Value) + i +1].ListeActivites[j].Nom;
-                        if (nomActivite == "Exploration Space suit" || nomActivite == "Exploration Vehicule" || nomActivite == "Outside experiment")
-                        {
-                            check = true;
-                        }
-                    }
-                    if (check)
-                    {
-                        Niveau1.Controls[i + 1].BackgroundImage = sortie;
-                    }
-                    else
-                    {
-                        Niveau1.Controls[i + 1].BackgroundImage = null;
-                    }*/
+                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);  
 
                     if (int.Parse(Niveau1.Controls[i].Text) < int.Parse(JourCourantMission.Text))
                     {
@@ -266,7 +279,7 @@ namespace Logiciel
         //A commenter
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-          //  JourCourantMission_TextChanged(new Object(), new EventArgs());           
+            KanKonSor();
             for (int i = 0; i < Niveau1.Controls.Count; i++)
             {
                 if (Niveau1.Controls[i].Name.Contains("jour"))
@@ -303,7 +316,6 @@ namespace Logiciel
                     {
                         Niveau1.Controls[i - 50 * trackBar1.Value].BackgroundImage = null;
                     }
-
                 }
             }
         }
@@ -394,12 +406,14 @@ namespace Logiciel
             Point pointDeBase = new Point(0, 0); //Point servant à la localisation des boutons
             int largeurActivite = 262; //Largeur fixée
             Jour jourJ = M.Calendar.Jours.ElementAt(n - 1); //n-1 : emplacement du jour dans la liste de jours
+            
 
             //Recherche du nombre d'activités du jour n dans le calendrier
             for (int i = 0; i < jourJ.ListeActivites.Count; i++)
             {
                 Button bouton = new System.Windows.Forms.Button();
                 Activite Act = jourJ.ListeActivites.ElementAt(i);
+               
 
                 //Définition d'une couleur par activité pour une meilleure lisibilité
                 switch (Act.Nom)
@@ -423,12 +437,10 @@ namespace Logiciel
                         bouton.BackColor = Color.NavajoWhite;
                         break;
                     case "Exploration Space suit":
-                        bouton.BackColor = Color.CornflowerBlue;
-                        jourJ.Sortie = true;
+                        bouton.BackColor = Color.CornflowerBlue;                       
                         break;
                     case "Exploration Vehicule":
-                        bouton.BackColor = Color.LightSteelBlue;
-                        jourJ.Sortie = true;
+                        bouton.BackColor = Color.LightSteelBlue;                        
                         break;
                     case "Briefing":
                         bouton.BackColor = Color.RoyalBlue;
@@ -440,8 +452,7 @@ namespace Logiciel
                         bouton.BackColor = Color.SkyBlue;
                         break;
                     case "Outside experiment":
-                        bouton.BackColor = Color.LightSteelBlue;
-                        jourJ.Sortie = true;
+                        bouton.BackColor = Color.LightSteelBlue;                        
                         break;
                     case "Cleaning":
                         bouton.BackColor = Color.LightGray;
@@ -636,6 +647,7 @@ namespace Logiciel
             {
                 HDebut.Enabled = false;
             }
+
             listeAstronautes.Clear();
             foreach (Astronaute a in M.ListAstr)
             {
@@ -683,7 +695,8 @@ namespace Logiciel
                 CoordX.Enabled = true;
                 CoordY.Enabled = true;
                 NomLieu.Enabled = true;
-                pictureBox1.Enabled = true;
+                pictureBox1.Enabled = true;                
+                
             }
             else
             {

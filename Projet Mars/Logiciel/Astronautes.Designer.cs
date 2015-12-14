@@ -101,7 +101,7 @@
             this.ConfirmerAstronaute.TabIndex = 14;
             this.ConfirmerAstronaute.Text = "Confirmer";
             this.ConfirmerAstronaute.UseVisualStyleBackColor = true;
-            //this.ConfirmerAstronaute.Click += new System.EventHandler(this.ConfirmerAstronaute_Click);
+            this.ConfirmerAstronaute.Click += new System.EventHandler(this.ConfirmerAstronaute_Click);
             // 
             // label3
             // 
@@ -127,7 +127,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Astronautes";
             this.Text = "Astronautes";
-            //this.Load += new System.EventHandler(this.Astronautes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
