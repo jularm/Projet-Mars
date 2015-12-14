@@ -186,54 +186,7 @@ namespace Logiciel
             this.Day = j;
             this.Heure = h;
             this.Minute = m;
-            this.Seconde = s;
-
-
-          /*  for (int i = 0; i < ecart; i++)
-            {
-                if (this.Heure != 24)
-                {
-                    if (this.Minute < 59)
-                    {
-                        if (this.Seconde < 59)
-                        {
-                            this.Seconde++;
-                        }
-                        else
-                        {
-                            this.Minute++;
-                            this.Seconde = 0;
-                        }
-                    }
-                    else
-                    {
-                        this.Heure++;
-                        this.Minute = 0;
-                    }
-                }
-                else
-                {
-                    if (this.Minute < 39)
-                    {
-                        if (this.Seconde < 59)
-                        {
-                            this.Seconde++;
-                        }
-                        else
-                        {
-                            this.Minute++;
-                            this.Seconde = 0;
-                        }
-                    }
-
-                    else
-                    {
-                        this.Heure = 0;
-                        this.Minute = 0;
-                        this.Day++;
-                    }
-                }
-            }     */
+            this.Seconde = s;          
         }
 
 
