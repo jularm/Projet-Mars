@@ -94,9 +94,6 @@
             System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Emergency");
             System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Emergency", new System.Windows.Forms.TreeNode[] {
             treeNode34});
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Paul");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Pierre");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Jack");
             this.heureMars = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -1427,7 +1424,6 @@
             this.CreerActivite.TabIndex = 5;
             this.CreerActivite.Text = "Créer une activité";
             this.CreerActivite.UseVisualStyleBackColor = true;
-            this.CreerActivite.EnabledChanged += new System.EventHandler(this.CreerActivite_EnabledChanged);
             this.CreerActivite.Click += new System.EventHandler(this.CreerActivite_Click);
             // 
             // splitContainer1
@@ -2017,13 +2013,6 @@
             // listeAstronautes
             // 
             this.listeAstronautes.CheckBoxes = true;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            listViewItem3.StateImageIndex = 0;
-            this.listeAstronautes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
             this.listeAstronautes.Location = new System.Drawing.Point(229, 151);
             this.listeAstronautes.Name = "listeAstronautes";
             this.listeAstronautes.Size = new System.Drawing.Size(309, 98);
