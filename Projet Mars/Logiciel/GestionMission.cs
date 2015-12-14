@@ -424,9 +424,11 @@ namespace Logiciel
                         break;
                     case "Exploration Space suit":
                         bouton.BackColor = Color.CornflowerBlue;
+                        jourJ.Sortie = true;
                         break;
                     case "Exploration Vehicule":
                         bouton.BackColor = Color.LightSteelBlue;
+                        jourJ.Sortie = true;
                         break;
                     case "Briefing":
                         bouton.BackColor = Color.RoyalBlue;
@@ -439,6 +441,7 @@ namespace Logiciel
                         break;
                     case "Outside experiment":
                         bouton.BackColor = Color.LightSteelBlue;
+                        jourJ.Sortie = true;
                         break;
                     case "Cleaning":
                         bouton.BackColor = Color.LightGray;

@@ -369,12 +369,11 @@ namespace Logiciel
                         {
 
                             XmlNodeList nodelistLibre = nodeListeLibre.SelectNodes("Libre");
+                            int i = 0;
                             foreach (XmlNode nodeLibre in nodelistLibre)
-                            {
-                                for (int i = 0; i < 147; i++)
-                                {
-                                    tabHoraires[i] = bool.Parse(nodeLibre.InnerText);
-                                }
+                            {   
+                                tabHoraires[i] = bool.Parse(nodeLibre.InnerText);
+                                i++;                                
                             }
                         }
 
