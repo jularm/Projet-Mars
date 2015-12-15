@@ -134,7 +134,7 @@ namespace Logiciel
 
         public void MiseAJour()// Fonction de mise à niveau de l'horloge martienne 
         {
-            TimeSpan Ts = System.DateTime.Now - this._debut;             
+            TimeSpan Ts = System.DateTime.Now - this._last;             
             double ecart = Math.Round(Ts.TotalSeconds);
 
             for (int i = 0; i < ecart; i++)

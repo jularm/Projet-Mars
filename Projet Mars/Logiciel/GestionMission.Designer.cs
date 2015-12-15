@@ -267,7 +267,7 @@
             // 
             this.heureMars.AutoSize = true;
             this.heureMars.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.heureMars.Location = new System.Drawing.Point(558, 10);
+            this.heureMars.Location = new System.Drawing.Point(599, 9);
             this.heureMars.Name = "heureMars";
             this.heureMars.Size = new System.Drawing.Size(122, 25);
             this.heureMars.TabIndex = 0;

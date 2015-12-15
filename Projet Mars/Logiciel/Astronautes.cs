@@ -15,34 +15,17 @@ namespace Logiciel
         static int Id=0;
         private List<Astronaute> listAstro = new List<Astronaute>();
 
-<<<<<<< HEAD
         public Astronautes()
-=======
-        /*public Astronautes()
         {
             SupprimerAstronaute.Enabled = false;
             AjouterAstronaute.Enabled = false;
             InitializeComponent();
-        }*/
-
-        /*public List<Astronaute> Astro()
->>>>>>> origin/master
-        {
-            InitializeComponent();
-            SupprimerAstronaute.Enabled = false;
-            AjouterAstronaute.Enabled = false;
-            this.Visible = true;
-        }
+        }                    
 
         public List<Astronaute> Astro()
         {   
-            return listAstro;
-<<<<<<< HEAD
-        }   
-=======
-        }*/
->>>>>>> origin/master
-        
+            return listAstro;  
+        }    
 
         private void AjouterAstronaute_Click(object sender, EventArgs e)
         {
