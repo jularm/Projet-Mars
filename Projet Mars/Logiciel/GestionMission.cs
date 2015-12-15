@@ -147,17 +147,7 @@ namespace Logiciel
                 Emergency_act.Add(urgence);
                 CategorieActivite Urgence = new CategorieActivite("Emergency");
 
-                //à automatiser (et ça ne marche pas !!!!!)
-
-                Astronaute A = new Astronaute(1, "Pierre");
-                Astronaute B = new Astronaute(2, "Paul");
-                Astronaute C = new Astronaute(3, "Jack");
-                Astronaute D = new Astronaute(4, "Phoebé");
-                List<Astronaute> ListAtr= new List<Astronaute>();
-
-                Astronautes InitAstr = new Astronautes();
-                
-                 
+                                                     
                 for (int i = 1; i < 501; i++)
                 {
                     Jour j = new Jour(i);
@@ -183,19 +173,29 @@ namespace Logiciel
                 M.AddCategorie(Maintenance);
                 M.AddCategorie(Communication);
                 M.AddCategorie(Reparation);
-                M.AddCategorie(Urgence);                               
+                M.AddCategorie(Urgence);
 
-                M.AddAstronaute(A);
-                M.AddAstronaute(B);
-                M.AddAstronaute(C);
-                M.AddAstronaute(D);               
-            }           
+                
+                List<Astronaute> ListAtr = new List<Astronaute>(); 
+                Astronautes InitAstr = new Astronautes();
+                InitAstr.Show();
 
-            //Calendrier
+                InitAstr.BringToFront();
+                
+                
+                M.ListAstr = InitAstr.Astro();
+       
+            }
+
+           
+            //Calendrier              
+           
+
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9; //Permet l'affichage des jours de 50 en 50
-            trackBar1_Scroll(new Object(), new EventArgs()); //Pour différencier les jours d'un scroll à l'autre
+            trackBar1_Scroll(new Object(), new EventArgs()); //Pourdifférencier les jours d'un scroll à l'autre
+            
         }
 
 
@@ -1266,7 +1266,7 @@ namespace Logiciel
             //Génération XML 
             xmlDoc = new XmlDocument();
             xmlDoc2 = new XmlDocument();
-
+            M.Calendar.Last = System.DateTime.Now;
             try
             {
                 M.genereXml(xmlDoc);

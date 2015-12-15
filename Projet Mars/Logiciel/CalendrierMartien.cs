@@ -13,6 +13,7 @@ namespace Logiciel
         private int _jour;
         private DateTime _debut;
         private DateTime _fin;
+        private DateTime _last;
         private int _minute;
         private int _heure;
         private int _seconde;
@@ -75,6 +76,12 @@ namespace Logiciel
             set { _fin = value; }
         }
 
+        public DateTime Last
+        {
+            get { return _last; }
+            set { _last = value; }
+        }
+
         public DateTime Debut
         {
             get { return _debut; }
@@ -88,7 +95,7 @@ namespace Logiciel
         }
 
 
-        public void Horloge()
+        public void Horloge()// Fonction qui permet d'avancer dans le temps martien de secondes en secondes
         {
             if (this.Seconde < 59)
             {
@@ -125,68 +132,15 @@ namespace Logiciel
             }
         }
 
-        public void MiseAJour()
-        {              
-            TimeSpan Ts = System.DateTime.Now - this._debut;
-            int j = 0;
-            int h = 0;
-            int m = 0;
-            int s = 0;
-            h = this._debut.Hour;
-            m = this._debut.Minute;
-            s = this._debut.Second;
+        public void MiseAJour()// Fonction de mise à niveau de l'horloge martienne 
+        {
+            TimeSpan Ts = System.DateTime.Now - this._debut;             
             double ecart = Math.Round(Ts.TotalSeconds);
 
             for (int i = 0; i < ecart; i++)
             {
-                if ( h != 24)
-                {
-                    if (m < 59)
-                    {
-                        if (s < 59)
-                        {
-                            s++;
-                        }
-                        else
-                        {
-                            m++;
-                            s = 0;
-                        }
-                    }
-                    else
-                    {
-                        h++;
-                        m = 0;
-                    }
-                }
-                else
-                {
-                    if (m < 39)
-                    {
-                        if (s < 59)
-                        {
-                            s++;
-                        }
-                        else
-                        {
-                            m++;
-                            s = 0;
-                        }
-                    }
-
-                    else
-                    {
-                        h = 0;
-                        m = 0;
-                        j++;
-                    }
-                }
+                Horloge();
             }
-
-            this.Day = j;
-            this.Heure = h;
-            this.Minute = m;
-            this.Seconde = s;          
         }
 
 
@@ -194,15 +148,19 @@ namespace Logiciel
         // Generation Xml
         public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
         {
-            XmlNode NodeCalendrier = xmlDoc.CreateElement("Calendrier_Martien");
+            XmlNode NodeCalendrier = xmlDoc.CreateElement("Calendrier_Martien"); // création d'un noeud XML pour le calendrier
 
-            XmlNode NodeDebut = xmlDoc.CreateElement("Début");
-            NodeDebut.InnerText = Debut.ToString();
-            NodeCalendrier.AppendChild(NodeDebut);
+            XmlNode NodeDebut = xmlDoc.CreateElement("Début");// création d'un noeud XML pour la date du début du calendrier
+            NodeDebut.InnerText = Debut.ToString();// on écrit dans le noeud ce que contient la variable début 
+            NodeCalendrier.AppendChild(NodeDebut);// on conclut le noeud début et on l'attache au noeud calendrier
 
             XmlNode NodeFin = xmlDoc.CreateElement("Fin");
             NodeFin.InnerText = Fin.ToString();
             NodeCalendrier.AppendChild(NodeFin);
+
+            XmlNode NodeLast = xmlDoc.CreateElement("Last");
+            NodeLast.InnerText = Last.ToString();
+            NodeCalendrier.AppendChild(NodeLast);
 
             XmlNode NodeJour = xmlDoc.CreateElement("Jour");
             NodeJour.InnerText = Day.ToString();
@@ -233,14 +191,15 @@ namespace Logiciel
         // lecture xml et generation objets    
         public void chargerXml(XmlDocument xmlDoc, Mission M)
         {
-            XmlNodeList nodelistCalendrier = xmlDoc.GetElementsByTagName("Calendrier_Martien");
+            XmlNodeList nodelistCalendrier = xmlDoc.GetElementsByTagName("Calendrier_Martien");// on créait une liste de tout les éléments dans tout le document qui porte le nom de Calendrier_Martien
 
             CalendrierMartien c = new CalendrierMartien();
 
-            foreach (XmlNode nodeCalendrier in nodelistCalendrier)
+            foreach (XmlNode nodeCalendrier in nodelistCalendrier)// Pour tout les noeuds présent dans notre liste d'élement (ici on a juste un élément)
             {
-                c.Debut = DateTime.Parse(nodeCalendrier.SelectSingleNode("Début").InnerText);
+                c.Debut = DateTime.Parse(nodeCalendrier.SelectSingleNode("Début").InnerText);// la date de début du calendrier est égal à ce qui est contenu dans le seul noeud portant le nom début
                 c.Fin = DateTime.Parse(nodeCalendrier.SelectSingleNode("Fin").InnerText);
+                c.Last= DateTime.Parse(nodeCalendrier.SelectSingleNode("Last").InnerText);
                 c.Day = int.Parse(nodeCalendrier.SelectSingleNode("Jour").InnerText);
                 c.Heure = int.Parse(nodeCalendrier.SelectSingleNode("Heure").InnerText);
                 c.Minute = int.Parse(nodeCalendrier.SelectSingleNode("Minute").InnerText);

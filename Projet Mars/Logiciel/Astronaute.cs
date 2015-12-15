@@ -10,7 +10,7 @@ using System.Xml;
 
 namespace Logiciel
 {
-    class Astronaute
+    public class Astronaute
     {
         private int _id;
         private string _nom;
@@ -54,9 +54,6 @@ namespace Logiciel
             {
                 rootNode.AppendChild(NodeAstronaute);
             }
-
-           // rootNode.AppendChild(NodeAstronaute);
-        }
-              
+        }                
     }
 }

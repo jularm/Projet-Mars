@@ -12,13 +12,13 @@ namespace Logiciel
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        {             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new GestionMission());
         }    
     }
-
+             
     //On crée une structure Heure pour faciliter la gestion de la création des boutons d'activité
     public struct Heure 
     {
