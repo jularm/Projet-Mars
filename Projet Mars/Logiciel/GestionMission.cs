@@ -208,22 +208,24 @@ namespace Logiciel
             M.Calendar.Jours[int.Parse( NumeroJour.Text)].CompteRendu = compteRendu;
         }
 
-
-        public void KanKonSor()
+        /// <summary>
+        /// Indique quels jours du calendrier sont concernés par une activité en extérieur
+        /// </summary>
+        public void Sortie()
         {
             int test = 0;            
             for (int i = 0; i < M.Calendar.Jours.Count; i++)
             {
-                bool SorOuSorPa = false;
+                bool ext = false;
                 test = M.Calendar.Jours[i].ListeActivites.Count;
                 for (int j = 0; j < test; j++)
                 {
                     if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
                     {
-                        SorOuSorPa = true;
+                        ext = true;
                     }
 
-                    if (SorOuSorPa)
+                    if (ext)
                     {
                         M.Calendar.Jours[i].Sortie = true;
                     }
@@ -279,7 +281,7 @@ namespace Logiciel
         //A commenter
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            KanKonSor();
+            Sortie(); //Affiche un astronaute sur les jours concernés par la sortie
             for (int i = 0; i < Niveau1.Controls.Count; i++)
             {
                 if (Niveau1.Controls[i].Name.Contains("jour"))
@@ -643,9 +645,16 @@ namespace Logiciel
         /// <param name="e"></param>
         private void ClickNiveau3(object sender, EventArgs e)
         {
+            //Dans le cas d'une modification, le bouton "Supprimer l'activité" est accessible (ce n'est pas le cas pour une création)
+            SupprimerNiv3.Visible = true;
+
             if (!CreerActivite.Enabled)
             {
                 HDebut.Enabled = false;
+                listeActivites.Enabled = false;
+                listeAstronautes.Enabled = false;
+                texteDescriptif.Enabled = false;
+                SupprimerNiv3.Visible = false;
             }
 
             listeAstronautes.Clear();
@@ -691,11 +700,21 @@ namespace Logiciel
             //On gère les champs en relation avec la carte en fonction de l'activité sélectionnée
             if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule" || ItemSelect.Text == "Outside experiment")
             {
-                //Si c'est une activité d'exploration, on a accès à la modification des coordonnées, du lieu et on peut cliquer sur la carte
-                CoordX.Enabled = true;
-                CoordY.Enabled = true;
-                NomLieu.Enabled = true;
-                pictureBox1.Enabled = true;                
+                if (!CreerActivite.Enabled)
+                {
+                    pictureBox1.Enabled = false;
+                    CoordX.Enabled = false;
+                    CoordY.Enabled = false;
+                    NomLieu.Enabled = false;
+                }
+                else
+                {
+                    //Si c'est une activité d'exploration, on a accès à la modification des coordonnées, du lieu et on peut cliquer sur la carte
+                    CoordX.Enabled = true;
+                    CoordY.Enabled = true;
+                    NomLieu.Enabled = true;
+                    pictureBox1.Enabled = true;
+                }
                 
             }
             else
@@ -709,8 +728,7 @@ namespace Logiciel
                 CoordY.Text = "0";
                 NomLieu.Text = "Base";
             }
-            //Dans le cas d'une modification, le bouton "Supprimer l'activité" est accessible (ce n'est pas le cas pour une création)
-            SupprimerNiv3.Visible = true; 
+             
         }
 
         /// <summary>
@@ -764,6 +782,10 @@ namespace Logiciel
             if (!CreerActivite.Enabled)
             {
                 MinDebut.Enabled = false;
+                listeActivites.Enabled = false;
+                listeAstronautes.Enabled = false;
+                texteDescriptif.Enabled = false;
+                SupprimerNiv3.Visible = false;
             }
             else
             {
@@ -793,6 +815,10 @@ namespace Logiciel
             if (!CreerActivite.Enabled)
             {
                 HFin.Enabled = false;
+                listeActivites.Enabled = false;
+                listeAstronautes.Enabled = false;
+                texteDescriptif.Enabled = false;
+                SupprimerNiv3.Visible = false;               
             }
             else
             {
@@ -810,6 +836,10 @@ namespace Logiciel
             if (!CreerActivite.Enabled)
             {
                 MinFin.Enabled = false;
+                listeActivites.Enabled = false;
+                listeAstronautes.Enabled = false;
+                texteDescriptif.Enabled = false;
+                SupprimerNiv3.Visible = false;
             }
             else
             {
@@ -838,11 +868,21 @@ namespace Logiciel
                 ItemSelect.Text = listeActivites.SelectedNode.Text;
                 if (ItemSelect.Text == "Exploration Space suit" || ItemSelect.Text == "Exploration Vehicule" || ItemSelect.Text == "Outside experiment")
                 {
-                    //Les champs de la carte sont accessibles
-                    CoordX.Enabled = true;
-                    CoordY.Enabled = true;
-                    NomLieu.Enabled = true;
-                    pictureBox1.Enabled = true;
+                    if (!CreerActivite.Enabled)
+                    {
+                        pictureBox1.Enabled = false;
+                        CoordX.Enabled = false;
+                        CoordY.Enabled = false;
+                        NomLieu.Enabled = false;
+                    }
+                    else
+                    {
+                        //Les champs de la carte sont accessibles
+                        CoordX.Enabled = true;
+                        CoordY.Enabled = true;
+                        NomLieu.Enabled = true;
+                        pictureBox1.Enabled = true;
+                    }                   
                 }
                 else
                 {
