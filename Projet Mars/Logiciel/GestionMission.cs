@@ -19,7 +19,8 @@ namespace Logiciel
     public partial class GestionMission : Form 
     {
         private Mission M = new Mission(); //Déclaration de la mission avec son calendrier, ses astronautes et ses activités
-
+        
+        // on créer deux documents pour l'écriture xml  
         XmlDocument xmlDoc = new XmlDocument();
         XmlDocument xmlDoc2 = new XmlDocument();
 
@@ -70,6 +71,8 @@ namespace Logiciel
             catch
             {
                 MessageBox.Show("Initialisation Mission", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Initialisation des paramètres de base pour une mission
 
                 CalendrierMartien c = new CalendrierMartien();
 
@@ -164,7 +167,7 @@ namespace Logiciel
                     c.AddJours(j);
                 }
                 
-                //Ajout du calendrier, des activités et des astronautes à la mission :
+                //Ajout du calendrier et des activités à la mission :
 
                 M.Calendar = c;
 
@@ -175,7 +178,8 @@ namespace Logiciel
                 M.AddCategorie(Reparation);
                 M.AddCategorie(Urgence);
 
-                
+                // Initialisation des astronautes 
+
                 List<Astronaute> ListAtr = new List<Astronaute>(); 
                 Astronautes InitAstr = new Astronautes();
 
@@ -210,11 +214,11 @@ namespace Logiciel
         public void Sortie()
         {
             int test = 0;            
-            for (int i = 0; i < M.Calendar.Jours.Count; i++)
+            for (int i = 0; i < M.Calendar.Jours.Count; i++)  // pour chaque jour du calendrier
             {
                 bool ext = false;
                 test = M.Calendar.Jours[i].ListeActivites.Count;
-                for (int j = 0; j < test; j++)
+                for (int j = 0; j < test; j++) // pour chque activité d'un jour donné
                 {
                     if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
                     {
@@ -256,9 +260,9 @@ namespace Logiciel
         private void JourCourantMission_TextChanged(object sender, EventArgs e)
         {
             dureMission.Increment(1);
-            for (int i = 0; i < Niveau1.Controls.Count; i++)
+            for (int i = 0; i < Niveau1.Controls.Count; i++)   // pour chaque element du groupBox 
             {
-                if (Niveau1.Controls[i].Name.Contains("jour"))
+                if (Niveau1.Controls[i].Name.Contains("jour"))  // ceux dont le nom contient jour
                 {
                     Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);  
 
@@ -278,11 +282,12 @@ namespace Logiciel
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             Sortie(); //Affiche un astronaute sur les jours concernés par la sortie
-            for (int i = 0; i < Niveau1.Controls.Count; i++)
+
+            for (int i = 0; i < Niveau1.Controls.Count; i++)    // pour chaque element du groupBox 
             {
-                if (Niveau1.Controls[i].Name.Contains("jour"))
+                if (Niveau1.Controls[i].Name.Contains("jour"))     // ceux dont le nom contient jour
                 {
-                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);
+                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);    // on modifie le texte des bouton selon la valeur du trackBar
 
                     if (int.Parse(JourCourantMission.Text) == (50 * trackBar1.Value) + i +1)
                     {
@@ -302,6 +307,7 @@ namespace Logiciel
                 }                
             }
 
+            // Boucle qui permet d'afficher les astronautes pour les jours avec sortie 
             for (int i = 50 * trackBar1.Value; i < 50 * (trackBar1.Value + 1); i++)
             {
                 if (Niveau1.Controls[i - 50 * trackBar1.Value].Name.Contains("jour"))

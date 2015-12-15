@@ -123,12 +123,12 @@ namespace Logiciel
 
         public void MiseAJour()// Fonction de mise à niveau de l'horloge martienne 
         {
-            TimeSpan Ts = System.DateTime.Now - this._last;             
-            double ecart = Math.Round(Ts.TotalSeconds);
+            TimeSpan Ts = System.DateTime.Now - this._last;   // on calcule l'écart entre le temps du système et le temps où on a arrêter le système          
+            double ecart = Math.Round(Ts.TotalSeconds); //  on convertit l'écart en seconde
 
-            for (int i = 0; i < ecart; i++)
+            for (int i = 0; i < ecart; i++)          // pour chaque seconde d'écart
             {
-                Horloge();
+                Horloge();     // on appel
             }
         }
 
@@ -165,9 +165,7 @@ namespace Logiciel
 
             XmlNode NodeSeconde = xmlDoc.CreateElement("Seconde");
             NodeSeconde.InnerText = Seconde.ToString();
-            NodeCalendrier.AppendChild(NodeSeconde);
-
-            XmlNode NodeListeJour = xmlDoc.CreateElement("Liste_Jour");
+            NodeCalendrier.AppendChild(NodeSeconde          XmlNode NodeListeJour = xmlDoc.CreateElement("Liste_Jour");
             foreach (Jour j in _Jours)
             {
                 j.genereXml(xmlDoc, NodeListeJour);

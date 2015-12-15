@@ -41,38 +41,38 @@ namespace Logiciel
         }
         
 
-        public static Lieu Parse(XmlNode test)
+        public static Lieu Parse(XmlNode test)    // on utilise le contenue d'un noeud
         {
             Lieu l = new Lieu();
             Point coords = new Point(0, 0);
             string nomLieu = "";
 
-            nomLieu = test.SelectSingleNode("Nom").InnerText;
-            string Coord = test.SelectSingleNode("Coordonnées").InnerText;
+            nomLieu = test.SelectSingleNode("Nom").InnerText; // on donne le contenu du noeud nom à la variable
+            string Coord = test.SelectSingleNode("Coordonnées").InnerText;// on prend le texte du noeud coordonnées
 
             int i = 0;
             int j = 0;
             string numberX = "";
             string numberY = "";
 
-            foreach (char c in Coord)
+            foreach (char c in Coord)   // pour chaque caractère 
             {
-                if (c == 'X')
+                if (c == 'X')     // quand on trouve le caractère X
                 {
-                    j = i + 3;
-                    do
+                    j = i + 3;     //on se place sur le premier nombre
+                    do          //on boucle à l'infini
                     {
-                        if (Coord[j - 1] == ',')
+                        if (Coord[j - 1] == ',') // quand un trouve le caractère spécifié
                         {
-                            break;
+                            break; // on sort le la boucle 
                         }
                         else
                         {
-                            numberX = numberX + Coord[j - 1];
+                            numberX = numberX + Coord[j - 1];    // un ajoute les numéro comme caractère les uns derrière les autres
                             j++;
                         }
                     } while (true);
-                    coords.X = int.Parse(numberX);
+                    coords.X = int.Parse(numberX); // on convertie la chaine de caractère en entier
                 }
 
                 if (c == 'Y')
