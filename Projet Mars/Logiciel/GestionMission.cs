@@ -947,7 +947,7 @@ namespace Logiciel
         private void ConfirmerNiv3_Click(object sender, EventArgs e)
         {
             bool[] tab = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires; //Tableau de disponibilité des activités du jour
-            bool[] erreurs = { true, false, false, false }; //Tableau d'erreurs
+            bool[] erreurs = { true, false, false, false,false }; //Tableau d'erreurs
             Jour jourj = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1];
             Activite act = new Activite("");
 
@@ -955,6 +955,11 @@ namespace Logiciel
             {
                 act = (Activite)ConfirmerNiv3.Tag;
                 changerUnePlageHoraire(act, jourj.TabHoraires, true);
+            }
+
+            if (listeAstronautes.CheckedItems == null)
+            {
+                erreurs[4] = true;
             }
 
             for (int i = 0; i < tab.Length; i++)
@@ -985,7 +990,7 @@ namespace Logiciel
                 }
             }
 
-            if (erreurs[0] && erreurs[1] && erreurs[2] && erreurs[3]) //Si pas d'erreurs
+            if (erreurs[0] && erreurs[1] && erreurs[2] && erreurs[3] && erreurs[4]) //Si pas d'erreurs
             {
                 List<Astronaute> liA = new List<Astronaute>();
 
@@ -1045,6 +1050,10 @@ namespace Logiciel
                 }
             }
             //En cas d'erreur, on affiche des messages spécifiques et il est impossible d'enregistrer l'activité
+            else if (!erreurs[4])
+            {
+                MessageBox.Show("Veuillez sélectionner au moins un astronaute", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else if (!erreurs[3])
             {
                 MessageBox.Show("Veuillez sélectionner une activité", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
