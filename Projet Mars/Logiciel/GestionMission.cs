@@ -953,7 +953,7 @@ namespace Logiciel
         private void ConfirmerNiv3_Click(object sender, EventArgs e)
         {
             bool[] tab = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1].TabHoraires; //Tableau de disponibilité des activités du jour
-            bool[] erreurs = { true, false, false, false,false }; //Tableau d'erreurs
+            bool[] erreurs = { true, false, false, false,true }; //Tableau d'erreurs
             Jour jourj = M.Calendar.Jours[int.Parse(NduJNiv3.Text) - 1];
             Activite act = new Activite("");
 
@@ -963,9 +963,9 @@ namespace Logiciel
                 changerUnePlageHoraire(act, jourj.TabHoraires, true);
             }
 
-            if (listeAstronautes.CheckedItems == null)
+            if (listeAstronautes.CheckedItems.Count == 0)
             {
-                erreurs[4] = true;
+                erreurs[4] = false;
             }
 
             for (int i = 0; i < tab.Length; i++)

@@ -165,7 +165,9 @@ namespace Logiciel
 
             XmlNode NodeSeconde = xmlDoc.CreateElement("Seconde");
             NodeSeconde.InnerText = Seconde.ToString();
-            NodeCalendrier.AppendChild(NodeSeconde          XmlNode NodeListeJour = xmlDoc.CreateElement("Liste_Jour");
+            NodeCalendrier.AppendChild(NodeSeconde); 
+        
+            XmlNode NodeListeJour = xmlDoc.CreateElement("Liste_Jour");
             foreach (Jour j in _Jours)
             {
                 j.genereXml(xmlDoc, NodeListeJour);
