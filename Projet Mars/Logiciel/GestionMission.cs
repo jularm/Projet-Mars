@@ -1188,18 +1188,18 @@ namespace Logiciel
             //On affiche l'icône en fonction du numéro du jour (passé ou futur) et du type d'activité
            
 
-                for (int i = int.Parse(PeriodeDebut.Text) ; i < int.Parse(PeriodeFin.Text) ; i++) //On parcourt les jours
+                for (int i = int.Parse(PeriodeDebut.Text)-1 ; i < int.Parse(PeriodeFin.Text) ; i++) //On parcourt les jours
                 {
-                    for (int j = 0; j < M.Calendar.Jours[i-1].ListeActivites.Count; j++) //On parcourt l'ensemble des activités du jour i
+                    for (int j = 0; j < M.Calendar.Jours[i].ListeActivites.Count; j++) //On parcourt l'ensemble des activités du jour i
                     {
-                        if (M.Calendar.Jours[i-1].ListeActivites[j].Nom == "Exploration Space suit" || M.Calendar.Jours[i-1].ListeActivites[j].Nom == "Exploration Vehicule" || M.Calendar.Jours[i-1].ListeActivites[j].Nom == "Outside experiment")
+                        if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
                         {
                             PictureBox icone = new PictureBox();
                             icone.BackColor = Color.Transparent;
                             icone.Size = new Size(24, 24);
                             Carte.Controls.Add(icone);
                             icone.Cursor = System.Windows.Forms.Cursors.Hand;
-                            icone.Tag = M.Calendar.Jours[i-1].ListeActivites[j]; //On associe l'activité à la picture box qui sert d'icône pour la récupérer après clic
+                            icone.Tag = M.Calendar.Jours[i].ListeActivites[j]; //On associe l'activité à la picture box qui sert d'icône pour la récupérer après clic
                             icone.Controls.Add(new Control(Convert.ToString(i))); //On ajoute un contrôle pour récupérer le numéro du jour
                             icone.Click += new System.EventHandler(this.ClickIconeCarte);
 
