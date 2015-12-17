@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Logiciel.Mission">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEBAgBAAAAAAIAAAAAAFABAABBAEIAAAEAAAEAA=</HashCode>
+      <FileName>Mission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logiciel.Lieu">
+    <Position X="8.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAEAAQBAAAAAAAAAAAAAABCAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Lieu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logiciel.Jour">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQECAQQAEAgAAAAAEAAAAAgQAAgAAAAAAAAABABA=</HashCode>
+      <FileName>Jour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logiciel.CategorieActivite">
+    <Position X="2.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAQAAAAAAAAAAAAAABCAEAAgAAAAAAgAAAAA=</HashCode>
+      <FileName>CategorieActivite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logiciel.CalendrierMartien">
+    <Position X="4.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAUAAIBAEAAiAAAAABEEFAAAAACBwSAACAAEAgAA=</HashCode>
+      <FileName>CalendrierMartien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logiciel.Astronaute">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAAAEAABAAAAABCAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Astronaute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logiciel.Activite">
+    <Position X="6.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAABAAACAIAAAAAABBKQAhAAwAAAYAAAIABA=</HashCode>
+      <FileName>Activite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Logiciel.Heure">
+    <Position X="8.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQACAAAAAAAAQAAAACAAgAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

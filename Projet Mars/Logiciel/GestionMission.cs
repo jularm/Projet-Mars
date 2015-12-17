@@ -179,7 +179,7 @@ namespace Logiciel
                 List<Astronaute> ListAtr = new List<Astronaute>(); 
                 Astronautes InitAstr = new Astronautes();
 
-                InitAstr.Show();
+                InitAstr.ShowDialog();
            
                 M.ListAstr = InitAstr.Astro();
                 InitAstr.BringToFront();
@@ -1284,6 +1284,7 @@ namespace Logiciel
         {
             ActExplo_Click(new object(), new EventArgs());
         }
+            
 
         /// <summary>
         /// Retour au calendrier ou au planning (selon le niveau où on a cliqué)
@@ -1330,6 +1331,8 @@ namespace Logiciel
                 MessageBox.Show("Echec sauvegarde 2 !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        
     }
 }
 

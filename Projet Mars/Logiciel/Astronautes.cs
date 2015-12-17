@@ -20,7 +20,7 @@ namespace Logiciel
             InitializeComponent();
             SupprimerAstronaute.Enabled = false;
             AjouterAstronaute.Enabled = false;
-            this.Visible = true;
+            ConfirmerAstronaute.Enabled = false;
         }                    
 
         public List<Astronaute> Astro()
@@ -34,7 +34,8 @@ namespace Logiciel
             Astronaute A = new Astronaute(Id, NomAstronaute.Text);
             listAstro.Add(A);
             AstronautesMission.Items.Add(A);
-            NomAstronaute.Text = "";
+            NomAstronaute.Text = ""; 
+            ConfirmerAstronaute.Enabled = true;
         }
 
         private void AstronautesMission_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,12 +64,13 @@ namespace Logiciel
             if (AstronautesMission.Items.Count == 0)
             {
                 SupprimerAstronaute.Enabled = false;
+                ConfirmerAstronaute.Enabled = false;
             }
         }
 
         
         private void ConfirmerAstronaute_Click(object sender, EventArgs e)
-        {
+        {     
             this.Visible = false;
             this.Close();
         }
