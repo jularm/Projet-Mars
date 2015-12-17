@@ -660,6 +660,16 @@ namespace Logiciel
                 texteDescriptif.Enabled = false;
                 SupprimerNiv3.Visible = false;
             }
+            else
+            {
+                HDebut.Enabled = true;
+                HFin.Enabled = true;
+                MinDebut.Enabled = true;
+                MinFin.Enabled = true;
+                listeActivites.Enabled = true;
+                listeAstronautes.Enabled = true;
+                texteDescriptif.Enabled = true;
+            }
 
             listeAstronautes.Clear();
             foreach (Astronaute a in M.ListAstr)
