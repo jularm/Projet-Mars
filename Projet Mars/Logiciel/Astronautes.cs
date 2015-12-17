@@ -19,7 +19,8 @@ namespace Logiciel
         {
             InitializeComponent();
             SupprimerAstronaute.Enabled = false;
-            AjouterAstronaute.Enabled = false;            
+            AjouterAstronaute.Enabled = false;
+            this.Visible = true;
         }                    
 
         public List<Astronaute> Astro()

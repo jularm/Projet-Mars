@@ -58,7 +58,7 @@ namespace Logiciel
         {
             InitializeComponent();
             try
-            {
+            {               
                 xmlDoc.Load(@"..\\..\\..\\sauvegarde1.xml");                
                 M.chargerXml(xmlDoc, M);
 
@@ -178,18 +178,15 @@ namespace Logiciel
                 
                 List<Astronaute> ListAtr = new List<Astronaute>(); 
                 Astronautes InitAstr = new Astronautes();
+
                 InitAstr.Show();
-
-                InitAstr.BringToFront();                
-                
+           
                 M.ListAstr = InitAstr.Astro();
-       
+                InitAstr.BringToFront();
+
+                
             }
-
-           
-            //Calendrier              
-           
-
+                 
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9; //Permet l'affichage des jours de 50 en 50

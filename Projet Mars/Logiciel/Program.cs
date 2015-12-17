@@ -15,7 +15,7 @@ namespace Logiciel
         {             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GestionMission());
+            Application.Run(new GestionMission());            
         }    
     }
              
