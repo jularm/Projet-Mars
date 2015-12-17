@@ -239,6 +239,7 @@
             this.LegendeCarte = new System.Windows.Forms.PictureBox();
             this.Carte = new System.Windows.Forms.PictureBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.msgErNbr = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.Niveau1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -2321,6 +2322,7 @@
             // 
             // ActiviteExploration
             // 
+            this.ActiviteExploration.Controls.Add(this.msgErNbr);
             this.ActiviteExploration.Controls.Add(this.Retour);
             this.ActiviteExploration.Controls.Add(this.LegendeCarte);
             this.ActiviteExploration.Controls.Add(this.PeriodeDebut);
@@ -2398,6 +2400,16 @@
             this.label26.Size = new System.Drawing.Size(194, 25);
             this.label26.TabIndex = 72;
             this.label26.Text = "Heure de la mission :";
+            // 
+            // msgErNbr
+            // 
+            this.msgErNbr.AutoSize = true;
+            this.msgErNbr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msgErNbr.ForeColor = System.Drawing.Color.OrangeRed;
+            this.msgErNbr.Location = new System.Drawing.Point(9, 144);
+            this.msgErNbr.Name = "msgErNbr";
+            this.msgErNbr.Size = new System.Drawing.Size(0, 24);
+            this.msgErNbr.TabIndex = 39;
             // 
             // GestionMission
             // 
@@ -2601,6 +2613,7 @@
         private System.Windows.Forms.PictureBox Retour;
         private System.Windows.Forms.Button CreerActivite;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label msgErNbr;
 
 
     }

@@ -33,13 +33,13 @@ namespace Logiciel
             Astronaute A = new Astronaute(Id, NomAstronaute.Text);
             listAstro.Add(A);
             AstronautesMission.Items.Add(A);
+            NomAstronaute.Text = "";
         }
 
         private void AstronautesMission_SelectedIndexChanged(object sender, EventArgs e)
         {
             SupprimerAstronaute.Enabled = true;
-            s = (Astronaute)AstronautesMission.SelectedItem;
-            NomAstronaute.Text = "";
+            s = (Astronaute)AstronautesMission.SelectedItem;           
         }
 
         private void NomAstronaute_TextChanged(object sender, EventArgs e)
@@ -59,6 +59,10 @@ namespace Logiciel
             s = (Astronaute)AstronautesMission.SelectedItem;
             listAstro.Remove(s);
             AstronautesMission.Items.Remove(s);
+            if (AstronautesMission.Items.Count == 0)
+            {
+                SupprimerAstronaute.Enabled = false;
+            }
         }
 
         
