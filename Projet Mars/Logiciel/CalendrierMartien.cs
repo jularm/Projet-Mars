@@ -22,24 +22,13 @@ namespace Logiciel
         public CalendrierMartien()
         {
             _debut = System.DateTime.Now;
-            System.TimeSpan duration = new System.TimeSpan(0, 500 * 1480, 0);
+            System.TimeSpan duration = new System.TimeSpan(0, 500 * 1480, 0);  // calcul le temps que dure 500 jours martien soit 500*1480 minutes
             _fin = System.DateTime.Now + duration;
             _jour = 1;
             _minute = 0;
             _heure = 0;
             _seconde = 0;
-        }
-
-        public CalendrierMartien(DateTime debut, DateTime fin, int jour, int heure, int minute, int seconde)
-        {
-            _debut = debut;
-            _fin = fin;
-            _jour = jour;
-            _minute = minute;
-            _heure = heure;
-            _seconde = seconde;
-        }
-
+        }   
 
         public int Day
         {
