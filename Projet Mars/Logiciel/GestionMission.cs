@@ -628,9 +628,9 @@ namespace Logiciel
         private void RetourCalendrier_Click_1(object sender, EventArgs e)
         {
             JourCourantMission_TextChanged(new Object(), new EventArgs());
-            Niveau2.Hide();            
-            trackBar1_Scroll(sender, e);
+            Niveau2.Hide();
             Niveau1.Show();
+            trackBar1_Scroll(sender,e);
         }
 
 
@@ -652,6 +652,9 @@ namespace Logiciel
             if (!CreerActivite.Enabled)
             {
                 HDebut.Enabled = false;
+                HFin.Enabled = false;
+                MinDebut.Enabled = false;
+                MinFin.Enabled = false;
                 listeActivites.Enabled = false;
                 listeAstronautes.Enabled = false;
                 texteDescriptif.Enabled = false;
