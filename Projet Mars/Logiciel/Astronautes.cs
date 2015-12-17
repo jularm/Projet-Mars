@@ -39,6 +39,7 @@ namespace Logiciel
         {
             SupprimerAstronaute.Enabled = true;
             s = (Astronaute)AstronautesMission.SelectedItem;
+            NomAstronaute.Text = "";
         }
 
         private void NomAstronaute_TextChanged(object sender, EventArgs e)

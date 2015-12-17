@@ -628,7 +628,8 @@ namespace Logiciel
         private void RetourCalendrier_Click_1(object sender, EventArgs e)
         {
             JourCourantMission_TextChanged(new Object(), new EventArgs());
-            Niveau2.Hide();
+            Niveau2.Hide();            
+            trackBar1_Scroll(sender, e);
             Niveau1.Show();
         }
 
