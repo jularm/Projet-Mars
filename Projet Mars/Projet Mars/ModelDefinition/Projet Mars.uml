@@ -1266,71 +1266,6 @@
         isActiveClass="false">
         <targetEnds>
           <association
-            Id="431d95f9-bcf8-457b-9684-e8d09906fdfc"
-            isDerived="false"
-            sourceEndRoleName="Mission"
-            targetEndRoleName="Astronaute"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="b8ea8360-5179-4b16-9c03-3721ea00965d"
-              LastKnownName="Astronaute"
-              LastKnownLocation="Projet Mars.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="356366d8-711d-4b22-8493-34ba9f33f2fd"
-                  name="Mission"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Shared"
-                  isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="4809ba70-5d39-4d00-a13b-cc44fdc14034"
-                      name="Lower"
-                      value="1" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="99a6d4f4-d553-4b12-b905-c712eba189c0"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="67dc77b5-a6c6-4f92-8e99-9edae8063938"
-                  name="Astronaute"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="0f262bf6-9f44-45ca-a4ac-15c3ae5ccf90"
-                      name="Lower"
-                      value="1" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="930d84b5-e392-4cb0-9427-82809f706408"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
             Id="93410142-770c-4fdf-b3a5-613ac1099bf0"
             isDerived="false"
             sourceEndRoleName="Mission"
@@ -1431,6 +1366,58 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d8e2845c-2564-4bde-ab85-de7784b0578a"
+            isDerived="false"
+            sourceEndRoleName="Mission"
+            targetEndRoleName="Astronaute"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b8ea8360-5179-4b16-9c03-3721ea00965d"
+              LastKnownName="Astronaute"
+              LastKnownLocation="Projet Mars.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3bbe90e6-3762-4be3-812a-b736ff507333"
+                  name="Mission"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f2b62c71-796f-4172-aa90-c0637b3d63a2"
+                  name="Astronaute"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ed0c4abf-eea7-425e-9e52-f3d4bdcdfe18"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c75c5b36-8979-4476-8cf2-23c285cf9d33"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>

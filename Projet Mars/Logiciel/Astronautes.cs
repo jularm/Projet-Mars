@@ -73,8 +73,6 @@ namespace Logiciel
         {     
             this.Visible = false;
             this.Close();
-        }
-
-           
+        }  
     }
 }

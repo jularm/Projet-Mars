@@ -561,42 +561,6 @@
       <class Id="d721f4f3-aaae-43d3-83a3-a86d3abf040d" name="Mission" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="947e6ec2-c1dd-4a87-b9e7-6a45a9c909d6" />
         <targetEnds>
-          <association Id="2ba06f76-a765-4b2d-be23-be80d13634ed" isDerived="false" sourceEndRoleName="Mission" targetEndRoleName="Astronaute" isLeaf="false" isAbstract="false">
-            <classMoniker Id="c93395dd-6334-433f-b5b3-07e7b54a6a64" LastKnownName="Astronaute" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="6313b181-219f-4aab-a576-a86c79fde44c" name="Mission" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString Id="87c8e712-b643-4d3e-a117-856b42e3c524" name="Lower" value="1">
-                      <elementDefinition Id="4809ba70-5d39-4d00-a13b-cc44fdc14034" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="9e668aa8-8dce-4bf5-a83a-2ddbace374d0" name="Upper" value="*">
-                      <elementDefinition Id="99a6d4f4-d553-4b12-b905-c712eba189c0" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="356366d8-711d-4b22-8493-34ba9f33f2fd" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="4add6bab-28ce-4a1a-9793-237b8d8d1031" name="Astronaute" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="eef9b9ad-2a8c-498d-88d3-58fa1665b009" name="Lower" value="1">
-                      <elementDefinition Id="0f262bf6-9f44-45ca-a4ac-15c3ae5ccf90" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="cb0a9d69-6394-4756-88e2-d023bdba2c36" name="Upper" value="*">
-                      <elementDefinition Id="930d84b5-e392-4cb0-9427-82809f706408" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="67dc77b5-a6c6-4f92-8e99-9edae8063938" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="431d95f9-bcf8-457b-9684-e8d09906fdfc" />
-          </association>
           <association Id="c6a10dc9-1b80-4b32-9a89-dd9e907a038c" isDerived="false" sourceEndRoleName="Mission" targetEndRoleName="CategorieActivite" isLeaf="false" isAbstract="false">
             <classMoniker Id="840c7a99-7de2-4e9f-b682-1f95df3b1250" LastKnownName="CategorieActivite" />
             <relationshipOwnedElementsInternal>
@@ -648,6 +612,32 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="bbe9b562-1da9-4fe1-b5dd-44bf7e3b1d43" />
+          </association>
+          <association Id="19323932-44d0-4e39-a923-0aea8ed54214" isDerived="false" sourceEndRoleName="Mission" targetEndRoleName="Astronaute" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c93395dd-6334-433f-b5b3-07e7b54a6a64" LastKnownName="Astronaute" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="73a5e4a7-10ac-4546-8de8-ace8d4edb2d0" name="Mission" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3bbe90e6-3762-4be3-812a-b736ff507333" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4b28ac3e-98f5-4006-9525-198bf5b7d0e4" name="Astronaute" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="2343ac8d-c3d2-43b7-96c3-a3806b492db7" name="Lower" value="1">
+                      <elementDefinition Id="ed0c4abf-eea7-425e-9e52-f3d4bdcdfe18" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="91a6a5a5-4961-4786-ae3a-d31949aca6d7" name="Upper" value="*">
+                      <elementDefinition Id="c75c5b36-8979-4476-8cf2-23c285cf9d33" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="f2b62c71-796f-4172-aa90-c0637b3d63a2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d8e2845c-2564-4bde-ab85-de7784b0578a" />
           </association>
         </targetEnds>
         <ownedOperationsInternal>
