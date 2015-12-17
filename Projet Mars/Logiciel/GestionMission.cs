@@ -29,8 +29,8 @@ namespace Logiciel
         Image scaphandreFutur = Image.FromFile("..\\..\\..\\..\\astronautGreen.png");
         Image vehiculePasse = Image.FromFile("..\\..\\..\\..\\MarsVehiculeGray.png");
         Image vehiculeFutur = Image.FromFile("..\\..\\..\\..\\MarsVehiculeGreen.png");
-        Image experiencePasse = Image.FromFile("..\\..\\..\\..\\chemicalGray.png");
-        Image experienceFutur = Image.FromFile("..\\..\\..\\..\\chemicalGreen.png");
+        Image experiencePasse = Image.FromFile("..\\..\\..\\..\\experimentGray.png");
+        Image experienceFutur = Image.FromFile("..\\..\\..\\..\\experimentGreen.png");
 
         //Carte niveau 3 :
         static double echCarteNiv3 = 37.9; //Facteur d'échelle pour la carte de niveau 3 par rapport à la carte fournie
@@ -1183,71 +1183,72 @@ namespace Logiciel
             ActiviteExploration.Visible = true;
        
             //On affiche l'icône en fonction du numéro du jour (passé ou futur) et du type d'activité
-           
 
-                for (int i = int.Parse(PeriodeDebut.Text)-1 ; i < int.Parse(PeriodeFin.Text) ; i++) //On parcourt les jours
+
+            for (int i = Convert.ToInt32(PeriodeDebut.Value) - 1; i < Convert.ToInt32(PeriodeFin.Value); i++) //On parcourt les jours
+            {
+                for (int j = 0; j < M.Calendar.Jours[i].ListeActivites.Count; j++) //On parcourt l'ensemble des activités du jour i
                 {
-                    for (int j = 0; j < M.Calendar.Jours[i].ListeActivites.Count; j++) //On parcourt l'ensemble des activités du jour i
+                    if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
                     {
-                        if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
-                        {
-                            PictureBox icone = new PictureBox();
-                            icone.BackColor = Color.Transparent;
-                            icone.Size = new Size(24, 24);
-                            Carte.Controls.Add(icone);
-                            icone.Cursor = System.Windows.Forms.Cursors.Hand;
-                            icone.Tag = M.Calendar.Jours[i].ListeActivites[j]; //On associe l'activité à la picture box qui sert d'icône pour la récupérer après clic
-                            icone.Controls.Add(new Control(Convert.ToString(i))); //On ajoute un contrôle pour récupérer le numéro du jour
-                            icone.Click += new System.EventHandler(this.ClickIconeCarte);
+                        PictureBox icone = new PictureBox();
+                        icone.BackColor = Color.Transparent;
+                        icone.Size = new Size(24, 24);
+                        Carte.Controls.Add(icone);
+                        icone.Cursor = System.Windows.Forms.Cursors.Hand;
+                        icone.Tag = M.Calendar.Jours[i].ListeActivites[j]; //On associe l'activité à la picture box qui sert d'icône pour la récupérer après clic
+                        icone.Controls.Add(new Control(Convert.ToString(i))); //On ajoute un contrôle pour récupérer le numéro du jour
+                        icone.Click += new System.EventHandler(this.ClickIconeCarte);
 
-                            //On place et on centre l'icône (-12 en X et en Y pour centrer l'icone de 24*24px)                       
-                            if (M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y >= 0)
+                        //On place et on centre l'icône (-12 en X et en Y pour centrer l'icone de 24*24px)                       
+                        if (M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y >= 0)
+                        {
+                            icone.Location = new Point(Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X + coordBase.X) / echCarteNiv3 * echCarteExplo)) - 12, Convert.ToInt32(Math.Round((coordBase.Y - M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y) / echCarteNiv3 * echCarteExplo)) - 12);
+                        }
+                        else
+                        {
+                            icone.Location = new Point(Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X + coordBase.X) / echCarteNiv3 * echCarteExplo)) - 12, -1 * (Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y - coordBase.Y) / echCarteNiv3 * echCarteExplo))) - 12);
+                        }
+
+                        //Affichage de l'icône correspondant au type d'activité et distinction entre passé/futur
+                        if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit")
+                        {
+                            if (i <= int.Parse(JourCourantMission.Text))
                             {
-                                icone.Location = new Point(Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X + coordBase.X) / echCarteNiv3 * echCarteExplo)) - 12, Convert.ToInt32(Math.Round((coordBase.Y - M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y) / echCarteNiv3 * echCarteExplo)) - 12);
+                                icone.Image = scaphandrePasse;
                             }
                             else
                             {
-                                icone.Location = new Point(Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.X + coordBase.X) / echCarteNiv3 * echCarteExplo)) - 12, -1 * (Convert.ToInt32(Math.Round((M.Calendar.Jours[i].ListeActivites[j].Gps.Coords.Y - coordBase.Y) / echCarteNiv3 * echCarteExplo))) - 12);
+                                icone.Image = scaphandreFutur;
                             }
-
-                            //Affichage de l'icône correspondant au type d'activité et distinction entre passé/futur
-                            if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit")
+                        }
+                        if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule")
+                        {
+                            if (i <= int.Parse(JourCourantMission.Text))
                             {
-                                if (i <= int.Parse(JourCourantMission.Text))
-                                {
-                                    icone.Image = scaphandrePasse;
-                                }
-                                else
-                                {
-                                    icone.Image = scaphandreFutur;
-                                }
+                                icone.Image = vehiculePasse;
                             }
-                            if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule")
+                            else
                             {
-                                if (i <= int.Parse(JourCourantMission.Text))
-                                {
-                                    icone.Image = vehiculePasse;
-                                }
-                                else
-                                {
-                                    icone.Image = vehiculeFutur;
-                                }
+                                icone.Image = vehiculeFutur;
                             }
-                            if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
+                        }
+                        if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
+                        {
+                            if (i <= int.Parse(JourCourantMission.Text))
                             {
-                                if (i <= int.Parse(JourCourantMission.Text))
-                                {
-                                    icone.Image = experiencePasse;
-                                }
-                                else
-                                {
-                                    icone.Image = experienceFutur;
-                                }
+                                icone.Image = experiencePasse;
+                            }
+                            else
+                            {
+                                icone.Image = experienceFutur;
                             }
                         }
                     }
-                }            
+                }
+            }
         }
+
 
        
         /// <summary>
@@ -1279,47 +1280,9 @@ namespace Logiciel
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void PeriodeDebut_TextChanged(object sender, EventArgs e)
+        private void ValiderPeriode_Click(object sender, EventArgs e)
         {
-            try
-            {
-                msgErNbr.Text = "";
-                int testNbr = int.Parse(PeriodeDebut.Text);
-                if (testNbr % 1 != 0)
-                {
-                    throw new Exception();
-                }
-                if (PeriodeDebut.Text != "" && PeriodeFin.Text != "" && int.Parse(PeriodeDebut.Text) > 0 && int.Parse(PeriodeDebut.Text) <= 500)
-                {
-                    ActExplo_Click(new object(), new EventArgs());
-                }
-            }
-
-            catch
-            {
-                msgErNbr.Text = "Entrez des nombres entiers";
-            }
-        }
-        private void PeriodeFin_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                msgErNbr.Text = "";
-                int testNbr = int.Parse(PeriodeFin.Text);
-                if (testNbr % 1 != 0)
-                {
-                    throw new Exception();
-                }
-                if (PeriodeDebut.Text != "" && PeriodeFin.Text != "" && int.Parse(PeriodeDebut.Text) > 0 && int.Parse(PeriodeDebut.Text) <= 500)
-                {
-                    ActExplo_Click(new object(), new EventArgs());
-                }
-            }
-
-            catch
-            {
-                msgErNbr.Text = "Entrez des nombres entiers";
-            }
+            ActExplo_Click(new object(), new EventArgs());
         }
 
         /// <summary>
@@ -1330,7 +1293,6 @@ namespace Logiciel
         private void Retour_Click(object sender, EventArgs e)
         {
             ActiviteExploration.Visible = false;
-            msgErNbr.Text = "";
         }
 
 

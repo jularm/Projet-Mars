@@ -151,8 +151,6 @@
             this.dureeMission = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.Niveau1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.DateTerrestre = new System.Windows.Forms.Label();
             this.Niveau2 = new System.Windows.Forms.GroupBox();
             this.Niveau3 = new System.Windows.Forms.GroupBox();
@@ -186,25 +184,19 @@
             this.texteDescriptif = new System.Windows.Forms.RichTextBox();
             this.ConfirmerNiv3 = new System.Windows.Forms.Button();
             this.listeAstronautes = new System.Windows.Forms.ListView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AnnulerNiv3 = new System.Windows.Forms.Button();
             this.CompteRendu = new System.Windows.Forms.Button();
             this.TrancheHoraire2 = new System.Windows.Forms.Label();
             this.TranchHoraire1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.RetourCalendrier = new System.Windows.Forms.PictureBox();
-            this.JourSuivant = new System.Windows.Forms.PictureBox();
-            this.JourPrecedent = new System.Windows.Forms.PictureBox();
             this.Jour = new System.Windows.Forms.Label();
             this.NumeroJour = new System.Windows.Forms.Label();
             this.CreerActivite = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label16 = new System.Windows.Forms.Label();
             this.boutonsMatin = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.boutonsApresMidi = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.titreJour = new System.Windows.Forms.Label();
             this.JourCourantMission = new System.Windows.Forms.Label();
             this.DateT = new System.Windows.Forms.Label();
@@ -232,36 +224,46 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.PeriodeFin = new System.Windows.Forms.TextBox();
-            this.PeriodeDebut = new System.Windows.Forms.TextBox();
             this.ActiviteExploration = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.Retour = new System.Windows.Forms.PictureBox();
             this.LegendeCarte = new System.Windows.Forms.PictureBox();
             this.Carte = new System.Windows.Forms.PictureBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.msgErNbr = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.RetourCalendrier = new System.Windows.Forms.PictureBox();
+            this.JourSuivant = new System.Windows.Forms.PictureBox();
+            this.JourPrecedent = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PeriodeDebut = new System.Windows.Forms.NumericUpDown();
+            this.PeriodeFin = new System.Windows.Forms.NumericUpDown();
+            this.ValiderPeriode = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.Niveau1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Niveau2.SuspendLayout();
             this.Niveau3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CoordY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoordX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RetourCalendrier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.JourSuivant)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.JourPrecedent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.ActiviteExploration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Retour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LegendeCarte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Carte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RetourCalendrier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JourSuivant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JourPrecedent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PeriodeDebut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PeriodeFin)).BeginInit();
             this.SuspendLayout();
             // 
             // heureMars
@@ -1274,30 +1276,6 @@
             this.Niveau1.TabStop = false;
             this.Niveau1.Text = "Calendrier";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::Logiciel.Properties.Resources.right2;
-            this.pictureBox3.Location = new System.Drawing.Point(620, 368);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 61;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::Logiciel.Properties.Resources.left2;
-            this.pictureBox2.Location = new System.Drawing.Point(36, 368);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 60;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // DateTerrestre
             // 
             this.DateTerrestre.AutoSize = true;
@@ -1853,18 +1831,6 @@
             this.listeAstronautes.UseCompatibleStateImageBehavior = false;
             this.listeAstronautes.View = System.Windows.Forms.View.SmallIcon;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.pictureBox1.Image = global::Logiciel.Properties.Resources.nanedi_valles;
-            this.pictureBox1.Location = new System.Drawing.Point(560, 151);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 264);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
-            // 
             // AnnulerNiv3
             // 
             this.AnnulerNiv3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1914,41 +1880,6 @@
             this.label1.Size = new System.Drawing.Size(208, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Pour consulter une activité, cliquez dessus";
-            // 
-            // RetourCalendrier
-            // 
-            this.RetourCalendrier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RetourCalendrier.Image = global::Logiciel.Properties.Resources.returnArrow;
-            this.RetourCalendrier.Location = new System.Drawing.Point(670, 10);
-            this.RetourCalendrier.Name = "RetourCalendrier";
-            this.RetourCalendrier.Size = new System.Drawing.Size(34, 35);
-            this.RetourCalendrier.TabIndex = 10;
-            this.RetourCalendrier.TabStop = false;
-            this.RetourCalendrier.Click += new System.EventHandler(this.RetourCalendrier_Click_1);
-            // 
-            // JourSuivant
-            // 
-            this.JourSuivant.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JourSuivant.Image = global::Logiciel.Properties.Resources.right2;
-            this.JourSuivant.Location = new System.Drawing.Point(446, 14);
-            this.JourSuivant.Name = "JourSuivant";
-            this.JourSuivant.Size = new System.Drawing.Size(30, 30);
-            this.JourSuivant.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.JourSuivant.TabIndex = 9;
-            this.JourSuivant.TabStop = false;
-            this.JourSuivant.Click += new System.EventHandler(this.JourSuivant_Click);
-            // 
-            // JourPrecedent
-            // 
-            this.JourPrecedent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JourPrecedent.Image = global::Logiciel.Properties.Resources.left2;
-            this.JourPrecedent.Location = new System.Drawing.Point(223, 14);
-            this.JourPrecedent.Name = "JourPrecedent";
-            this.JourPrecedent.Size = new System.Drawing.Size(30, 30);
-            this.JourPrecedent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.JourPrecedent.TabIndex = 8;
-            this.JourPrecedent.TabStop = false;
-            this.JourPrecedent.Click += new System.EventHandler(this.JourPrecedent_Click);
             // 
             // Jour
             // 
@@ -2018,15 +1949,6 @@
             this.boutonsMatin.Size = new System.Drawing.Size(273, 370);
             this.boutonsMatin.TabIndex = 9;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::Logiciel.Properties.Resources.HoraireAM;
-            this.pictureBox6.Location = new System.Drawing.Point(17, 5);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(45, 376);
-            this.pictureBox6.TabIndex = 8;
-            this.pictureBox6.TabStop = false;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -2042,15 +1964,6 @@
             this.boutonsApresMidi.Name = "boutonsApresMidi";
             this.boutonsApresMidi.Size = new System.Drawing.Size(273, 370);
             this.boutonsApresMidi.TabIndex = 10;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Logiciel.Properties.Resources.HorairePM;
-            this.pictureBox5.Location = new System.Drawing.Point(17, 5);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(45, 376);
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
             // 
             // titreJour
             // 
@@ -2302,31 +2215,13 @@
             this.label25.TabIndex = 34;
             this.label25.Text = "au jour n°";
             // 
-            // PeriodeFin
-            // 
-            this.PeriodeFin.Location = new System.Drawing.Point(60, 114);
-            this.PeriodeFin.Name = "PeriodeFin";
-            this.PeriodeFin.Size = new System.Drawing.Size(39, 20);
-            this.PeriodeFin.TabIndex = 35;
-            this.PeriodeFin.Text = "500";
-            this.PeriodeFin.TextChanged += new System.EventHandler(this.PeriodeFin_TextChanged);
-            // 
-            // PeriodeDebut
-            // 
-            this.PeriodeDebut.Location = new System.Drawing.Point(60, 88);
-            this.PeriodeDebut.Name = "PeriodeDebut";
-            this.PeriodeDebut.Size = new System.Drawing.Size(39, 20);
-            this.PeriodeDebut.TabIndex = 36;
-            this.PeriodeDebut.Text = "1";
-            this.PeriodeDebut.TextChanged += new System.EventHandler(this.PeriodeDebut_TextChanged);
-            // 
             // ActiviteExploration
             // 
-            this.ActiviteExploration.Controls.Add(this.msgErNbr);
+            this.ActiviteExploration.Controls.Add(this.ValiderPeriode);
+            this.ActiviteExploration.Controls.Add(this.PeriodeFin);
+            this.ActiviteExploration.Controls.Add(this.PeriodeDebut);
             this.ActiviteExploration.Controls.Add(this.Retour);
             this.ActiviteExploration.Controls.Add(this.LegendeCarte);
-            this.ActiviteExploration.Controls.Add(this.PeriodeDebut);
-            this.ActiviteExploration.Controls.Add(this.PeriodeFin);
             this.ActiviteExploration.Controls.Add(this.label25);
             this.ActiviteExploration.Controls.Add(this.label24);
             this.ActiviteExploration.Controls.Add(this.label23);
@@ -2362,6 +2257,16 @@
             this.ActiviteExploration.Text = "Carte d\'exploration";
             this.ActiviteExploration.Visible = false;
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(402, 9);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(194, 25);
+            this.label26.TabIndex = 72;
+            this.label26.Text = "Heure de la mission :";
+            // 
             // Retour
             // 
             this.Retour.Image = global::Logiciel.Properties.Resources.returnArrow;
@@ -2374,10 +2279,10 @@
             // 
             // LegendeCarte
             // 
-            this.LegendeCarte.Image = global::Logiciel.Properties.Resources.LegendeCarte;
-            this.LegendeCarte.Location = new System.Drawing.Point(6, 231);
+            this.LegendeCarte.Image = global::Logiciel.Properties.Resources.LegendeCarte1;
+            this.LegendeCarte.Location = new System.Drawing.Point(6, 253);
             this.LegendeCarte.Name = "LegendeCarte";
-            this.LegendeCarte.Size = new System.Drawing.Size(235, 200);
+            this.LegendeCarte.Size = new System.Drawing.Size(235, 190);
             this.LegendeCarte.TabIndex = 37;
             this.LegendeCarte.TabStop = false;
             // 
@@ -2391,25 +2296,148 @@
             this.Carte.TabIndex = 3;
             this.Carte.TabStop = false;
             // 
-            // label26
+            // pictureBox1
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(402, 9);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(194, 25);
-            this.label26.TabIndex = 72;
-            this.label26.Text = "Heure de la mission :";
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.pictureBox1.Image = global::Logiciel.Properties.Resources.nanedi_valles;
+            this.pictureBox1.Location = new System.Drawing.Point(560, 151);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(141, 264);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
-            // msgErNbr
+            // RetourCalendrier
             // 
-            this.msgErNbr.AutoSize = true;
-            this.msgErNbr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msgErNbr.ForeColor = System.Drawing.Color.OrangeRed;
-            this.msgErNbr.Location = new System.Drawing.Point(9, 144);
-            this.msgErNbr.Name = "msgErNbr";
-            this.msgErNbr.Size = new System.Drawing.Size(0, 24);
-            this.msgErNbr.TabIndex = 39;
+            this.RetourCalendrier.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RetourCalendrier.Image = global::Logiciel.Properties.Resources.returnArrow;
+            this.RetourCalendrier.Location = new System.Drawing.Point(670, 10);
+            this.RetourCalendrier.Name = "RetourCalendrier";
+            this.RetourCalendrier.Size = new System.Drawing.Size(34, 35);
+            this.RetourCalendrier.TabIndex = 10;
+            this.RetourCalendrier.TabStop = false;
+            this.RetourCalendrier.Click += new System.EventHandler(this.RetourCalendrier_Click_1);
+            // 
+            // JourSuivant
+            // 
+            this.JourSuivant.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JourSuivant.Image = global::Logiciel.Properties.Resources.right2;
+            this.JourSuivant.Location = new System.Drawing.Point(446, 14);
+            this.JourSuivant.Name = "JourSuivant";
+            this.JourSuivant.Size = new System.Drawing.Size(30, 30);
+            this.JourSuivant.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.JourSuivant.TabIndex = 9;
+            this.JourSuivant.TabStop = false;
+            this.JourSuivant.Click += new System.EventHandler(this.JourSuivant_Click);
+            // 
+            // JourPrecedent
+            // 
+            this.JourPrecedent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JourPrecedent.Image = global::Logiciel.Properties.Resources.left2;
+            this.JourPrecedent.Location = new System.Drawing.Point(223, 14);
+            this.JourPrecedent.Name = "JourPrecedent";
+            this.JourPrecedent.Size = new System.Drawing.Size(30, 30);
+            this.JourPrecedent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.JourPrecedent.TabIndex = 8;
+            this.JourPrecedent.TabStop = false;
+            this.JourPrecedent.Click += new System.EventHandler(this.JourPrecedent_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Logiciel.Properties.Resources.HoraireAM;
+            this.pictureBox6.Location = new System.Drawing.Point(17, 5);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(45, 376);
+            this.pictureBox6.TabIndex = 8;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Logiciel.Properties.Resources.HorairePM;
+            this.pictureBox5.Location = new System.Drawing.Point(17, 5);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(45, 376);
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::Logiciel.Properties.Resources.right2;
+            this.pictureBox3.Location = new System.Drawing.Point(620, 368);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 61;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::Logiciel.Properties.Resources.left2;
+            this.pictureBox2.Location = new System.Drawing.Point(36, 368);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 60;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // PeriodeDebut
+            // 
+            this.PeriodeDebut.Location = new System.Drawing.Point(62, 87);
+            this.PeriodeDebut.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.PeriodeDebut.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.PeriodeDebut.Name = "PeriodeDebut";
+            this.PeriodeDebut.Size = new System.Drawing.Size(46, 20);
+            this.PeriodeDebut.TabIndex = 39;
+            this.PeriodeDebut.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // PeriodeFin
+            // 
+            this.PeriodeFin.Location = new System.Drawing.Point(62, 114);
+            this.PeriodeFin.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.PeriodeFin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.PeriodeFin.Name = "PeriodeFin";
+            this.PeriodeFin.Size = new System.Drawing.Size(46, 20);
+            this.PeriodeFin.TabIndex = 40;
+            this.PeriodeFin.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // ValiderPeriode
+            // 
+            this.ValiderPeriode.Location = new System.Drawing.Point(30, 145);
+            this.ValiderPeriode.Name = "ValiderPeriode";
+            this.ValiderPeriode.Size = new System.Drawing.Size(60, 25);
+            this.ValiderPeriode.TabIndex = 41;
+            this.ValiderPeriode.Text = "Go !";
+            this.ValiderPeriode.UseVisualStyleBackColor = true;
+            this.ValiderPeriode.Click += new System.EventHandler(this.ValiderPeriode_Click);
             // 
             // GestionMission
             // 
@@ -2436,31 +2464,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.Niveau1.ResumeLayout(false);
             this.Niveau1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Niveau2.ResumeLayout(false);
             this.Niveau2.PerformLayout();
             this.Niveau3.ResumeLayout(false);
             this.Niveau3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CoordY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoordX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RetourCalendrier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.JourSuivant)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.JourPrecedent)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ActiviteExploration.ResumeLayout(false);
             this.ActiviteExploration.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Retour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LegendeCarte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Carte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RetourCalendrier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JourSuivant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JourPrecedent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PeriodeDebut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PeriodeFin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2606,14 +2636,14 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox PeriodeFin;
-        private System.Windows.Forms.TextBox PeriodeDebut;
         private System.Windows.Forms.PictureBox LegendeCarte;
         private System.Windows.Forms.GroupBox ActiviteExploration;
         private System.Windows.Forms.PictureBox Retour;
         private System.Windows.Forms.Button CreerActivite;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label msgErNbr;
+        private System.Windows.Forms.NumericUpDown PeriodeFin;
+        private System.Windows.Forms.NumericUpDown PeriodeDebut;
+        private System.Windows.Forms.Button ValiderPeriode;
 
 
     }

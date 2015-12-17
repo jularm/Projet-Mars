@@ -173,6 +173,16 @@ namespace Logiciel.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LegendeCarte1 {
+            get {
+                object obj = ResourceManager.GetObject("LegendeCarte1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nanedi_valles {
             get {
                 object obj = ResourceManager.GetObject("nanedi valles", resourceCulture);
