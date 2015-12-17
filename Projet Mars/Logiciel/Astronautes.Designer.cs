@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Astronautes));
             this.label1 = new System.Windows.Forms.Label();
             this.AstronautesMission = new System.Windows.Forms.ListBox();
             this.Nom = new System.Windows.Forms.Label();
@@ -125,6 +126,7 @@
             this.Controls.Add(this.NomAstronaute);
             this.Controls.Add(this.AstronautesMission);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Astronautes";
             this.Text = "Astronautes";
             this.ResumeLayout(false);
