@@ -101,6 +101,7 @@ namespace Logiciel
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             if (comboBox1.SelectedItem != null)
             {                
                 comboBox2.Enabled = false;
@@ -109,18 +110,12 @@ namespace Logiciel
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             if (comboBox2.SelectedItem != null)
             {               
                 comboBox1.Enabled = false;
             }
         }
-
-        private void recherche_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-        }
-
-       
     }
 }
         

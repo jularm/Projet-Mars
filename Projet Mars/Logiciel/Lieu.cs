@@ -113,23 +113,7 @@ namespace Logiciel
             NodeLieu.AppendChild(NodeCoords);
 
             rootNode.AppendChild(NodeLieu);
-        }
-
-        // lecture xml et generation objets
-        public void chargerXml(XmlDocument xmlDoc, Mission M)
-        {
-            XmlNodeList nodelistLieu = xmlDoc.GetElementsByTagName("Lieu");
-
-            string nom="";
-            Point coords = new Point (0,0);
-
-            foreach (XmlNode nodeLieu in nodelistLieu)
-            {
-                nom = nodeLieu.SelectSingleNode("Nom").InnerText;
-                coords.X = int.Parse(nodeLieu.SelectSingleNode("Coordonnées").InnerText);
-                coords.Y = int.Parse(nodeLieu.SelectSingleNode("Coordonnées").InnerText);                
-            }
-            Lieu L = new Lieu(nom, coords);        
-        }
+        }                
+        
     }
 }

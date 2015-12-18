@@ -97,6 +97,15 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="f232c4b4-acb0-460c-a159-6c658bbfc363" name="AddJours" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a3b34ea1-1cd3-4260-aa8a-5b9cd84ecf94" />
+          </operation>
+          <operation Id="d527895d-4a18-4124-9f58-7ba0a4b8581b" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c371f70a-6405-4d8c-a977-7f009aa73ea5" />
+          </operation>
+          <operation Id="7516ae7a-da7c-433b-b595-4121ca8ca6b1" name="chargerXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="662575ac-80c7-4c54-8d91-b257f579cbb8" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -210,6 +219,9 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="ddaca6c6-5683-4f1f-91c8-c5ab86134fce" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="956e3bb6-5cfb-4afc-9697-0d6b5d0d025c" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -281,34 +293,16 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="ee2cfaa7-d17b-42f8-91b7-4c0fee94103e" name="_debut" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="1474c178-4a62-4d90-b1be-3b2fa9203e4a" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="f3ccb079-7d2a-45ca-a813-472196f06091" LastKnownName="Heure" />
-            </type_NamedElement>
-          </property>
           <property Id="ac73673d-ba6f-43d8-a58a-b96ac696ee55" name="_compteRendu" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="dad6ab45-6c67-4bc3-84a4-97ef3c7beb67" />
             <type_NamedElement>
               <referencedTypeMoniker Id="3c802d9a-3a1f-4535-8a76-f68049db7f7d" LastKnownName="string" />
             </type_NamedElement>
           </property>
-          <property Id="4b691de2-4a7e-464e-b9e0-b566b7005260" name="_gps" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="233392a9-3e74-4e27-bca4-5fe4d8046ca9" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="e7579bdb-c0d6-4148-9e84-d292d5562647" LastKnownName="Lieu" />
-            </type_NamedElement>
-          </property>
           <property Id="ba8180c1-2a6e-4270-b950-fac08ecd5525" name="_texteDescriptif" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="aeac2fe4-b94e-4636-a180-40a240493faf" />
             <type_NamedElement>
               <referencedTypeMoniker Id="3c802d9a-3a1f-4535-8a76-f68049db7f7d" LastKnownName="string" />
-            </type_NamedElement>
-          </property>
-          <property Id="21258724-73dd-498f-baa9-8e2d2ec232a0" name="_fin" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="a1134c6c-dceb-401a-91c9-48a68ac3909f" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="f3ccb079-7d2a-45ca-a813-472196f06091" LastKnownName="Heure" />
             </type_NamedElement>
           </property>
           <property Id="376350f3-1f9f-48e2-978a-42700672182e" name="_nom" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -361,6 +355,12 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="e2d00d4d-854d-4158-a139-e4774e62cb0d" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eecfba48-fbe7-4049-8a70-5ad15d666185" />
+          </operation>
+          <operation Id="cc62cd93-c5c4-4f8d-9e10-2e6b69c3cae7" name="genereXml2" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a8136737-9bcf-4be8-a04d-2e6d250ca1d1" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -381,6 +381,11 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="02a50869-7abc-4479-9983-278b11c473f0" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="48542b69-ff73-4419-ac2c-addbd1ecac70" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -400,6 +405,14 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="fc0ae0d7-1a57-44d9-b4f7-2c7c57b979de" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b1a25c71-c854-4f23-ba6d-db4e24711e64" />
+          </operation>
+          <operation Id="95af424e-66f4-45e6-b0be-ae2363edee34" name="Parse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3d26b054-7214-4c75-be42-3b8d13131f38" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -484,6 +497,9 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="b5e0cf3d-dc13-4c70-b4dc-2a9b52d34422" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ef8cb7b1-0118-4e77-8650-1f476450be1e" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -530,16 +546,6 @@
     <packageHasNamedElement>
       <referencedType Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
         <elementDefinition Id="158d5942-a8cb-4709-b5d6-05b15efdc902" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="f3ccb079-7d2a-45ca-a813-472196f06091" name="Heure" isAbstract="false" isLeaf="false" cachedFullName="Projet Mars::Heure">
-        <elementDefinition Id="f8c8048d-0536-4cb0-832d-2c80c1ad7f93" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="e7579bdb-c0d6-4148-9e84-d292d5562647" name="Lieu" isAbstract="false" isLeaf="false" cachedFullName="Projet Mars::Lieu">
-        <elementDefinition Id="cb12c113-340c-4914-9cbd-7c7dd845b430" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -725,6 +731,18 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="abcf4cb1-b6a1-459c-8fe8-a4eb0191d7dd" name="chargerXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f5156cc5-f206-4eee-8af0-f6910e57be4e" />
+          </operation>
+          <operation Id="d8994826-6abb-41b6-9189-db5649368313" name="chargerXml2" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d2a67cc6-eca3-464e-ba51-8d39a3455c8f" />
+          </operation>
+          <operation Id="7a3d405e-5167-437d-94b2-79142a0f9ecf" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="49990959-2764-432f-a907-9ff2af6c8992" />
+          </operation>
+          <operation Id="df6edd9a-bfcf-4994-aa05-295bfa2c1406" name="genereXml2" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b7e96358-8cf7-4652-bb76-83c8c0565a4b" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -743,6 +761,27 @@
         <elementDefinition Id="586b8dc4-72f6-40a2-8ff7-88951470697f" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c6a1c956-329c-4e3b-a19a-f41d579d1a83" name="Heure" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bf0d0f35-2720-48ee-91a3-de614e490939" />
+        <ownedAttributesInternal>
+          <property Id="139bc2bd-9f3a-47f0-987c-a4691d7e5209" name="_heures" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c372a6f5-b880-4ce7-814c-49794395f46f" />
+          </property>
+          <property Id="db820cc2-e2dd-45f9-9c92-b2eec5331aa2" name="_minutes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="310eab90-8c13-441a-b42d-f5b7ad94b685" />
+          </property>
+          <property Id="b95cb9ea-a9d1-4abd-9978-356b07f218f3" name="heuresMinutes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1bdb3b40-7ef8-406c-9d8b-51ee820c4199" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="aa2f96fc-42b5-4fcf-a3cc-dd8085656369" name="Heure" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="21de60a9-4dd6-4a6c-a166-97e6b5216eab" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="407e6f78-6fca-4445-a20e-006ed31b61fb" name="Projet Mars">
     <elementDefinition Id="4447bcab-b6b3-44bc-8e22-dd9b3809bfce" />
