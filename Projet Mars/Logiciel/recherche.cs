@@ -64,7 +64,6 @@ namespace Logiciel
                                     aff = aff + refer.Calendar.Jours[i].ListeActivites[j].ListAstronaute[k].Nom + ", ";
                                 }
                                 listBox1.Items.Add(aff);
-
                             }
                         }
                     }                    

@@ -40,10 +40,12 @@
             // 
             // listBox1
             // 
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.HorizontalScrollbar = true;
             this.listBox1.Location = new System.Drawing.Point(12, 104);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(516, 329);
+            this.listBox1.Size = new System.Drawing.Size(516, 327);
             this.listBox1.TabIndex = 2;
             // 
             // comboBox1
