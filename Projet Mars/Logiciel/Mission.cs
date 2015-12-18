@@ -59,15 +59,8 @@ namespace Logiciel
         public void AddCategorie(CategorieActivite a)
         {
             _listCategorieActivite.Add(a);
-        }
-
-        public void RemoveCategorie(CategorieActivite a)
-        {
-            _listCategorieActivite.Remove(a);
-        }
-
+        }        
                 
-
 
         // Generation Xml
         public void genereXml(XmlDocument xmlDoc)

@@ -14,7 +14,7 @@ namespace Logiciel
     {
         private int _id;
         private string _nom;
-
+                        
         public Astronaute(int id, string nom)
         {
             _id = id;

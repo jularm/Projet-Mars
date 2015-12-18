@@ -384,7 +384,11 @@ namespace Logiciel
             {
                 Button bouton = new System.Windows.Forms.Button();
                 Activite Act = jourJ.ListeActivites.ElementAt(i);
-               
+
+                CoordX.Enabled = false;
+                CoordY.Enabled = false;
+                NomLieu.Enabled = false;
+                pictureBox1.Enabled = false;
 
                 //Définition d'une couleur par activité pour une meilleure lisibilité
                 switch (Act.Nom)
@@ -408,10 +412,18 @@ namespace Logiciel
                         bouton.BackColor = Color.NavajoWhite;
                         break;
                     case "Exploration Space suit":
-                        bouton.BackColor = Color.CornflowerBlue;                       
+                        bouton.BackColor = Color.CornflowerBlue;  
+                        CoordX.Enabled = true;
+                        CoordY.Enabled = true;
+                        NomLieu.Enabled = true;
+                        pictureBox1.Enabled = true;
                         break;
                     case "Exploration Vehicule":
-                        bouton.BackColor = Color.LightSteelBlue;                        
+                        bouton.BackColor = Color.LightSteelBlue;
+                        CoordX.Enabled = true;
+                        CoordY.Enabled = true;
+                        NomLieu.Enabled = true;
+                        pictureBox1.Enabled = true;
                         break;
                     case "Briefing":
                         bouton.BackColor = Color.RoyalBlue;
@@ -423,7 +435,11 @@ namespace Logiciel
                         bouton.BackColor = Color.SkyBlue;
                         break;
                     case "Outside experiment":
-                        bouton.BackColor = Color.LightSteelBlue;                        
+                        bouton.BackColor = Color.LightSteelBlue;
+                        CoordX.Enabled = true;
+                        CoordY.Enabled = true;
+                        NomLieu.Enabled = true;
+                        pictureBox1.Enabled = true;
                         break;
                     case "Cleaning":
                         bouton.BackColor = Color.LightGray;
@@ -894,6 +910,9 @@ namespace Logiciel
         {
             Niveau3.Hide();
             Niveau2.Show();
+            NomLieu.Text = "";
+            CoordX.Value = 0;
+            CoordY.Value = 0;
         }
 
         /// <summary>
@@ -1267,7 +1286,7 @@ namespace Logiciel
             InfoMFin.Text = Convert.ToString(activiteClickee.Fin.Minutes);
             for (int i = 0; i < activiteClickee.ListAstronaute.Count; i++)
             {
-                InfoAstronautes.Items.Add(activiteClickee.ListAstronaute[i].Nom);
+                InfoAstronautes.Items.Add(activiteClickee.ListAstronaute[i]);
             }
             InfoDescriptif.Text = activiteClickee.TexteDescriptif;
         }
@@ -1333,6 +1352,7 @@ namespace Logiciel
         {
             Astronautes modif = new Astronautes(M.ListAstr);
             modif.Show();
+            M.ListAstr = modif.Astro();                       
         }
 
         private void Search_Click(object sender, EventArgs e)

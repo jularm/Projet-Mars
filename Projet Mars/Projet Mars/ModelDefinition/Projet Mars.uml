@@ -825,6 +825,71 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="73cb9851-14d9-4380-bc70-4b33f693aa76"
+            isDerived="false"
+            sourceEndRoleName="Activite"
+            targetEndRoleName="Heure"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="bf0d0f35-2720-48ee-91a3-de614e490939"
+              LastKnownName="Heure"
+              LastKnownLocation="Projet Mars.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="678478f2-af72-436f-944f-7d770c9e3c91"
+                  name="Activite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="59ef1863-2001-4217-a6d0-80137c1cd9ef"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1b3279c2-9889-49db-856b-fd6036e6ff06"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cf79c773-074a-4dc1-b10c-0c8452f1c13c"
+                  name="Heure"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="004cafca-c846-4bdf-97e8-a0eb2d70f4cc"
+                      name="Lower"
+                      value="2" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="84041d87-f4a0-4657-8b5d-c18771a311fb"
+                      name="Upper"
+                      value="2" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -1371,82 +1436,6 @@
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="048e0e38-cd8b-4880-bef7-f441abaf8931"
-            name="AddActivite"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="0bdf00e2-9ad9-4051-b4f0-6a655d2ec9bf"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
-                      LastKnownName="void"
-                      LastKnownLocation="Projet Mars.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="610edce4-6fa4-46ec-89eb-60642a329d6c"
-                  name="A"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="586b8dc4-72f6-40a2-8ff7-88951470697f"
-                      LastKnownName="Activite"
-                      LastKnownLocation="Projet Mars.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="dd5414a3-3574-44e8-9cea-aa842147bcd6"
-            name="RemoveActivite"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="97e97ca2-5aa1-4768-b717-da8f47d6981d"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
-                      LastKnownName="void"
-                      LastKnownLocation="Projet Mars.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="7b3a903c-99ce-4dcc-b19c-ef5aead6b79d"
-                  name="A"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="586b8dc4-72f6-40a2-8ff7-88951470697f"
-                      LastKnownName="Activite"
-                      LastKnownLocation="Projet Mars.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
             Id="ef8cb7b1-0118-4e77-8650-1f476450be1e"
             name="genereXml"
             isLeaf="false"
@@ -1841,44 +1830,6 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="b175a923-91f1-46d9-9b96-030c322e99a3"
-            name="RemoveCategorie"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="b9cae6f6-10db-41c8-85b1-dd5212c22cd4"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
-                      LastKnownName="void"
-                      LastKnownLocation="Projet Mars.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="a4fddf61-1e61-42c0-907c-0d3c22f03962"
-                  name="a"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="1ab7df5a-2473-46f7-ad3b-79ed6e12f68e"
-                      LastKnownName="CategorieActivite"
-                      LastKnownLocation="Projet Mars.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
             Id="789936ae-19b8-48ec-b4d3-83860df51d80"
             name="AddCategorie"
             isLeaf="false"
@@ -2136,7 +2087,7 @@
             isComposite="false" />
           <property
             Id="1bdb3b40-7ef8-406c-9d8b-51ee820c4199"
-            name="heuresMinutes"
+            name="_heuresMinutes"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"

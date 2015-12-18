@@ -10,10 +10,10 @@ namespace Logiciel
 {
     public class CalendrierMartien 
     {
-        private int _jour;
         private DateTime _debut;
         private DateTime _fin;
         private DateTime _last;
+        private int _jour;
         private int _minute;
         private int _heure;
         private int _seconde;

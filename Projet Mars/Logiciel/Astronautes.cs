@@ -12,7 +12,7 @@ namespace Logiciel
     public partial class Astronautes : Form      // à revoir
     {
         private Astronaute s;
-        static int Id=0;
+        private int Id=0;
         private List<Astronaute> listAstro = new List<Astronaute>();
        
         public Astronautes()
@@ -30,8 +30,8 @@ namespace Logiciel
             foreach (Astronaute a in listeAstro)
             {
                 AstronautesMission.Items.Add(a);
-            }
-            Id = listeAstro.Count();
+                Id = a.Id;
+            }            
             SupprimerAstronaute.Enabled = false;
             AjouterAstronaute.Enabled = false;           
         } 

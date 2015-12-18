@@ -30,25 +30,12 @@ namespace Logiciel
 
         public string Nom
         {
-            get { return _nom; }
-            set { _nom = value; }
+            get { return _nom; }           
         }
 
         public List<Activite> ListActivite
         {
             get { return _listActivite; }
-            set { _listActivite = value; }
-        }
-
-
-        public void AddActivite(Activite A)
-        {
-            _listActivite.Add(A);
-        }
-
-        public void RemoveActivite(Activite A)
-        {
-            _listActivite.Remove(A);
         }
 
         

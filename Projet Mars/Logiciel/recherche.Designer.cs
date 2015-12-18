@@ -62,9 +62,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 45;
-            this.label2.Text = "Activitée :";
+            this.label2.Text = "Activité :";
             // 
             // comboBox2
             // 
@@ -80,9 +80,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 47;
-            this.label3.Text = "Astronaute";
+            this.label3.Text = "Astronaute :";
             // 
             // button1
             // 
