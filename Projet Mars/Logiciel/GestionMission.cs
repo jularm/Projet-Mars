@@ -42,11 +42,11 @@ namespace Logiciel
         Point coordBaseExpl = new Point(175, 250); //origine du repère carte d'exploration
         static double echCarteExplo = 1.94; //Facteur d'échelle pour la carte de la fiche exploration par rapport à la carte au niveau 3
 
-        int jourSelec;
+        int jourSelec; // permet de retenir le numéro jour sélectionner 
 
-        Button test;
+        Button Boutontest;  // bouton factise pouvant être n'importe quel bouton ( utilisé dans le groupBOx du calendrier )
 
-        bool premClick = false;
+       
 
 
 
@@ -259,27 +259,13 @@ namespace Logiciel
         //A commenter
         private void JourCourantMission_TextChanged(object sender, EventArgs e)
         {
-            dureMission.Increment(1);
-            for (int i = 0; i < Niveau1.Controls.Count; i++)   // pour chaque element du groupBox 
-            {
-                if (Niveau1.Controls[i].Name.Contains("jour"))  // ceux dont le nom contient jour
-                {
-                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);  
+            dureMission.Increment(1);  //on augmente de 1 pas la barre de progression de la mission           
 
-                    if (int.Parse(Niveau1.Controls[i].Text) < int.Parse(JourCourantMission.Text))
-                    {
-                        Niveau1.Controls[i].BackColor = Color.DimGray;
-                    }
-                    if (int.Parse(Niveau1.Controls[i].Text) == int.Parse(JourCourantMission.Text))
-                    {
-                        Niveau1.Controls[i].BackColor = Color.RoyalBlue;
-                    }
-                }
-            }
+            trackBar1_Scroll(sender, e); 
         }
 
         //A commenter
-        private void trackBar1_Scroll(object sender, EventArgs e)
+        private void trackBar1_Scroll(object sender, EventArgs e)  // permet de changer l'affichage au niveau des jours du calendrier
         {
             Sortie(); //Affiche un astronaute sur les jours concernés par la sortie
 
@@ -354,34 +340,14 @@ namespace Logiciel
 
         //A commenter
         private void jour_Click(object sender, EventArgs e)
-        {
-            if (premClick)
-            {
-                if (int.Parse(test.Text) == M.Calendar.Day)
-                {
-                    test.BackColor = Color.RoyalBlue;
-                }
-                else
-                {
-                    if (int.Parse(test.Text) < M.Calendar.Day)
-                    {
-                        test.BackColor = Color.DimGray;
-                    }
-                    else
-                    {
-                        test.BackColor = Color.DarkGreen;
-                    }
-                }
-            }
-            Button clickedButton = (Button)sender;
-            jourSelec = int.Parse(clickedButton.Text);
-            test = clickedButton;
-            premClick = true;
+        {          
+            Button clickedButton = (Button)sender; // on conserve le bouton qui sert à entrer dans la fonction ( sender )
+            jourSelec = int.Parse(clickedButton.Text); // on conserve le numéro du jour cliqué
+               
+            Niveau2.Show(); // on montre le deuxième niveau du programme
+            Niveau1.Hide(); // on cache le premier niveau du programme
 
-            Niveau2.Show();
-            Niveau1.Hide();
-
-            NumeroJour.Text = clickedButton.Text;
+            NumeroJour.Text = clickedButton.Text; 
             NduJNiv3.Text = NumeroJour.Text;
             if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
             {
@@ -1366,6 +1332,12 @@ namespace Logiciel
             {
                 MessageBox.Show("Echec sauvegarde 2 !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Astronautes modif = new Astronautes(M.ListAstr);
+            modif.Show();
         }
     }
 }

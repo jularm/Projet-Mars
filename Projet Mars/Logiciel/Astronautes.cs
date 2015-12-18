@@ -14,14 +14,27 @@ namespace Logiciel
         private Astronaute s;
         static int Id=0;
         private List<Astronaute> listAstro = new List<Astronaute>();
-
+       
         public Astronautes()
         {
             InitializeComponent();
             SupprimerAstronaute.Enabled = false;
             AjouterAstronaute.Enabled = false;
             ConfirmerAstronaute.Enabled = false;
-        }                    
+        }
+
+        public Astronautes(List<Astronaute> listeAstro)
+        {
+            InitializeComponent();
+            listAstro = listeAstro;
+            foreach (Astronaute a in listeAstro)
+            {
+                AstronautesMission.Items.Add(a);
+            }
+            Id = listeAstro.Count();
+            SupprimerAstronaute.Enabled = false;
+            AjouterAstronaute.Enabled = false;           
+        } 
 
         public List<Astronaute> Astro()
         {   
@@ -72,7 +85,7 @@ namespace Logiciel
         private void ConfirmerAstronaute_Click(object sender, EventArgs e)
         {     
             this.Visible = false;
-            this.Close();
+            this.Close();            
         }
     }
 }
