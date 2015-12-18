@@ -1,24 +1,24 @@
 <Mission>
   <Liste_Astronaute>
     <Astronaute>
-      <Id>1</Id>
-      <Nom>Thomas Pesquet</Nom>
-    </Astronaute>
-    <Astronaute>
       <Id>2</Id>
       <Nom>Jean-Loup Chrétien</Nom>
     </Astronaute>
     <Astronaute>
-      <Id>3</Id>
-      <Nom>Claudie Haigneré</Nom>
+      <Id>5</Id>
+      <Nom>Michel Tognini</Nom>
     </Astronaute>
     <Astronaute>
-      <Id>4</Id>
-      <Nom>Jean-Jacques Favier</Nom>
+      <Id>6</Id>
+      <Nom>Claude Haigneré</Nom>
     </Astronaute>
     <Astronaute>
       <Id>5</Id>
-      <Nom>Michel Tognini</Nom>
+      <Nom>Thomas Pesquet</Nom>
+    </Astronaute>
+    <Astronaute>
+      <Id>6</Id>
+      <Nom>Jean-Jacques Favier</Nom>
     </Astronaute>
   </Liste_Astronaute>
   <Liste_Catégorie_Activité>

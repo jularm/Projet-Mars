@@ -1367,6 +1367,7 @@ namespace Logiciel
             Niveau2.Hide(); 
             Niveau3.Hide();
             ActiviteExploration.Hide();
+            trackBar1_Scroll(sender, e);
         }
     }
 }
