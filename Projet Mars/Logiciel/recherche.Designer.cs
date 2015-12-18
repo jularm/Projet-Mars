@@ -102,7 +102,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(119, 41);
             this.button2.TabIndex = 49;
-            this.button2.Text = "Supprimer les résultats";
+            this.button2.Text = "Nouvelle recherche";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
