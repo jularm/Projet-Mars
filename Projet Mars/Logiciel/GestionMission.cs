@@ -1346,8 +1346,6 @@ namespace Logiciel
                 MessageBox.Show("Echec sauvegarde 2 !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-        
     }
 }
 

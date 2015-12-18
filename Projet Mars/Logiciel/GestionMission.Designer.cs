@@ -240,6 +240,7 @@
             this.LegendeCarte = new System.Windows.Forms.PictureBox();
             this.Carte = new System.Windows.Forms.PictureBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.Niveau1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -1333,6 +1334,7 @@
             // 
             // Niveau3
             // 
+            this.Niveau3.Controls.Add(this.label27);
             this.Niveau3.Controls.Add(this.CoordY);
             this.Niveau3.Controls.Add(this.CoordX);
             this.Niveau3.Controls.Add(this.label10);
@@ -1375,7 +1377,7 @@
             // 
             // CoordY
             // 
-            this.CoordY.Location = new System.Drawing.Point(650, 468);
+            this.CoordY.Location = new System.Drawing.Point(650, 462);
             this.CoordY.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -1393,7 +1395,7 @@
             // 
             // CoordX
             // 
-            this.CoordX.Location = new System.Drawing.Point(575, 468);
+            this.CoordX.Location = new System.Drawing.Point(575, 462);
             this.CoordX.Maximum = new decimal(new int[] {
             1975,
             0,
@@ -1412,7 +1414,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(633, 468);
+            this.label10.Location = new System.Drawing.Point(633, 462);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(21, 13);
             this.label10.TabIndex = 37;
@@ -1450,7 +1452,7 @@
             // labelX
             // 
             this.labelX.AutoSize = true;
-            this.labelX.Location = new System.Drawing.Point(558, 468);
+            this.labelX.Location = new System.Drawing.Point(558, 462);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(21, 13);
             this.labelX.TabIndex = 30;
@@ -1459,7 +1461,7 @@
             // Coord
             // 
             this.Coord.AutoSize = true;
-            this.Coord.Location = new System.Drawing.Point(558, 451);
+            this.Coord.Location = new System.Drawing.Point(558, 445);
             this.Coord.Name = "Coord";
             this.Coord.Size = new System.Drawing.Size(76, 13);
             this.Coord.TabIndex = 29;
@@ -2337,7 +2339,7 @@
             this.ActiviteExploration.Controls.Add(this.label11);
             this.ActiviteExploration.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ActiviteExploration.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActiviteExploration.Location = new System.Drawing.Point(18, 96);
+            this.ActiviteExploration.Location = new System.Drawing.Point(748, 10);
             this.ActiviteExploration.Name = "ActiviteExploration";
             this.ActiviteExploration.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ActiviteExploration.Size = new System.Drawing.Size(761, 563);
@@ -2438,6 +2440,15 @@
             this.label26.Size = new System.Drawing.Size(194, 25);
             this.label26.TabIndex = 72;
             this.label26.Text = "Heure de la mission :";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(561, 483);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(136, 13);
+            this.label27.TabIndex = 41;
+            this.label27.Text = "(en m par rapport à la base)";
             // 
             // GestionMission
             // 
@@ -2644,6 +2655,7 @@
         private System.Windows.Forms.NumericUpDown PeriodeFin;
         private System.Windows.Forms.NumericUpDown PeriodeDebut;
         private System.Windows.Forms.Button ValiderPeriode;
+        private System.Windows.Forms.Label label27;
 
 
     }
