@@ -42,17 +42,12 @@ namespace Logiciel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (numericUpDown1.Enabled == true && comboBox1.Enabled == true && comboBox2.Enabled == true)
+            if (comboBox1.Enabled == true && comboBox2.Enabled == true)
             {
                 MessageBox.Show("Veuillez entrer un champ de recherche", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
-            {
-                if (numericUpDown1.Enabled == true)
-                {
-                    choixJ = int.Parse(numericUpDown1.Value.ToString());
-                }
-
+            {   
                 if (comboBox1.Enabled == true)
                 {
 
@@ -63,10 +58,10 @@ namespace Logiciel
                             if (refer.Calendar.Jours[i].ListeActivites[j].Nom == comboBox1.SelectedItem.ToString())
                             {
                                 string aff = "Jour " + refer.Calendar.Jours[i].Numero + ", Début :" + refer.Calendar.Jours[i].ListeActivites[j].Debut.ToString() + ", Fin :" + refer.Calendar.Jours[i].ListeActivites[j].Fin.ToString() + "";
-                                aff = aff + " Astronautes Concernés :";
+                                aff = aff + " Astronautes Concernés : ";
                                 for (int k = 0; k < refer.Calendar.Jours[i].ListeActivites[j].ListAstronaute.Count(); k++)
                                 {
-                                    aff = aff + refer.Calendar.Jours[i].ListeActivites[j].ListAstronaute[k].Nom + ",";
+                                    aff = aff + refer.Calendar.Jours[i].ListeActivites[j].ListAstronaute[k].Nom + ", ";
                                 }
                                 listBox1.Items.Add(aff);
 
@@ -94,20 +89,10 @@ namespace Logiciel
                 }
             }
         }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            if (numericUpDown1.Value != 0)
-            {
-                comboBox1.Enabled = false;
-                comboBox2.Enabled = false;
-            }
-        }
+                
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            numericUpDown1.Enabled = true;
-            numericUpDown1.Value = 0;            
+        {                    
             comboBox1.Enabled = true;
             comboBox1.SelectedItem = null;
             comboBox2.Enabled = true;
@@ -118,8 +103,7 @@ namespace Logiciel
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem != null)
-            {
-                numericUpDown1.Enabled = false;
+            {                
                 comboBox2.Enabled = false;
             }
         }
@@ -127,8 +111,7 @@ namespace Logiciel
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox2.SelectedItem != null)
-            {
-                numericUpDown1.Enabled = false;
+            {               
                 comboBox1.Enabled = false;
             }
         }
