@@ -128,7 +128,7 @@ namespace Logiciel
 
             for (int i = 0; i < ecart; i++)          // pour chaque seconde d'écart
             {
-                Horloge();     // on appel
+                Horloge();     // on appelle la fonction Horloge qui avance de 1 seconde
             }
         }
 
