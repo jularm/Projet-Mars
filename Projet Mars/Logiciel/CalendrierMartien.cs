@@ -228,8 +228,7 @@ namespace Logiciel
 
                                 Activite a = new Activite("");
 
-                                a.Nom = Activite.SelectSingleNode("Nom").InnerText;
-                                a.CompteRendu = Activite.SelectSingleNode("Compte_Rendu").InnerText;
+                                a.Nom = Activite.SelectSingleNode("Nom").InnerText;                                
                                 debut.Heures = int.Parse(Activite.SelectSingleNode("Heure_Debut").InnerText);
                                 fin.Heures = int.Parse(Activite.SelectSingleNode("Heure_Fin").InnerText);
                                 debut.Minutes = int.Parse(Activite.SelectSingleNode("Minute_Debut").InnerText);

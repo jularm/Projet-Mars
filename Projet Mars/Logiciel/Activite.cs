@@ -13,8 +13,7 @@ namespace Logiciel
 
     public class Activite 
     {
-        private string _nom;
-        private string _compteRendu;
+        private string _nom;       
         private Heure _debut;
         private Heure _fin;
         private Lieu _gps;
@@ -30,15 +29,8 @@ namespace Logiciel
             _texteDescriptif = "";
             _gps = new Lieu();
             _texteDescriptif = "";
-            _listAstronaute.Add (new Astronaute(0,""));
-            _compteRendu = "";
-        }
-
-        public Activite(string nom, string texteDescriptif)
-            : this(nom)
-        {
-            _texteDescriptif = texteDescriptif;
-        }
+            _listAstronaute.Add (new Astronaute(0,""));           
+        }       
 
         public Activite(string nom, Heure debut, Heure fin, string texteDescriptif)
             : this(nom)
@@ -60,13 +52,7 @@ namespace Logiciel
             get { return _listAstronaute; }
             set { _listAstronaute = value; }
         }
-
-        public string CompteRendu
-        {
-            get { return _compteRendu; }
-            set { _compteRendu = value; }
-        }
-
+          
         public string TexteDescriptif
         {
             get { return _texteDescriptif; }
@@ -133,11 +119,7 @@ namespace Logiciel
 
             XmlNode NodeNom = xmlDoc.CreateElement("Nom");
             NodeNom.InnerText = Nom.ToString();
-            NodeActivite.AppendChild(NodeNom);
-
-            XmlNode NodeCompteRendu = xmlDoc.CreateElement("Compte_Rendu");
-            NodeCompteRendu.InnerText = CompteRendu.ToString();
-            NodeActivite.AppendChild(NodeCompteRendu);
+            NodeActivite.AppendChild(NodeNom);            
 
             XmlNode NodeHDebut = xmlDoc.CreateElement("Heure_Debut");
             NodeHDebut.InnerText = Debut.Heures.ToString();
