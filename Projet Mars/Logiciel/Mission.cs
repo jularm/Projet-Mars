@@ -35,9 +35,8 @@ namespace Logiciel
         public List<CategorieActivite> Listcat
         {
             get { return _listCategorieActivite; }
-            set { _listCategorieActivite = value; }        }
-
-        
+            set { _listCategorieActivite = value; }       
+        }
 
         public List<Astronaute> ListAstr
         {

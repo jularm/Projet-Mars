@@ -9,7 +9,11 @@ using System.Windows.Forms;
 
 namespace Logiciel
 {
-    public partial class Astronautes : Form      // à revoir
+    /// <summary>
+    /// Fiche de gestion des astronautes de la mission
+    /// </summary>
+
+    public partial class Astronautes : Form 
     {
         private Astronaute s;
         private int Id=0;
@@ -41,6 +45,11 @@ namespace Logiciel
             return listAstro;  
         }    
 
+        /// <summary>
+        /// Ajoute le nom de l'astronaute à la liste et lui attribue un identifiant
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AjouterAstronaute_Click(object sender, EventArgs e)
         {
             Id++;
@@ -51,12 +60,22 @@ namespace Logiciel
             ConfirmerAstronaute.Enabled = true;
         }
 
+        /// <summary>
+        /// Active le bouton de suppression à la sélection d'un astronaute
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AstronautesMission_SelectedIndexChanged(object sender, EventArgs e)
         {
             SupprimerAstronaute.Enabled = true;
             s = (Astronaute)AstronautesMission.SelectedItem;           
         }
 
+        /// <summary>
+        /// Active le bouton d'ajout d'un astronaute
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NomAstronaute_TextChanged(object sender, EventArgs e)
         {
             if (NomAstronaute.Text != "")
@@ -69,6 +88,11 @@ namespace Logiciel
             }
         }
 
+        /// <summary>
+        /// Supprime l'astronaute de la liste (avec son identifiant)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SupprimerAstronaute_Click(object sender, EventArgs e)
         {
             s = (Astronaute)AstronautesMission.SelectedItem;
@@ -81,7 +105,11 @@ namespace Logiciel
             }
         }
 
-        
+        /// <summary>
+        /// Ferme la fenêtre de gestion des astronautes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ConfirmerAstronaute_Click(object sender, EventArgs e)
         {     
             this.Visible = false;

@@ -22,7 +22,7 @@ namespace Logiciel
         public CalendrierMartien()
         {
             _debut = System.DateTime.Now;
-            System.TimeSpan duration = new System.TimeSpan(0, 500 * 1480, 0);  // calcul le temps que dure 500 jours martien soit 500*1480 minutes
+            System.TimeSpan duration = new System.TimeSpan(0, 500 * 1480, 0);  //Calcule le temps que durent 500 jours martiens, soit 500*1480 minutes
             _fin = System.DateTime.Now + duration;
             _jour = 1;
             _minute = 0;
@@ -83,8 +83,10 @@ namespace Logiciel
             _Jours.Add(J);
         }
 
-
-        public void Horloge()// Fonction qui permet d'avancer dans le temps martien de secondes en secondes
+        /// <summary>
+        /// Méthode qui permet d'avancer dans le temps martien de seconde en seconde
+        /// </summary>
+        public void Horloge() 
         {
             if (this.Seconde < 59)
             {
@@ -121,14 +123,17 @@ namespace Logiciel
             }
         }
 
-        public void MiseAJour()// Fonction de mise à niveau de l'horloge martienne 
+        /// <summary>
+        /// Fonction de mise à niveau de l'horloge martienne
+        /// </summary>
+        public void MiseAJour() 
         {
-            TimeSpan Ts = System.DateTime.Now - this._last;   // on calcule l'écart entre le temps du système et le temps où on a arrêter le système          
-            double ecart = Math.Round(Ts.TotalSeconds); //  on convertit l'écart en seconde
+            TimeSpan Ts = System.DateTime.Now - this._last;   //On calcule l'écart entre le temps du système et le temps où on a arrêté le système          
+            double ecart = Math.Round(Ts.TotalSeconds);   //On convertit l'écart en seconde
 
-            for (int i = 0; i < ecart; i++)          // pour chaque seconde d'écart
+            for (int i = 0; i < ecart; i++)   //Pour chaque seconde d'écart
             {
-                Horloge();     // on appelle la fonction Horloge qui avance de 1 seconde
+                Horloge();   //On appelle la fonction Horloge qui avance de 1 seconde
             }
         }
 
@@ -137,11 +142,11 @@ namespace Logiciel
         // Generation Xml
         public void genereXml(XmlDocument xmlDoc, XmlNode rootNode)
         {
-            XmlNode NodeCalendrier = xmlDoc.CreateElement("Calendrier_Martien"); // création d'un noeud XML pour le calendrier
+            XmlNode NodeCalendrier = xmlDoc.CreateElement("Calendrier_Martien"); //Création d'un noeud XML pour le calendrier
 
-            XmlNode NodeDebut = xmlDoc.CreateElement("Début");// création d'un noeud XML pour la date du début du calendrier
-            NodeDebut.InnerText = Debut.ToString();// on écrit dans le noeud ce que contient la variable début 
-            NodeCalendrier.AppendChild(NodeDebut);// on conclut le noeud début et on l'attache au noeud calendrier
+            XmlNode NodeDebut = xmlDoc.CreateElement("Début"); //Création d'un noeud XML pour la date du début du calendrier
+            NodeDebut.InnerText = Debut.ToString(); //On écrit dans le noeud ce que contient la variable début 
+            NodeCalendrier.AppendChild(NodeDebut); //On conclut le noeud début et on l'attache au noeud calendrier
 
             XmlNode NodeFin = xmlDoc.CreateElement("Fin");
             NodeFin.InnerText = Fin.ToString();
@@ -177,16 +182,16 @@ namespace Logiciel
             rootNode.AppendChild(NodeCalendrier);
         }
 
-        // lecture xml et generation objets    
+        //Lecture XML et génération objets    
         public void chargerXml(XmlDocument xmlDoc, Mission M)
         {
-            XmlNodeList nodelistCalendrier = xmlDoc.GetElementsByTagName("Calendrier_Martien");// on créait une liste de tout les éléments dans tout le document qui porte le nom de Calendrier_Martien
+            XmlNodeList nodelistCalendrier = xmlDoc.GetElementsByTagName("Calendrier_Martien");  //On crée une liste de tous les éléments dans tout le document qui portent le nom de Calendrier_Martien
 
             CalendrierMartien c = new CalendrierMartien();
 
-            foreach (XmlNode nodeCalendrier in nodelistCalendrier)// Pour tout les noeuds présent dans notre liste d'élement (ici on a juste un élément)
+            foreach (XmlNode nodeCalendrier in nodelistCalendrier)  //Pour tout les noeuds présents dans notre liste d'élements (ici on a juste un élément)
             {
-                c.Debut = DateTime.Parse(nodeCalendrier.SelectSingleNode("Début").InnerText);// la date de début du calendrier est égal à ce qui est contenu dans le seul noeud portant le nom début
+                c.Debut = DateTime.Parse(nodeCalendrier.SelectSingleNode("Début").InnerText);  //La date de début du calendrier est égale à ce qui est contenu dans le seul noeud portant le nom début
                 c.Fin = DateTime.Parse(nodeCalendrier.SelectSingleNode("Fin").InnerText);
                 c.Last= DateTime.Parse(nodeCalendrier.SelectSingleNode("Last").InnerText);
                 c.Day = int.Parse(nodeCalendrier.SelectSingleNode("Jour").InnerText);
@@ -283,7 +288,6 @@ namespace Logiciel
                     }
                 }
             }
-
             M.Calendar = c;
         }
     }

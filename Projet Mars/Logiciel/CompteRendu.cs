@@ -22,15 +22,23 @@ namespace Logiciel
             texteCR.Text = CR;            
         }
 
-        //Enregistrement des modifications 
-        //Fermeture de la fenêtre et retour au planning de la journée (niveau 2)
+        /// <summary>
+        ///Enregistrement des modifications 
+        ///Fermeture de la fenêtre et retour au planning de la journée (niveau 2)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ConfirmerCR_Click(object sender, EventArgs e)
         {          
             this.CR(texteCR.Text);
             this.Close();            
         }
 
-        //Fermeture de la fenêtre sans enregistrement
+        /// <summary>
+        /// Fermeture de la fenêtre sans enregistrement
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AnnulerCR_Click(object sender, EventArgs e)
         {
             this.Close();

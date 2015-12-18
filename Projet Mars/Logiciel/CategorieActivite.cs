@@ -10,7 +10,6 @@ using System.Xml;
 
 namespace Logiciel
 {
-    //Contient les instances et les méthodes relative au nom des activités
     public class CategorieActivite 
     {
         private string _nom;
@@ -59,9 +58,6 @@ namespace Logiciel
 
             rootNode.AppendChild(NodeCategorieActivite);
 
-        }
-
-       
-           
+        }      
     }
 }

@@ -16,11 +16,12 @@ namespace Logiciel
     /// <summary>
     /// Form principal de l'application contenant le calendrier, le planning des activités, les fenêtres de modification des activités et la fiche d'exploration
     /// </summary>
+
     public partial class GestionMission : Form 
     {
         private Mission M = new Mission(); //Déclaration de la mission avec son calendrier, ses astronautes et ses activités
         
-        // on créer deux documents pour l'écriture xml  
+        //On crée deux documents pour l'écriture XML  
         XmlDocument xmlDoc = new XmlDocument();
         XmlDocument xmlDoc2 = new XmlDocument();
 
@@ -250,10 +251,14 @@ namespace Logiciel
             timer1.Start();
         }
 
-        //A commenter
+        /// <summary>
+        /// Met à jour la barre de progression
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void JourCourantMission_TextChanged(object sender, EventArgs e)
         {
-            dureMission.Increment(1);  //on augmente de 1 pas la barre de progression de la mission           
+            dureMission.Increment(1);  //On augmente de 1 pas la barre de progression de la mission           
             trackBar1.Value = int.Parse(JourCourantMission.Text) / 50;
             trackBar1_Scroll(sender, e); 
         }
@@ -267,11 +272,11 @@ namespace Logiciel
         {
             Sortie(); //Affiche un astronaute sur les jours concernés par la sortie
 
-            for (int i = 0; i < Niveau1.Controls.Count; i++)    //Pour chaque élément du groupBox 
+            for (int i = 0; i < Niveau1.Controls.Count; i++)  //Pour chaque élément du groupBox 
             {
-                if (Niveau1.Controls[i].Name.Contains("jour"))     //Ceux dont le nom contient jour
+                if (Niveau1.Controls[i].Name.Contains("jour"))   //Ceux dont le nom contient jour
                 {
-                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);    //On modifie le texte des bouton selon la valeur du trackBar
+                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);  //On modifie le texte des bouton selon la valeur du trackBar
 
                     if (int.Parse(JourCourantMission.Text) == (50 * trackBar1.Value) + i +1)
                     {
@@ -668,7 +673,6 @@ namespace Logiciel
             
             ConfirmerNiv3.Tag = act;
 
-            //Niveau2.Hide();
             Niveau3.Show();
 
             TitreNiv3.Text = "Modifier une activité";
@@ -1177,8 +1181,7 @@ namespace Logiciel
 
             ActiviteExploration.Visible = true;
        
-            //On affiche l'icône en fonction du numéro du jour (passé ou futur) et du type d'activité
-
+            //On affiche l'icône en fonction du numéro du jour (passé ou futur) et du type d'activité :
 
             for (int i = Convert.ToInt32(PeriodeDebut.Value) - 1; i < Convert.ToInt32(PeriodeFin.Value); i++) //On parcourt les jours
             {
@@ -1314,6 +1317,52 @@ namespace Logiciel
 
 
 
+        //PARAMETRES
+
+        /// <summary>
+        /// Permet d'accéder à la fiche de gestion des astronautes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Parametres_Click(object sender, EventArgs e)
+        {
+            Astronautes modif = new Astronautes(M.ListAstr);
+            modif.Show();
+            M.ListAstr = modif.Astro();
+        }
+
+
+
+        //RECHERCHE
+
+        /// <summary>
+        /// Permet d'accéder au form Recherche
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Search_Click(object sender, EventArgs e)
+        {
+            Recherche R = new Recherche(M.ListAstr, M.Listcat, M.Calendar);
+            R.Show();
+        }
+
+
+        //RETOUR ACCUEIL
+
+        /// <summary>
+        /// Permet de retourner au calendrier (niveau 1) depuis n'importe quel niveau de GestionMission 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Home_Click(object sender, EventArgs e)
+        {
+            Niveau1.Show();
+            Niveau2.Hide();
+            Niveau3.Hide();
+            ActiviteExploration.Hide();
+            trackBar1_Scroll(sender, e);
+        }
+
         //FERMETURE DE L'APPLICATION
 
         /// <summary>
@@ -1346,28 +1395,6 @@ namespace Logiciel
             {
                 MessageBox.Show("Echec sauvegarde 2 !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private void Parametres_Click(object sender, EventArgs e)
-        {
-            Astronautes modif = new Astronautes(M.ListAstr);
-            modif.Show();
-            M.ListAstr = modif.Astro();                       
-        }
-
-        private void Search_Click(object sender, EventArgs e)
-        {
-            Recherche R = new Recherche(M.ListAstr,M.Listcat,M.Calendar);
-            R.Show();
-        }
-
-        private void Home_Click(object sender, EventArgs e)
-        {
-            Niveau1.Show();
-            Niveau2.Hide(); 
-            Niveau3.Hide();
-            ActiviteExploration.Hide();
-            trackBar1_Scroll(sender, e);
         }
     }
 }

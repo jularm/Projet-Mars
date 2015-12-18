@@ -41,38 +41,38 @@ namespace Logiciel
         }
         
 
-        public static Lieu Parse(XmlNode test)    // on utilise le contenue d'un noeud
+        public static Lieu Parse(XmlNode test)    //On utilise le contenu d'un noeud
         {
             Lieu l = new Lieu();
             Point coords = new Point(0, 0);
             string nomLieu = "";
 
-            nomLieu = test.SelectSingleNode("Nom").InnerText; // on donne le contenu du noeud nom à la variable
-            string Coord = test.SelectSingleNode("Coordonnées").InnerText;// on prend le texte du noeud coordonnées
+            nomLieu = test.SelectSingleNode("Nom").InnerText; //On donne le contenu du noeud Nom à la variable
+            string Coord = test.SelectSingleNode("Coordonnées").InnerText;//On prend le texte du noeud coordonnées
 
             int i = 0;
             int j = 0;
             string numberX = "";
             string numberY = "";
 
-            foreach (char c in Coord)   // pour chaque caractère 
+            foreach (char c in Coord)   //Pour chaque caractère 
             {
-                if (c == 'X')     // quand on trouve le caractère X
+                if (c == 'X')     //Quand on trouve le caractère X
                 {
-                    j = i + 3;     //on se place sur le premier nombre
-                    do          //on boucle à l'infini
+                    j = i + 3;     //On se place sur le premier nombre
+                    do          //On boucle à l'infini
                     {
-                        if (Coord[j - 1] == ',') // quand un trouve le caractère spécifié
+                        if (Coord[j - 1] == ',') //Quand un trouve le caractère spécifié
                         {
-                            break; // on sort le la boucle 
+                            break;
                         }
                         else
                         {
-                            numberX = numberX + Coord[j - 1];    // un ajoute les numéro comme caractère les uns derrière les autres
+                            numberX = numberX + Coord[j - 1];    //On ajoute les numéros comme caractères les uns derrière les autres
                             j++;
                         }
                     } while (true);
-                    coords.X = int.Parse(numberX); // on convertie la chaine de caractère en entier
+                    coords.X = int.Parse(numberX);  //On converti la chaîne de caractères en entier
                 }
 
                 if (c == 'Y')

@@ -10,7 +10,6 @@ using System.Drawing;
 
 namespace Logiciel
 {
-
     public class Activite 
     {
         private string _nom;       
@@ -152,7 +151,6 @@ namespace Logiciel
             NodeActivite.AppendChild(NodeTexteDescriptif);
 
             rootNode.AppendChild(NodeActivite);
-        }
-    
+        } 
     }
 }
