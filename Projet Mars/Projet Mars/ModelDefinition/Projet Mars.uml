@@ -251,7 +251,37 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1563beee-ed1c-4b84-b907-6407c63f4fcc"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c7e67b80-dbba-498e-ba7f-1359daa5f447"
+                  name="J"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fa98e4b1-30c4-4447-9701-763cedbf032b"
+                      LastKnownName="Jour"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="c371f70a-6405-4d8c-a977-7f009aa73ea5"
             name="genereXml"
@@ -259,7 +289,37 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a4f29a85-2ca1-4483-8b98-f6190a285623"
+                  name="xmlDoc"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+                      LastKnownName="XmlDocument"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="55f9846d-c1a9-494a-912c-025a5ebc78eb"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="662575ac-80c7-4c54-8d91-b257f579cbb8"
             name="chargerXml"
@@ -267,7 +327,51 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="66efc1d7-8e51-4ae6-9e2c-f54a12119382"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c1371685-24db-4f62-8e5c-8f1f76a62892"
+                  name="xmlDoc"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+                      LastKnownName="XmlDocument"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1d687ad1-d5f5-4c55-b1f6-6c50a5e601cc"
+                  name="rootNode"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="19961c96-3805-4914-adc3-35d04ed34807"
+                      LastKnownName="XmlNode"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -507,7 +611,37 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cb778b9b-d68c-4b56-914d-f73a43fa907b"
+                  name="xmlDoc"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+                      LastKnownName="XmlDocument"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d72b69b3-e29d-413a-8f3a-81899befb828"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -835,7 +969,37 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="786487c7-374c-4d43-ac23-30ab5d74513a"
+                  name="xmlDoc"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+                      LastKnownName="XmlDocument"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fb6af263-bc97-4bf1-ad8a-a6eea7d51d0b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="a8136737-9bcf-4be8-a04d-2e6d250ca1d1"
             name="genereXml2"
@@ -843,7 +1007,37 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d8a23f06-8bf6-4bf9-910d-e9bc2277b744"
+                  name="xmlDoc"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+                      LastKnownName="XmlDocument"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="12a0ba19-a84e-4f5a-8963-92d2f13237fe"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -910,7 +1104,37 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ec1924b8-e72f-49de-b676-fa6aec631dd1"
+                  name="xmlDoc"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+                      LastKnownName="XmlDocument"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f01f91cc-6808-4b02-9b10-bb4c8e62c881"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -969,7 +1193,37 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ee627d65-2efc-4ac2-aa0d-c321678acfa3"
+                  name="xmlDoc"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+                      LastKnownName="XmlDocument"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7167125e-eebf-4958-97ea-deb4213fa2a3"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="3d26b054-7214-4c75-be42-3b8d13131f38"
             name="Parse"
@@ -977,7 +1231,37 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9b94d22e-e839-4ff8-bdaa-864d3c73e764"
+                  name="test"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="19961c96-3805-4914-adc3-35d04ed34807"
+                      LastKnownName="XmlNode"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f18cc754-82f3-4f45-994c-726e622837d1"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="cb12c113-340c-4914-9cbd-7c7dd845b430"
+                      LastKnownName="Lieu"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1169,7 +1453,37 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="07dad9f2-5634-4176-ae82-3580aead8dac"
+                  name="xmlDoc"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+                      LastKnownName="XmlDocument"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="285352e6-a83f-43ab-8f13-b3f07f72c4fc"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1609,7 +1923,51 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5a01f323-1eda-4359-9282-ae59f1651d33"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="348b2373-d649-4b5e-b690-9010f98d4918"
+                  name="xmlDoc"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+                      LastKnownName="XmlDocument"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cca65165-7473-49a4-9e95-66e87e1cc683"
+                  name="M"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="947e6ec2-c1dd-4a87-b9e7-6a45a9c909d6"
+                      LastKnownName="Mission"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="d2a67cc6-eca3-464e-ba51-8d39a3455c8f"
             name="chargerXml2"
@@ -1617,7 +1975,51 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1a9a16cd-8319-4a85-bb5d-d3ec7675e3dc"
+                  name="xmlDoc"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+                      LastKnownName="XmlDocument"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ccd7e020-1431-4434-a09d-13841c2bc401"
+                  name="M"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="947e6ec2-c1dd-4a87-b9e7-6a45a9c909d6"
+                      LastKnownName="Mission"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1cd2a1ee-8d45-459b-8263-d2f3f2c735b6"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="49990959-2764-432f-a907-9ff2af6c8992"
             name="genereXml"
@@ -1625,7 +2027,37 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="679b9d11-7930-45c1-a8ae-0668e683180e"
+                  name="xmlDoc"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+                      LastKnownName="XmlDocument"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d27e577e-6369-467e-9f77-34ef4d1475e7"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="b7e96358-8cf7-4652-bb76-83c8c0565a4b"
             name="genereXml2"
@@ -1633,7 +2065,37 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="505be898-a7eb-4b3b-ba6e-271ee6986fc1"
+                  name="xmlDoc"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+                      LastKnownName="XmlDocument"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="07d7ea83-d7a3-4ecf-b7e5-9c95ef7badb2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="158d5942-a8cb-4709-b5d6-05b15efdc902"
+                      LastKnownName="void"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1692,9 +2154,50 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="031693f5-6b0a-41bc-ac3a-abd79bcd25e5"
+                  name="h"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="af1ba112-9d1d-4945-a76b-8b20fcff9913"
+                      LastKnownName="int"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5d152548-f415-4d08-822e-d7cf2ef97112"
+                  name="m"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="af1ba112-9d1d-4945-a76b-8b20fcff9913"
+                      LastKnownName="int"
+                      LastKnownLocation="Projet Mars.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="53cb797d-ffd8-4077-8e23-d8a39964c382"
+        name="XmlDocument" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="19961c96-3805-4914-adc3-35d04ed34807"
+        name="XmlNode" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

@@ -99,12 +99,74 @@
           </operation>
           <operation Id="f232c4b4-acb0-460c-a159-6c658bbfc363" name="AddJours" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="a3b34ea1-1cd3-4260-aa8a-5b9cd84ecf94" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="181bc93a-d58b-4e2d-a0a0-657fbf591253" direction="Return" isUnique="false">
+                  <elementDefinition Id="1563beee-ed1c-4b84-b907-6407c63f4fcc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="266120b7-1b28-42e6-ae80-ce8b40266d46" name="J" direction="In" isUnique="false">
+                  <elementDefinition Id="c7e67b80-dbba-498e-ba7f-1359daa5f447" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="29d3ba0a-8f80-4869-b93b-45881335f6ab" LastKnownName="Jour" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="d527895d-4a18-4124-9f58-7ba0a4b8581b" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="c371f70a-6405-4d8c-a977-7f009aa73ea5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7c0ca6e9-2442-4a45-b262-f7944f4d8366" name="xmlDoc" direction="In" isUnique="false">
+                  <elementDefinition Id="a4f29a85-2ca1-4483-8b98-f6190a285623" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27735c61-441d-44db-bd69-b90c7a6b99d5" LastKnownName="XmlDocument" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="28068527-03e9-4ed1-8c13-1e43eaaf9bc5" direction="Return" isUnique="false">
+                  <elementDefinition Id="55f9846d-c1a9-494a-912c-025a5ebc78eb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="7516ae7a-da7c-433b-b595-4121ca8ca6b1" name="chargerXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="662575ac-80c7-4c54-8d91-b257f579cbb8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2db9d3b0-1056-42fd-9177-22afd54aa0f1" direction="Return" isUnique="false">
+                  <elementDefinition Id="66efc1d7-8e51-4ae6-9e2c-f54a12119382" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c16dfa4e-0aa8-4586-a10b-cdf1a658b655" name="xmlDoc" direction="In" isUnique="false">
+                  <elementDefinition Id="c1371685-24db-4f62-8e5c-8f1f76a62892" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27735c61-441d-44db-bd69-b90c7a6b99d5" LastKnownName="XmlDocument" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dec65594-e24f-48b5-83bf-c6c09d48def5" name="rootNode" direction="In" isUnique="false">
+                  <elementDefinition Id="1d687ad1-d5f5-4c55-b1f6-6c50a5e601cc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4c86fa5d-a925-48ea-b39e-c7b21f089c22" LastKnownName="XmlNode" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -221,6 +283,24 @@
           </operation>
           <operation Id="ddaca6c6-5683-4f1f-91c8-c5ab86134fce" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="956e3bb6-5cfb-4afc-9697-0d6b5d0d025c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ed80207c-f351-4bdb-baa9-a9354a3a50cb" name="xmlDoc" direction="In" isUnique="false">
+                  <elementDefinition Id="cb778b9b-d68c-4b56-914d-f73a43fa907b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27735c61-441d-44db-bd69-b90c7a6b99d5" LastKnownName="XmlDocument" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="30531b4c-318e-4020-96b4-86d96a47b4c6" direction="Return" isUnique="false">
+                  <elementDefinition Id="d72b69b3-e29d-413a-8f3a-81899befb828" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -357,9 +437,45 @@
           </operation>
           <operation Id="e2d00d4d-854d-4158-a139-e4774e62cb0d" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="eecfba48-fbe7-4049-8a70-5ad15d666185" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4294ad8f-e1f6-4b62-8925-af4c01a72e04" name="xmlDoc" direction="In" isUnique="false">
+                  <elementDefinition Id="786487c7-374c-4d43-ac23-30ab5d74513a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27735c61-441d-44db-bd69-b90c7a6b99d5" LastKnownName="XmlDocument" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ecb78f1b-8fe3-453e-90db-c909a1539fd0" direction="Return" isUnique="false">
+                  <elementDefinition Id="fb6af263-bc97-4bf1-ad8a-a6eea7d51d0b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="cc62cd93-c5c4-4f8d-9e10-2e6b69c3cae7" name="genereXml2" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="a8136737-9bcf-4be8-a04d-2e6d250ca1d1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9e2763d9-16dd-4ec3-8db1-2f3a1d220b59" name="xmlDoc" direction="In" isUnique="false">
+                  <elementDefinition Id="d8a23f06-8bf6-4bf9-910d-e9bc2277b744" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27735c61-441d-44db-bd69-b90c7a6b99d5" LastKnownName="XmlDocument" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="807481ce-a30b-43aa-8afa-213c8d3c6dd4" direction="Return" isUnique="false">
+                  <elementDefinition Id="12a0ba19-a84e-4f5a-8963-92d2f13237fe" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -384,6 +500,24 @@
         <ownedOperationsInternal>
           <operation Id="02a50869-7abc-4479-9983-278b11c473f0" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="48542b69-ff73-4419-ac2c-addbd1ecac70" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="913b66fa-ccf8-4658-aedd-a6ebd11b5296" name="xmlDoc" direction="In" isUnique="false">
+                  <elementDefinition Id="ec1924b8-e72f-49de-b676-fa6aec631dd1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27735c61-441d-44db-bd69-b90c7a6b99d5" LastKnownName="XmlDocument" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8fd267fa-4f21-49a6-953a-d334c9f4328a" direction="Return" isUnique="false">
+                  <elementDefinition Id="f01f91cc-6808-4b02-9b10-bb4c8e62c881" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -408,9 +542,45 @@
         <ownedOperationsInternal>
           <operation Id="fc0ae0d7-1a57-44d9-b4f7-2c7c57b979de" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="b1a25c71-c854-4f23-ba6d-db4e24711e64" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f1f95e97-ca4e-4cd7-ad5e-f0ffa9f5ec8f" name="xmlDoc" direction="In" isUnique="false">
+                  <elementDefinition Id="ee627d65-2efc-4ac2-aa0d-c321678acfa3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27735c61-441d-44db-bd69-b90c7a6b99d5" LastKnownName="XmlDocument" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e3f4af1f-27d8-413a-84a1-edf68e78a38d" direction="Return" isUnique="false">
+                  <elementDefinition Id="7167125e-eebf-4958-97ea-deb4213fa2a3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="95af424e-66f4-45e6-b0be-ae2363edee34" name="Parse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="3d26b054-7214-4c75-be42-3b8d13131f38" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="17049f24-db23-4446-8155-b00e628291ff" name="test" direction="In" isUnique="false">
+                  <elementDefinition Id="9b94d22e-e839-4ff8-bdaa-864d3c73e764" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4c86fa5d-a925-48ea-b39e-c7b21f089c22" LastKnownName="XmlNode" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a843859d-0317-4f9c-ae91-d508c2bc0beb" direction="Return" isUnique="false">
+                  <elementDefinition Id="f18cc754-82f3-4f45-994c-726e622837d1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0bd3c5b2-3723-42bd-a306-04d7e7d2ac29" LastKnownName="Lieu" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -499,6 +669,24 @@
           </operation>
           <operation Id="b5e0cf3d-dc13-4c70-b4dc-2a9b52d34422" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="ef8cb7b1-0118-4e77-8650-1f476450be1e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e62040a3-2394-4d0f-8a5e-fb5e5307b60c" name="xmlDoc" direction="In" isUnique="false">
+                  <elementDefinition Id="07dad9f2-5634-4176-ae82-3580aead8dac" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27735c61-441d-44db-bd69-b90c7a6b99d5" LastKnownName="XmlDocument" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4bbe0d87-bf90-4949-b83f-df9fe3f22376" direction="Return" isUnique="false">
+                  <elementDefinition Id="285352e6-a83f-43ab-8f13-b3f07f72c4fc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -733,15 +921,103 @@
           </operation>
           <operation Id="abcf4cb1-b6a1-459c-8fe8-a4eb0191d7dd" name="chargerXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="f5156cc5-f206-4eee-8af0-f6910e57be4e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d55b8c2e-a018-4cd6-bdbe-791b039de139" direction="Return" isUnique="false">
+                  <elementDefinition Id="5a01f323-1eda-4359-9282-ae59f1651d33" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ddfd71a7-72cb-4278-adcb-1e5be4776b62" name="xmlDoc" direction="In" isUnique="false">
+                  <elementDefinition Id="348b2373-d649-4b5e-b690-9010f98d4918" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27735c61-441d-44db-bd69-b90c7a6b99d5" LastKnownName="XmlDocument" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ae6f0686-7920-4dfa-9557-66c1ab813c87" name="M" direction="In" isUnique="false">
+                  <elementDefinition Id="cca65165-7473-49a4-9e95-66e87e1cc683" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bc28182c-b8b8-4112-a3f8-e9ed25c17eb0" LastKnownName="Mission" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="d8994826-6abb-41b6-9189-db5649368313" name="chargerXml2" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="d2a67cc6-eca3-464e-ba51-8d39a3455c8f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a09aaced-ae67-4986-b83c-623e7abca193" name="xmlDoc" direction="In" isUnique="false">
+                  <elementDefinition Id="1a9a16cd-8319-4a85-bb5d-d3ec7675e3dc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27735c61-441d-44db-bd69-b90c7a6b99d5" LastKnownName="XmlDocument" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4c27ec95-a135-434a-bafe-237190c0b4ba" name="M" direction="In" isUnique="false">
+                  <elementDefinition Id="ccd7e020-1431-4434-a09d-13841c2bc401" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bc28182c-b8b8-4112-a3f8-e9ed25c17eb0" LastKnownName="Mission" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2bcbb229-0682-4417-ab6f-18d8be6f2668" direction="Return" isUnique="false">
+                  <elementDefinition Id="1cd2a1ee-8d45-459b-8263-d2f3f2c735b6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="7a3d405e-5167-437d-94b2-79142a0f9ecf" name="genereXml" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="49990959-2764-432f-a907-9ff2af6c8992" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="183f34d8-5184-4397-9f2e-fa25bb6cc962" name="xmlDoc" direction="In" isUnique="false">
+                  <elementDefinition Id="679b9d11-7930-45c1-a8ae-0668e683180e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27735c61-441d-44db-bd69-b90c7a6b99d5" LastKnownName="XmlDocument" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b146f1ba-d5dd-4acb-ba1e-5b2a022baee0" direction="Return" isUnique="false">
+                  <elementDefinition Id="d27e577e-6369-467e-9f77-34ef4d1475e7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="df6edd9a-bfcf-4994-aa05-295bfa2c1406" name="genereXml2" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="b7e96358-8cf7-4652-bb76-83c8c0565a4b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6f187bc1-75e7-4de1-802d-d9edeeb2afa3" name="xmlDoc" direction="In" isUnique="false">
+                  <elementDefinition Id="505be898-a7eb-4b3b-ba6e-271ee6986fc1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27735c61-441d-44db-bd69-b90c7a6b99d5" LastKnownName="XmlDocument" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="603a3527-9c06-41ab-94f3-4fdc23e26786" direction="Return" isUnique="false">
+                  <elementDefinition Id="07d7ea83-d7a3-4ecf-b7e5-9c95ef7badb2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9fb1300-d0ae-4ea7-9a32-b079fa240045" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -778,10 +1054,53 @@
         <ownedOperationsInternal>
           <operation Id="aa2f96fc-42b5-4fcf-a3cc-dd8085656369" name="Heure" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="21de60a9-4dd6-4a6c-a166-97e6b5216eab" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="37dc6ec6-7aa3-463d-a275-428fc54e7aeb" name="h" direction="In" isUnique="false">
+                  <elementDefinition Id="031693f5-6b0a-41bc-ac3a-abd79bcd25e5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="171e7a8b-eea7-46fa-9514-f9c3ca5a151b" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="27b5e0e9-ac90-4b79-a95b-d22b9f383a0c" name="m" direction="In" isUnique="false">
+                  <elementDefinition Id="5d152548-f415-4d08-822e-d7cf2ef97112" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="171e7a8b-eea7-46fa-9514-f9c3ca5a151b" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="27735c61-441d-44db-bd69-b90c7a6b99d5" name="XmlDocument" isAbstract="false" isLeaf="false" cachedFullName="XmlDocument">
+        <elementDefinition Id="53cb797d-ffd8-4077-8e23-d8a39964c382" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bc28182c-b8b8-4112-a3f8-e9ed25c17eb0" name="Mission" isAbstract="false" isLeaf="false" cachedFullName="Projet Mars::Mission">
+        <elementDefinition Id="947e6ec2-c1dd-4a87-b9e7-6a45a9c909d6" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4c86fa5d-a925-48ea-b39e-c7b21f089c22" name="XmlNode" isAbstract="false" isLeaf="false" cachedFullName="XmlNode">
+        <elementDefinition Id="19961c96-3805-4914-adc3-35d04ed34807" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0bd3c5b2-3723-42bd-a306-04d7e7d2ac29" name="Lieu" isAbstract="false" isLeaf="false" cachedFullName="Projet Mars::Lieu">
+        <elementDefinition Id="cb12c113-340c-4914-9cbd-7c7dd845b430" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="29d3ba0a-8f80-4869-b93b-45881335f6ab" name="Jour" isAbstract="false" isLeaf="false" cachedFullName="Projet Mars::Jour">
+        <elementDefinition Id="fa98e4b1-30c4-4447-9701-763cedbf032b" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="407e6f78-6fca-4445-a20e-006ed31b61fb" name="Projet Mars">
     <elementDefinition Id="4447bcab-b6b3-44bc-8e22-dd9b3809bfce" />
