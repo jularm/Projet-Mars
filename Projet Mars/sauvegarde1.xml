@@ -2,19 +2,23 @@
   <Liste_Astronaute>
     <Astronaute>
       <Id>1</Id>
-      <Nom>Pierre</Nom>
+      <Nom>Thomas Pesquet</Nom>
     </Astronaute>
     <Astronaute>
       <Id>2</Id>
-      <Nom>Paul</Nom>
+      <Nom>Jean-Loup Chrétien</Nom>
     </Astronaute>
     <Astronaute>
       <Id>3</Id>
-      <Nom>Jacques</Nom>
+      <Nom>Claudie Haigneré</Nom>
     </Astronaute>
     <Astronaute>
       <Id>4</Id>
-      <Nom>Phoebe</Nom>
+      <Nom>Jean-Jacques Favier</Nom>
+    </Astronaute>
+    <Astronaute>
+      <Id>5</Id>
+      <Nom>Michel Tognini</Nom>
     </Astronaute>
   </Liste_Astronaute>
   <Liste_Catégorie_Activité>

@@ -99,6 +99,7 @@
             this.SupprimerAstronaute.TabIndex = 13;
             this.SupprimerAstronaute.Text = "Supprimer";
             this.SupprimerAstronaute.UseVisualStyleBackColor = true;
+            this.SupprimerAstronaute.Click += new System.EventHandler(this.SupprimerAstronaute_Click);
             // 
             // ConfirmerAstronaute
             // 
