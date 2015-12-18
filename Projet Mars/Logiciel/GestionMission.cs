@@ -260,7 +260,7 @@ namespace Logiciel
         private void JourCourantMission_TextChanged(object sender, EventArgs e)
         {
             dureMission.Increment(1);  //on augmente de 1 pas la barre de progression de la mission           
-
+            trackBar1.Value = int.Parse(JourCourantMission.Text) / 50;
             trackBar1_Scroll(sender, e); 
         }
 
@@ -359,29 +359,6 @@ namespace Logiciel
             }
             CreerBoutons(jourSelec);
         }
-
-        private void jour_Click(int i)
-        {
-            jourSelec = i; 
-
-            Niveau2.Show(); // on montre le deuxième niveau du programme
-            Niveau1.Hide(); // on cache le premier niveau du programme
-            Niveau3.Hide();
-            ActiviteExploration.Hide();
-
-            NumeroJour.Text = i.ToString();
-            NduJNiv3.Text = NumeroJour.Text;
-            if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
-            {
-                CreerActivite.Enabled = false;
-            }
-            else
-            {
-                CreerActivite.Enabled = true;
-            }
-            CreerBoutons(jourSelec);
-        }
-
 
 
         //NIVEAU 2//
@@ -1366,6 +1343,14 @@ namespace Logiciel
         {
             recherche R = new recherche(M.ListAstr,M.Listcat,M.Calendar);
             R.Show();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Niveau1.Show();
+            Niveau2.Hide(); 
+            Niveau3.Hide();
+            ActiviteExploration.Hide();
         }
     }
 }
