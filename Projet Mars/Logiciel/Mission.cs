@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace Logiciel
 {
-    class Mission 
+    public class Mission 
     {
         private List<Astronaute> _listAstronautes = new List<Astronaute>();
         private List<CategorieActivite> _listCategorieActivite = new List<CategorieActivite>();
@@ -35,12 +35,9 @@ namespace Logiciel
         public List<CategorieActivite> Listcat
         {
             get { return _listCategorieActivite; }
-        }
+            set { _listCategorieActivite = value; }        }
 
-        private List<CategorieActivite> Listcate
-        {
-            set { _listCategorieActivite = value; }
-        }
+        
 
         public List<Astronaute> ListAstr
         {
@@ -172,7 +169,7 @@ namespace Logiciel
             }
 
            
-            M.Listcate = Listcat;
+            M.Listcat = Listcat;
             
         }
 

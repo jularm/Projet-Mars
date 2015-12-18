@@ -11,7 +11,7 @@ using System.Drawing;
 namespace Logiciel
 {
 
-    class Activite 
+    public class Activite 
     {
         private string _nom;
         private string _compteRendu;
@@ -107,6 +107,10 @@ namespace Logiciel
             _listAstronaute.Remove(a);
         }
 
+        public override string ToString()
+        {
+            return this.Nom;
+        }
 
 
 

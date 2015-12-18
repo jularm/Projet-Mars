@@ -11,7 +11,7 @@ using System.Drawing; //Pour pouvoir utiliser la structure Point
 
 namespace Logiciel
 {
-    class Lieu
+    public class Lieu
     {
         private string _nom;
         private Point _coords;

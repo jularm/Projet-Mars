@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace Logiciel
 {
-    class CalendrierMartien 
+    public class CalendrierMartien 
     {
         private int _jour;
         private DateTime _debut;

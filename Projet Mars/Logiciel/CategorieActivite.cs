@@ -11,7 +11,7 @@ using System.Xml;
 namespace Logiciel
 {
     //Contient les instances et les méthodes relative au nom des activités
-    class CategorieActivite 
+    public class CategorieActivite 
     {
         private string _nom;
         private List<Activite> _listActivite = new List<Activite>(); //Pour créer une liste d'activités par jour

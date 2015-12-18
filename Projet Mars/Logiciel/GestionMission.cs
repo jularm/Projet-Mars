@@ -360,6 +360,28 @@ namespace Logiciel
             CreerBoutons(jourSelec);
         }
 
+        private void jour_Click(int i)
+        {
+            jourSelec = i; 
+
+            Niveau2.Show(); // on montre le deuxième niveau du programme
+            Niveau1.Hide(); // on cache le premier niveau du programme
+            Niveau3.Hide();
+            ActiviteExploration.Hide();
+
+            NumeroJour.Text = i.ToString();
+            NduJNiv3.Text = NumeroJour.Text;
+            if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
+            {
+                CreerActivite.Enabled = false;
+            }
+            else
+            {
+                CreerActivite.Enabled = true;
+            }
+            CreerBoutons(jourSelec);
+        }
+
 
 
         //NIVEAU 2//
@@ -1338,6 +1360,12 @@ namespace Logiciel
         {
             Astronautes modif = new Astronautes(M.ListAstr);
             modif.Show();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            recherche R = new recherche(M.ListAstr,M.Listcat,M.Calendar);
+            R.Show();
         }
     }
 }

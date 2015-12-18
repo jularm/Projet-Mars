@@ -56,6 +56,11 @@ namespace Logiciel
         {
             get { return _minutes; }
             set { _minutes = value; }
-        }                
+        }
+        public override string ToString()
+        {
+            string res = "" + this.Heures + " H " + this.Minutes + "";
+            return res;
+        }     
     }
 }

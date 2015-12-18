@@ -9,7 +9,7 @@ using System.Xml;
 
 namespace Logiciel
 {
-    class Jour
+    public class Jour
     {
         private string _compteRendu;
         private int _numero;
