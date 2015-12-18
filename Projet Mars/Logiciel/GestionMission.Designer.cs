@@ -2476,6 +2476,7 @@
             this.Home.Size = new System.Drawing.Size(48, 48);
             this.Home.TabIndex = 75;
             this.Home.TabStop = false;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // Search
             // 
@@ -2487,6 +2488,7 @@
             this.Search.Size = new System.Drawing.Size(52, 52);
             this.Search.TabIndex = 74;
             this.Search.TabStop = false;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // Parametres
             // 
@@ -2498,6 +2500,7 @@
             this.Parametres.Size = new System.Drawing.Size(52, 52);
             this.Parametres.TabIndex = 73;
             this.Parametres.TabStop = false;
+            this.Parametres.Click += new System.EventHandler(this.Parametres_Click);
             // 
             // GestionMission
             // 
