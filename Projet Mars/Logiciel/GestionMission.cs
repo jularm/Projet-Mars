@@ -1228,35 +1228,56 @@ namespace Logiciel
                         //Affichage de l'icône correspondant au type d'activité et distinction entre passé/futur
                         if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit")
                         {
-                            if (i <= int.Parse(JourCourantMission.Text))
+                            if (i < int.Parse(JourCourantMission.Text)-1)
                             {
                                 icone.Image = scaphandrePasse;
                             }
                             else
                             {
-                                icone.Image = scaphandreFutur;
+                                if (i == int.Parse(JourCourantMission.Text)-1)
+                                {
+                                    icone.Image = scaphandreFutur;
+                                }
+                                else
+                                {
+                                    icone.Image = scaphandreFutur;
+                                }
                             }
                         }
                         if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule")
                         {
-                            if (i <= int.Parse(JourCourantMission.Text))
+                            if (i < int.Parse(JourCourantMission.Text)-1)
                             {
                                 icone.Image = vehiculePasse;
                             }
                             else
                             {
-                                icone.Image = vehiculeFutur;
+                                if (i == int.Parse(JourCourantMission.Text)-1)
+                                {
+                                    icone.Image = vehiculeFutur;
+                                }
+                                else
+                                {
+                                    icone.Image = vehiculeFutur;
+                                }
                             }
                         }
                         if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
                         {
-                            if (i <= int.Parse(JourCourantMission.Text))
+                            if (i < int.Parse(JourCourantMission.Text)-1)
                             {
                                 icone.Image = experiencePasse;
                             }
                             else
                             {
-                                icone.Image = experienceFutur;
+                                if (i == int.Parse(JourCourantMission.Text)-1)
+                                {
+                                    icone.Image = experienceFutur;
+                                }
+                                else
+                                {
+                                    icone.Image = experienceFutur;
+                                }
                             }
                         }
                     }

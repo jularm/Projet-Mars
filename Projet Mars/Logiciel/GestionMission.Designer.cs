@@ -156,6 +156,7 @@
             this.DateTerrestre = new System.Windows.Forms.Label();
             this.Niveau2 = new System.Windows.Forms.GroupBox();
             this.Niveau3 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.CoordY = new System.Windows.Forms.NumericUpDown();
             this.CoordX = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
@@ -240,7 +241,6 @@
             this.LegendeCarte = new System.Windows.Forms.PictureBox();
             this.Carte = new System.Windows.Forms.PictureBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.Niveau1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -1375,6 +1375,15 @@
             this.Niveau3.Text = "Niveau3";
             this.Niveau3.Visible = false;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(561, 483);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(136, 13);
+            this.label27.TabIndex = 41;
+            this.label27.Text = "(en m par rapport à la base)";
+            // 
             // CoordY
             // 
             this.CoordY.Location = new System.Drawing.Point(650, 462);
@@ -2339,7 +2348,7 @@
             this.ActiviteExploration.Controls.Add(this.label11);
             this.ActiviteExploration.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ActiviteExploration.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActiviteExploration.Location = new System.Drawing.Point(748, 10);
+            this.ActiviteExploration.Location = new System.Drawing.Point(24, 94);
             this.ActiviteExploration.Name = "ActiviteExploration";
             this.ActiviteExploration.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ActiviteExploration.Size = new System.Drawing.Size(761, 563);
@@ -2441,20 +2450,11 @@
             this.label26.TabIndex = 72;
             this.label26.Text = "Heure de la mission :";
             // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(561, 483);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(136, 13);
-            this.label27.TabIndex = 41;
-            this.label27.Text = "(en m par rapport à la base)";
-            // 
             // GestionMission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 679);
+            this.ClientSize = new System.Drawing.Size(797, 679);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.ActiviteExploration);
             this.Controls.Add(this.ActExplo);
