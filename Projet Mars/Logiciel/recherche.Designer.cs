@@ -1,6 +1,6 @@
 ﻿namespace Logiciel
 {
-    partial class recherche
+    partial class Recherche
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(recherche));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Recherche));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -86,6 +86,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(249, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 41);
@@ -96,15 +97,16 @@
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(392, 25);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(119, 41);
             this.button2.TabIndex = 49;
-            this.button2.Text = " Tout Effacer";
+            this.button2.Text = "Supprimer les résultats";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // recherche
+            // Recherche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,7 +119,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "recherche";
+            this.Name = "Recherche";
             this.Text = "recherche";
             this.ResumeLayout(false);
             this.PerformLayout();

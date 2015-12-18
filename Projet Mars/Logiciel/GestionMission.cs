@@ -47,11 +47,6 @@ namespace Logiciel
 
         int jourSelec; // permet de retenir le numéro jour sélectionner 
 
-        Button Boutontest;  // bouton factise pouvant être n'importe quel bouton ( utilisé dans le groupBOx du calendrier )
-
-       
-
-
 
         //INITIALISATION DE LA MISSION//
         
@@ -153,11 +148,11 @@ namespace Logiciel
                 Emergency_act.Add(urgence);
                 CategorieActivite Urgence = new CategorieActivite("Emergency");
 
-                                                     
+                //Journée type par défaut :                                      
                 for (int i = 1; i < 501; i++)
                 {
                     Jour j = new Jour(i);
-                    //Journée type par défaut :  
+                     
                     j.AddAct(new Activite("Sleeping", new Heure(0, 0), new Heure(7, 0), "Un repos bien mérité !"));
                     j.AddAct(new Activite("Eating", new Heure(7, 0), new Heure(8, 0), "Manger c'est important"));
                     j.AddAct(new Activite("Private", new Heure(8, 0), new Heure(12, 0), ""));
@@ -181,7 +176,7 @@ namespace Logiciel
                 M.AddCategorie(Reparation);
                 M.AddCategorie(Urgence);
 
-                // Initialisation des astronautes 
+                // Initialisation des astronautes :
 
                 List<Astronaute> ListAtr = new List<Astronaute>(); 
                 Astronautes InitAstr = new Astronautes();
@@ -189,16 +184,12 @@ namespace Logiciel
                 InitAstr.ShowDialog();
            
                 M.ListAstr = InitAstr.Astro();
-                InitAstr.BringToFront();
-
-                
-            }
-                 
+                InitAstr.BringToFront();                
+            }                
             timer1.Start();
             dureMission.Maximum = 500;
             trackBar1.Maximum = 9; //Permet l'affichage des jours de 50 en 50
-            trackBar1_Scroll(new Object(), new EventArgs()); //Pourdifférencier les jours d'un scroll à l'autre
-            
+            trackBar1_Scroll(new Object(), new EventArgs()); //Pour différencier les jours d'un scroll à l'autre           
         }
 
 
@@ -217,11 +208,11 @@ namespace Logiciel
         public void Sortie()
         {
             int test = 0;            
-            for (int i = 0; i < M.Calendar.Jours.Count; i++)  // pour chaque jour du calendrier
+            for (int i = 0; i < M.Calendar.Jours.Count; i++)  //Pour chaque jour du calendrier
             {
                 bool ext = false;
                 test = M.Calendar.Jours[i].ListeActivites.Count;
-                for (int j = 0; j < test; j++) // pour chque activité d'un jour donné
+                for (int j = 0; j < test; j++) //Pour chaque activité d'un jour donné
                 {
                     if (M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Vehicule" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Exploration Space suit" || M.Calendar.Jours[i].ListeActivites[j].Nom == "Outside experiment")
                     {
@@ -267,16 +258,20 @@ namespace Logiciel
             trackBar1_Scroll(sender, e); 
         }
 
-        //A commenter
-        private void trackBar1_Scroll(object sender, EventArgs e)  // permet de changer l'affichage au niveau des jours du calendrier
+        /// <summary>
+        /// Permet de changer l'affichage au niveau des jours du calendrier
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void trackBar1_Scroll(object sender, EventArgs e)  
         {
             Sortie(); //Affiche un astronaute sur les jours concernés par la sortie
 
-            for (int i = 0; i < Niveau1.Controls.Count; i++)    // pour chaque element du groupBox 
+            for (int i = 0; i < Niveau1.Controls.Count; i++)    //Pour chaque élément du groupBox 
             {
-                if (Niveau1.Controls[i].Name.Contains("jour"))     // ceux dont le nom contient jour
+                if (Niveau1.Controls[i].Name.Contains("jour"))     //Ceux dont le nom contient jour
                 {
-                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);    // on modifie le texte des bouton selon la valeur du trackBar
+                    Niveau1.Controls[i].Text = Convert.ToString((50 * trackBar1.Value) + i +1);    //On modifie le texte des bouton selon la valeur du trackBar
 
                     if (int.Parse(JourCourantMission.Text) == (50 * trackBar1.Value) + i +1)
                     {
@@ -341,20 +336,24 @@ namespace Logiciel
             trackBar1_Scroll(sender, e);
         }
 
-        //A commenter
+        /// <summary>
+        /// Permet d'accéder au niveau 2 par le jour cliqué
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void jour_Click(object sender, EventArgs e)
         {          
-            Button clickedButton = (Button)sender; // on conserve le bouton qui sert à entrer dans la fonction ( sender )
-            jourSelec = int.Parse(clickedButton.Text); // on conserve le numéro du jour cliqué
+            Button clickedButton = (Button)sender; //On conserve le bouton qui sert à entrer dans la fonction (sender)
+            jourSelec = int.Parse(clickedButton.Text); //On conserve le numéro du jour cliqué
                
-            Niveau2.Show(); // on montre le deuxième niveau du programme
-            Niveau1.Hide(); // on cache le premier niveau du programme
+            Niveau2.Show(); //On montre le deuxième niveau du programme
+            Niveau1.Hide(); //On cache le premier niveau du programme
 
             NumeroJour.Text = clickedButton.Text; 
             NduJNiv3.Text = NumeroJour.Text;
             if (int.Parse(NumeroJour.Text) < int.Parse(JourCourantMission.Text))
             {
-                CreerActivite.Enabled = false;
+                CreerActivite.Enabled = false; //On ne peut pas créer d'activité pour un jour passé
             }
             else
             {
@@ -754,8 +753,8 @@ namespace Logiciel
             texteDescriptif.Text = "";
 
             Niveau3.Show();
-            //Niveau2.Hide();
         }
+
         /// <summary>
         /// Conrôle des valeurs autorisées pour les heures et les minutes de début de l'activité
         /// </summary>
@@ -930,7 +929,7 @@ namespace Logiciel
                 act = (Activite)ConfirmerNiv3.Tag;
                 changerUnePlageHoraire(act, jourj.TabHoraires, true);
             }
-
+            //Vérification de la sélection d'un astronautes
             if (listeAstronautes.CheckedItems.Count == 0)
             {
                 erreurs[4] = false;
@@ -944,7 +943,7 @@ namespace Logiciel
                 }
             }
 
-            //Sélection d'une activité
+            //Vérification de la sélection d'une activité
             if (ItemSelect.Text != "")
             {
                 erreurs[3] = true;
@@ -986,12 +985,6 @@ namespace Logiciel
                     }
                 }
 
-
-
-                /*for (int i = 0; i < listeAstronautes.CheckedItems.Count; i++)
-                {
-                    liA.Add(new Astronaute(i, listeAstronautes.CheckedItems[i].Text));
-                }*/
                 if (TitreNiv3.Text == "Modifier une activité")
                 {
                     act.Nom = ItemSelect.Text;
@@ -1336,19 +1329,19 @@ namespace Logiciel
             }
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void Parametres_Click(object sender, EventArgs e)
         {
             Astronautes modif = new Astronautes(M.ListAstr);
             modif.Show();
         }
 
-        private void pictureBox7_Click(object sender, EventArgs e)
+        private void Search_Click(object sender, EventArgs e)
         {
-            recherche R = new recherche(M.ListAstr,M.Listcat,M.Calendar);
+            Recherche R = new Recherche(M.ListAstr,M.Listcat,M.Calendar);
             R.Show();
         }
 
-        private void pictureBox8_Click(object sender, EventArgs e)
+        private void Home_Click(object sender, EventArgs e)
         {
             Niveau1.Show();
             Niveau2.Hide(); 

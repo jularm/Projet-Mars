@@ -29,70 +29,70 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Eating");
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Sleeping");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Entertainment");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Private");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Health control");
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Medical act");
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Living", new System.Windows.Forms.TreeNode[] {
-            treeNode36,
-            treeNode37,
-            treeNode38,
-            treeNode39,
-            treeNode40,
-            treeNode41});
-            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Exploration Space suit");
-            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Exploration Vehicule");
-            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Briefing");
-            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Debriefing");
-            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Inside experiment");
-            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Outside experiment");
-            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Science", new System.Windows.Forms.TreeNode[] {
-            treeNode43,
-            treeNode44,
-            treeNode45,
-            treeNode46,
-            treeNode47,
-            treeNode48});
-            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Cleaning");
-            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("LSS air system");
-            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("LSS water system");
-            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("LSS food system");
-            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Power systems");
-            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Space suit");
-            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Other");
-            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Maintenance", new System.Windows.Forms.TreeNode[] {
-            treeNode50,
-            treeNode51,
-            treeNode52,
-            treeNode53,
-            treeNode54,
-            treeNode55,
-            treeNode56});
-            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Sending message");
-            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Receiving message");
-            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Communication", new System.Windows.Forms.TreeNode[] {
-            treeNode58,
-            treeNode59});
-            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("LSS");
-            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("Power systems");
-            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("Communication systems");
-            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("Propulsion systems");
-            System.Windows.Forms.TreeNode treeNode65 = new System.Windows.Forms.TreeNode("Habitat");
-            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("Space suit");
-            System.Windows.Forms.TreeNode treeNode67 = new System.Windows.Forms.TreeNode("Vehicule");
-            System.Windows.Forms.TreeNode treeNode68 = new System.Windows.Forms.TreeNode("Repair", new System.Windows.Forms.TreeNode[] {
-            treeNode61,
-            treeNode62,
-            treeNode63,
-            treeNode64,
-            treeNode65,
-            treeNode66,
-            treeNode67});
-            System.Windows.Forms.TreeNode treeNode69 = new System.Windows.Forms.TreeNode("Emergency");
-            System.Windows.Forms.TreeNode treeNode70 = new System.Windows.Forms.TreeNode("Emergency", new System.Windows.Forms.TreeNode[] {
-            treeNode69});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Eating");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Sleeping");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Entertainment");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Private");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Health control");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Medical act");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Living", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Exploration Space suit");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Exploration Vehicule");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Briefing");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Debriefing");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Inside experiment");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Outside experiment");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Science", new System.Windows.Forms.TreeNode[] {
+            treeNode8,
+            treeNode9,
+            treeNode10,
+            treeNode11,
+            treeNode12,
+            treeNode13});
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Cleaning");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("LSS air system");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("LSS water system");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("LSS food system");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Power systems");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Space suit");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Other");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Maintenance", new System.Windows.Forms.TreeNode[] {
+            treeNode15,
+            treeNode16,
+            treeNode17,
+            treeNode18,
+            treeNode19,
+            treeNode20,
+            treeNode21});
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Sending message");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Receiving message");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Communication", new System.Windows.Forms.TreeNode[] {
+            treeNode23,
+            treeNode24});
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("LSS");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Power systems");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Communication systems");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Propulsion systems");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Habitat");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Space suit");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Vehicule");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Repair", new System.Windows.Forms.TreeNode[] {
+            treeNode26,
+            treeNode27,
+            treeNode28,
+            treeNode29,
+            treeNode30,
+            treeNode31,
+            treeNode32});
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Emergency");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Emergency", new System.Windows.Forms.TreeNode[] {
+            treeNode34});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionMission));
             this.heureMars = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -151,6 +151,8 @@
             this.dureeMission = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.Niveau1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.DateTerrestre = new System.Windows.Forms.Label();
             this.Niveau2 = new System.Windows.Forms.GroupBox();
             this.Niveau3 = new System.Windows.Forms.GroupBox();
@@ -185,19 +187,25 @@
             this.texteDescriptif = new System.Windows.Forms.RichTextBox();
             this.ConfirmerNiv3 = new System.Windows.Forms.Button();
             this.listeAstronautes = new System.Windows.Forms.ListView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AnnulerNiv3 = new System.Windows.Forms.Button();
             this.CompteRendu = new System.Windows.Forms.Button();
             this.TrancheHoraire2 = new System.Windows.Forms.Label();
             this.TranchHoraire1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.RetourCalendrier = new System.Windows.Forms.PictureBox();
+            this.JourSuivant = new System.Windows.Forms.PictureBox();
+            this.JourPrecedent = new System.Windows.Forms.PictureBox();
             this.Jour = new System.Windows.Forms.Label();
             this.NumeroJour = new System.Windows.Forms.Label();
             this.CreerActivite = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label16 = new System.Windows.Forms.Label();
             this.boutonsMatin = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.boutonsApresMidi = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.titreJour = new System.Windows.Forms.Label();
             this.JourCourantMission = new System.Windows.Forms.Label();
             this.DateT = new System.Windows.Forms.Label();
@@ -229,49 +237,41 @@
             this.ValiderPeriode = new System.Windows.Forms.Button();
             this.PeriodeFin = new System.Windows.Forms.NumericUpDown();
             this.PeriodeDebut = new System.Windows.Forms.NumericUpDown();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Retour = new System.Windows.Forms.PictureBox();
             this.LegendeCarte = new System.Windows.Forms.PictureBox();
             this.Carte = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.RetourCalendrier = new System.Windows.Forms.PictureBox();
-            this.JourSuivant = new System.Windows.Forms.PictureBox();
-            this.JourPrecedent = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.Home = new System.Windows.Forms.PictureBox();
+            this.Search = new System.Windows.Forms.PictureBox();
+            this.Parametres = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.Niveau1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Niveau2.SuspendLayout();
             this.Niveau3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CoordY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoordX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.ActiviteExploration.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PeriodeFin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PeriodeDebut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Retour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LegendeCarte)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Carte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RetourCalendrier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JourSuivant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JourPrecedent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.ActiviteExploration.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PeriodeFin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PeriodeDebut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Retour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LegendeCarte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Carte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Home)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Parametres)).BeginInit();
             this.SuspendLayout();
             // 
             // heureMars
@@ -1284,6 +1284,30 @@
             this.Niveau1.TabStop = false;
             this.Niveau1.Text = "Calendrier";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::Logiciel.Properties.Resources.right2;
+            this.pictureBox3.Location = new System.Drawing.Point(620, 368);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 61;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::Logiciel.Properties.Resources.left2;
+            this.pictureBox2.Location = new System.Drawing.Point(36, 368);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 60;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // DateTerrestre
             // 
             this.DateTerrestre.AutoSize = true;
@@ -1520,120 +1544,120 @@
             this.listeActivites.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listeActivites.Location = new System.Drawing.Point(9, 152);
             this.listeActivites.Name = "listeActivites";
-            treeNode36.Checked = true;
-            treeNode36.ForeColor = System.Drawing.Color.Sienna;
-            treeNode36.Name = "Eating";
-            treeNode36.Text = "Eating";
-            treeNode36.ToolTipText = "Manger c\'est cool";
-            treeNode37.ForeColor = System.Drawing.Color.Sienna;
-            treeNode37.Name = "Sleeping";
-            treeNode37.Text = "Sleeping";
-            treeNode38.ForeColor = System.Drawing.Color.Sienna;
-            treeNode38.Name = "Entertainment";
-            treeNode38.Text = "Entertainment";
-            treeNode39.ForeColor = System.Drawing.Color.Sienna;
-            treeNode39.Name = "Private";
-            treeNode39.Text = "Private";
-            treeNode40.ForeColor = System.Drawing.Color.Sienna;
-            treeNode40.Name = "Health control";
-            treeNode40.Text = "Health control";
-            treeNode41.ForeColor = System.Drawing.Color.Sienna;
-            treeNode41.Name = "Medical act";
-            treeNode41.Text = "Medical act";
-            treeNode42.Name = "";
-            treeNode42.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode42.Text = "Living";
-            treeNode43.ForeColor = System.Drawing.Color.Sienna;
-            treeNode43.Name = "Exploration Space suit";
-            treeNode43.Text = "Exploration Space suit";
-            treeNode44.ForeColor = System.Drawing.Color.Sienna;
-            treeNode44.Name = "Exploration Vehicule";
-            treeNode44.Text = "Exploration Vehicule";
-            treeNode45.ForeColor = System.Drawing.Color.Sienna;
-            treeNode45.Name = "Briefing";
-            treeNode45.Text = "Briefing";
-            treeNode46.ForeColor = System.Drawing.Color.Sienna;
-            treeNode46.Name = "Debriefing";
-            treeNode46.Text = "Debriefing";
-            treeNode47.ForeColor = System.Drawing.Color.Sienna;
-            treeNode47.Name = "Inside experiment";
-            treeNode47.Text = "Inside experiment";
-            treeNode48.ForeColor = System.Drawing.Color.Sienna;
-            treeNode48.Name = "Outside experiment";
-            treeNode48.Text = "Outside experiment";
-            treeNode49.Name = "Science";
-            treeNode49.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode49.Text = "Science";
-            treeNode50.ForeColor = System.Drawing.Color.Sienna;
-            treeNode50.Name = "Cleaning";
-            treeNode50.Text = "Cleaning";
-            treeNode51.ForeColor = System.Drawing.Color.Sienna;
-            treeNode51.Name = "LSS air system";
-            treeNode51.Text = "LSS air system";
-            treeNode52.ForeColor = System.Drawing.Color.Sienna;
-            treeNode52.Name = "LSS water system";
-            treeNode52.Text = "LSS water system";
-            treeNode53.ForeColor = System.Drawing.Color.Sienna;
-            treeNode53.Name = "LSS food system";
-            treeNode53.Text = "LSS food system";
-            treeNode54.ForeColor = System.Drawing.Color.Sienna;
-            treeNode54.Name = "Power systems";
-            treeNode54.Text = "Power systems";
-            treeNode55.ForeColor = System.Drawing.Color.Sienna;
-            treeNode55.Name = "Space suit";
-            treeNode55.Text = "Space suit";
-            treeNode56.ForeColor = System.Drawing.Color.Sienna;
-            treeNode56.Name = "Other";
-            treeNode56.Text = "Other";
-            treeNode57.Name = "Maintenance";
-            treeNode57.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode57.Text = "Maintenance";
-            treeNode58.ForeColor = System.Drawing.Color.Sienna;
-            treeNode58.Name = "Sending message";
-            treeNode58.Text = "Sending message";
-            treeNode59.ForeColor = System.Drawing.Color.Sienna;
-            treeNode59.Name = "Receiving message";
-            treeNode59.Text = "Receiving message";
-            treeNode60.Name = "Communication";
-            treeNode60.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode60.Text = "Communication";
-            treeNode61.ForeColor = System.Drawing.Color.Sienna;
-            treeNode61.Name = "LSS";
-            treeNode61.Text = "LSS";
-            treeNode62.ForeColor = System.Drawing.Color.Sienna;
-            treeNode62.Name = "Power systems";
-            treeNode62.Text = "Power systems";
-            treeNode63.ForeColor = System.Drawing.Color.Sienna;
-            treeNode63.Name = "Communication systems";
-            treeNode63.Text = "Communication systems";
-            treeNode64.ForeColor = System.Drawing.Color.Sienna;
-            treeNode64.Name = "Propulsion systems";
-            treeNode64.Text = "Propulsion systems";
-            treeNode65.ForeColor = System.Drawing.Color.Sienna;
-            treeNode65.Name = "Habitat";
-            treeNode65.Text = "Habitat";
-            treeNode66.ForeColor = System.Drawing.Color.Sienna;
-            treeNode66.Name = "Space suit";
-            treeNode66.Text = "Space suit";
-            treeNode67.ForeColor = System.Drawing.Color.Sienna;
-            treeNode67.Name = "Vehicule";
-            treeNode67.Text = "Vehicule";
-            treeNode68.Name = "Repair";
-            treeNode68.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode68.Text = "Repair";
-            treeNode69.ForeColor = System.Drawing.Color.Sienna;
-            treeNode69.Name = "Emergency";
-            treeNode69.Text = "Emergency";
-            treeNode70.Name = "Emergency";
-            treeNode70.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode70.Text = "Emergency";
+            treeNode1.Checked = true;
+            treeNode1.ForeColor = System.Drawing.Color.Sienna;
+            treeNode1.Name = "Eating";
+            treeNode1.Text = "Eating";
+            treeNode1.ToolTipText = "Manger c\'est cool";
+            treeNode2.ForeColor = System.Drawing.Color.Sienna;
+            treeNode2.Name = "Sleeping";
+            treeNode2.Text = "Sleeping";
+            treeNode3.ForeColor = System.Drawing.Color.Sienna;
+            treeNode3.Name = "Entertainment";
+            treeNode3.Text = "Entertainment";
+            treeNode4.ForeColor = System.Drawing.Color.Sienna;
+            treeNode4.Name = "Private";
+            treeNode4.Text = "Private";
+            treeNode5.ForeColor = System.Drawing.Color.Sienna;
+            treeNode5.Name = "Health control";
+            treeNode5.Text = "Health control";
+            treeNode6.ForeColor = System.Drawing.Color.Sienna;
+            treeNode6.Name = "Medical act";
+            treeNode6.Text = "Medical act";
+            treeNode7.Name = "";
+            treeNode7.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode7.Text = "Living";
+            treeNode8.ForeColor = System.Drawing.Color.Sienna;
+            treeNode8.Name = "Exploration Space suit";
+            treeNode8.Text = "Exploration Space suit";
+            treeNode9.ForeColor = System.Drawing.Color.Sienna;
+            treeNode9.Name = "Exploration Vehicule";
+            treeNode9.Text = "Exploration Vehicule";
+            treeNode10.ForeColor = System.Drawing.Color.Sienna;
+            treeNode10.Name = "Briefing";
+            treeNode10.Text = "Briefing";
+            treeNode11.ForeColor = System.Drawing.Color.Sienna;
+            treeNode11.Name = "Debriefing";
+            treeNode11.Text = "Debriefing";
+            treeNode12.ForeColor = System.Drawing.Color.Sienna;
+            treeNode12.Name = "Inside experiment";
+            treeNode12.Text = "Inside experiment";
+            treeNode13.ForeColor = System.Drawing.Color.Sienna;
+            treeNode13.Name = "Outside experiment";
+            treeNode13.Text = "Outside experiment";
+            treeNode14.Name = "Science";
+            treeNode14.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode14.Text = "Science";
+            treeNode15.ForeColor = System.Drawing.Color.Sienna;
+            treeNode15.Name = "Cleaning";
+            treeNode15.Text = "Cleaning";
+            treeNode16.ForeColor = System.Drawing.Color.Sienna;
+            treeNode16.Name = "LSS air system";
+            treeNode16.Text = "LSS air system";
+            treeNode17.ForeColor = System.Drawing.Color.Sienna;
+            treeNode17.Name = "LSS water system";
+            treeNode17.Text = "LSS water system";
+            treeNode18.ForeColor = System.Drawing.Color.Sienna;
+            treeNode18.Name = "LSS food system";
+            treeNode18.Text = "LSS food system";
+            treeNode19.ForeColor = System.Drawing.Color.Sienna;
+            treeNode19.Name = "Power systems";
+            treeNode19.Text = "Power systems";
+            treeNode20.ForeColor = System.Drawing.Color.Sienna;
+            treeNode20.Name = "Space suit";
+            treeNode20.Text = "Space suit";
+            treeNode21.ForeColor = System.Drawing.Color.Sienna;
+            treeNode21.Name = "Other";
+            treeNode21.Text = "Other";
+            treeNode22.Name = "Maintenance";
+            treeNode22.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode22.Text = "Maintenance";
+            treeNode23.ForeColor = System.Drawing.Color.Sienna;
+            treeNode23.Name = "Sending message";
+            treeNode23.Text = "Sending message";
+            treeNode24.ForeColor = System.Drawing.Color.Sienna;
+            treeNode24.Name = "Receiving message";
+            treeNode24.Text = "Receiving message";
+            treeNode25.Name = "Communication";
+            treeNode25.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode25.Text = "Communication";
+            treeNode26.ForeColor = System.Drawing.Color.Sienna;
+            treeNode26.Name = "LSS";
+            treeNode26.Text = "LSS";
+            treeNode27.ForeColor = System.Drawing.Color.Sienna;
+            treeNode27.Name = "Power systems";
+            treeNode27.Text = "Power systems";
+            treeNode28.ForeColor = System.Drawing.Color.Sienna;
+            treeNode28.Name = "Communication systems";
+            treeNode28.Text = "Communication systems";
+            treeNode29.ForeColor = System.Drawing.Color.Sienna;
+            treeNode29.Name = "Propulsion systems";
+            treeNode29.Text = "Propulsion systems";
+            treeNode30.ForeColor = System.Drawing.Color.Sienna;
+            treeNode30.Name = "Habitat";
+            treeNode30.Text = "Habitat";
+            treeNode31.ForeColor = System.Drawing.Color.Sienna;
+            treeNode31.Name = "Space suit";
+            treeNode31.Text = "Space suit";
+            treeNode32.ForeColor = System.Drawing.Color.Sienna;
+            treeNode32.Name = "Vehicule";
+            treeNode32.Text = "Vehicule";
+            treeNode33.Name = "Repair";
+            treeNode33.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode33.Text = "Repair";
+            treeNode34.ForeColor = System.Drawing.Color.Sienna;
+            treeNode34.Name = "Emergency";
+            treeNode34.Text = "Emergency";
+            treeNode35.Name = "Emergency";
+            treeNode35.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode35.Text = "Emergency";
             this.listeActivites.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode42,
-            treeNode49,
-            treeNode57,
-            treeNode60,
-            treeNode68,
-            treeNode70});
+            treeNode7,
+            treeNode14,
+            treeNode22,
+            treeNode25,
+            treeNode33,
+            treeNode35});
             this.listeActivites.Size = new System.Drawing.Size(189, 303);
             this.listeActivites.TabIndex = 20;
             this.listeActivites.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.listeActivites_AfterSelect);
@@ -1849,6 +1873,18 @@
             this.listeAstronautes.UseCompatibleStateImageBehavior = false;
             this.listeAstronautes.View = System.Windows.Forms.View.SmallIcon;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.pictureBox1.Image = global::Logiciel.Properties.Resources.nanedi_valles;
+            this.pictureBox1.Location = new System.Drawing.Point(560, 151);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(141, 264);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
+            // 
             // AnnulerNiv3
             // 
             this.AnnulerNiv3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1898,6 +1934,41 @@
             this.label1.Size = new System.Drawing.Size(208, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Pour consulter une activité, cliquez dessus";
+            // 
+            // RetourCalendrier
+            // 
+            this.RetourCalendrier.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RetourCalendrier.Image = global::Logiciel.Properties.Resources.returnArrow;
+            this.RetourCalendrier.Location = new System.Drawing.Point(670, 10);
+            this.RetourCalendrier.Name = "RetourCalendrier";
+            this.RetourCalendrier.Size = new System.Drawing.Size(34, 35);
+            this.RetourCalendrier.TabIndex = 10;
+            this.RetourCalendrier.TabStop = false;
+            this.RetourCalendrier.Click += new System.EventHandler(this.RetourCalendrier_Click_1);
+            // 
+            // JourSuivant
+            // 
+            this.JourSuivant.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JourSuivant.Image = global::Logiciel.Properties.Resources.right2;
+            this.JourSuivant.Location = new System.Drawing.Point(446, 14);
+            this.JourSuivant.Name = "JourSuivant";
+            this.JourSuivant.Size = new System.Drawing.Size(30, 30);
+            this.JourSuivant.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.JourSuivant.TabIndex = 9;
+            this.JourSuivant.TabStop = false;
+            this.JourSuivant.Click += new System.EventHandler(this.JourSuivant_Click);
+            // 
+            // JourPrecedent
+            // 
+            this.JourPrecedent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JourPrecedent.Image = global::Logiciel.Properties.Resources.left2;
+            this.JourPrecedent.Location = new System.Drawing.Point(223, 14);
+            this.JourPrecedent.Name = "JourPrecedent";
+            this.JourPrecedent.Size = new System.Drawing.Size(30, 30);
+            this.JourPrecedent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.JourPrecedent.TabIndex = 8;
+            this.JourPrecedent.TabStop = false;
+            this.JourPrecedent.Click += new System.EventHandler(this.JourPrecedent_Click);
             // 
             // Jour
             // 
@@ -1967,6 +2038,15 @@
             this.boutonsMatin.Size = new System.Drawing.Size(273, 370);
             this.boutonsMatin.TabIndex = 9;
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Logiciel.Properties.Resources.HoraireAM;
+            this.pictureBox6.Location = new System.Drawing.Point(17, 5);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(45, 376);
+            this.pictureBox6.TabIndex = 8;
+            this.pictureBox6.TabStop = false;
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -1982,6 +2062,15 @@
             this.boutonsApresMidi.Name = "boutonsApresMidi";
             this.boutonsApresMidi.Size = new System.Drawing.Size(273, 370);
             this.boutonsApresMidi.TabIndex = 10;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Logiciel.Properties.Resources.HorairePM;
+            this.pictureBox5.Location = new System.Drawing.Point(17, 5);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(45, 376);
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
             // 
             // titreJour
             // 
@@ -2329,58 +2418,6 @@
             0,
             0});
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(318, 9);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(194, 25);
-            this.label26.TabIndex = 72;
-            this.label26.Text = "Heure de la mission :";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(179, 11);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(125, 25);
-            this.label28.TabIndex = 76;
-            this.label28.Text = "de la mission";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(13, 15);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox8.TabIndex = 75;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.InitialImage = null;
-            this.pictureBox7.Location = new System.Drawing.Point(738, 7);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(52, 52);
-            this.pictureBox7.TabIndex = 74;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(680, 7);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(52, 52);
-            this.pictureBox4.TabIndex = 73;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
             // Retour
             // 
             this.Retour.Image = global::Logiciel.Properties.Resources.returnArrow;
@@ -2410,7 +2447,7 @@
             this.Carte.TabIndex = 3;
             this.Carte.TabStop = false;
             // 
-            // pictureBox1
+            // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2419,55 +2456,9 @@
             this.label26.Size = new System.Drawing.Size(194, 25);
             this.label26.TabIndex = 72;
             this.label26.Text = "Heure de la mission :";
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.pictureBox1.Image = global::Logiciel.Properties.Resources.nanedi_valles;
-            this.pictureBox1.Location = new System.Drawing.Point(560, 151);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 264);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
-
             // 
-            // RetourCalendrier
+            // label28
             // 
-            this.RetourCalendrier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RetourCalendrier.Image = global::Logiciel.Properties.Resources.returnArrow;
-            this.RetourCalendrier.Location = new System.Drawing.Point(670, 10);
-            this.RetourCalendrier.Name = "RetourCalendrier";
-            this.RetourCalendrier.Size = new System.Drawing.Size(34, 35);
-            this.RetourCalendrier.TabIndex = 10;
-            this.RetourCalendrier.TabStop = false;
-            this.RetourCalendrier.Click += new System.EventHandler(this.RetourCalendrier_Click_1);
-            // 
-            // JourSuivant
-            // 
-            this.JourSuivant.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JourSuivant.Image = global::Logiciel.Properties.Resources.right2;
-            this.JourSuivant.Location = new System.Drawing.Point(446, 14);
-            this.JourSuivant.Name = "JourSuivant";
-            this.JourSuivant.Size = new System.Drawing.Size(30, 30);
-            this.JourSuivant.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.JourSuivant.TabIndex = 9;
-            this.JourSuivant.TabStop = false;
-            this.JourSuivant.Click += new System.EventHandler(this.JourSuivant_Click);
-            // 
-            // JourPrecedent
-            // 
-            this.JourPrecedent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JourPrecedent.Image = global::Logiciel.Properties.Resources.left2;
-            this.JourPrecedent.Location = new System.Drawing.Point(223, 14);
-            this.JourPrecedent.Name = "JourPrecedent";
-            this.JourPrecedent.Size = new System.Drawing.Size(30, 30);
-            this.JourPrecedent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.JourPrecedent.TabIndex = 8;
-            this.JourPrecedent.TabStop = false;
-            this.JourPrecedent.Click += new System.EventHandler(this.JourPrecedent_Click);
-            // 
-            // pictureBox6
-            // 
-
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.Location = new System.Drawing.Point(184, 11);
@@ -2475,47 +2466,38 @@
             this.label28.Size = new System.Drawing.Size(125, 25);
             this.label28.TabIndex = 76;
             this.label28.Text = "de la mission";
-
-            this.pictureBox6.Image = global::Logiciel.Properties.Resources.HoraireAM;
-            this.pictureBox6.Location = new System.Drawing.Point(17, 5);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(45, 376);
-            this.pictureBox6.TabIndex = 8;
-            this.pictureBox6.TabStop = false;
             // 
-            // pictureBox5
+            // Home
             // 
-            this.pictureBox5.Image = global::Logiciel.Properties.Resources.HorairePM;
-            this.pictureBox5.Location = new System.Drawing.Point(17, 5);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(45, 376);
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
+            this.Home.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Home.Image = ((System.Drawing.Image)(resources.GetObject("Home.Image")));
+            this.Home.Location = new System.Drawing.Point(13, 15);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(48, 48);
+            this.Home.TabIndex = 75;
+            this.Home.TabStop = false;
             // 
-            // pictureBox3
+            // Search
             // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::Logiciel.Properties.Resources.right2;
-            this.pictureBox3.Location = new System.Drawing.Point(620, 368);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 61;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.Search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Search.Image = ((System.Drawing.Image)(resources.GetObject("Search.Image")));
+            this.Search.InitialImage = null;
+            this.Search.Location = new System.Drawing.Point(738, 7);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(52, 52);
+            this.Search.TabIndex = 74;
+            this.Search.TabStop = false;
             // 
-            // pictureBox2
+            // Parametres
             // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::Logiciel.Properties.Resources.left2;
-            this.pictureBox2.Location = new System.Drawing.Point(36, 368);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 60;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-
+            this.Parametres.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Parametres.Image = ((System.Drawing.Image)(resources.GetObject("Parametres.Image")));
+            this.Parametres.InitialImage = null;
+            this.Parametres.Location = new System.Drawing.Point(680, 7);
+            this.Parametres.Name = "Parametres";
+            this.Parametres.Size = new System.Drawing.Size(52, 52);
+            this.Parametres.TabIndex = 73;
+            this.Parametres.TabStop = false;
             // 
             // GestionMission
             // 
@@ -2523,9 +2505,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 679);
             this.Controls.Add(this.label28);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.Home);
+            this.Controls.Add(this.Search);
+            this.Controls.Add(this.Parametres);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.ActiviteExploration);
             this.Controls.Add(this.ActExplo);
@@ -2546,36 +2528,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.Niveau1.ResumeLayout(false);
             this.Niveau1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Niveau2.ResumeLayout(false);
             this.Niveau2.PerformLayout();
             this.Niveau3.ResumeLayout(false);
             this.Niveau3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CoordY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoordX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RetourCalendrier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JourSuivant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JourPrecedent)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ActiviteExploration.ResumeLayout(false);
             this.ActiviteExploration.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeriodeFin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PeriodeDebut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Retour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LegendeCarte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Carte)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RetourCalendrier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.JourSuivant)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.JourPrecedent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Home)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Parametres)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2730,9 +2712,9 @@
         private System.Windows.Forms.NumericUpDown PeriodeDebut;
         private System.Windows.Forms.Button ValiderPeriode;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox Parametres;
+        private System.Windows.Forms.PictureBox Search;
+        private System.Windows.Forms.PictureBox Home;
         private System.Windows.Forms.Label label28;
 
 

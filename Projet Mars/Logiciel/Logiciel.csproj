@@ -73,11 +73,11 @@
     <Compile Include="Mission.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="recherche.cs">
+    <Compile Include="Recherche.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="recherche.Designer.cs">
-      <DependentUpon>recherche.cs</DependentUpon>
+    <Compile Include="Recherche.Designer.cs">
+      <DependentUpon>Recherche.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Astronautes.resx">
       <DependentUpon>Astronautes.cs</DependentUpon>
@@ -98,8 +98,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="recherche.resx">
-      <DependentUpon>recherche.cs</DependentUpon>
+    <EmbeddedResource Include="Recherche.resx">
+      <DependentUpon>Recherche.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">

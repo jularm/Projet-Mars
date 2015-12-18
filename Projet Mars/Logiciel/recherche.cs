@@ -9,17 +9,12 @@ using System.Windows.Forms;
 
 namespace Logiciel
 {
-    public partial class recherche : Form
+    public partial class Recherche : Form
     {
         Mission refer = new Mission();
         int choixJ = 0;
-
-        public int choixj()
-        {
-            return choixJ;
-        }
         
-        public recherche(List<Astronaute> LAstr, List<CategorieActivite> LCat, CalendrierMartien C)
+        public Recherche(List<Astronaute> LAstr, List<CategorieActivite> LCat, CalendrierMartien C)
         {
             InitializeComponent();
             refer.ListAstr = LAstr;
@@ -40,6 +35,17 @@ namespace Logiciel
             }
         }
 
+        public int choixj()
+        {
+            return choixJ;
+        }
+
+        /// <summary>
+        /// Permet de lancer la recherche si on a sélectionné une activité ou un astronaute
+        /// Affiche les résultats correspondants sous forme de liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (comboBox1.Enabled == true && comboBox2.Enabled == true)
@@ -48,7 +54,7 @@ namespace Logiciel
             }
             else
             {   
-                if (comboBox1.Enabled == true)
+                if (comboBox1.Enabled == true) //Recherche sur les activités
                 {
 
                     for (int i = 0; i < refer.Calendar.Jours.Count(); i++)
@@ -69,7 +75,7 @@ namespace Logiciel
                     }                    
                 }
 
-                if (comboBox2.Enabled == true)
+                if (comboBox2.Enabled == true) //Recherche sur les astronautes
                 {
                     for (int i = 0; i < refer.Calendar.Jours.Count(); i++)
                     {
@@ -89,7 +95,11 @@ namespace Logiciel
             }
         }
                 
-
+        /// <summary>
+        /// Vide la liste des résultats
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {                    
             comboBox1.Enabled = true;
@@ -99,6 +109,11 @@ namespace Logiciel
             listBox1.Items.Clear();
         }
 
+        /// <summary>
+        /// Permet une recherche exclusivement par activité : le champ pour la recherche par astronaute se bloque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
@@ -108,6 +123,11 @@ namespace Logiciel
             }
         }
 
+        /// <summary>
+        /// Idem pour les astronautes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
