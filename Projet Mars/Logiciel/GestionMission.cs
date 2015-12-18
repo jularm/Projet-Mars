@@ -64,7 +64,9 @@ namespace Logiciel
                 xmlDoc2.Load(@"..\\..\\..\\sauvegarde2.xml");
                 M.chargerXml2(xmlDoc2, M);
 
-                M.Calendar.MiseAJour();//Pour remettre les pendules à l'heure 
+                M.Calendar.MiseAJour();//Pour remettre les pendules à l'heure    
+
+                Maj(new Object(), new EventArgs());
             }
             catch
             {
@@ -188,7 +190,7 @@ namespace Logiciel
             }                
             timer1.Start();
             dureMission.Maximum = 500;
-            trackBar1.Maximum = 9; //Permet l'affichage des jours de 50 en 50
+            trackBar1.Maximum = 9; //Permet l'affichage des jours de 50 en 50           
             trackBar1_Scroll(new Object(), new EventArgs()); //Pour différencier les jours d'un scroll à l'autre           
         }
 
@@ -253,9 +255,17 @@ namespace Logiciel
         //A commenter
         private void JourCourantMission_TextChanged(object sender, EventArgs e)
         {
-            dureMission.Increment(1);  //on augmente de 1 pas la barre de progression de la mission           
+            dureMission.Increment(1);  //on augmente de 1 pas la barre de progression de la mission 
             trackBar1.Value = int.Parse(JourCourantMission.Text) / 50;
+            dureMission.Value = int.Parse(JourCourantMission.Text);
             trackBar1_Scroll(sender, e); 
+        }
+
+        private void Maj(object sender, EventArgs e)
+        {            
+            trackBar1.Value = int.Parse(JourCourantMission.Text) / 50;
+            dureMission.Value = int.Parse(JourCourantMission.Text);
+            trackBar1_Scroll(sender, e);
         }
 
         /// <summary>
@@ -611,8 +621,7 @@ namespace Logiciel
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void RetourCalendrier_Click_1(object sender, EventArgs e)
-        {
-            JourCourantMission_TextChanged(new Object(), new EventArgs());
+        {           
             Niveau2.Hide();
             Niveau1.Show();
             trackBar1_Scroll(sender,e);
@@ -913,6 +922,10 @@ namespace Logiciel
             NomLieu.Text = "";
             CoordX.Value = 0;
             CoordY.Value = 0;
+            CoordX.Enabled = false;
+            CoordY.Enabled = false;
+            NomLieu.Enabled = false;
+            pictureBox1.Enabled = false;
         }
 
         /// <summary>
