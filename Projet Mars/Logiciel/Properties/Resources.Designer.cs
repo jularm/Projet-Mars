@@ -153,16 +153,6 @@ namespace Logiciel.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap left224 {
-            get {
-                object obj = ResourceManager.GetObject("left224", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap LegendeCarte {
             get {
                 object obj = ResourceManager.GetObject("LegendeCarte", resourceCulture);
@@ -246,16 +236,6 @@ namespace Logiciel.Properties {
         internal static System.Drawing.Bitmap right2 {
             get {
                 object obj = ResourceManager.GetObject("right2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap right208 {
-            get {
-                object obj = ResourceManager.GetObject("right208", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
