@@ -28,10 +28,13 @@ namespace Logiciel
         Image sortie = Image.FromFile("..\\..\\..\\..\\astronaut.png");
         Image scaphandrePasse = Image.FromFile("..\\..\\..\\..\\astronautGray.png");
         Image scaphandreFutur = Image.FromFile("..\\..\\..\\..\\astronautGreen.png");
+        Image scaphandreActuel = Image.FromFile("..\\..\\..\\..\\astronautBlue.png");
         Image vehiculePasse = Image.FromFile("..\\..\\..\\..\\MarsVehiculeGray.png");
+        Image vehiculeActuel = Image.FromFile("..\\..\\..\\..\\MarsVehiculeBlue.png");
         Image vehiculeFutur = Image.FromFile("..\\..\\..\\..\\MarsVehiculeGreen.png");
         Image experiencePasse = Image.FromFile("..\\..\\..\\..\\experimentGray.png");
         Image experienceFutur = Image.FromFile("..\\..\\..\\..\\experimentGreen.png");
+        Image experienceActuelle = Image.FromFile("..\\..\\..\\..\\experimentBlue.png");
 
         //Carte niveau 3 :
         static double echCarteNiv3 = 37.9; //Facteur d'échelle pour la carte de niveau 3 par rapport à la carte fournie
@@ -1201,7 +1204,7 @@ namespace Logiciel
                             {
                                 if (i == int.Parse(JourCourantMission.Text)-1)
                                 {
-                                    icone.Image = scaphandreFutur;
+                                    icone.Image = scaphandreActuel;
                                 }
                                 else
                                 {
@@ -1219,7 +1222,7 @@ namespace Logiciel
                             {
                                 if (i == int.Parse(JourCourantMission.Text)-1)
                                 {
-                                    icone.Image = vehiculeFutur;
+                                    icone.Image = vehiculeActuel;
                                 }
                                 else
                                 {
@@ -1237,7 +1240,7 @@ namespace Logiciel
                             {
                                 if (i == int.Parse(JourCourantMission.Text)-1)
                                 {
-                                    icone.Image = experienceFutur;
+                                    icone.Image = experienceActuelle;
                                 }
                                 else
                                 {
